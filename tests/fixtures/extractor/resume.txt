@@ -1,0 +1,3 @@
+Alex completed CS 301: Operating Systems and built a Python scheduler project.
+GPA: 3.7.
+Goal: become a security engineer.

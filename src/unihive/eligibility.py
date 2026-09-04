@@ -59,8 +59,11 @@ def load_program_config(
 ) -> ProgramConfig:
     """Load and schema-validate a sourced program YAML configuration."""
     try:
+        raw_document: object = yaml.safe_load(
+            program_path.read_text(encoding="utf-8")
+        )
         document = JSON_VALUE_ADAPTER.validate_python(
-            yaml.safe_load(program_path.read_text(encoding="utf-8"))
+            _normalize_yaml_dates(raw_document)
         )
         schema = JSON_VALUE_ADAPTER.validate_python(
             yaml.safe_load(schema_path.read_text(encoding="utf-8"))
@@ -436,3 +439,17 @@ def _ordered_unique(values: Iterable[str]) -> list[str]:
             unique.append(value)
             seen.add(value)
     return unique
+
+
+def _normalize_yaml_dates(value: object) -> object:
+    """Convert YAML timestamp scalars to JSON-compatible ISO date strings."""
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, list):
+        return [_normalize_yaml_dates(item) for item in value]
+    if isinstance(value, dict):
+        return {
+            key: _normalize_yaml_dates(item)
+            for key, item in value.items()
+        }
+    return value

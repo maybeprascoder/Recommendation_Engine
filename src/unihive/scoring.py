@@ -271,6 +271,7 @@ def score_assessment(
         source_urls=source_urls,
         timestamp=timestamp,
         confidence=confidence,
+        scoring_config_version=loaded.version,
     )
     alignment = ProgramAlignment(
         readiness_value=readiness,

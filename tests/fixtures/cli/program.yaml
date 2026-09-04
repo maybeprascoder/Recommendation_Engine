@@ -1,0 +1,20 @@
+program_id: example-ml-ms
+university: Example University
+degree: MS Machine Learning
+demand_profile:
+  machine_learning:
+    required_level: 5
+    weight: 1.0
+eligibility_rules:
+  - id: minimum-gpa
+    type: MINIMUM_GPA
+    source_url: https://example.edu/program/requirements
+    failure_effect: NOT_CURRENTLY_ELIGIBLE
+    minimum_gpa: 3.0
+dimension_emphasis: {}
+version: test-program-v1
+source_url: https://example.edu/program
+verified_on: 2026-01-01
+provisional: true
+validated_by: null
+profile_shape_rules: []

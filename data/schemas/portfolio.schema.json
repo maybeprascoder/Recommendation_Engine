@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/portfolio.schema.json",
+  "title": "UniHive portfolio balance configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "provisional",
+    "validated_by",
+    "source",
+    "minimum_size",
+    "maximum_size",
+    "target_distribution"
+  ],
+  "properties": {
+    "version": {"type": "string", "minLength": 1},
+    "provisional": {"type": "boolean"},
+    "validated_by": {"type": ["string", "null"]},
+    "source": {"type": ["string", "null"]},
+    "minimum_size": {"type": "integer", "minimum": 8, "maximum": 12},
+    "maximum_size": {"type": "integer", "minimum": 8, "maximum": 12},
+    "target_distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["SAFE", "TARGET", "AMBITIOUS"],
+      "properties": {
+        "SAFE": {"$ref": "#/$defs/categoryTarget"},
+        "TARGET": {"$ref": "#/$defs/categoryTarget"},
+        "AMBITIOUS": {"$ref": "#/$defs/categoryTarget"}
+      }
+    }
+  },
+  "$defs": {
+    "categoryTarget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_count", "target_count"],
+      "properties": {
+        "minimum_count": {"type": "integer", "minimum": 1},
+        "target_count": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

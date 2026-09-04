@@ -13,6 +13,9 @@ dependencies = [
     "PyYAML>=6,<7",
 ]
 
+[project.scripts]
+unihive = "cli:main"
+
 [project.optional-dependencies]
 dev = [
     "hypothesis>=6",
@@ -25,6 +28,9 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools]
+py-modules = ["cli"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

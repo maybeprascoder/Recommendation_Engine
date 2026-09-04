@@ -1,0 +1,23 @@
+version: extractor-retry-v1
+The previous extraction failed validation. Return one corrected JSON object only.
+Do not explain the correction, add Markdown fences, coerce unsupported claims, or remove required fields.
+
+Continue to follow these evidence rules:
+- Use only facts clearly stated in the student input.
+- Every evidence item must include state, extraction_confidence, and source.
+- source must be an exact, verbatim span copied from the student input.
+- Anything not clearly stated is UNKNOWN, never CONFIRMED_ABSENT.
+- Never infer a skill or competency from an adjacent skill, course, project, role, or credential.
+- Do not invent achievements, dates, scores, institutions, skills, or goals.
+
+Validation error:
+{{validation_error}}
+
+Previous invalid response:
+{{previous_response}}
+
+StudentProfile JSON Schema:
+{{profile_schema}}
+
+Original student input begins after this line:
+{{student_input}}

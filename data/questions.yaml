@@ -1,0 +1,25 @@
+version: questions-v1
+provisional: true
+validated_by: null
+source: docs/engine_build_spec_v1.md
+questions:
+  - id: networking_coursework
+    text: Have you completed any networking coursework or projects?
+    resolves_type: COMPETENCY
+    resolves_id: networking
+  - id: operating_systems_coursework
+    text: Have you completed any operating-systems coursework or projects?
+    resolves_type: COMPETENCY
+    resolves_id: operating_systems
+  - id: security_coursework
+    text: Have you completed any security coursework, projects, or internships?
+    resolves_type: COMPETENCY
+    resolves_id: security
+  - id: career_goal
+    text: What do you want to do after your degree?
+    resolves_type: FIELD
+    resolves_id: goals
+  - id: bridging_constraint
+    text: Would you spend three to six months bridging into your chosen field?
+    resolves_type: FIELD
+    resolves_id: constraints

@@ -1,0 +1,16 @@
+version: portfolio-v1
+provisional: true
+validated_by: null
+source: docs/engine_build_spec_v1.md
+minimum_size: 8
+maximum_size: 12
+target_distribution:
+  SAFE:
+    minimum_count: 2
+    target_count: 3
+  TARGET:
+    minimum_count: 3
+    target_count: 4
+  AMBITIOUS:
+    minimum_count: 2
+    target_count: 3

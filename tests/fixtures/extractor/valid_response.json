@@ -1,0 +1,54 @@
+{
+  "academic_history": [
+    {
+      "statement": "GPA: 3.7."
+    }
+  ],
+  "normalized_gpa": 3.7,
+  "courses": [
+    {
+      "name": "CS 301: Operating Systems"
+    }
+  ],
+  "skills": [
+    "Python"
+  ],
+  "projects": [
+    {
+      "name": "Python scheduler project"
+    }
+  ],
+  "research": [],
+  "work": [],
+  "goals": [
+    "become a security engineer"
+  ],
+  "constraints": [],
+  "tests": [],
+  "evidence": [
+    {
+      "id": "course-os",
+      "kind": "coursework",
+      "raw_text": "Completed an operating-systems course",
+      "state": "VERIFIED_PRESENT",
+      "quality": "completed_course",
+      "depth": "completed",
+      "recency": null,
+      "source": "CS 301: Operating Systems",
+      "extraction_confidence": "HIGH"
+    },
+    {
+      "id": "project-python",
+      "kind": "project",
+      "raw_text": "Built a Python scheduler project",
+      "state": "VERIFIED_PRESENT",
+      "quality": "project",
+      "depth": "builder",
+      "recency": null,
+      "source": "Python scheduler project",
+      "extraction_confidence": "HIGH"
+    }
+  ],
+  "citizenship": null,
+  "residency": null
+}

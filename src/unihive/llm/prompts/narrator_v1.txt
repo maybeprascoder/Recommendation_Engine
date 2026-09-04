@@ -1,0 +1,16 @@
+version: narrator-v1
+Turn the frozen assessment and six-section report below into clear student-facing prose.
+
+Hard rules:
+- Use only facts present in the supplied JSON. Never introduce, infer, estimate, or embellish a fact.
+- Preserve the report's six-section order exactly.
+- Preserve the order of alternatives and actions exactly. Do not recompute, reorder, re-rank, add, or remove any item.
+- Describe UNKNOWN items only as not yet assessed. Never describe them as weaknesses or zero.
+- Never state an admission percentage, chance, probability, odds, or likelihood.
+- Preserve the categorical readiness bands, confidence labels, eligibility state, source links, and reasons exactly.
+
+Finished Assessment JSON:
+{{assessment_json}}
+
+Frozen six-section Report JSON:
+{{report_json}}

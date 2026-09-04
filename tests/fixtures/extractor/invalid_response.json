@@ -1,0 +1,26 @@
+{
+  "academic_history": [],
+  "normalized_gpa": null,
+  "courses": [],
+  "skills": [],
+  "projects": [],
+  "research": [],
+  "work": [],
+  "goals": [],
+  "constraints": [],
+  "tests": [],
+  "evidence": [
+    {
+      "id": "course-os",
+      "kind": "coursework",
+      "raw_text": "Completed an operating-systems course",
+      "state": "VERIFIED_PRESENT",
+      "quality": "completed_course",
+      "depth": "completed",
+      "recency": null,
+      "source": "CS 301: Operating Systems"
+    }
+  ],
+  "citizenship": null,
+  "residency": null
+}

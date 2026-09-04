@@ -1,0 +1,34 @@
+{
+  "academic_history": [
+    {
+      "degree": "BS",
+      "completed": true
+    }
+  ],
+  "normalized_gpa": 3.7,
+  "courses": [],
+  "skills": [],
+  "projects": [],
+  "research": [],
+  "work": [],
+  "goals": [
+    "Study machine learning"
+  ],
+  "constraints": [],
+  "tests": [],
+  "evidence": [
+    {
+      "id": "ml-paper",
+      "kind": "machine_learning_publication",
+      "raw_text": "First-author paper at a top-tier venue",
+      "state": "VERIFIED_PRESENT",
+      "quality": "top_tier_venue",
+      "depth": "first_author",
+      "recency": "2025-12-01",
+      "source": "First-author paper at a top-tier venue",
+      "extraction_confidence": "HIGH"
+    }
+  ],
+  "citizenship": null,
+  "residency": null
+}

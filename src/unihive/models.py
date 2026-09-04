@@ -383,6 +383,12 @@ class AuditRecord(CoreModel):
     source_urls: list[HttpUrl]
     timestamp: datetime
     confidence: Confidence
+    scoring_config_version: str | None = None
+    as_of: date | None = None
+    profile_snapshot: StudentProfile | None = None
+    program_config_snapshot: ProgramConfig | None = None
+    preference_fit_snapshot: JsonValue = None
+    admissions_outlook_snapshot: JsonValue = None
 
 
 class Assessment(CoreModel):
