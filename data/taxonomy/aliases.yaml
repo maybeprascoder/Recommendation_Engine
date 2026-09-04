@@ -1,0 +1,7 @@
+aliases:
+  crypto: cryptography
+  governance: policy_governance
+  ml: machine_learning
+  networks: networking
+  os: operating_systems
+  policy: policy_governance

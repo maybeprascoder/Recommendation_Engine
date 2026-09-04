@@ -1,0 +1,21 @@
+version: bands-v1
+provisional: true
+validated_by: null
+source: docs/engine_build_spec_v1.md
+score_ceiling: 1.0
+band_cutoffs:
+  EMERGING: 0.0
+  DEVELOPING: 0.4
+  COMPETITIVE: 0.65
+  STRONG: 0.85
+confidence:
+  state_factors:
+    VERIFIED_PRESENT: 1.0
+    SELF_REPORTED_PRESENT: 0.6
+    CONFIRMED_ABSENT: 1.0
+    UNKNOWN: 0.0
+    NOT_APPLICABLE: 0.0
+  cutoffs:
+    LOW: 0.0
+    MEDIUM: 0.5
+    HIGH: 0.8

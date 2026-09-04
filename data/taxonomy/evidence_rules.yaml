@@ -1,0 +1,9 @@
+rules:
+  - id: machine_learning_publication_to_machine_learning
+    evidence_kind: machine_learning_publication
+    competency_id: machine_learning
+    quality_ladder: research_venue
+    relevance: 1.0
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md

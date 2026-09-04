@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/bands.schema.json",
+  "title": "UniHive readiness bands and confidence configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "provisional",
+    "validated_by",
+    "source",
+    "score_ceiling",
+    "band_cutoffs",
+    "confidence"
+  ],
+  "properties": {
+    "version": {"type": "string", "minLength": 1},
+    "provisional": {"type": "boolean"},
+    "validated_by": {"type": ["string", "null"]},
+    "source": {"type": ["string", "null"]},
+    "score_ceiling": {"type": "number", "exclusiveMinimum": 0},
+    "band_cutoffs": {
+      "$ref": "#/$defs/readinessBandMap"
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_factors", "cutoffs"],
+      "properties": {
+        "state_factors": {"$ref": "#/$defs/evidenceStateMap"},
+        "cutoffs": {"$ref": "#/$defs/confidenceMap"}
+      }
+    }
+  },
+  "$defs": {
+    "readinessBandMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["EMERGING", "DEVELOPING", "COMPETITIVE", "STRONG"],
+      "properties": {
+        "EMERGING": {"type": "number", "minimum": 0},
+        "DEVELOPING": {"type": "number", "minimum": 0},
+        "COMPETITIVE": {"type": "number", "minimum": 0},
+        "STRONG": {"type": "number", "minimum": 0}
+      }
+    },
+    "evidenceStateMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "VERIFIED_PRESENT",
+        "SELF_REPORTED_PRESENT",
+        "CONFIRMED_ABSENT",
+        "UNKNOWN",
+        "NOT_APPLICABLE"
+      ],
+      "properties": {
+        "VERIFIED_PRESENT": {"type": "number", "minimum": 0},
+        "SELF_REPORTED_PRESENT": {"type": "number", "minimum": 0},
+        "CONFIRMED_ABSENT": {"type": "number", "minimum": 0},
+        "UNKNOWN": {"type": "number", "minimum": 0},
+        "NOT_APPLICABLE": {"type": "number", "minimum": 0}
+      }
+    },
+    "confidenceMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["LOW", "MEDIUM", "HIGH"],
+      "properties": {
+        "LOW": {"type": "number", "minimum": 0},
+        "MEDIUM": {"type": "number", "minimum": 0},
+        "HIGH": {"type": "number", "minimum": 0}
+      }
+    }
+  }
+}

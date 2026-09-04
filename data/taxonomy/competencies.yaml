@@ -1,0 +1,111 @@
+competencies:
+  - id: networking
+    name: Networking
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: operating_systems
+    name: Operating Systems
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: cryptography
+    name: Cryptography
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: statistics
+    name: Statistics
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: machine_learning
+    name: Machine Learning
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: distributed_systems
+    name: Distributed Systems
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec section 3; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: programming
+    name: Programming
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec section 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: security
+    name: Security
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec section 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: policy_governance
+    name: Policy / Governance
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: risk
+    name: Risk
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec section 4; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md
+  - id: quantitative_analysis
+    name: Quantitative Analysis
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Competency explicitly named in Build Spec section 5.2; definition pending human validation.
+    provisional: true
+    validated_by: null
+    source: docs/engine_build_spec_v1.md

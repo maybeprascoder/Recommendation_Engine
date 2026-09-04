@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/competencies.schema.json",
+  "title": "UniHive competency taxonomy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["competencies"],
+  "properties": {
+    "competencies": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/competency"}
+    }
+  },
+  "$defs": {
+    "competency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "fields",
+        "parent_ids",
+        "child_ids",
+        "cip_anchor",
+        "description",
+        "provisional",
+        "validated_by",
+        "source"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "pattern": "^[a-z][a-z0-9_]*$"},
+        "name": {"type": "string", "minLength": 1},
+        "fields": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "parent_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "child_ids": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "cip_anchor": {"type": ["string", "null"]},
+        "description": {"type": "string", "minLength": 1},
+        "provisional": {"type": "boolean"},
+        "validated_by": {"type": ["string", "null"]},
+        "source": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

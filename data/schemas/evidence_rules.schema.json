@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/evidence_rules.schema.json",
+  "title": "UniHive evidence-to-competency rules",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rules"],
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "evidence_kind",
+          "competency_id",
+          "quality_ladder",
+          "relevance",
+          "provisional",
+          "validated_by",
+          "source"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "evidence_kind": {"type": "string", "minLength": 1},
+          "competency_id": {"type": "string", "minLength": 1},
+          "quality_ladder": {"type": "string", "minLength": 1},
+          "relevance": {"type": "number", "minimum": 0, "maximum": 1},
+          "provisional": {"type": "boolean"},
+          "validated_by": {"type": ["string", "null"]},
+          "source": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

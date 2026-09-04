@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/program.schema.json",
+  "title": "UniHive program configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "program_id",
+    "university",
+    "degree",
+    "demand_profile",
+    "eligibility_rules",
+    "dimension_emphasis",
+    "version",
+    "source_url",
+    "verified_on",
+    "provisional",
+    "validated_by"
+  ],
+  "properties": {
+    "program_id": {"type": "string", "minLength": 1},
+    "university": {"type": "string", "minLength": 1},
+    "degree": {"type": "string", "minLength": 1},
+    "demand_profile": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["required_level", "weight"],
+        "properties": {
+          "required_level": {"type": "integer", "minimum": 1, "maximum": 5},
+          "weight": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "eligibility_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/eligibilityRule"}
+    },
+    "dimension_emphasis": {
+      "type": "object",
+      "additionalProperties": {"type": "number", "minimum": 0}
+    },
+    "version": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "format": "uri"},
+    "verified_on": {"type": "string", "format": "date"},
+    "provisional": {"type": "boolean"},
+    "validated_by": {"type": ["string", "null"]},
+    "profile_shape_rules": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/profileShapeRule"}
+    }
+  },
+  "$defs": {
+    "eligibilityRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "source_url", "failure_effect"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {
+          "enum": [
+            "REQUIRED_PRIOR_DEGREE",
+            "MINIMUM_GPA",
+            "MANDATORY_COURSEWORK",
+            "ENGLISH_SCORE",
+            "GRE_REQUIREMENT",
+            "WORK_EXPERIENCE",
+            "CITIZENSHIP_RESIDENCY",
+            "DEADLINE",
+            "INTAKE_AVAILABILITY"
+          ]
+        },
+        "source_url": {"type": "string", "format": "uri"},
+        "failure_effect": {
+          "enum": ["CONDITIONALLY_ELIGIBLE", "NOT_CURRENTLY_ELIGIBLE"]
+        },
+        "accepted_degrees": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "minimum_gpa": {"type": "number"},
+        "required_courses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "minimum_scores": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "number"}
+        },
+        "required": {"type": "boolean"},
+        "minimum_score": {"type": ["number", "null"]},
+        "minimum_months": {"type": "integer", "minimum": 0},
+        "accepted_citizenships": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "accepted_residencies": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "deadline": {"type": "string", "format": "date"},
+        "intake": {"type": "string", "minLength": 1},
+        "available": {"type": ["boolean", "null"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"const": "REQUIRED_PRIOR_DEGREE"}}},
+          "then": {"required": ["accepted_degrees"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "MINIMUM_GPA"}}},
+          "then": {"required": ["minimum_gpa"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "MANDATORY_COURSEWORK"}}},
+          "then": {"required": ["required_courses"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "ENGLISH_SCORE"}}},
+          "then": {"required": ["minimum_scores"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "GRE_REQUIREMENT"}}},
+          "then": {"required": ["required", "minimum_score"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "WORK_EXPERIENCE"}}},
+          "then": {"required": ["minimum_months"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "CITIZENSHIP_RESIDENCY"}}},
+          "then": {
+            "required": ["accepted_citizenships", "accepted_residencies"]
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "DEADLINE"}}},
+          "then": {"required": ["deadline"]}
+        },
+        {
+          "if": {"properties": {"type": {"const": "INTAKE_AVAILABILITY"}}},
+          "then": {"required": ["intake", "available"]}
+        }
+      ]
+    },
+    "profileShapeRule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "rationale", "source_url"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {"enum": ["HARD_PREREQUISITE_FLOOR", "COHERENCE"]},
+        "rationale": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "format": "uri"},
+        "competency_id": {"type": "string", "minLength": 1},
+        "minimum_level": {"type": "integer", "minimum": 1, "maximum": 5},
+        "maximum_band": {
+          "enum": ["EMERGING", "DEVELOPING", "COMPETITIVE", "STRONG"]
+        },
+        "competency_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "minimum_count": {"type": "integer", "minimum": 1},
+        "adjustment": {"type": "number"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"type": {"const": "HARD_PREREQUISITE_FLOOR"}}
+          },
+          "then": {
+            "required": ["competency_id", "minimum_level", "maximum_band"]
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "COHERENCE"}}},
+          "then": {
+            "required": [
+              "competency_ids",
+              "minimum_level",
+              "minimum_count",
+              "adjustment"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unihive.local/schemas/ladders.schema.json",
+  "title": "UniHive evidence evaluation configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provisional",
+    "validated_by",
+    "source",
+    "quality_ladders",
+    "default_depth_label",
+    "depth_factors",
+    "verification_factors",
+    "recency",
+    "combination_curve",
+    "level_thresholds"
+  ],
+  "properties": {
+    "provisional": {"type": "boolean"},
+    "validated_by": {"type": ["string", "null"]},
+    "source": {"type": ["string", "null"]},
+    "quality_ladders": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/factorMap"}
+    },
+    "default_depth_label": {"type": "string", "minLength": 1},
+    "depth_factors": {"$ref": "#/$defs/factorMap"},
+    "verification_factors": {"$ref": "#/$defs/factorMap"},
+    "recency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["undated_factor", "bands"],
+      "properties": {
+        "undated_factor": {"type": "number", "minimum": 0},
+        "bands": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["max_age_days", "factor"],
+            "properties": {
+              "max_age_days": {"type": ["integer", "null"], "minimum": 0},
+              "factor": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "combination_curve": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["multipliers", "tail_multiplier"],
+      "properties": {
+        "multipliers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "number", "minimum": 0}
+        },
+        "tail_multiplier": {"type": "number", "minimum": 0}
+      }
+    },
+    "level_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "INTRODUCTORY",
+        "DEVELOPING",
+        "PROFICIENT",
+        "ADVANCED",
+        "EXPERT"
+      ],
+      "properties": {
+        "INTRODUCTORY": {"type": "number", "minimum": 0},
+        "DEVELOPING": {"type": "number", "minimum": 0},
+        "PROFICIENT": {"type": "number", "minimum": 0},
+        "ADVANCED": {"type": "number", "minimum": 0},
+        "EXPERT": {"type": "number", "minimum": 0}
+      }
+    }
+  },
+  "$defs": {
+    "factorMap": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {"minLength": 1},
+      "additionalProperties": {"type": "number", "minimum": 0}
+    }
+  }
+}
