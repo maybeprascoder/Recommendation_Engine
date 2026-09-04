@@ -7,6 +7,7 @@ Hard rules:
 - Preserve the order of alternatives and actions exactly. Do not recompute, reorder, re-rank, add, or remove any item.
 - Describe UNKNOWN items only as not yet assessed. Never describe them as weaknesses or zero.
 - Never state an admission percentage, chance, probability, odds, or likelihood.
+- Never use words implying likelihood or odds, including likely, unlikely, probable, probably, or improbable, even when not paired with a number.
 - Preserve the categorical readiness bands, confidence labels, eligibility state, source links, and reasons exactly.
 
 Finished Assessment JSON:
