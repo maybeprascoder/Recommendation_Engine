@@ -34,7 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "command",
         nargs="?",
-        choices=("score", "replay", "review", "confirm", "questions"),
+        choices=("score", "replay", "review", "confirm", "questions", "analyze"),
         default="score",
     )
     parser.add_argument(
@@ -45,6 +45,21 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--profile", type=Path, help="structured profile JSON")
     parser.add_argument("--program", type=Path, help="sourced program YAML")
     parser.add_argument("--audit", type=Path, help="past assessment JSON to replay")
+    parser.add_argument(
+        "--input",
+        type=Path,
+        action="append",
+        dest="documents",
+        help="UTF-8 text document to analyze; repeat for supporting documents",
+    )
+    parser.add_argument(
+        "--recorded-responses",
+        type=Path,
+        help="offline synthetic/recorded model responses; makes no model calls",
+    )
+    parser.add_argument(
+        "--output", type=Path, help="save analysis JSON exclusively to a new file"
+    )
     parser.add_argument(
         "--report",
         action="store_true",
@@ -70,6 +85,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.report and not args.json_output:
         parser.error("--report requires --json")
+    if args.command == "analyze":
+        if not args.documents:
+            parser.error("analyze requires --input with a UTF-8 text document")
+        if args.score_only:
+            parser.error("analyze cannot use --score-only")
+        from unihive.llm.analysis_cli import run_analysis
+
+        return run_analysis(args.documents, args.recorded_responses, args.output)
     taxonomy = load_taxonomy()
     scoring_configuration = load_scoring_configuration()
 

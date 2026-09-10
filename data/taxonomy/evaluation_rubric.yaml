@@ -1,0 +1,43 @@
+version: qualitative-v1
+provisional: true
+validated_by: null
+source: null
+# Draft descriptors from the agreed generic-evaluator design. No scoring weights.
+dimensions:
+  - id: ownership
+    description: Individual contribution explicitly described in the evidence.
+    labels:
+      unknown: Individual responsibility is not established.
+      assisted: Explicitly supported another contributor or followed guided work.
+      shared: Explicit individual contribution within collaborative work.
+      led: Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient.
+  - id: depth
+    description: Nature of the work demonstrated by the description, not prestige.
+    labels:
+      unknown: A title, skill list, or credential alone does not describe the work.
+      applied: Used established methods to implement or complete a described task.
+      designed: Made and explained design choices or adapted methods to constraints.
+      investigated: Investigated a question through an explicit method and analysis.
+  - id: evaluation
+    description: How the work was evaluated; no implied ordering across disciplines.
+    labels:
+      unknown: No evaluation method is stated.
+      described: A concrete test, review, or assessment method is stated.
+      compared: Evaluation includes explicit baselines, alternatives, or controls.
+      externally_reviewed: External assessment is explicitly stated; this remains a claim until verified.
+  - id: impact
+    description: Evidence describing results, separate from their independent verification.
+    labels:
+      unknown: No result is stated.
+      reported: A concrete outcome is reported without a measurement method.
+      measured: An outcome and measurement method or comparison are stated.
+      adopted: Actual use or adoption by identified users or an organization is stated.
+category_guidance:
+  project: Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.
+  work: Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.
+  research: Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.
+  publication: Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.
+  coursework: Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.
+  education: Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.
+  activity: Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.
+  other: Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage.

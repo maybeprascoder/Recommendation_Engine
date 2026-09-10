@@ -1,0 +1,6 @@
+Synthetic student example, not a real person.
+Education: MSc Environmental Science, Example Institute, GPA 3.6/4.0.
+Education: BSc Geography, Sample College, GPA 8.2/10.
+Research: I compared two rainfall prediction methods against a seasonal baseline using held-out observations. I have not published this work.
+Project: As part of a three-person team, I implemented a rainwater monitor and compared its sensor readings against a manual gauge. My teammate designed the hardware. We have not deployed it outside the classroom.
+Community: I coordinated six volunteers to run a weekly neighborhood reading club for one semester.

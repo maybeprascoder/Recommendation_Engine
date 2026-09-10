@@ -78,11 +78,87 @@ this information**, edit the relevant section, then confirm and score again. The
 review starts from your latest confirmed profile and retains previous changes. **Not
 now** skips a question for this page session without changing your profile.
 
-Upload/extraction and live LLM providers are not connected. Student confirmation
+Web upload/extraction is not connected. The separate `analyze` CLI below now has
+a live model adapter and proposed qualitative evidence review. Student confirmation
 records a review; it does not prove that a source supports a claim. University data
 and broader evidence mappings still need human validation.
 
 See [current validation and remaining work](qa/STEP4_PROFILE_FOLLOWUP.md).
+
+## Generic evidence evaluator (first milestone)
+
+`analyze` reads arbitrary UTF-8 text documents, proposes source-linked claims,
+preserves academic records and original grading scales, applies a provisional
+qualitative rubric, and runs a separate model support check. Projects, work,
+unpublished research, publications, coursework, and nontechnical activities are
+supported categories. Unfamiliar skills remain visible even without a taxonomy ID.
+This is an interpretation draft requiring review, not an admissions score.
+
+Use an installed local Ollama model without paid API calls. These variables apply
+to the current PowerShell session only; no account or API key is required:
+
+```powershell
+$env:UNIHIVE_LLM_PROVIDER = 'ollama'
+$env:UNIHIVE_LLM_BASE_URL = 'http://127.0.0.1:11434'
+$env:UNIHIVE_LLM_MODEL = 'qwen3.5:9b'
+$env:UNIHIVE_LLM_CONTEXT = '16384'
+$env:UNIHIVE_LLM_TIMEOUT = '180'
+.\.venv\Scripts\unihive.exe analyze --input tests/fixtures/understanding/student.txt --output data/reviews/example-understanding.json
+```
+
+Choose a model you have installed. Local mode rejects cloud tags and remote
+endpoints and never switches to a paid model on failure. It uses the native
+Ollama API to set context size, disable thinking, and request schema-shaped JSON.
+Model quality and latency must be evaluated; fitting the weights into memory
+does not guarantee sufficient context memory or reliable judgments.
+
+On Windows, the same local configuration is available through
+`./run-local-analysis.ps1 -InputPath student.txt -OutputPath data/reviews/new.json`.
+
+The replaceable adapter also supports explicitly configured OpenAI-compatible
+servers with `UNIHIVE_LLM_PROVIDER` unset, a base URL ending in `/v1`, and optional
+`UNIHIVE_LLM_API_KEY`. No credentials are stored in output. An OpenAI key is never
+automatically sent to another host. `UNIHIVE_LLM_OUTPUT_MODE` supports `json_schema`,
+`json_object`, or `prompt` for servers with different capabilities; local validation
+always remains strict. No automatic mode downgrade or provider fallback occurs.
+
+Repeat `--input` for supporting text files. IDs follow input order (`document-1`,
+`document-2`). PDF/OCR and the web review connection are future milestones.
+`--output` creates a new file exclusively; it never overwrites a document or report.
+Reports contain the supplied text; keep personal outputs under ignored `data/reviews/`.
+
+The result keeps all proposed statements in `draft`, including rejected proposals,
+with `support_review` verdicts and explicit supported-ID lists. Consumers must use
+those lists, not treat the entire draft as approved evidence. Unknown judgments
+and children of rejected claims are excluded from supported judgments. Model
+support means consistency with the source, not independent factual verification.
+No semantic interpretation is inserted into deterministic scoring in this milestone.
+If the model omits a rubric dimension, the engine adds an explicitly labeled
+unknown judgment with a rationale stating that the model did not assess it.
+
+For repeatable offline plumbing tests, pass `--recorded-responses` containing
+`{"draft": <UnderstandingDraft>, "review": <SupportReview>}`. These outputs are
+explicitly marked `recorded-offline`; they do not establish live model quality.
+
+Thirty synthetic evaluation cases and human-review expectations are in
+`tests/fixtures/understanding/cases.json`. Run a selected subset against your model:
+
+```powershell
+.\.venv\Scripts\python.exe qa/run_evidence_evals.py --case unpublished-research --case tutorial-project --output data/reviews/eval-run-1
+```
+
+Use a new output directory each time. `--all` explicitly selects all cases.
+The runner retains synthetic responses and reports schema/provenance validation
+separately from human review. Validation passing is not semantic accuracy passing.
+
+The rubric is a versioned, unvalidated draft, not admissions expertise. One model
+reviewing its own draft can repeat its mistakes. Remaining work includes human
+evaluation, broader live cases, clarification/confirmation integration, external
+source retrieval, reviewed competency mapping, and sourced program comparison.
+
+Protocol references: [Ollama native chat](https://docs.ollama.com/api/chat),
+[structured outputs](https://docs.ollama.com/capabilities/structured-outputs), and
+[compatible API](https://docs.ollama.com/api/openai-compatibility).
 
 The web API returns a versioned envelope with `assessment`, `eligibility_result`,
 `report`, `provisional`, and `limitations`. The six-section report shows evidence,

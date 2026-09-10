@@ -1,0 +1,95 @@
+{
+  "$defs": {
+    "EvidenceCategory": {
+      "enum": [
+        "project",
+        "work",
+        "research",
+        "publication",
+        "coursework",
+        "education",
+        "activity",
+        "other"
+      ],
+      "title": "EvidenceCategory",
+      "type": "string"
+    },
+    "RubricDimension": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "labels": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Labels",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "labels"
+      ],
+      "title": "RubricDimension",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "minLength": 1,
+      "title": "Version",
+      "type": "string"
+    },
+    "provisional": {
+      "const": true,
+      "title": "Provisional",
+      "type": "boolean"
+    },
+    "validated_by": {
+      "title": "Validated By",
+      "type": "null"
+    },
+    "source": {
+      "title": "Source",
+      "type": "null"
+    },
+    "dimensions": {
+      "items": {
+        "$ref": "#/$defs/RubricDimension"
+      },
+      "title": "Dimensions",
+      "type": "array"
+    },
+    "category_guidance": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "propertyNames": {
+        "$ref": "#/$defs/EvidenceCategory"
+      },
+      "title": "Category Guidance",
+      "type": "object"
+    }
+  },
+  "required": [
+    "version",
+    "provisional",
+    "validated_by",
+    "source",
+    "dimensions",
+    "category_guidance"
+  ],
+  "title": "EvaluationRubric",
+  "type": "object"
+}
