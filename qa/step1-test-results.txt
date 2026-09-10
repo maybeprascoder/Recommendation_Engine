@@ -1,0 +1,20 @@
+........................................................................ [ 80%]
+.................                                                        [100%]
+============================== warnings summary ===============================
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:55: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:56: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration = load_scoring_configuration()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:82: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(args.program)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+89 passed, 6 warnings in 17.99s

@@ -39,9 +39,9 @@ from unihive.models import (
     StudentProfile,
     WorkExperienceRule,
 )
+from unihive.resources import DATA_ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_PROGRAM_SCHEMA = PROJECT_ROOT / "data" / "schemas" / "program.schema.json"
+DEFAULT_PROGRAM_SCHEMA = DATA_ROOT / "schemas" / "program.schema.json"
 JSON_VALUE_ADAPTER: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
 
 

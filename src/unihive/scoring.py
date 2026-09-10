@@ -38,10 +38,10 @@ from unihive.models import (
     ScoreExclusionReason,
     StudentCompetency,
 )
+from unihive.resources import DATA_ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_BANDS_PATH = PROJECT_ROOT / "data" / "bands.yaml"
-DEFAULT_BANDS_SCHEMA = PROJECT_ROOT / "data" / "schemas" / "bands.schema.json"
+DEFAULT_BANDS_PATH = DATA_ROOT / "bands.yaml"
+DEFAULT_BANDS_SCHEMA = DATA_ROOT / "schemas" / "bands.schema.json"
 JSON_VALUE_ADAPTER: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
 
 

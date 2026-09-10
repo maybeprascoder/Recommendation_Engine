@@ -1,0 +1,138 @@
+........................................................................ [ 52%]
+.................................................................        [100%]
+============================== warnings summary ===============================
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:73: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:74: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration = load_scoring_configuration()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:145: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(args.program)
+
+tests/test_profile_followup.py::test_all_profile_sections_edit_without_overwriting_evidence
+tests/test_profile_followup.py::test_invalid_profile_details_fail_closed[bad0]
+tests/test_profile_followup.py::test_invalid_profile_details_fail_closed[bad1]
+tests/test_profile_followup.py::test_invalid_profile_details_fail_closed[bad2]
+tests/test_profile_followup.py::test_invalid_profile_details_fail_closed[bad3]
+tests/test_profile_followup.py::test_new_evidence_is_student_supplied_and_has_no_verification_upgrade
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:26: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    "taxonomy_version": load_taxonomy().version,
+
+tests/test_profile_followup.py::test_all_profile_sections_edit_without_overwriting_evidence
+tests/test_profile_followup.py::test_new_evidence_is_student_supplied_and_has_no_verification_upgrade
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:51: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    load_taxonomy(),
+
+tests/test_profile_followup.py::test_all_profile_sections_edit_without_overwriting_evidence
+tests/test_profile_followup.py::test_new_evidence_is_student_supplied_and_has_no_verification_upgrade
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:56: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_profile_followup.py::test_all_profile_sections_edit_without_overwriting_evidence
+tests/test_profile_followup.py::test_new_evidence_is_student_supplied_and_has_no_verification_upgrade
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:57: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring = load_scoring_configuration()
+
+tests/test_profile_followup.py::test_all_profile_sections_edit_without_overwriting_evidence
+tests/test_profile_followup.py::test_new_evidence_is_student_supplied_and_has_no_verification_upgrade
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:60: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    load_program_config(FIXTURES / "program.yaml"),
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:153: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    questions = build_followup_questions(scored, load_taxonomy(), load_question_bank())
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:153: ProvisionalQuestionBankWarning: Provisional question bank: questions-v1
+    questions = build_followup_questions(scored, load_taxonomy(), load_question_bank())
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:163: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    build_followup_questions(scored, load_taxonomy(), load_question_bank())
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:163: ProvisionalQuestionBankWarning: Provisional question bank: questions-v1
+    build_followup_questions(scored, load_taxonomy(), load_question_bank())
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:173: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    answered, load_taxonomy(), load_question_bank()
+
+tests/test_profile_followup.py::test_followups_cover_missing_evidence_and_fields_then_disappear_when_answered
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:173: ProvisionalQuestionBankWarning: Provisional question bank: questions-v1
+    answered, load_taxonomy(), load_question_bank()
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:191: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy=load_taxonomy(),
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:192: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration=load_scoring_configuration(),
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:200: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy=load_taxonomy(),
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:201: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration=load_scoring_configuration(),
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:203: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    load_taxonomy(),
+
+tests/test_profile_followup.py::test_unmapped_competency_questions_do_not_promise_resolution
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_profile_followup.py:204: ProvisionalQuestionBankWarning: Provisional question bank: questions-v1
+    load_question_bank(),
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:24: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:25: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    config = load_scoring_configuration()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:26: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(FIXTURES / "program.yaml")
+
+tests/test_review.py: 22 warnings
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_review.py:16: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    return load_taxonomy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+137 passed, 82 warnings in 28.07s

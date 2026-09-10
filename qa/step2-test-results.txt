@@ -1,0 +1,47 @@
+........................................................................ [ 74%]
+.........................                                                [100%]
+============================== warnings summary ===============================
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:69: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:70: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration = load_scoring_configuration()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:106: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(args.program)
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:24: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:25: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    config = load_scoring_configuration()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:26: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(FIXTURES / "program.yaml")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+97 passed, 24 warnings in 25.86s

@@ -1,0 +1,81 @@
+FFFFFFFF                                                                 [100%]
+================================== FAILURES ===================================
+_____________ test_checkout_has_selectable_profiles_and_programs ______________
+qa\test_experience_acceptance.py:34: in test_checkout_has_selectable_profiles_and_programs
+    assert serve.profiles(), "The profile picker is empty"
+E   AssertionError: The profile picker is empty
+E   assert []
+E    +  where [] = <function profiles at 0x000001C3C5081580>()
+E    +    where <function profiles at 0x000001C3C5081580> = serve.profiles
+___________ test_installed_console_command_can_score_from_checkout ____________
+qa\test_experience_acceptance.py:55: in test_installed_console_command_can_score_from_checkout
+    assert completed.returncode == 0, completed.stderr
+E   AssertionError: Traceback (most recent call last):
+E       File "<frozen runpy>", line 198, in _run_module_as_main
+E       File "<frozen runpy>", line 88, in _run_code
+E       File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Scripts\unihive.exe\__main__.py", line 4, in <module>
+E     ModuleNotFoundError: No module named 'cli'
+E     
+E   assert 1 == 0
+E    +  where 1 = CompletedProcess(args=['C:\\Users\\praso\\OneDrive\\Documents\\Recommendation Engine\\unihive-engine\\.venv\\Scripts\\...ngine\\.venv\\Scripts\\unihive.exe\\__main__.py", line 4, in <module>\nModuleNotFoundError: No module named \'cli\'\n').returncode
+__ test_extracted_coursework_and_projects_are_recognized[operating_systems] ___
+qa\test_experience_acceptance.py:63: in test_extracted_coursework_and_projects_are_recognized
+    assert actual.state is EvidenceState.VERIFIED_PRESENT
+E   AssertionError: assert <EvidenceState.UNKNOWN: 'UNKNOWN'> is <EvidenceState.VERIFIED_PRESENT: 'VERIFIED_PRESENT'>
+E    +  where <EvidenceState.UNKNOWN: 'UNKNOWN'> = StudentCompetency(competency_id='operating_systems', level=None, state=<EvidenceState.UNKNOWN: 'UNKNOWN'>, contributing_evidence_ids=[], explanation_trace=[]).state
+E    +  and   <EvidenceState.VERIFIED_PRESENT: 'VERIFIED_PRESENT'> = EvidenceState.VERIFIED_PRESENT
+_____ test_extracted_coursework_and_projects_are_recognized[programming] ______
+qa\test_experience_acceptance.py:63: in test_extracted_coursework_and_projects_are_recognized
+    assert actual.state is EvidenceState.VERIFIED_PRESENT
+E   AssertionError: assert <EvidenceState.UNKNOWN: 'UNKNOWN'> is <EvidenceState.VERIFIED_PRESENT: 'VERIFIED_PRESENT'>
+E    +  where <EvidenceState.UNKNOWN: 'UNKNOWN'> = StudentCompetency(competency_id='programming', level=None, state=<EvidenceState.UNKNOWN: 'UNKNOWN'>, contributing_evidence_ids=[], explanation_trace=[]).state
+E    +  and   <EvidenceState.VERIFIED_PRESENT: 'VERIFIED_PRESENT'> = EvidenceState.VERIFIED_PRESENT
+____________________ test_cli_supplies_six_section_report _____________________
+qa\test_experience_acceptance.py:85: in test_cli_supplies_six_section_report
+    assert "report" in payload, "CLI returns Assessment only; web report is unpopulated"
+E   AssertionError: CLI returns Assessment only; web report is unpopulated
+E   assert 'report' in {'pathway_readiness': None, 'program_alignment': {'readiness_value': None, 'base_readiness_value': None, 'contribution_sum': '0', 'known_demand_weight': '0', ...}, 'eligibility': 'ELIGIBLE', 'preference_fit': None, ...}
+_________ test_extractor_rejects_claim_unrelated_to_real_source_span __________
+qa\test_experience_acceptance.py:107: in test_extractor_rejects_claim_unrelated_to_real_source_span
+    with pytest.raises(ExtractionFailedError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ExtractionFailedError
+_ test_narrator_rejects_contradictions_and_unsourced_facts[Your readiness is Emerging and your confidence is Low.] _
+qa\test_experience_acceptance.py:120: in test_narrator_rejects_contradictions_and_unsourced_facts
+    with pytest.raises(NarrationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE NarrationError
+_ test_narrator_rejects_contradictions_and_unsourced_facts[The program deadline is December 31, 2030 and tuition is 12345 dollars.] _
+qa\test_experience_acceptance.py:120: in test_narrator_rejects_contradictions_and_unsourced_facts
+    with pytest.raises(NarrationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE NarrationError
+============================== warnings summary ===============================
+qa/test_experience_acceptance.py::test_extracted_coursework_and_projects_are_recognized[operating_systems]
+qa/test_experience_acceptance.py::test_extracted_coursework_and_projects_are_recognized[programming]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\test_experience_acceptance.py:61: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    resolved = resolve_competencies(profile, load_taxonomy(), as_of=date(2026, 9, 9))
+
+qa/test_experience_acceptance.py::test_cli_supplies_six_section_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:55: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+qa/test_experience_acceptance.py::test_cli_supplies_six_section_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:56: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration = load_scoring_configuration()
+
+qa/test_experience_acceptance.py::test_cli_supplies_six_section_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:82: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(args.program)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED qa/test_experience_acceptance.py::test_checkout_has_selectable_profiles_and_programs
+FAILED qa/test_experience_acceptance.py::test_installed_console_command_can_score_from_checkout
+FAILED qa/test_experience_acceptance.py::test_extracted_coursework_and_projects_are_recognized[operating_systems]
+FAILED qa/test_experience_acceptance.py::test_extracted_coursework_and_projects_are_recognized[programming]
+FAILED qa/test_experience_acceptance.py::test_cli_supplies_six_section_report
+FAILED qa/test_experience_acceptance.py::test_extractor_rejects_claim_unrelated_to_real_source_span
+FAILED qa/test_experience_acceptance.py::test_narrator_rejects_contradictions_and_unsourced_facts[Your readiness is Emerging and your confidence is Low.]
+FAILED qa/test_experience_acceptance.py::test_narrator_rejects_contradictions_and_unsourced_facts[The program deadline is December 31, 2030 and tuition is 12345 dollars.]
+8 failed, 5 warnings in 1.93s

@@ -1,0 +1,12 @@
+FAIL: chosen path uses backend field/path_id
+The input did not match the regular expression /Cybersecurity|cyber-ms/. Input:
+
+' Not provided  Readiness band: Developing '
+
+FAIL: known below-level evidence remains visible as a gap
+The input did not match the regular expression /security/. Input:
+
+' Not provided '
+
+PASS: unknown evidence is not rendered as a gap
+1 passed, 2 failed

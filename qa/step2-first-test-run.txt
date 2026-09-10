@@ -1,0 +1,89 @@
+................................................F....................... [ 74%]
+.........................                                                [100%]
+================================== FAILURES ===================================
+_____________ test_scoring_is_byte_deterministic_across_100_runs ______________
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_invariants.py", line 302, in test_scoring_is_byte_deterministic_across_100_runs
+  |     def test_scoring_is_byte_deterministic_across_100_runs(
+  |                    ^^^
+  |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 2295, in wrapped_test
+  |     raise the_error_hypothesis_found
+  | hypothesis.errors.FlakyFailure: Hypothesis test_scoring_is_byte_deterministic_across_100_runs(case=ProfileProgramCase(competencies=[StudentCompetency(competency_id='machine_learning', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['machine_learning-e'], explanation_trace=[]),
+  |   StudentCompetency(competency_id='programming', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['programming-e'], explanation_trace=[]),
+  |   StudentCompetency(competency_id='statistics', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['statistics-e'], explanation_trace=[])],
+  |  program=ProgramConfig(program_id='generated-program', university='Example University', degree='MS', demand_profile={'machine_learning': CompetencyDemand(required_level=<CompetencyLevel.DEVELOPING: 2>, weight=Decimal('0.6')), 'programming': CompetencyDemand(required_level=<CompetencyLevel.EXPERT: 5>, weight=Decimal('0.9')), 'statistics': CompetencyDemand(required_level=<CompetencyLevel.EXPERT: 5>, weight=Decimal('0.1'))}, eligibility_rules=[], dimension_emphasis={}, version='test-v1', source_url=HttpUrl('https://example.edu/program'), verified_on=datetime.date(2026, 1, 1), provisional=True, validated_by=None, profile_shape_rules=[]))) produces unreliable results: Failed on the first call but did not on a subsequent one (1 sub-exception)
+  | Failing test case: test_scoring_is_byte_deterministic_across_100_runs(
+  |     case=ProfileProgramCase(competencies=[StudentCompetency(competency_id='machine_learning', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['machine_learning-e'], explanation_trace=[]),
+  |       StudentCompetency(competency_id='programming', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['programming-e'], explanation_trace=[]),
+  |       StudentCompetency(competency_id='statistics', level=None, state=<EvidenceState.NOT_APPLICABLE: 'NOT_APPLICABLE'>, contributing_evidence_ids=['statistics-e'], explanation_trace=[])],
+  |      program=ProgramConfig(program_id='generated-program', university='Example University', degree='MS', demand_profile={'machine_learning': CompetencyDemand(required_level=<CompetencyLevel.DEVELOPING: 2>, weight=Decimal('0.6')), 'programming': CompetencyDemand(required_level=<CompetencyLevel.EXPERT: 5>, weight=Decimal('0.9')), 'statistics': CompetencyDemand(required_level=<CompetencyLevel.EXPERT: 5>, weight=Decimal('0.1'))}, eligibility_rules=[], dimension_emphasis={}, version='test-v1', source_url=HttpUrl('https://example.edu/program'), verified_on=datetime.date(2026, 1, 1), provisional=True, validated_by=None, profile_shape_rules=[])),
+  | )
+  | Unreliable test timings! On an initial run, this test took 288.39ms, which exceeded the deadline of 200.00ms, but on a subsequent run it took 59.77 ms, which did not. If you expect this sort of variability in your test timings, consider turning deadlines off for this test by setting deadline=None.
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 1223, in _execute_once_for_engine
+    |     result = self.execute_once(data)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 1161, in execute_once
+    |     result = self.test_runner(data, run)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 828, in default_executor
+    |     return function(data)
+    |            ^^^^^^^^^^^^^^
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 1118, in run
+    |     return test(*args, **kwargs)
+    |            ^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_invariants.py", line 302, in test_scoring_is_byte_deterministic_across_100_runs
+    |     def test_scoring_is_byte_deterministic_across_100_runs(
+    |                    ^^^^^^^
+    |   File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\.venv\Lib\site-packages\hypothesis\core.py", line 1050, in test
+    |     raise DeadlineExceeded(
+    | hypothesis.errors.DeadlineExceeded: Test took 288.39ms, which exceeds the deadline of 200.00ms. If you expect test cases to take this long, you can use @settings(deadline=...) to either set a higher deadline, or to disable it with deadline=None.
+    +------------------------------------
+============================== warnings summary ===============================
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:69: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:70: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    scoring_configuration = load_scoring_configuration()
+
+tests/test_audit_cli.py::test_score_only_cli_needs_no_api_key_and_emits_json_audit
+tests/test_audit_cli.py::test_cli_replay_emits_the_same_assessment
+tests/test_response.py::test_report_cli_and_replay_preserve_complete_response
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\cli.py:106: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(args.program)
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:24: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    taxonomy = load_taxonomy()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:25: ProvisionalScoringWarning: Provisional scoring configuration: bands-v1
+    config = load_scoring_configuration()
+
+tests/test_response.py::test_report_contains_six_sections_provenance_and_explicit_limits
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[UNKNOWN]
+tests/test_response.py::test_unknown_and_absent_stay_distinct_in_complete_report[CONFIRMED_ABSENT]
+tests/test_response.py::test_known_low_level_evidence_is_a_gap_not_an_unknown
+tests/test_response.py::test_missing_eligibility_rules_are_named_in_report
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_response.py:26: ProvisionalProgramWarning: Provisional program configuration: example-ml-ms
+    program = load_program_config(FIXTURES / "program.yaml")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_invariants.py::test_scoring_is_byte_deterministic_across_100_runs
+1 failed, 96 passed, 24 warnings in 39.24s

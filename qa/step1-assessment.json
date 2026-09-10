@@ -1,0 +1,126 @@
+{
+  "pathway_readiness": "STRONG",
+  "program_alignment": {
+    "readiness_value": "1",
+    "base_readiness_value": "1",
+    "contribution_sum": "1.0",
+    "known_demand_weight": "1.0",
+    "configured_demand_weight": "1.0",
+    "competency_trace": [
+      {
+        "competency_id": "machine_learning",
+        "state": "VERIFIED_PRESENT",
+        "demonstrated_level": 5,
+        "expected_level": 5,
+        "demand_weight": "1.0",
+        "match_value": "1",
+        "contribution": "1.0",
+        "evidence_ids": [
+          "ml-paper"
+        ],
+        "evidence_trace": [
+          {
+            "evidence_id": "ml-paper",
+            "rule_id": "machine_learning_publication_to_machine_learning",
+            "state": "VERIFIED_PRESENT",
+            "quality": "4.0",
+            "relevance": "1.0",
+            "depth": "1.25",
+            "verification": "1.0",
+            "recency": "1.0",
+            "combination_multiplier": "1.0",
+            "contribution": "5.0000000"
+          }
+        ],
+        "exclusion_reason": null
+      }
+    ],
+    "profile_shape_trace": [],
+    "band_config_version": "bands-v1:e13d063f650a5ca1c6208598fac268ef4c882596fbeb0686e274add5e2075650"
+  },
+  "eligibility": "ELIGIBLE",
+  "preference_fit": null,
+  "admissions_outlook": null,
+  "data_confidence": "HIGH",
+  "audit": {
+    "engine_version": "0.1.0",
+    "taxonomy_version": "3d4d24c71d5964de098b55a1583c09f81712186a824275fd580b9b4afcc5a58a",
+    "program_config_version": "test-program-v1",
+    "evidence_ids_used": [
+      "ml-paper"
+    ],
+    "missing_fields": [],
+    "source_urls": [
+      "https://example.edu/program",
+      "https://example.edu/program/requirements"
+    ],
+    "timestamp": "2026-01-01T00:00:00Z",
+    "confidence": "HIGH",
+    "scoring_config_version": "bands-v1:e13d063f650a5ca1c6208598fac268ef4c882596fbeb0686e274add5e2075650",
+    "as_of": "2026-01-01",
+    "profile_snapshot": {
+      "academic_history": [
+        {
+          "degree": "BS",
+          "completed": true
+        }
+      ],
+      "normalized_gpa": "3.7",
+      "courses": [],
+      "skills": [],
+      "projects": [],
+      "research": [],
+      "work": [],
+      "goals": [
+        "Study machine learning"
+      ],
+      "constraints": [],
+      "tests": [],
+      "evidence": [
+        {
+          "id": "ml-paper",
+          "kind": "machine_learning_publication",
+          "raw_text": "First-author paper at a top-tier venue",
+          "state": "VERIFIED_PRESENT",
+          "quality": "top_tier_venue",
+          "depth": "first_author",
+          "recency": "2025-12-01",
+          "source": "First-author paper at a top-tier venue",
+          "extraction_confidence": "HIGH"
+        }
+      ],
+      "citizenship": null,
+      "residency": null
+    },
+    "program_config_snapshot": {
+      "program_id": "example-ml-ms",
+      "university": "Example University",
+      "degree": "MS Machine Learning",
+      "demand_profile": {
+        "machine_learning": {
+          "required_level": 5,
+          "weight": "1.0"
+        }
+      },
+      "eligibility_rules": [
+        {
+          "id": "minimum-gpa",
+          "type": "MINIMUM_GPA",
+          "source_url": "https://example.edu/program/requirements",
+          "failure_effect": "NOT_CURRENTLY_ELIGIBLE",
+          "minimum_gpa": "3.0"
+        }
+      ],
+      "dimension_emphasis": {},
+      "version": "test-program-v1",
+      "source_url": "https://example.edu/program",
+      "verified_on": "2026-01-01",
+      "provisional": true,
+      "validated_by": null,
+      "profile_shape_rules": []
+    },
+    "preference_fit_snapshot": null,
+    "admissions_outlook_snapshot": null
+  },
+  "not_assessed": []
+}

@@ -1,0 +1,16 @@
+PASS index: HTTP 200
+PASS javascript: HTTP 200
+PASS styles: HTTP 200
+PASS tokens: HTTP 200
+PASS profiles: HTTP 200
+PASS programs: HTTP 200
+PASS bad host: HTTP 400
+PASS missing fields: HTTP 422
+PASS extra fields: HTTP 422
+PASS path traversal: HTTP 400
+PASS missing profile: HTTP 404
+PASS wrong suffix: HTTP 400
+PASS real CLI scoring: HTTP 200
+Report present: False
+Eligibility breakdown present: False
+PASS 8 concurrent/repeated requests: byte-identical in 2.82s

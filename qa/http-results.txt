@@ -1,0 +1,19 @@
+PASS index: HTTP 200
+PASS javascript: HTTP 200
+PASS styles: HTTP 200
+PASS tokens: HTTP 200
+PASS profiles: HTTP 200
+PASS programs: HTTP 200
+PASS bad host: HTTP 400
+PASS missing fields: HTTP 422
+PASS extra fields: HTTP 422
+PASS path traversal: HTTP 400
+PASS missing profile: HTTP 404
+PASS wrong suffix: HTTP 400
+Traceback (most recent call last):
+  File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\http_smoke.py", line 90, in <module>
+    main()
+  File "C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\http_smoke.py", line 71, in main
+    assert code == expected, (name, code, body)
+           ^^^^^^^^^^^^^^^^
+AssertionError: ('real CLI scoring', 422, b'{"error":{"code":"CLI_SCORE_FAILED","message":"The UniHive CLI could not score this selection.","stderr":"Traceback (most recent call last):\\r\\n  File \\"<frozen runpy>\\", line 198, in _run_module_as_main\\r\\n  File \\"<frozen runpy>\\", line 88, in _run_code\\r\\n  File \\"C:\\\\Users\\\\praso\\\\OneDrive\\\\Documents\\\\Recommendation Engine\\\\unihive-engine\\\\.venv\\\\Scripts\\\\unihive.exe\\\\__main__.py\\", line 4, in <module>\\r\\nModuleNotFoundError: No module named \'cli\'","return_code":1}}')

@@ -21,11 +21,11 @@ from pydantic import Field, JsonValue, TypeAdapter, model_validator
 from pydantic import ValidationError as PydanticValidationError
 
 from unihive.models import Confidence, CoreModel, ReadinessBand
+from unihive.resources import DATA_ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_PORTFOLIO_PATH = PROJECT_ROOT / "data" / "portfolio.yaml"
+DEFAULT_PORTFOLIO_PATH = DATA_ROOT / "portfolio.yaml"
 DEFAULT_PORTFOLIO_SCHEMA = (
-    PROJECT_ROOT / "data" / "schemas" / "portfolio.schema.json"
+    DATA_ROOT / "schemas" / "portfolio.schema.json"
 )
 JSON_VALUE_ADAPTER: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
 T = TypeVar("T")

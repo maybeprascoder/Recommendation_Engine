@@ -1,0 +1,7 @@
+PASS: API envelope renders evidence, eligibility and explicit limitations
+PASS: alternative names follow the same backend contract
+PASS: chosen path uses backend field/path_id
+PASS: known below-level evidence remains visible as a gap
+PASS: unknown evidence is not rendered as a gap
+PASS: unknowns cannot bypass filtering through a contradictory gap kind
+6 passed, 0 failed

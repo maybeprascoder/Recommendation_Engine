@@ -17,9 +17,10 @@ from jsonschema.exceptions import SchemaError, ValidationError
 from pydantic import BaseModel, ConfigDict, JsonValue, TypeAdapter
 from pydantic import ValidationError as PydanticValidationError
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_TAXONOMY_DIR = PROJECT_ROOT / "data" / "taxonomy"
-DEFAULT_SCHEMA_DIR = PROJECT_ROOT / "data" / "schemas"
+from unihive.resources import DATA_ROOT
+
+DEFAULT_TAXONOMY_DIR = DATA_ROOT / "taxonomy"
+DEFAULT_SCHEMA_DIR = DATA_ROOT / "schemas"
 TAXONOMY_FILES: tuple[tuple[str, str], ...] = (
     ("aliases.yaml", "aliases.schema.json"),
     ("competencies.yaml", "competencies.schema.json"),

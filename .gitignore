@@ -3,6 +3,13 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 .pytest_tmp/
+.pytest_tmp_*/
+qa/wheels/
+build/
+dist/
+.env
+.env.*
 .ruff_cache/
 *.py[cod]
 *.egg-info/
+data/reviews/

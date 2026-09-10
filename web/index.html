@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UniHive scoring review</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">Local review harness</p>
+      <h1>UniHive scoring review</h1>
+      <p class="intro">
+        Review your evidence, correct any mistakes, then confirm it to see your assessment.
+        Re-score a confirmed snapshot after tuning the program configuration.
+      </p>
+    </header>
+
+    <main>
+      <form class="controls" id="score-form">
+        <label class="field">
+          <span class="label">Student profile</span>
+          <select id="profile-picker" name="profile_path" required></select>
+        </label>
+        <label class="field">
+          <span class="label">Program</span>
+          <select id="program-picker" name="program_path" required></select>
+        </label>
+        <div class="actions">
+          <button type="submit" id="score-button">Review evidence</button>
+          <button type="button" class="secondary" id="rescore-button" disabled>
+            Re-score
+          </button>
+          <p class="status" id="status" aria-live="polite">Choose a profile and program.</p>
+        </div>
+      </form>
+
+      <form class="panel" id="review-form" hidden>
+        <h2>Review your profile</h2>
+        <p>Check each claim against its original source. Corrections are saved separately.
+          Editing a verified claim makes it self-reported; confirmation does not verify a document.</p>
+        <p>Choose “Unknown” when unsure, and “Confirmed absent” only when you know it is absent.
+          Expand only the profile sections you want to update. Profile records do not automatically become competency evidence.</p>
+        <p id="active-question" aria-live="polite" hidden></p>
+        <div id="profile-details"></div>
+        <h3>Evidence</h3>
+        <div id="review-items"></div>
+        <button type="button" class="secondary" id="add-evidence">Add evidence</button>
+        <label class="confirmation-check"><input type="checkbox" id="evidence-consent" required>
+          I have reviewed this profile and confirm the information or uncertainty shown.</label>
+        <button type="submit" id="confirm-button" disabled>Confirm and score</button>
+        <p id="confirmation-status" aria-live="polite"></p>
+      </form>
+
+      <section class="panel" id="followup-panel" hidden>
+        <h2>What would help next</h2>
+        <p id="followup-text"></p>
+        <p id="followup-reason"></p>
+        <p id="followup-guidance"></p>
+        <button type="button" id="answer-question">Update this information</button>
+        <button type="button" class="secondary" id="skip-question">Not now</button>
+        <p id="followup-status" aria-live="polite"></p>
+      </section>
+
+      <section class="error-panel" id="error-panel" aria-live="assertive" hidden>
+        <h2>Scoring error</h2>
+        <p id="error-message"></p>
+        <pre class="raw-value" id="error-detail"></pre>
+      </section>
+
+      <section class="results" id="results" aria-live="polite" hidden>
+        <div class="state-row">
+          <article class="state-card band-missing" id="readiness-card">
+            <span class="label">Readiness band</span>
+            <span class="state" id="readiness-band">Not provided</span>
+          </article>
+          <article class="state-card confidence-card">
+            <span class="label">Data confidence</span>
+            <span class="state" id="confidence">Not provided</span>
+          </article>
+        </div>
+
+        <p class="panel neutral-panel" id="provisional-notice" hidden></p>
+        <article class="panel" id="understood-panel">
+          <h2>What we understand about you</h2>
+          <ul class="item-list" id="understood-evidence"></ul>
+        </article>
+        <div class="result-grid">
+          <article class="panel" id="strengths-panel">
+            <h2>Your strengths</h2>
+            <ul class="item-list" id="strengths"></ul>
+          </article>
+          <article class="panel gap-panel" id="gaps-panel">
+            <h2>Your gaps</h2>
+            <ul class="item-list" id="gaps"></ul>
+          </article>
+          <article class="panel" id="pathways-panel">
+            <h2>Chosen path and alternatives</h2>
+            <div id="chosen-path"></div>
+            <ul class="item-list" id="alternatives"></ul>
+          </article>
+          <article class="panel" id="actions-panel">
+            <h2>Top actions</h2>
+            <ul class="item-list" id="top-actions"></ul>
+          </article>
+        </div>
+        <article class="panel neutral-panel" id="unknown-panel">
+          <h2>What we cannot assess yet</h2>
+          <p class="item-meta">Missing information is kept separate from confirmed gaps.</p>
+          <ul class="item-list" id="not-assessed"></ul>
+        </article>
+        <article class="panel" id="eligibility-panel">
+          <h2>Eligibility</h2>
+          <p><span class="label">Overall status</span><br><span id="eligibility-status"></span></p>
+          <h3>Rule breakdown</h3>
+          <ul class="detail-list" id="eligibility-rules"></ul>
+        </article>
+
+        <aside class="trace-panel" id="trace-panel" hidden>
+          <div class="trace-toolbar">
+            <div>
+              <p class="eyebrow">Development view</p>
+              <h2>Explanation trace</h2>
+            </div>
+            <label class="trace-toggle">
+              <input id="trace-toggle" type="checkbox" checked>
+              <span>Show trace</span>
+            </label>
+          </div>
+          <div class="trace-content" id="trace-content">
+            <ul class="trace-list" id="trace-list"></ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/static/app.js?v=profile-v1" defer></script>
+    <script src="/static/profile.js?v=profile-v1" defer></script>
+    <script src="/static/review.js?v=profile-v1" defer></script>
+    <script src="/static/followup.js?v=profile-v1" defer></script>
+  </body>
+</html>

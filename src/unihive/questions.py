@@ -24,11 +24,11 @@ from unihive.models import (
     CoreModel,
     ScoreExclusionReason,
 )
+from unihive.resources import DATA_ROOT
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_QUESTIONS_PATH = PROJECT_ROOT / "data" / "questions.yaml"
+DEFAULT_QUESTIONS_PATH = DATA_ROOT / "questions.yaml"
 DEFAULT_QUESTIONS_SCHEMA = (
-    PROJECT_ROOT / "data" / "schemas" / "questions.schema.json"
+    DATA_ROOT / "schemas" / "questions.schema.json"
 )
 JSON_VALUE_ADAPTER: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
 

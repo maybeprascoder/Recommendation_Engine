@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal
 
-from hypothesis import given
+from hypothesis import given, settings
 from hypothesis import strategies as st
 
 from unihive.competency import resolve_competencies
@@ -298,6 +298,7 @@ def test_upgrading_evidence_quality_never_lowers_readiness(
     assert _readiness(higher_assessment) >= _readiness(lower_assessment)
 
 
+@settings(deadline=None)  # Correctness over 100 replays, not a wall-clock benchmark.
 @given(profile_program_cases())
 def test_scoring_is_byte_deterministic_across_100_runs(
     case: ProfileProgramCase,

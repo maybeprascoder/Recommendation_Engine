@@ -1,0 +1,79 @@
+running bdist_wheel
+running build
+running build_py
+file src\cli.py (for module cli) not found
+creating build\lib\unihive
+copying src\unihive\alternatives.py -> build\lib\unihive
+copying src\unihive\audit.py -> build\lib\unihive
+copying src\unihive\competency.py -> build\lib\unihive
+copying src\unihive\eligibility.py -> build\lib\unihive
+copying src\unihive\evidence.py -> build\lib\unihive
+copying src\unihive\models.py -> build\lib\unihive
+copying src\unihive\portfolio.py -> build\lib\unihive
+copying src\unihive\questions.py -> build\lib\unihive
+copying src\unihive\report.py -> build\lib\unihive
+copying src\unihive\scoring.py -> build\lib\unihive
+copying src\unihive\taxonomy.py -> build\lib\unihive
+copying src\unihive\__init__.py -> build\lib\unihive
+creating build\lib\unihive\llm
+copying src\unihive\llm\extractor.py -> build\lib\unihive\llm
+copying src\unihive\llm\narrator.py -> build\lib\unihive\llm
+copying src\unihive\llm\__init__.py -> build\lib\unihive\llm
+running egg_info
+writing src\unihive_engine.egg-info\PKG-INFO
+writing dependency_links to src\unihive_engine.egg-info\dependency_links.txt
+writing entry points to src\unihive_engine.egg-info\entry_points.txt
+writing requirements to src\unihive_engine.egg-info\requires.txt
+writing top-level names to src\unihive_engine.egg-info\top_level.txt
+file src\cli.py (for module cli) not found
+reading manifest file 'src\unihive_engine.egg-info\SOURCES.txt'
+writing manifest file 'src\unihive_engine.egg-info\SOURCES.txt'
+file src\cli.py (for module cli) not found
+installing to build\bdist.win-amd64\wheel
+running install
+running install_lib
+creating build\bdist.win-amd64\wheel
+creating build\bdist.win-amd64\wheel\unihive
+copying build\lib\unihive\alternatives.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\audit.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\competency.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\eligibility.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\evidence.py -> build\bdist.win-amd64\wheel\.\unihive
+creating build\bdist.win-amd64\wheel\unihive\llm
+copying build\lib\unihive\llm\extractor.py -> build\bdist.win-amd64\wheel\.\unihive\llm
+copying build\lib\unihive\llm\narrator.py -> build\bdist.win-amd64\wheel\.\unihive\llm
+copying build\lib\unihive\llm\__init__.py -> build\bdist.win-amd64\wheel\.\unihive\llm
+copying build\lib\unihive\models.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\portfolio.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\questions.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\report.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\scoring.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\taxonomy.py -> build\bdist.win-amd64\wheel\.\unihive
+copying build\lib\unihive\__init__.py -> build\bdist.win-amd64\wheel\.\unihive
+running install_egg_info
+Copying src\unihive_engine.egg-info to build\bdist.win-amd64\wheel\.\unihive_engine-0.1.0-py3.12.egg-info
+running install_scripts
+creating build\bdist.win-amd64\wheel\unihive_engine-0.1.0.dist-info\WHEEL
+creating 'C:\\Users\\praso\\OneDrive\\Documents\\Recommendation Engine\\unihive-engine\\qa\\wheels\\.tmp-3j9xdklg\\unihive_engine-0.1.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it
+adding 'unihive/__init__.py'
+adding 'unihive/alternatives.py'
+adding 'unihive/audit.py'
+adding 'unihive/competency.py'
+adding 'unihive/eligibility.py'
+adding 'unihive/evidence.py'
+adding 'unihive/models.py'
+adding 'unihive/portfolio.py'
+adding 'unihive/questions.py'
+adding 'unihive/report.py'
+adding 'unihive/scoring.py'
+adding 'unihive/taxonomy.py'
+adding 'unihive/llm/__init__.py'
+adding 'unihive/llm/extractor.py'
+adding 'unihive/llm/narrator.py'
+adding 'unihive_engine-0.1.0.dist-info/METADATA'
+adding 'unihive_engine-0.1.0.dist-info/WHEEL'
+adding 'unihive_engine-0.1.0.dist-info/entry_points.txt'
+adding 'unihive_engine-0.1.0.dist-info/top_level.txt'
+adding 'unihive_engine-0.1.0.dist-info/RECORD'
+removing build\bdist.win-amd64\wheel
+unihive_engine-0.1.0-py3-none-any.whl
