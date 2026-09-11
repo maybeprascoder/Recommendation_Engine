@@ -17,6 +17,27 @@ class ProviderError(ValueError):
     """A safe, credential-free provider failure suitable for CLI output."""
 
 
+def strict_output_schema(schema: dict[str, JsonValue]) -> dict[str, JsonValue]:
+    """Require all output fields even when local readers support old defaults."""
+
+    def visit(value: JsonValue) -> JsonValue:
+        if isinstance(value, list):
+            return [visit(item) for item in value]
+        if isinstance(value, dict):
+            result = {
+                key: visit(item) for key, item in value.items() if key != "default"
+            }
+            properties = result.get("properties")
+            if isinstance(properties, dict):
+                result["required"] = list(properties)
+            return result
+        return value
+
+    result = visit(schema)
+    assert isinstance(result, dict)
+    return result
+
+
 @dataclass(frozen=True)
 class Completion:
     text: str
@@ -139,6 +160,7 @@ class CompatibleChatClient:
         schema: dict[str, JsonValue],
         name: str,
     ) -> Completion:
+        schema = strict_output_schema(schema)
         response_format: dict[str, JsonValue]
         if self._output_mode == "json_schema":
             response_format = {

@@ -42,10 +42,18 @@ class EvidenceCategory(StrEnum):
     OTHER = "other"
 
 
+class ClaimAttribution(StrEnum):
+    STUDENT = "student"
+    TEAM = "team"
+    OTHER = "other"
+    UNKNOWN = "unknown"
+
+
 class SourcedClaim(CoreModel):
     id: Text
     category: EvidenceCategory
     statement: Text
+    attribution: ClaimAttribution = ClaimAttribution.UNKNOWN
     citations: Annotated[list[Citation], Field(min_length=1)]
     # Repeated descriptions retain provenance but do not become new achievements.
     duplicate_of: str | None
@@ -109,8 +117,15 @@ class SupportCheck(CoreModel):
     explanation: Text
 
 
+class DuplicateGroup(CoreModel):
+    canonical_claim_id: Text
+    duplicate_claim_ids: Annotated[list[Text], Field(min_length=1)]
+    explanation: Text
+
+
 class SupportReview(CoreModel):
     checks: list[SupportCheck]
+    duplicate_groups: list[DuplicateGroup] = Field(default_factory=list)
 
 
 class RubricDimension(CoreModel):
@@ -152,11 +167,11 @@ class UnderstandingAudit(CoreModel):
     competency_catalog: dict[str, str]
     source_sha256: dict[str, str]
     draft_response_sha256: Text
-    review_response_sha256: Text
+    review_response_sha256: Text | None
 
 
 class UnderstandingResult(CoreModel):
-    response_version: Literal["understanding-v1"] = "understanding-v1"
+    response_version: Literal["understanding-v2"] = "understanding-v2"
     requires_confirmation: Literal[True] = True
     scoring_enabled: Literal[False] = False
     # Full sources make the interpretation reviewable, even when a file changes.
@@ -215,7 +230,38 @@ def complete_unknown_dimensions(
                     citations=claim.citations,
                 )
             )
-    return draft.model_copy(update={"judgments": judgments})
+    academics = list(draft.academics)
+    recorded_ids = {record.claim_id for record in academics}
+    questions = list(draft.questions)
+    for claim in draft.claims:
+        if (
+            claim.category == EvidenceCategory.EDUCATION
+            and claim.duplicate_of is None
+            and claim.id not in recorded_ids
+        ):
+            academics.append(
+                AcademicRecord(
+                    claim_id=claim.id,
+                    institution=None,
+                    qualification=None,
+                    grade=None,
+                    grade_scale=None,
+                )
+            )
+            questions.append(
+                Clarification(
+                    claim_id=claim.id,
+                    question="Which school, qualification and grading scale apply?",
+                    reason="The model did not extract an academic record here.",
+                )
+            )
+    return draft.model_copy(
+        update={
+            "judgments": judgments,
+            "academics": academics,
+            "questions": questions,
+        }
+    )
 
 
 def validate_draft(
@@ -259,8 +305,8 @@ def validate_draft(
     for item in linked_items:
         if item.claim_id not in claims:
             raise ValueError("Unknown claim reference")
-        if claims[item.claim_id].duplicate_of is not None:
-            raise ValueError("Duplicate claims cannot receive additional judgments")
+        # Keep duplicate-linked proposals reviewable. supported_ids excludes them
+        # from credit, so a redundant model judgment cannot double-count the work.
         check_citations(item.citations)
     for judgment in draft.judgments:
         dimension = dimensions.get(judgment.dimension)
@@ -329,20 +375,41 @@ def supported_ids(
         for check in review.checks
         if check.verdict == SupportVerdict.SUPPORTED
     }
+    claim_map = {claim.id: claim for claim in draft.claims}
+    grouped: set[str] = set()
+    duplicate_ids: set[str] = set()
+    for group in review.duplicate_groups:
+        ids = [group.canonical_claim_id, *group.duplicate_claim_ids]
+        if (
+            len(set(ids)) != len(ids)
+            or grouped.intersection(ids)
+            or not set(ids).issubset(claim_map)
+            or claim_map[group.canonical_claim_id].duplicate_of is not None
+        ):
+            raise ValueError("Duplicate groups must be disjoint valid claim references")
+        grouped.update(ids)
+        duplicate_ids.update(group.duplicate_claim_ids)
     claims = sorted(
         claim.id
         for claim in draft.claims
-        if claim.id in accepted and claim.duplicate_of is None
+        if claim.id in accepted
+        and claim.duplicate_of is None
+        and claim.id not in duplicate_ids
     )
     judgments = sorted(
         item.id
         for item in draft.judgments
-        if item.id in accepted and item.claim_id in claims and item.label != "unknown"
+        if item.id in accepted
+        and item.claim_id in claims
+        and item.label != "unknown"
+        and claim_map[item.claim_id].attribution == ClaimAttribution.STUDENT
     )
     competencies = sorted(
         item.id
         for item in draft.competencies
-        if item.id in accepted and item.claim_id in claims
+        if item.id in accepted
+        and item.claim_id in claims
+        and claim_map[item.claim_id].attribution == ClaimAttribution.STUDENT
     )
     return claims, judgments, competencies
 

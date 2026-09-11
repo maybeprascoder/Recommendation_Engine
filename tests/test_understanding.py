@@ -38,6 +38,7 @@ def example() -> dict:
                 "id": "c1",
                 "category": "project",
                 "statement": TEXT,
+                "attribution": "student",
                 "citations": [citation],
                 "duplicate_of": None,
             }
@@ -332,9 +333,11 @@ def test_duplicate_description_retains_source_without_extra_judgments() -> None:
     claims, judgments, _ = supported_ids(parse(data), SupportReview(**review_for(data)))
     assert claims == ["c1"]
     assert judgments == ["j1", "j2"]
-    data["judgments"][0]["claim_id"] = "c2"
-    with pytest.raises(ValueError, match="Duplicate claims"):
-        validate(data)
+    data["judgments"].append(dict(data["judgments"][1], id="j_dup", claim_id="c2"))
+    validate(data)
+    assert (
+        "j_dup" not in supported_ids(parse(data), SupportReview(**review_for(data)))[1]
+    )
 
 
 def test_missing_dimensions_become_explicit_unknown_never_positive():
@@ -351,3 +354,88 @@ def test_missing_dimensions_become_explicit_unknown_never_positive():
     )
     reviewed = review_for(draft.model_dump(mode="json"))
     assert supported_ids(draft, SupportReview(**reviewed))[1] == []
+
+
+def test_empty_interpretation_skips_review_and_asks_for_evidence():
+    data = {key: [] for key in example()}
+    data["unassessed"] = ["Skills are listed without supporting activities."]
+    client = RecordedClient(
+        RecordedResponses(
+            draft=parse(data),
+            review=SupportReview(checks=[]),
+        )
+    )
+    result = analyze_documents(
+        [SourceDocument(id="document-1", text="Skills: Python, leadership")],
+        client,
+        taxonomy_version="test",
+        competency_catalog={},
+    )
+    assert result.supported_claim_ids == []
+    assert len(result.audit.response_ids) == 1
+    assert result.audit.review_response_sha256 is None
+    assert result.questions[0].claim_id is None
+    assert next(client._responses).checks == []  # No unnecessary review call.
+
+
+def test_incomplete_education_gets_unknown_record_and_clarification():
+    data = example()
+    data["claims"][0]["category"] = "education"
+    draft = complete_unknown_dimensions(parse(data), load_evaluation_rubric())
+    validate_draft(
+        draft,
+        [SourceDocument(id="document-1", text=TEXT)],
+        load_evaluation_rubric(),
+        {},
+    )
+    academic = draft.academics[0]
+    assert academic.claim_id == "c1"
+    assert academic.grade is None and academic.grade_scale is None
+    assert academic.qualification is None and academic.institution is None
+    assert "did not extract" in draft.questions[0].reason
+
+
+@pytest.mark.parametrize("attribution", ["other", "team", "unknown"])
+def test_other_peoples_work_cannot_grant_student_judgments(attribution):
+    data = example()
+    data["claims"][0]["attribution"] = attribution
+    claims, judgments, competencies = supported_ids(
+        parse(data),
+        SupportReview(**review_for(data)),
+    )
+    assert claims == ["c1"]  # Context is preserved, not credited to the student.
+    assert judgments == [] and competencies == []
+
+
+def test_reviewer_detected_duplicates_are_not_counted_twice():
+    data = example()
+    data["claims"].append(dict(data["claims"][0], id="c2"))
+    for item in list(data["judgments"]):
+        data["judgments"].append(dict(item, id=item["id"] + "b", claim_id="c2"))
+    review = review_for(data)
+    review["duplicate_groups"] = [
+        {
+            "canonical_claim_id": "c1",
+            "duplicate_claim_ids": ["c2"],
+            "explanation": "Same deliverable repeated under internship.",
+        }
+    ]
+    claims, judgments, _ = supported_ids(parse(data), SupportReview(**review))
+    assert claims == ["c1"]
+    assert judgments == ["j1", "j2"]
+
+
+@pytest.mark.parametrize("duplicates", [["c1"], ["missing"], ["c2", "c2"]])
+def test_invalid_duplicate_groups_are_rejected(duplicates):
+    data = example()
+    data["claims"].append(dict(data["claims"][0], id="c2"))
+    review = review_for(data)
+    review["duplicate_groups"] = [
+        {
+            "canonical_claim_id": "c1",
+            "duplicate_claim_ids": duplicates,
+            "explanation": "Invalid group",
+        }
+    ]
+    with pytest.raises(ValueError, match="Duplicate groups"):
+        supported_ids(parse(data), SupportReview(**review))

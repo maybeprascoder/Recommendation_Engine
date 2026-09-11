@@ -13,6 +13,8 @@ from dataclasses import asdict
 from pathlib import Path
 from time import perf_counter
 
+from evidence_assertions import check_behavior
+
 from unihive.llm.provider import CompatibleChatClient
 from unihive.llm.understanding import analyze_documents
 from unihive.taxonomy import load_taxonomy
@@ -74,6 +76,15 @@ def main() -> int:
                 encoding="utf-8",
             )
             record["validation"] = "passed"
+            failures = check_behavior(case["id"], result)
+            record["behavior_checks"] = (
+                "not_configured"
+                if failures is None
+                else "failed"
+                if failures
+                else "passed"
+            )
+            record["behavior_failures"] = failures or []
         except ValueError as exc:
             record["validation"] = "failed"
             record["error"] = str(exc)
@@ -86,7 +97,13 @@ def main() -> int:
         (args.output / "results.json").write_text(
             json.dumps(results, indent=2), "utf-8"
         )
-    return int(any(record["validation"] == "failed" for record in results))
+    return int(
+        any(
+            record["validation"] == "failed"
+            or record.get("behavior_checks") == "failed"
+            for record in results
+        )
+    )
 
 
 if __name__ == "__main__":

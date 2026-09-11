@@ -8,7 +8,12 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import pytest
 
-from unihive.llm.provider import CompatibleChatClient, ProviderError
+from unihive.llm.provider import (
+    CompatibleChatClient,
+    ProviderError,
+    strict_output_schema,
+)
+from unihive.understanding import SupportReview, UnderstandingDraft
 
 
 @pytest.fixture
@@ -164,3 +169,23 @@ def test_native_local_mode_rejects_cloud_tag():
             model="kimi-k2.6:cloud",
             ollama_native=True,
         )
+
+
+@pytest.mark.parametrize("model", [UnderstandingDraft, SupportReview])
+def test_api_schema_requires_defaulted_fields_without_mutating_local_schema(model):
+    original = model.model_json_schema()
+    schema = strict_output_schema(original)
+
+    def visit(node):
+        if isinstance(node, dict):
+            assert "default" not in node
+            if "properties" in node:
+                assert set(node["required"]) == set(node["properties"])
+            for value in node.values():
+                visit(value)
+        elif isinstance(node, list):
+            for value in node:
+                visit(value)
+
+    visit(schema)
+    assert original == model.model_json_schema()

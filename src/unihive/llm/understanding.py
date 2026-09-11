@@ -76,14 +76,20 @@ def analyze_documents(
         + [item.id for item in draft.judgments]
         + [item.id for item in draft.competencies]
     )
-    second = client.complete(
-        instructions=review_instructions,
-        payload=json.dumps(payload, ensure_ascii=False),
-        schema=SupportReview.model_json_schema(),
-        name="support_review",
-    )
+    second = None
+    if payload["required_review_target_ids"]:
+        second = client.complete(
+            instructions=review_instructions,
+            payload=json.dumps(payload, ensure_ascii=False),
+            schema=SupportReview.model_json_schema(),
+            name="support_review",
+        )
     try:
-        review = SupportReview.model_validate_json(second.text, strict=True)
+        review = (
+            SupportReview.model_validate_json(second.text, strict=True)
+            if second is not None
+            else SupportReview(checks=[])
+        )
         claim_ids, judgment_ids, competency_ids = supported_ids(draft, review)
     except (ValidationError, ValueError) as exc:
         raise ProviderError(
@@ -93,6 +99,14 @@ def analyze_documents(
     target_claims.update({item.id: item.claim_id for item in draft.judgments})
     target_claims.update({item.id: item.claim_id for item in draft.competencies})
     questions = list(draft.questions)
+    if not draft.claims and not questions:
+        questions.append(
+            Clarification(
+                claim_id=None,
+                question="Describe one project, course, activity or work contribution.",
+                reason="No assessable accomplishments were extracted.",
+            )
+        )
     for check in review.checks:
         if check.verdict != SupportVerdict.SUPPORTED:
             questions.append(
@@ -119,9 +133,9 @@ def analyze_documents(
         audit=UnderstandingAudit(
             provider=client.provider,
             model=client.model,
-            completion_models=[first.model, second.model],
-            response_ids=[first.response_id, second.response_id],
-            prompt_version="understanding-v1+support-review-v1",
+            completion_models=[first.model] + ([second.model] if second else []),
+            response_ids=[first.response_id] + ([second.response_id] if second else []),
+            prompt_version="understanding-v2+support-review-v2",
             prompt_sha256=fingerprint(instructions + "\n" + review_instructions),
             rubric_sha256=fingerprint(canonical_json(rubric)),
             rubric_snapshot=rubric,
@@ -129,6 +143,6 @@ def analyze_documents(
             competency_catalog=competency_catalog,
             source_sha256={doc.id: fingerprint(doc.text) for doc in documents},
             draft_response_sha256=fingerprint(first.text),
-            review_response_sha256=fingerprint(second.text),
+            review_response_sha256=fingerprint(second.text) if second else None,
         ),
     )

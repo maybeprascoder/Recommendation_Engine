@@ -136,6 +136,19 @@ No semantic interpretation is inserted into deterministic scoring in this milest
 If the model omits a rubric dimension, the engine adds an explicitly labeled
 unknown judgment with a rationale stating that the model did not assess it.
 
+`understanding-v2` additionally records whether a claim describes the student,
+their team, another person, or unclear responsibility. Only supported claims
+attributed to the student can grant supported judgments or competency suggestions.
+The reviewer can also identify duplicate-work groups missed by extraction; those
+groups retain the source statements but exclude duplicate items from supported
+lists. These are model judgments requiring review, not verified facts.
+
+When a school-status claim has no extracted academic record, the engine supplies
+an all-unknown record and asks for clarification. It never invents a qualification
+or GPA. If there are no claims to check (for example, an unsupported keyword list),
+the second model call is skipped and the response asks for supporting evidence.
+The audit then contains one completion and a null review-response hash.
+
 For repeatable offline plumbing tests, pass `--recorded-responses` containing
 `{"draft": <UnderstandingDraft>, "review": <SupportReview>}`. These outputs are
 explicitly marked `recorded-offline`; they do not establish live model quality.
@@ -150,6 +163,9 @@ Thirty synthetic evaluation cases and human-review expectations are in
 Use a new output directory each time. `--all` explicitly selects all cases.
 The runner retains synthetic responses and reports schema/provenance validation
 separately from human review. Validation passing is not semantic accuracy passing.
+For selected adversarial cases it also runs explicit behavioral checks. Cases
+without these checks are marked `not_configured`, never automatically passed.
+These narrow checks do not replace expert evaluation of the complete explanation.
 
 The rubric is a versioned, unvalidated draft, not admissions expertise. One model
 reviewing its own draft can repeat its mistakes. Remaining work includes human
