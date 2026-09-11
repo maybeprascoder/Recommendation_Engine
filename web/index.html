@@ -27,6 +27,9 @@
           <select id="program-picker" name="program_path" required></select>
         </label>
         <div class="actions">
+          <label class="field">LLM interpretation (optional JSON from analyze)
+            <input type="file" id="understanding-file" accept=".json,application/json">
+          </label>
           <button type="submit" id="score-button">Review evidence</button>
           <button type="button" class="secondary" id="rescore-button" disabled>
             Re-score
@@ -43,6 +46,7 @@
           Expand only the profile sections you want to update. Profile records do not automatically become competency evidence.</p>
         <p id="active-question" aria-live="polite" hidden></p>
         <div id="profile-details"></div>
+        <section id="understanding-review" hidden></section>
         <h3>Evidence</h3>
         <div id="review-items"></div>
         <button type="button" class="secondary" id="add-evidence">Add evidence</button>
@@ -50,6 +54,7 @@
           I have reviewed this profile and confirm the information or uncertainty shown.</label>
         <button type="submit" id="confirm-button" disabled>Confirm and score</button>
         <p id="confirmation-status" aria-live="polite"></p>
+        <button type="button" class="secondary" id="download-receipt" hidden>Download audit receipt</button>
       </form>
 
       <section class="panel" id="followup-panel" hidden>
@@ -137,6 +142,7 @@
     <script src="/static/app.js?v=profile-v1" defer></script>
     <script src="/static/profile.js?v=profile-v1" defer></script>
     <script src="/static/review.js?v=profile-v1" defer></script>
+    <script src="/static/understanding.js?v=understanding-v1" defer></script>
     <script src="/static/followup.js?v=profile-v1" defer></script>
   </body>
 </html>

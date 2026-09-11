@@ -24,6 +24,11 @@ from unihive.response import ScoringResponse, build_scoring_response
 from unihive.review import ConfirmationRequest, confirm_evidence
 from unihive.scoring import LoadedScoringConfiguration, load_scoring_configuration
 from unihive.taxonomy import Taxonomy, load_taxonomy
+from unihive.understanding_review import (
+    UnderstandingReviewRequest,
+    initial_claim_corrections,
+    validate_understanding,
+)
 
 ENGINE_VERSION = "0.1.0"
 
@@ -34,7 +39,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "command",
         nargs="?",
-        choices=("score", "replay", "review", "confirm", "questions", "analyze"),
+        choices=(
+            "score",
+            "replay",
+            "review",
+            "review-understanding",
+            "confirm",
+            "questions",
+            "analyze",
+        ),
         default="score",
     )
     parser.add_argument(
@@ -96,10 +109,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     taxonomy = load_taxonomy()
     scoring_configuration = load_scoring_configuration()
 
-    if args.command == "review":
-        if args.profile is None:
-            parser.error("review requires --profile (use - for stdin)")
-        profile = _load_profile(args.profile)
+    if args.command in {"review", "review-understanding"}:
+        interpretation = None
+        if args.command == "review-understanding":
+            imported = UnderstandingReviewRequest.model_validate_json(
+                sys.stdin.read(), strict=True
+            )
+            profile = imported.profile
+            interpretation = imported.understanding
+            validate_understanding(interpretation, taxonomy.version)
+        else:
+            if args.profile is None:
+                parser.error("review requires --profile (use - for stdin)")
+            profile = _load_profile(args.profile)
 
         print(
             json.dumps(
@@ -113,6 +135,17 @@ def main(argv: Sequence[str] | None = None) -> int:
                         "quality_ladders"
                     ],
                     "depth_factors": taxonomy.evidence_configuration["depth_factors"],
+                    **(
+                        {
+                            "understanding": interpretation.model_dump(mode="json"),
+                            "claim_corrections": [
+                                change.model_dump(mode="json")
+                                for change in initial_claim_corrections(interpretation)
+                            ],
+                        }
+                        if interpretation is not None
+                        else {}
+                    ),
                 }
             )
         )

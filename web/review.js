@@ -17,7 +17,7 @@ function invalidateConfirmation() {
   confirmationStatus.textContent = "Changes require a new confirmation.";
   statusText.textContent = "Review and confirm the current evidence before scoring.";
 }
-for (const picker of [profilePicker, programPicker]) {
+for (const picker of [profilePicker, programPicker, document.querySelector("#understanding-file")]) {
   picker.addEventListener("change", () => {
     invalidateConfirmation();
     reviewDraft = null;
@@ -50,10 +50,13 @@ async function startReview(selection) {
   hideError();
   setBusy(true);
   try {
-    reviewDraft = await postReview("/review", selection);
+    const file = document.querySelector("#understanding-file").files[0];
+    const understanding = file ? JSON.parse(await file.text()) : null;
+    reviewDraft = await postReview("/review", {...selection, understanding});
     document.querySelector("#active-question").hidden = true;
     renderProfileDetails(reviewDraft.profile);
     renderReview(reviewDraft.profile.evidence);
+    renderUnderstanding();
     reviewForm.hidden = false;
     confirmationStatus.textContent = "Review every item before confirming.";
     statusText.textContent = "Evidence loaded. Review and confirm below.";
@@ -87,6 +90,10 @@ function renderReview(evidence) {
       wrapper.append(control);
       card.append(wrapper);
       controls[key] = control;
+      if (item.scoring_exclusion) {
+        control.disabled = true;
+        control.dataset.readonly = "true";
+      }
     }
     field("raw_text", "Claim", "textarea");
     field("kind", "Evidence kind");
@@ -113,7 +120,9 @@ function renderReview(evidence) {
     }
     const mapping = textElement("p", "", "item-meta");
     const updateMapping = () => {
-      mapping.textContent = reviewDraft.mapped_kinds.includes(controls.kind.value)
+      mapping.textContent = item.scoring_exclusion
+        ? "Awaiting approved scoring mappings. Update this claim in the interpretation review above; it contributes no numerical score."
+        : reviewDraft.mapped_kinds.includes(controls.kind.value)
         ? "This evidence kind has a provisional scoring rule."
         : "This evidence kind has no scoring rule and will remain unassessed.";
     };
@@ -169,11 +178,15 @@ reviewForm.addEventListener("submit", async (event) => {
       corrections: changes.filter(item => existing.has(item.evidence_id)),
       additions: changes.filter(item => !existing.has(item.evidence_id)),
       profile_details: collectProfileDetails(),
+      claim_corrections: collectClaimCorrections(),
     });
+    savedReceiptId = confirmed.confirmation_id;
+    document.querySelector("#download-receipt").hidden = false;
     reviewDraft = await postReview("/continue-review", {confirmation_id: confirmed.confirmation_id});
     document.querySelector("#active-question").hidden = true;
     renderProfileDetails(confirmed.profile);
     renderReview(confirmed.profile.evidence);
+    renderUnderstanding();
     confirmationStatus.textContent = `Evidence confirmed at ${confirmed.confirmed_at}. Edited present claims are self-reported. A separate snapshot has been saved.`;
     await runScore({ confirmation_id: confirmed.confirmation_id });
   } catch (error) {

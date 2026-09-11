@@ -181,6 +181,8 @@ def _group_evidence_by_kind(
 ) -> dict[str, tuple[Evidence, ...]]:
     grouped: dict[str, list[Evidence]] = {}
     for evidence in sorted(evidence_items, key=lambda item: item.id):
+        if evidence.scoring_exclusion is not None:
+            continue
         grouped.setdefault(evidence.kind, []).append(evidence)
     return {kind: tuple(items) for kind, items in grouped.items()}
 

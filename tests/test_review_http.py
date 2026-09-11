@@ -12,6 +12,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import pytest
+from understanding_samples import mixed_result
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -312,3 +313,153 @@ def test_profile_followup_continues_latest_snapshot_and_saves_answer(
         == 409
     )
     assert json.loads((root / "profile.json").read_text())["normalized_gpa"] != "3.2"
+
+
+def test_interpretation_correction_confirmation_receipt_and_replay(
+    server: tuple[str, Path],
+) -> None:
+    from unihive.understanding import canonical_json, fingerprint
+
+    base, root = server
+    result = mixed_result()
+    original_profile = (root / "profile.json").read_bytes()
+    code, review = post(
+        base,
+        "/review",
+        {
+            "profile_path": "profile.json",
+            "program_path": "program.yaml",
+            "understanding": result.model_dump(mode="json"),
+        },
+    )
+    assert code == 200, review
+    assert review["understanding"] == result.model_dump(mode="json")
+    assert len(review["claim_corrections"]) == len(result.draft.claims)
+    evidence_changes = [
+        {
+            "evidence_id": item["id"],
+            **{
+                key: item[key]
+                for key in ("raw_text", "kind", "state", "quality", "depth", "recency")
+            },
+        }
+        for item in review["profile"]["evidence"]
+    ]
+    claim_changes = review["claim_corrections"]
+    for change in claim_changes:
+        change["decision"] = "confirm"
+    claim_changes[2].update(
+        statement="Correction: the supervisor did this work, not me.",
+        notes="Keep the publication judgment attached to the supervisor.",
+    )
+    submission = {
+        "review_id": review["review_id"],
+        "confirmed": True,
+        "corrections": evidence_changes,
+        "claim_corrections": claim_changes,
+    }
+    # Missing/duplicate reviews and client attempts to replace the interpretation fail.
+    assert post(base, "/confirm", {**submission, "claim_corrections": []})[0] == 422
+    assert post(base, "/confirm", {**submission, "understanding": {}})[0] == 422
+    code, confirmed = post(base, "/confirm", submission)
+    assert code == 200, confirmed
+    selection = {"confirmation_id": confirmed["confirmation_id"]}
+    code, receipt = post(base, "/receipt", selection)
+    assert code == 200, receipt
+    assert receipt["submission"]["understanding"] == result.model_dump(mode="json")
+    assert receipt["submission"]["claim_corrections"] == claim_changes
+    assert receipt["understanding_sha256"] == fingerprint(canonical_json(result))
+    assert receipt["profile"] == confirmed["profile"]
+    assert receipt["profile_sha256"] == fingerprint(
+        json.dumps(confirmed["profile"], sort_keys=True, ensure_ascii=False)
+    )
+    imported = [
+        item
+        for item in confirmed["profile"]["evidence"]
+        if item["scoring_exclusion"] is not None
+    ]
+    assert len(imported) == 2
+    assert all(item["state"] == "SELF_REPORTED_PRESENT" for item in imported)
+    assert confirmed["profile"]["normalized_gpa"] == review["profile"]["normalized_gpa"]
+    assert (root / "profile.json").read_bytes() == original_profile
+    code, scored = post(base, "/score", selection)
+    assert code == 200, scored
+    assert scored["assessment"]["audit"]["profile_snapshot"] == confirmed["profile"]
+    contributions = scored["assessment"]["audit"]["evidence_ids_used"]
+    assert not set(item["id"] for item in imported).intersection(contributions)
+    audit_path = root / "understanding-assessment.json"
+    audit_path.write_text(json.dumps(scored), encoding="utf-8")
+    replay = subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "cli.py"),
+            "replay",
+            "--audit",
+            str(audit_path),
+            "--json",
+            "--report",
+        ],
+        capture_output=True,
+        env={**os.environ, "PYTHONUTF8": "1"},
+        timeout=30,
+    )
+    assert replay.returncode == 0, replay.stderr.decode()
+    assert json.loads(replay.stdout) == scored
+    code, continued = post(base, "/continue-review", selection)
+    assert code == 200, continued
+    assert continued["understanding"] == review["understanding"]
+    assert continued["claim_corrections"] == claim_changes
+    evidence_changes = [
+        {
+            "evidence_id": item["id"],
+            **{
+                key: item[key]
+                for key in ("raw_text", "kind", "state", "quality", "depth", "recency")
+            },
+        }
+        for item in continued["profile"]["evidence"]
+    ]
+    claim_changes[0]["decision"] = "exclude"
+    code, updated = post(
+        base,
+        "/confirm",
+        {
+            "review_id": continued["review_id"],
+            "confirmed": True,
+            "corrections": evidence_changes,
+            "claim_corrections": claim_changes,
+        },
+    )
+    assert code == 200, updated
+    assert (
+        len(updated["profile"]["evidence"]) == len(confirmed["profile"]["evidence"]) - 1
+    )
+    code, updated_receipt = post(
+        base,
+        "/receipt",
+        {
+            "confirmation_id": updated["confirmation_id"],
+        },
+    )
+    assert code == 200, updated_receipt
+    assert updated_receipt["parent_confirmation_id"] == confirmed["confirmation_id"]
+    assert updated_receipt["submission"]["understanding"] == review["understanding"]
+    assert post(base, "/receipt", selection)[1] == receipt
+    assert post(base, "/score", selection)[1] == scored
+
+
+def test_interpretation_import_rejects_forged_support_lists(
+    server: tuple[str, Path],
+) -> None:
+    result = mixed_result().model_dump(mode="json")
+    result["supported_claim_ids"].append("unsupported")
+    code, response = post(
+        server[0],
+        "/review",
+        {
+            "profile_path": "profile.json",
+            "program_path": "program.yaml",
+            "understanding": result,
+        },
+    )
+    assert code == 422, response

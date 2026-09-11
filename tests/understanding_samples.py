@@ -1,0 +1,95 @@
+"""Synthetic interpretation shared by adapter and live HTTP tests."""
+
+from unihive.llm.analysis_cli import RecordedClient, RecordedResponses
+from unihive.llm.understanding import analyze_documents
+from unihive.taxonomy import load_taxonomy
+from unihive.understanding import (
+    SourceDocument,
+    SupportReview,
+    UnderstandingDraft,
+    UnderstandingResult,
+    complete_unknown_dimensions,
+    load_evaluation_rubric,
+)
+
+
+def mixed_result() -> UnderstandingResult:
+    passages = {
+        "student": "I designed a sensor system — 学生.",
+        "team": "Our team deployed the system.",
+        "other": "My supervisor published the findings.",
+        "unknown": "Won an award.",
+        "duplicate": "I designed a sensor system — 学生.",
+        "review-duplicate": "I designed a sensor system — 学生.",
+        "unsupported": "A project was discussed.",
+        "uncertain": "I may have helped with testing.",
+        "education": "Example College, BSc, GPA 8.2/10.",
+    }
+    claims = [
+        {
+            "id": key,
+            "category": "education" if key == "education" else "project",
+            "statement": passage,
+            "attribution": key if key in {"team", "other", "unknown"} else "student",
+            "citations": [{"document_id": "resume", "quote": passage}],
+            "duplicate_of": "student" if key == "duplicate" else None,
+        }
+        for key, passage in passages.items()
+    ]
+    draft = complete_unknown_dimensions(
+        UnderstandingDraft.model_validate(
+            {
+                "claims": claims,
+                "academics": [
+                    {
+                        "claim_id": "education",
+                        "institution": "Example College",
+                        "qualification": "BSc",
+                        "grade": "8.2",
+                        "grade_scale": "10",
+                    }
+                ],
+                "judgments": [
+                    {
+                        "id": "depth-student",
+                        "claim_id": "student",
+                        "dimension": "depth",
+                        "label": "designed",
+                        "rationale": "The source describes design.",
+                        "citations": claims[0]["citations"],
+                    }
+                ],
+                "competencies": [],
+                "questions": [],
+                "unassessed": ["Venue quality"],
+            }
+        ),
+        load_evaluation_rubric(),
+    )
+    review = SupportReview.model_validate(
+        {
+            "checks": [
+                {
+                    "target_id": item.id,
+                    "verdict": item.id
+                    if item.id in {"unsupported", "uncertain"}
+                    else "supported",
+                    "explanation": "Synthetic support check.",
+                }
+                for item in [*draft.claims, *draft.judgments]
+            ],
+            "duplicate_groups": [
+                {
+                    "canonical_claim_id": "student",
+                    "duplicate_claim_ids": ["review-duplicate"],
+                    "explanation": "Repeated project.",
+                }
+            ],
+        }
+    )
+    return analyze_documents(
+        [SourceDocument(id="resume", text="\n".join(passages.values()))],
+        RecordedClient(RecordedResponses(draft=draft, review=review)),
+        taxonomy_version=load_taxonomy().version,
+        competency_catalog={},
+    )

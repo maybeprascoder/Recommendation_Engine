@@ -14,6 +14,8 @@ from unihive.models import (
     StudentProfile,
 )
 from unihive.taxonomy import Taxonomy
+from unihive.understanding import UnderstandingResult
+from unihive.understanding_review import ClaimCorrection, confirm_understanding
 
 
 class EvidenceCorrection(CoreModel):
@@ -50,6 +52,8 @@ class ConfirmationRequest(CoreModel):
     confirmed: StrictBool
     profile_details: ProfileDetails | None = None
     additions: list[EvidenceCorrection] = Field(default_factory=list)
+    understanding: UnderstandingResult | None = None
+    claim_corrections: list[ClaimCorrection] = Field(default_factory=list)
 
 
 def confirm_evidence(
@@ -60,6 +64,8 @@ def confirm_evidence(
         raise ValueError("Explicit evidence confirmation is required")
     if request.taxonomy_version != taxonomy.version:
         raise ValueError("Taxonomy changed; reload the evidence review")
+    if request.understanding is None and request.claim_corrections:
+        raise ValueError("Claim corrections require an interpretation")
     original = {item.id: item for item in request.profile.evidence}
     ids = [item.evidence_id for item in request.corrections]
     if len(original) != len(request.profile.evidence):
@@ -91,6 +97,8 @@ def confirm_evidence(
         fields = change.model_dump(exclude={"evidence_id"})
         state = change.state
         changed = any(getattr(before, key) != value for key, value in fields.items())
+        if before.scoring_exclusion is not None and changed:
+            raise ValueError("Edit interpreted claims in the interpretation review")
         if state == EvidenceState.VERIFIED_PRESENT and (
             changed or before.state != EvidenceState.VERIFIED_PRESENT
         ):
@@ -115,7 +123,7 @@ def confirm_evidence(
         corrected.append(Evidence.model_validate({**before.model_dump(), **fields}))
     # Keep original ordering so reordering the form cannot affect replay.
     by_id = {item.id: item for item in corrected}
-    return StudentProfile.model_validate(
+    profile = StudentProfile.model_validate(
         {
             **request.profile.model_dump(),
             **(request.profile_details.model_dump() if request.profile_details else {}),
@@ -123,3 +131,8 @@ def confirm_evidence(
             + [by_id[identifier] for identifier in sorted(added_ids)],
         }
     )
+    if request.understanding is not None:
+        return confirm_understanding(
+            profile, request.understanding, request.claim_corrections, taxonomy.version
+        )
+    return profile

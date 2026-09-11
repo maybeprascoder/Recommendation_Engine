@@ -123,6 +123,8 @@ class Evidence(CoreModel):
     recency: date | None
     source: str | None
     extraction_confidence: Confidence
+    # Generic interpretation is evidence, but has no human-approved score mapping.
+    scoring_exclusion: Literal["awaiting_approved_mapping"] | None = None
 
 
 class EvidenceContribution(CoreModel):

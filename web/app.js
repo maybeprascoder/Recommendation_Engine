@@ -147,10 +147,11 @@ function setBusy(isBusy) {
   scoreButton.disabled = isBusy || !profilePicker.value || !programPicker.value;
   profilePicker.disabled = isBusy;
   programPicker.disabled = isBusy;
+  document.querySelector("#understanding-file").disabled = isBusy;
   document.querySelector("#followup-panel").querySelectorAll("button")
     .forEach((control) => { control.disabled = isBusy; });
   document.querySelector("#review-form").querySelectorAll("input, select, textarea, button")
-    .forEach((control) => { control.disabled = isBusy; });
+    .forEach((control) => { control.disabled = isBusy || control.dataset.readonly === "true"; });
   document.querySelector("#confirm-button").disabled = isBusy ||
     !document.querySelector("#evidence-consent").checked;
   rescoreButton.disabled = isBusy || lastSelection === null;

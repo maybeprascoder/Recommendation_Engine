@@ -68,6 +68,51 @@ confirmation ID and question context. A question that is no longer relevant retu
 409. After answering, confirmation and reassessment refresh the question list.
 Skipping is local to this page session and never marks an unknown as answered.
 
-This is a localhost development flow without authentication, document uploads,
-semantic claim verification, or live LLM calls. No real university data is required
-for the synthetic demo.
+### Reviewing generic interpretations
+
+Generate an interpretation with `unihive analyze --input resume.txt --output analysis.json`.
+Select the existing profile and program, choose that JSON file in **LLM interpretation**,
+then select **Review evidence**. This merges eligible claims into the selected profile
+only after confirmation; the source profile file is never overwritten.
+
+All claims are shown with original quotations, attribution, support checks and duplicate
+links. Correct the statement or attribution, select confirm/exclude/uncertain, and use
+the notes field for corrections to academic records or qualitative judgments. Notes and
+excluded claims are retained in the receipt. A claim imports only when both its original
+and confirmed attribution are student, its support check passes, it is canonical in
+both extraction and support review, its statement is unchanged, and the student confirms
+it. Edited statements need another support review; confirmation alone cannot override
+unsupported, uncertain, duplicate or third-party status.
+
+Imported evidence is always `SELF_REPORTED_PRESENT`, with the source quotes preserved,
+low extraction confidence, null quality/depth, and
+`scoring_exclusion: awaiting_approved_mapping`. Even if its category matches an existing
+rule, it cannot affect competency levels or readiness, including absence states. Its
+ordinary evidence controls stay read-only; edit its interpretation controls instead.
+Qualitative labels and competency suggestions never become scoring weights. Academic
+records retain the original grade and scale in the receipt; automatic academic profile
+projection and GPA normalization are separate milestones.
+
+`POST /review` accepts an optional `understanding` object containing the complete
+`UnderstandingResult`. The server uses `unihive review-understanding --json`, passing
+`{"profile": ..., "understanding": ...}` on stdin. That command revalidates exact quotes,
+references, source/rubric hashes, taxonomy version and derived support lists, and returns
+every claim in `claim_corrections`. `POST /confirm` accepts those corrections (claim_id,
+statement, attribution, decision, notes), with each claim reviewed exactly once. The
+original interpretation comes from the server-owned draft, never from the confirmation
+submission. Direct CLI confirmations support the same fields in `ConfirmationRequest`.
+
+**Download audit receipt** exports `POST /receipt` with the confirmation ID. The receipt
+contains the complete interpretation (including source documents, quotes, academic
+records, judgments, suggestions, model/prompt/rubric hashes and support checks), every
+submitted correction, the effective profile, interpretation/profile hashes and parent
+confirmation ID. Continued reviews preserve the original interpretation and previous
+corrections, replacing imports instead of duplicating them. Previous receipts remain
+unchanged. The assessment's profile snapshot retains each evidence scoring exclusion;
+the complete interpretation remains in the separate confirmation receipt. Hashes detect
+inconsistency; they do not authenticate a locally supplied analysis or independently
+verify its semantic support.
+
+This is a localhost development flow without authentication, raw document parsing,
+external verification, or live LLM calls in the web server. Analysis JSON uploads stay
+local. No real university data is required for the synthetic demo.

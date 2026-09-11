@@ -44,6 +44,7 @@ answerQuestion.addEventListener("click", async () => {
     });
     invalidateConfirmation(); reviewDraft = draft;
     renderProfileDetails(draft.profile); renderReview(draft.profile.evidence);
+    renderUnderstanding();
     reviewForm.hidden = false;
     const prompt = document.querySelector("#active-question");
     prompt.textContent = `${item.question.text} ${item.guidance}`; prompt.hidden = false;

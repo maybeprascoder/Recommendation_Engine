@@ -32,6 +32,7 @@ class ReviewRequest(BaseModel):
 
     profile_path: str
     program_path: str
+    understanding: dict[str, JsonValue] | None = None
 
 
 class ConfirmRequest(BaseModel):
@@ -41,6 +42,7 @@ class ConfirmRequest(BaseModel):
     corrections: list[dict[str, JsonValue]]
     profile_details: dict[str, JsonValue] | None = None
     additions: list[dict[str, JsonValue]] = Field(default_factory=list)
+    claim_corrections: list[dict[str, JsonValue]] = Field(default_factory=list)
 
 
 class ScoreRequest(BaseModel):
@@ -106,7 +108,19 @@ def review(request: ReviewRequest) -> Response:
         allowed_suffixes={".yaml", ".yml"},
     )
     original = profile_path.read_bytes()
-    response = _run_cli(["unihive", "review", "--profile", "-", "--json"], original)
+    if request.understanding is not None:
+        try:
+            profile_data = json.loads(original)
+        except ValueError as error:
+            raise HTTPException(422, "The source profile is not valid JSON.") from error
+        response = _run_cli(
+            ["unihive", "review-understanding", "--json"],
+            json.dumps(
+                {"profile": profile_data, "understanding": request.understanding}
+            ).encode("utf-8"),
+        )
+    else:
+        response = _run_cli(["unihive", "review", "--profile", "-", "--json"], original)
     if response.status_code != 200:
         return response
     draft = json.loads(response.body)
@@ -148,6 +162,8 @@ def confirm(request: ConfirmRequest) -> Response:
         "corrections": request.corrections,
         "profile_details": request.profile_details,
         "additions": request.additions,
+        "understanding": draft.get("understanding"),
+        "claim_corrections": request.claim_corrections,
     }
     response = _run_cli(
         ["unihive", "confirm", "--json"], json.dumps(submission).encode("utf-8")
@@ -164,6 +180,18 @@ def confirm(request: ConfirmRequest) -> Response:
         "original_hash": record["original_hash"],
         "parent_confirmation_id": record.get("parent_confirmation_id"),
         "followup_question": record.get("followup_question"),
+        "understanding_sha256": (
+            sha256(
+                json.dumps(
+                    draft["understanding"], sort_keys=True, ensure_ascii=False
+                ).encode("utf-8")
+            ).hexdigest()
+            if draft.get("understanding") is not None
+            else None
+        ),
+        "profile_sha256": sha256(
+            json.dumps(profile, sort_keys=True, ensure_ascii=False).encode("utf-8")
+        ).hexdigest(),
     }
     confirmation_id = _save_record("confirmations", receipt)
     return JSONResponse(
@@ -172,6 +200,15 @@ def confirm(request: ConfirmRequest) -> Response:
             "profile": profile,
             "confirmed_at": receipt["confirmed_at"],
         },
+        headers={"Cache-Control": "no-store"},
+    )
+
+
+@app.post("/receipt")
+def receipt(request: ScoreRequest) -> Response:
+    """Export the complete interpretation, submitted corrections and saved profile."""
+    return JSONResponse(
+        _read_record("confirmations", request.confirmation_id),
         headers={"Cache-Control": "no-store"},
     )
 
@@ -237,6 +274,9 @@ def continue_review(request: ContinueRequest) -> Response:
     if response.status_code != 200:
         return response
     draft = json.loads(response.body)
+    if receipt["submission"].get("understanding") is not None:
+        draft["understanding"] = receipt["submission"]["understanding"]
+        draft["claim_corrections"] = receipt["submission"]["claim_corrections"]
     identifier = _save_record(
         "drafts",
         {

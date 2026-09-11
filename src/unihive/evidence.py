@@ -146,6 +146,8 @@ def evaluate_evidence(
     as_of: date,
 ) -> EvidenceEvaluation:
     """Evaluate quality, relevance, depth, verification, and recency."""
+    if evidence.scoring_exclusion is not None:
+        raise EvidenceValueError("Evidence requires a human-approved scoring mapping")
     if evidence.state not in configuration.verification_factors:
         raise EvidenceValueError(
             f"Evidence {evidence.id} is not in a present state and cannot be scored"
