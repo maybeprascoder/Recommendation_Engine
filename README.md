@@ -32,6 +32,19 @@ Pass `--as-of` for comparable manual runs. To replay a saved assessment JSON:
 .\.venv\Scripts\unihive.exe replay --audit assessment.json --json
 ```
 
+Screen a directory of sourced program records with the multi-program command:
+
+```powershell
+.\.venv\Scripts\unihive.exe recommend --profile profile.json --program-dir data/programs --as-of 2026-09-11
+```
+
+The command assesses only records allowed by `data/program_data_policy.yaml`.
+Provisional, unreviewed, stale, or future-dated records are returned with explicit
+hold reasons and no assessment. The checked-in policy is itself provisional, so
+it cannot silently enable recommendations. Developers may add
+`--include-blocked-diagnostics` to exercise the deterministic path; those results
+remain marked `diagnostic_only` and `recommendation_ready` remains false.
+
 ## Local scoring review
 
 The server invokes the installed `unihive` command, so put the virtual

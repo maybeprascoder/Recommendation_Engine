@@ -19,6 +19,7 @@ from unihive.audit import (
 from unihive.eligibility import load_program_config
 from unihive.followup import build_followup_questions
 from unihive.models import Assessment, ProgramConfig, StudentProfile
+from unihive.program_quality import assess_programs, load_program_data_policy
 from unihive.questions import load_question_bank
 from unihive.response import ScoringResponse, build_scoring_response
 from unihive.review import ConfirmationRequest, confirm_evidence
@@ -49,6 +50,7 @@ def build_parser() -> argparse.ArgumentParser:
             "confirm",
             "questions",
             "analyze",
+            "recommend",
         ),
         default="score",
     )
@@ -59,6 +61,21 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--profile", type=Path, help="structured profile JSON")
     parser.add_argument("--program", type=Path, help="sourced program YAML")
+    parser.add_argument(
+        "--program-dir",
+        type=Path,
+        help="directory of sourced program YAML files for recommendation screening",
+    )
+    parser.add_argument(
+        "--program-policy",
+        type=Path,
+        help="versioned program-data freshness policy YAML",
+    )
+    parser.add_argument(
+        "--include-blocked-diagnostics",
+        action="store_true",
+        help="assess blocked records for diagnostics while keeping them on hold",
+    )
     parser.add_argument("--audit", type=Path, help="past assessment JSON to replay")
     parser.add_argument(
         "--input",
@@ -178,6 +195,43 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(confirm_evidence(request, taxonomy).model_dump_json())
         return 0
 
+    if args.command == "recommend":
+        if args.profile is None or args.program_dir is None:
+            parser.error("recommend requires --profile and --program-dir")
+        if not args.program_dir.is_dir():
+            parser.error("--program-dir must be a directory")
+        program_paths = sorted(args.program_dir.glob("*.yaml"))
+        if not program_paths:
+            parser.error("--program-dir contains no .yaml program files")
+        profile = _load_profile(args.profile)
+        programs = [load_program_config(path) for path in program_paths]
+        policy = (
+            load_program_data_policy(args.program_policy)
+            if args.program_policy is not None
+            else load_program_data_policy()
+        )
+        as_of = args.as_of or date.today()
+        timestamp = datetime.combine(as_of, time.min, tzinfo=UTC)
+        run = assess_programs(
+            profile,
+            programs,
+            taxonomy=taxonomy,
+            scoring_configuration=scoring_configuration,
+            policy=policy,
+            as_of=as_of,
+            timestamp=timestamp,
+            engine_version=ENGINE_VERSION,
+            include_blocked_diagnostics=args.include_blocked_diagnostics,
+        )
+        provisional_count = (
+            _shared_provisional_count(taxonomy, scoring_configuration)
+            + sum(item.provisional for item in programs)
+            + int(policy.values.provisional)
+        )
+        print(f"Provisional configs in use: {provisional_count}", file=sys.stderr)
+        print(run.model_dump_json(indent=2))
+        return 0
+
     if args.command == "replay":
         if args.audit is None:
             parser.error("replay requires --audit")
@@ -259,19 +313,18 @@ def _provisional_count(
     program: ProgramConfig,
     scoring: LoadedScoringConfiguration,
 ) -> int:
-    node_count = sum(node.provisional for node in taxonomy.competencies)
-    evidence_rule_count = sum(rule.provisional for rule in taxonomy.evidence_rules)
-    evidence_configuration_count = int(
-        taxonomy.evidence_configuration.get("provisional") is True
-    )
-    program_count = int(program.provisional)
-    scoring_count = int(scoring.values.provisional)
+    return _shared_provisional_count(taxonomy, scoring) + int(program.provisional)
+
+
+def _shared_provisional_count(
+    taxonomy: Taxonomy,
+    scoring: LoadedScoringConfiguration,
+) -> int:
     return (
-        node_count
-        + evidence_rule_count
-        + evidence_configuration_count
-        + program_count
-        + scoring_count
+        sum(node.provisional for node in taxonomy.competencies)
+        + sum(rule.provisional for rule in taxonomy.evidence_rules)
+        + int(taxonomy.evidence_configuration.get("provisional") is True)
+        + int(scoring.values.provisional)
     )
 
 

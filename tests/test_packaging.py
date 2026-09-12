@@ -50,7 +50,13 @@ def installed_package(tmp_path_factory: pytest.TempPathFactory) -> tuple[Path, P
     )
     for directory in ("taxonomy", "schemas"):
         shutil.copytree(ROOT / "data" / directory, source / "data" / directory)
-    for name in ("__init__.py", "bands.yaml", "questions.yaml", "portfolio.yaml"):
+    for name in (
+        "__init__.py",
+        "bands.yaml",
+        "questions.yaml",
+        "portfolio.yaml",
+        "program_data_policy.yaml",
+    ):
         shutil.copyfile(ROOT / "data" / name, source / "data" / name)
     # Catalogs are user inputs; never accidentally distribute student profiles.
     for directory, filename in (
@@ -203,6 +209,7 @@ import unihive
 from unihive.resources import DATA_ROOT
 from unihive.questions import load_question_bank
 from unihive.portfolio import load_portfolio_configuration
+from unihive.program_quality import load_program_data_policy
 from unihive.llm.extractor import (
     load_prompt_template, DEFAULT_EXTRACTION_PROMPT, DEFAULT_RETRY_PROMPT,
 )
@@ -212,6 +219,7 @@ for path in (Path(cli.__file__), Path(unihive.__file__), DATA_ROOT,
     assert path.is_relative_to(Path(sys.prefix)), path
 assert load_question_bank().values.questions
 assert load_portfolio_configuration().values.minimum_size == 8
+assert load_program_data_policy().values.maximum_age_days > 0
 for path in (DEFAULT_EXTRACTION_PROMPT, DEFAULT_RETRY_PROMPT, DEFAULT_NARRATOR_PROMPT):
     assert load_prompt_template(path).text
 print('Installed resources verified')
