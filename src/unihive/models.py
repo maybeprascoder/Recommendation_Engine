@@ -3,9 +3,9 @@
 from datetime import date, datetime
 from decimal import Decimal
 from enum import IntEnum, StrEnum
-from typing import Annotated, Literal
+from typing import Annotated, Literal, Self
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, JsonValue
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, JsonValue, model_validator
 
 StructuredRecord = dict[str, JsonValue]
 
@@ -125,6 +125,24 @@ class Evidence(CoreModel):
     extraction_confidence: Confidence
     # Generic interpretation is evidence, but has no human-approved score mapping.
     scoring_exclusion: Literal["awaiting_approved_mapping"] | None = None
+    source_interpretation_sha256: str | None = None
+    source_claim_id: str | None = None
+    approved_mapping_id: str | None = None
+
+    @model_validator(mode="after")
+    def validate_interpretation_provenance(self) -> Self:
+        linked = self.source_interpretation_sha256 is not None
+        if linked != (self.source_claim_id is not None):
+            raise ValueError(
+                "Interpreted evidence requires its receipt hash and claim ID"
+            )
+        if self.scoring_exclusion is not None and not linked:
+            raise ValueError("A scoring exclusion requires interpretation provenance")
+        if self.approved_mapping_id is not None and (
+            not linked or self.scoring_exclusion is not None
+        ):
+            raise ValueError("Approved mappings require score-eligible provenance")
+        return self
 
 
 class EvidenceContribution(CoreModel):

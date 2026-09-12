@@ -335,6 +335,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
     assert code == 200, review
     assert review["understanding"] == result.model_dump(mode="json")
     assert len(review["claim_corrections"]) == len(result.draft.claims)
+    assert len(review["academic_corrections"]) == len(result.draft.academics)
+    assert len(review["judgment_corrections"]) == len(result.draft.judgments)
     evidence_changes = [
         {
             "evidence_id": item["id"],
@@ -346,6 +348,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
         for item in review["profile"]["evidence"]
     ]
     claim_changes = review["claim_corrections"]
+    academic_changes = review["academic_corrections"]
+    judgment_changes = review["judgment_corrections"]
     for change in claim_changes:
         change["decision"] = "confirm"
     claim_changes[2].update(
@@ -357,6 +361,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
         "confirmed": True,
         "corrections": evidence_changes,
         "claim_corrections": claim_changes,
+        "academic_corrections": academic_changes,
+        "judgment_corrections": judgment_changes,
     }
     # Missing/duplicate reviews and client attempts to replace the interpretation fail.
     assert post(base, "/confirm", {**submission, "claim_corrections": []})[0] == 422
@@ -368,6 +374,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
     assert code == 200, receipt
     assert receipt["submission"]["understanding"] == result.model_dump(mode="json")
     assert receipt["submission"]["claim_corrections"] == claim_changes
+    assert receipt["submission"]["academic_corrections"] == academic_changes
+    assert receipt["submission"]["judgment_corrections"] == judgment_changes
     assert receipt["understanding_sha256"] == fingerprint(canonical_json(result))
     assert receipt["profile"] == confirmed["profile"]
     assert receipt["profile_sha256"] == fingerprint(
@@ -381,6 +389,10 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
     assert len(imported) == 2
     assert all(item["state"] == "SELF_REPORTED_PRESENT" for item in imported)
     assert confirmed["profile"]["normalized_gpa"] == review["profile"]["normalized_gpa"]
+    projected_academic = confirmed["profile"]["academic_history"][-1]
+    assert projected_academic["grade"] == "8.2"
+    assert projected_academic["grade_scale"] == "10"
+    assert "completed" not in projected_academic
     assert (root / "profile.json").read_bytes() == original_profile
     code, scored = post(base, "/score", selection)
     assert code == 200, scored
@@ -409,6 +421,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
     assert code == 200, continued
     assert continued["understanding"] == review["understanding"]
     assert continued["claim_corrections"] == claim_changes
+    assert continued["academic_corrections"] == academic_changes
+    assert continued["judgment_corrections"] == judgment_changes
     evidence_changes = [
         {
             "evidence_id": item["id"],
@@ -428,6 +442,8 @@ def test_interpretation_correction_confirmation_receipt_and_replay(
             "confirmed": True,
             "corrections": evidence_changes,
             "claim_corrections": claim_changes,
+            "academic_corrections": academic_changes,
+            "judgment_corrections": judgment_changes,
         },
     )
     assert code == 200, updated

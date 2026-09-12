@@ -89,16 +89,30 @@ low extraction confidence, null quality/depth, and
 `scoring_exclusion: awaiting_approved_mapping`. Even if its category matches an existing
 rule, it cannot affect competency levels or readiness, including absence states. Its
 ordinary evidence controls stay read-only; edit its interpretation controls instead.
-Qualitative labels and competency suggestions never become scoring weights. Academic
-records retain the original grade and scale in the receipt; automatic academic profile
-projection and GPA normalization are separate milestones.
+Qualitative labels and competency suggestions never create scoring weights. Confirmed
+academic records are projected into `academic_history` with their source claim, quotes,
+original grade and original scale. Student corrections are marked `student_corrected`.
+The projection does not set degree completion and never changes `normalized_gpa`.
+
+Qualitative judgments can enter scoring only through `data/taxonomy/qualitative_mappings.yaml`.
+The checked-in file is deliberately empty. Each future mapping must name its exact rubric
+hash, required reviewed labels, a named reviewer, review date and source. It must reference
+an existing non-provisional evidence rule with its own reviewer and source. The taxonomy
+loader rejects provisional rules, unknown quality/depth labels, duplicate conditions and
+dangling references. A matched mapping creates a separate evidence item carrying the
+mapping ID; the original generic claim remains preserved and score-excluded.
+Mapping changes update the deterministic taxonomy/audit version without invalidating an
+existing interpretation whose extraction taxonomy inputs are unchanged.
 
 `POST /review` accepts an optional `understanding` object containing the complete
 `UnderstandingResult`. The server uses `unihive review-understanding --json`, passing
 `{"profile": ..., "understanding": ...}` on stdin. That command revalidates exact quotes,
 references, source/rubric hashes, taxonomy version and derived support lists, and returns
 every claim in `claim_corrections`. `POST /confirm` accepts those corrections (claim_id,
-statement, attribution, decision, notes), with each claim reviewed exactly once. The
+statement, attribution, decision, notes), `academic_corrections` containing each
+academic field, decision and notes, and `judgment_corrections` containing every label,
+decision and note. Every claim, academic record and qualitative judgment is reviewed
+exactly once. A changed or excluded judgment cannot activate a mapping. The
 original interpretation comes from the server-owned draft, never from the confirmation
 submission. Direct CLI confirmations support the same fields in `ConfirmationRequest`.
 

@@ -90,7 +90,7 @@ function renderReview(evidence) {
       wrapper.append(control);
       card.append(wrapper);
       controls[key] = control;
-      if (item.scoring_exclusion) {
+      if (item.source_interpretation_sha256) {
         control.disabled = true;
         control.dataset.readonly = "true";
       }
@@ -179,6 +179,8 @@ reviewForm.addEventListener("submit", async (event) => {
       additions: changes.filter(item => !existing.has(item.evidence_id)),
       profile_details: collectProfileDetails(),
       claim_corrections: collectClaimCorrections(),
+      academic_corrections: collectAcademicCorrections(),
+      judgment_corrections: collectJudgmentCorrections(),
     });
     savedReceiptId = confirmed.confirmation_id;
     document.querySelector("#download-receipt").hidden = false;

@@ -28,6 +28,9 @@ def taxonomy_dir(tmp_path: Path) -> Path:
         "aliases:\n  nets: networking\n", encoding="utf-8"
     )
     (tmp_path / "evidence_rules.yaml").write_text("rules: []\n", encoding="utf-8")
+    (tmp_path / "qualitative_mappings.yaml").write_text(
+        "version: test-v1\nmappings: []\n", encoding="utf-8"
+    )
     shutil.copyfile(
         DEFAULT_SCHEMA_DIR.parent / "taxonomy" / "ladders.yaml",
         tmp_path / "ladders.yaml",
@@ -74,6 +77,41 @@ def load_test_taxonomy(taxonomy_dir: Path) -> Taxonomy:
     """Load a test taxonomy while asserting its required provisional warning."""
     with pytest.warns(ProvisionalTaxonomyWarning):
         return load_taxonomy(taxonomy_dir, DEFAULT_SCHEMA_DIR)
+
+
+def write_mapping_inputs(taxonomy_dir: Path, *, rule_provisional: bool) -> None:
+    provisional = str(rule_provisional).lower()
+    taxonomy_dir.joinpath("evidence_rules.yaml").write_text(
+        f"""rules:
+  - id: reviewed-project
+    evidence_kind: reviewed_project
+    competency_id: networking
+    quality_ladder: research_venue
+    relevance: 0.8
+    provisional: {provisional}
+    validated_by: Expert reviewer
+    source: Expert review record
+""",
+        encoding="utf-8",
+    )
+    taxonomy_dir.joinpath("qualitative_mappings.yaml").write_text(
+        """version: test-v1
+mappings:
+  - id: designed-project
+    claim_category: project
+    rubric_sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    judgment_requirements:
+      - dimension: depth
+        labels: [designed]
+    evidence_rule_id: reviewed-project
+    quality_label: preprint
+    depth_label: contributor
+    validated_by: Expert reviewer
+    validated_on: "2026-09-11"
+    source: Expert review record
+""",
+        encoding="utf-8",
+    )
 
 
 def test_valid_file_loads(taxonomy_dir: Path, write_taxonomy: WriteTaxonomy) -> None:
@@ -140,6 +178,22 @@ def test_version_hash_is_stable_and_content_sensitive(
     assert changed != first
 
 
+def test_mapping_version_changes_assessment_without_invalidating_interpretation(
+    taxonomy_dir: Path, write_taxonomy: WriteTaxonomy
+) -> None:
+    write_taxonomy(node_yaml("networking"))
+    before = load_test_taxonomy(taxonomy_dir)
+    mapping_path = taxonomy_dir / "qualitative_mappings.yaml"
+    mapping_path.write_text(
+        mapping_path.read_text(encoding="utf-8").replace("test-v1", "test-v2"),
+        encoding="utf-8",
+    )
+    after = load_test_taxonomy(taxonomy_dir)
+
+    assert after.version != before.version
+    assert after.understanding_version == before.understanding_version
+
+
 def test_seed_taxonomy_loads() -> None:
     """Keep the checked-in taxonomy and schemas compatible."""
     seed_dir = DEFAULT_SCHEMA_DIR.parent / "taxonomy"
@@ -148,3 +202,25 @@ def test_seed_taxonomy_loads() -> None:
 
     warning_text = str(warning_records[0].message)
     assert all(node.id in warning_text for node in taxonomy.competencies)
+
+
+def test_approved_qualitative_mapping_loads(
+    taxonomy_dir: Path, write_taxonomy: WriteTaxonomy
+) -> None:
+    write_taxonomy(node_yaml("networking"))
+    write_mapping_inputs(taxonomy_dir, rule_provisional=False)
+
+    taxonomy = load_test_taxonomy(taxonomy_dir)
+
+    assert taxonomy.qualitative_mapping_version == "test-v1"
+    assert taxonomy.qualitative_mappings[0].evidence_rule_id == "reviewed-project"
+
+
+def test_mapping_cannot_reference_provisional_scoring_rule(
+    taxonomy_dir: Path, write_taxonomy: WriteTaxonomy
+) -> None:
+    write_taxonomy(node_yaml("networking"))
+    write_mapping_inputs(taxonomy_dir, rule_provisional=True)
+
+    with pytest.raises(TaxonomyIntegrityError, match="expert-validated"):
+        load_taxonomy(taxonomy_dir, DEFAULT_SCHEMA_DIR)

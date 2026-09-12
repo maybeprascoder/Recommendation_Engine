@@ -77,7 +77,7 @@ def run_analysis(
         result = analyze_documents(
             documents,
             client,
-            taxonomy_version=taxonomy.version,
+            taxonomy_version=taxonomy.understanding_version,
             competency_catalog={
                 node.id: node.description for node in taxonomy.competencies
             },

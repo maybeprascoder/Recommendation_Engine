@@ -43,6 +43,8 @@ class ConfirmRequest(BaseModel):
     profile_details: dict[str, JsonValue] | None = None
     additions: list[dict[str, JsonValue]] = Field(default_factory=list)
     claim_corrections: list[dict[str, JsonValue]] = Field(default_factory=list)
+    academic_corrections: list[dict[str, JsonValue]] = Field(default_factory=list)
+    judgment_corrections: list[dict[str, JsonValue]] = Field(default_factory=list)
 
 
 class ScoreRequest(BaseModel):
@@ -164,6 +166,8 @@ def confirm(request: ConfirmRequest) -> Response:
         "additions": request.additions,
         "understanding": draft.get("understanding"),
         "claim_corrections": request.claim_corrections,
+        "academic_corrections": request.academic_corrections,
+        "judgment_corrections": request.judgment_corrections,
     }
     response = _run_cli(
         ["unihive", "confirm", "--json"], json.dumps(submission).encode("utf-8")
@@ -277,6 +281,8 @@ def continue_review(request: ContinueRequest) -> Response:
     if receipt["submission"].get("understanding") is not None:
         draft["understanding"] = receipt["submission"]["understanding"]
         draft["claim_corrections"] = receipt["submission"]["claim_corrections"]
+        draft["academic_corrections"] = receipt["submission"]["academic_corrections"]
+        draft["judgment_corrections"] = receipt["submission"]["judgment_corrections"]
     identifier = _save_record(
         "drafts",
         {

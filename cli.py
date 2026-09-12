@@ -26,7 +26,9 @@ from unihive.scoring import LoadedScoringConfiguration, load_scoring_configurati
 from unihive.taxonomy import Taxonomy, load_taxonomy
 from unihive.understanding_review import (
     UnderstandingReviewRequest,
+    initial_academic_corrections,
     initial_claim_corrections,
+    initial_judgment_corrections,
     validate_understanding,
 )
 
@@ -117,7 +119,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             profile = imported.profile
             interpretation = imported.understanding
-            validate_understanding(interpretation, taxonomy.version)
+            validate_understanding(interpretation, taxonomy.understanding_version)
         else:
             if args.profile is None:
                 parser.error("review requires --profile (use - for stdin)")
@@ -141,6 +143,18 @@ def main(argv: Sequence[str] | None = None) -> int:
                             "claim_corrections": [
                                 change.model_dump(mode="json")
                                 for change in initial_claim_corrections(interpretation)
+                            ],
+                            "academic_corrections": [
+                                change.model_dump(mode="json")
+                                for change in initial_academic_corrections(
+                                    interpretation
+                                )
+                            ],
+                            "judgment_corrections": [
+                                change.model_dump(mode="json")
+                                for change in initial_judgment_corrections(
+                                    interpretation
+                                )
                             ],
                         }
                         if interpretation is not None

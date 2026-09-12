@@ -15,7 +15,12 @@ from unihive.models import (
 )
 from unihive.taxonomy import Taxonomy
 from unihive.understanding import UnderstandingResult
-from unihive.understanding_review import ClaimCorrection, confirm_understanding
+from unihive.understanding_review import (
+    AcademicCorrection,
+    ClaimCorrection,
+    JudgmentCorrection,
+    confirm_understanding,
+)
 
 
 class EvidenceCorrection(CoreModel):
@@ -54,6 +59,8 @@ class ConfirmationRequest(CoreModel):
     additions: list[EvidenceCorrection] = Field(default_factory=list)
     understanding: UnderstandingResult | None = None
     claim_corrections: list[ClaimCorrection] = Field(default_factory=list)
+    academic_corrections: list[AcademicCorrection] = Field(default_factory=list)
+    judgment_corrections: list[JudgmentCorrection] = Field(default_factory=list)
 
 
 def confirm_evidence(
@@ -64,8 +71,12 @@ def confirm_evidence(
         raise ValueError("Explicit evidence confirmation is required")
     if request.taxonomy_version != taxonomy.version:
         raise ValueError("Taxonomy changed; reload the evidence review")
-    if request.understanding is None and request.claim_corrections:
-        raise ValueError("Claim corrections require an interpretation")
+    if request.understanding is None and (
+        request.claim_corrections
+        or request.academic_corrections
+        or request.judgment_corrections
+    ):
+        raise ValueError("Interpretation corrections require an interpretation")
     original = {item.id: item for item in request.profile.evidence}
     ids = [item.evidence_id for item in request.corrections]
     if len(original) != len(request.profile.evidence):
@@ -97,7 +108,7 @@ def confirm_evidence(
         fields = change.model_dump(exclude={"evidence_id"})
         state = change.state
         changed = any(getattr(before, key) != value for key, value in fields.items())
-        if before.scoring_exclusion is not None and changed:
+        if before.source_interpretation_sha256 is not None and changed:
             raise ValueError("Edit interpreted claims in the interpretation review")
         if state == EvidenceState.VERIFIED_PRESENT and (
             changed or before.state != EvidenceState.VERIFIED_PRESENT
@@ -133,6 +144,11 @@ def confirm_evidence(
     )
     if request.understanding is not None:
         return confirm_understanding(
-            profile, request.understanding, request.claim_corrections, taxonomy.version
+            profile,
+            request.understanding,
+            request.claim_corrections,
+            request.academic_corrections,
+            request.judgment_corrections,
+            taxonomy,
         )
     return profile

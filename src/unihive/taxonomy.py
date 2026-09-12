@@ -7,6 +7,7 @@ program-independent evidence mappings.
 from __future__ import annotations
 
 import warnings
+from datetime import date
 from decimal import Decimal
 from hashlib import sha256
 from pathlib import Path
@@ -21,11 +22,15 @@ from unihive.resources import DATA_ROOT
 
 DEFAULT_TAXONOMY_DIR = DATA_ROOT / "taxonomy"
 DEFAULT_SCHEMA_DIR = DATA_ROOT / "schemas"
-TAXONOMY_FILES: tuple[tuple[str, str], ...] = (
+UNDERSTANDING_TAXONOMY_FILES: tuple[tuple[str, str], ...] = (
     ("aliases.yaml", "aliases.schema.json"),
     ("competencies.yaml", "competencies.schema.json"),
     ("evidence_rules.yaml", "evidence_rules.schema.json"),
     ("ladders.yaml", "ladders.schema.json"),
+)
+TAXONOMY_FILES: tuple[tuple[str, str], ...] = (
+    *UNDERSTANDING_TAXONOMY_FILES,
+    ("qualitative_mappings.yaml", "qualitative_mappings.schema.json"),
 )
 JSON_VALUE_ADAPTER: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
 
@@ -82,16 +87,45 @@ class EvidenceRule(BaseModel):
     source: str | None
 
 
+class JudgmentRequirement(BaseModel):
+    """One reviewed qualitative condition required by an approved mapping."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    dimension: str
+    labels: tuple[str, ...]
+
+
+class QualitativeEvidenceMapping(BaseModel):
+    """Human-approved bridge from reviewed labels to configured evidence."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    id: str
+    claim_category: str
+    rubric_sha256: str
+    judgment_requirements: tuple[JudgmentRequirement, ...]
+    evidence_rule_id: str
+    quality_label: str
+    depth_label: str
+    validated_by: str
+    validated_on: date
+    source: str
+
+
 class Taxonomy(BaseModel):
     """An immutable taxonomy snapshot with deterministic lookup helpers."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
     version: str
+    understanding_version: str
     competencies: tuple[CompetencyNode, ...]
     aliases: dict[str, str]
     evidence_rules: tuple[EvidenceRule, ...]
     evidence_configuration: dict[str, JsonValue]
+    qualitative_mapping_version: str
+    qualitative_mappings: tuple[QualitativeEvidenceMapping, ...]
 
     def lookup_by_id(self, competency_id: str) -> CompetencyNode:
         """Return a competency by canonical id, raising ``KeyError`` if absent."""
@@ -129,6 +163,11 @@ def load_taxonomy(
     evidence_rules = _parse_evidence_rules(
         documents["evidence_rules.yaml"], competency_ids
     )
+    mapping_version, qualitative_mappings = _parse_qualitative_mappings(
+        documents["qualitative_mappings.yaml"],
+        evidence_rules,
+        documents["ladders.yaml"],
+    )
 
     provisional_ids = sorted(
         competency.id for competency in competencies if competency.provisional
@@ -142,10 +181,15 @@ def load_taxonomy(
 
     return Taxonomy(
         version=_content_version(taxonomy_dir),
+        understanding_version=_content_version(
+            taxonomy_dir, UNDERSTANDING_TAXONOMY_FILES
+        ),
         competencies=competencies,
         aliases=aliases,
         evidence_rules=evidence_rules,
         evidence_configuration=documents["ladders.yaml"],
+        qualitative_mapping_version=mapping_version,
+        qualitative_mappings=qualitative_mappings,
     )
 
 
@@ -303,9 +347,7 @@ def _parse_evidence_rules(
         )
 
     dangling = {
-        rule.competency_id
-        for rule in rules
-        if rule.competency_id not in competency_ids
+        rule.competency_id for rule in rules if rule.competency_id not in competency_ids
     }
     if dangling:
         raise TaxonomyIntegrityError(
@@ -314,13 +356,70 @@ def _parse_evidence_rules(
     return rules
 
 
+def _parse_qualitative_mappings(
+    document: dict[str, JsonValue],
+    evidence_rules: tuple[EvidenceRule, ...],
+    evidence_configuration: dict[str, JsonValue],
+) -> tuple[str, tuple[QualitativeEvidenceMapping, ...]]:
+    """Validate approved qualitative mappings and all deterministic inputs."""
+    raw_version = document["version"]
+    raw_mappings = document["mappings"]
+    if not isinstance(raw_version, str) or not isinstance(raw_mappings, list):
+        raise TaxonomySchemaError("qualitative mappings need a version and array")
+    try:
+        mappings = tuple(
+            QualitativeEvidenceMapping.model_validate(item) for item in raw_mappings
+        )
+    except PydanticValidationError as error:
+        raise TaxonomySchemaError(f"Invalid qualitative mapping: {error}") from error
+    ids = [mapping.id for mapping in mappings]
+    duplicate_ids = sorted({item for item in ids if ids.count(item) > 1})
+    if duplicate_ids:
+        raise TaxonomyIntegrityError(
+            "Duplicate qualitative-mapping ids: " + ", ".join(duplicate_ids)
+        )
+    rules = {rule.id: rule for rule in evidence_rules}
+    raw_ladders = evidence_configuration.get("quality_ladders")
+    raw_depths = evidence_configuration.get("depth_factors")
+    assert isinstance(raw_ladders, dict) and isinstance(raw_depths, dict)
+    for mapping in mappings:
+        dimensions = [item.dimension for item in mapping.judgment_requirements]
+        if len(set(dimensions)) != len(dimensions):
+            raise TaxonomyIntegrityError(
+                f"Duplicate judgment dimension in mapping {mapping.id}"
+            )
+        try:
+            rule = rules[mapping.evidence_rule_id]
+            ladder = raw_ladders[rule.quality_ladder]
+        except KeyError as error:
+            raise TaxonomyIntegrityError(
+                f"Mapping {mapping.id} references an unknown scoring input"
+            ) from error
+        if rule.provisional or not rule.validated_by or not rule.source:
+            raise TaxonomyIntegrityError(
+                f"Mapping {mapping.id} requires an expert-validated evidence rule"
+            )
+        if not isinstance(ladder, dict) or mapping.quality_label not in ladder:
+            raise TaxonomyIntegrityError(
+                f"Mapping {mapping.id} has an unknown quality label"
+            )
+        if mapping.depth_label not in raw_depths:
+            raise TaxonomyIntegrityError(
+                f"Mapping {mapping.id} has an unknown depth label"
+            )
+    return raw_version, mappings
+
+
 def _normalize_alias(alias: str) -> str:
     return " ".join(alias.casefold().split())
 
 
-def _content_version(taxonomy_dir: Path) -> str:
+def _content_version(
+    taxonomy_dir: Path,
+    files: tuple[tuple[str, str], ...] = TAXONOMY_FILES,
+) -> str:
     digest = sha256()
-    for data_name, _ in TAXONOMY_FILES:
+    for data_name, _ in files:
         payload = (taxonomy_dir / data_name).read_bytes()
         digest.update(data_name.encode("utf-8"))
         digest.update(b"\0")

@@ -90,6 +90,6 @@ def mixed_result() -> UnderstandingResult:
     return analyze_documents(
         [SourceDocument(id="resume", text="\n".join(passages.values()))],
         RecordedClient(RecordedResponses(draft=draft, review=review)),
-        taxonomy_version=load_taxonomy().version,
+        taxonomy_version=load_taxonomy().understanding_version,
         competency_catalog={},
     )
