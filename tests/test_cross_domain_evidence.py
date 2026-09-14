@@ -129,11 +129,11 @@ def test_tool_names_create_neither_methods_nor_scored_competencies(case_id, taxo
 @pytest.mark.parametrize(
     "case_id,reason",
     [
-        ("civil-deep", "unmapped_skill_needs_review"),
-        ("electrical-deep", "unmapped_skill_needs_review"),
-        ("mechanical-deep", "unmapped_skill_needs_review"),
+        ("civil-deep", "qualitative_route_missing"),
+        ("electrical-deep", "qualitative_route_missing"),
+        ("mechanical-deep", "qualitative_route_missing"),
         ("cyber-basic", "qualitative_route_missing"),
-        ("neutral-teaching", "unmapped_skill_needs_review"),
+        ("neutral-teaching", "qualitative_route_missing"),
     ],
 )
 def test_coverage_failure_is_not_failed_student_evidence(case_id, reason, taxonomy):
@@ -157,7 +157,7 @@ def test_coverage_failure_is_not_failed_student_evidence(case_id, reason, taxono
         ("software-api-design", {"programming"}),
         ("civil-designed", set()),
         ("mechanical-deep", set()),
-        ("sql-analysis", set()),
+        ("sql-analysis", {"programming"}),
     ],
 )
 def test_general_purpose_tools_do_not_force_unrelated_competencies(

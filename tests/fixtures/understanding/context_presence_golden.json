@@ -1230,7 +1230,7 @@
             "claim_id": "c1",
             "dimension": "ownership",
             "label": "unknown",
-            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
             "citations": [
               {
                 "document_id": "source",
@@ -1243,7 +1243,7 @@
             "claim_id": "c1",
             "dimension": "depth",
             "label": "applied",
-            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
             "citations": [
               {
                 "document_id": "source",
@@ -1256,7 +1256,7 @@
             "claim_id": "c1",
             "dimension": "evaluation",
             "label": "compared",
-            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
             "citations": [
               {
                 "document_id": "source",
@@ -1269,7 +1269,7 @@
             "claim_id": "c1",
             "dimension": "impact",
             "label": "unknown",
-            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
             "citations": [
               {
                 "document_id": "source",
@@ -1282,9 +1282,9 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "Structural modeling and force comparison",
-            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
             "citations": [
               {
                 "document_id": "source",
@@ -1370,9 +1370,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Structural modeling and force comparison"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "Tool recognition alone is a skill",
@@ -1410,7 +1408,7 @@
               "claim_id": "c1",
               "dimension": "ownership",
               "label": "unknown",
-              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
               "citations": [
                 {
                   "document_id": "source",
@@ -1423,7 +1421,7 @@
               "claim_id": "c1",
               "dimension": "depth",
               "label": "applied",
-              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
               "citations": [
                 {
                   "document_id": "source",
@@ -1436,7 +1434,7 @@
               "claim_id": "c1",
               "dimension": "evaluation",
               "label": "compared",
-              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
               "citations": [
                 {
                   "document_id": "source",
@@ -1449,7 +1447,7 @@
               "claim_id": "c1",
               "dimension": "impact",
               "label": "unknown",
-              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
               "citations": [
                 {
                   "document_id": "source",
@@ -1464,7 +1462,7 @@
               "claim_id": "c1",
               "competency_id": "programming",
               "observed_skill": "Structural modeling and force comparison",
-              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "rationale": "Modeling and comparing structural forces is a described structural-analysis method.",
               "citations": [
                 {
                   "document_id": "source",
@@ -1543,7 +1541,9 @@
             "activity",
             "project"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "structural_analysis"
+          ],
           "contexts": [
             {
               "kind": "tool",
@@ -1557,7 +1557,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false
         }
       ]

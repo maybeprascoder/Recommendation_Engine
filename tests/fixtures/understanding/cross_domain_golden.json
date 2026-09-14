@@ -2062,7 +2062,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "programming",
             "observed_skill": "SQL data querying",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -2135,9 +2135,7 @@
         "ownership",
         "impact"
       ],
-      "coverage_gaps": [
-        "SQL data querying"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -2146,9 +2144,7 @@
         "venue prestige",
         "regulatory compliance unless stated"
       ],
-      "forbidden_competency_ids": [
-        "programming"
-      ],
+      "forbidden_competency_ids": [],
       "annotation_status": "provisional_synthetic_reference",
       "validated_by": null,
       "review_challenge": {
@@ -2240,7 +2236,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "programming",
               "observed_skill": "SQL data querying",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -2429,7 +2425,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "machine_learning",
             "observed_skill": "NLP classification",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -2502,9 +2498,7 @@
       "unknown_fields": [
         "ownership"
       ],
-      "coverage_gaps": [
-        "NLP classification"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -2607,7 +2601,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "machine_learning",
               "observed_skill": "NLP classification",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -2836,7 +2830,6 @@
         "regulatory compliance unless stated"
       ],
       "forbidden_competency_ids": [
-        "programming",
         "machine_learning"
       ],
       "annotation_status": "provisional_synthetic_reference",
@@ -3461,7 +3454,7 @@
           {
             "id": "s3",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "security",
             "observed_skill": "detection engineering",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -3540,9 +3533,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "detection engineering"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -3659,7 +3650,7 @@
             {
               "id": "s3",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "security",
               "observed_skill": "detection engineering",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -4567,7 +4558,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "structural modeling",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -4634,9 +4625,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "structural modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -4727,7 +4716,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "structural modeling",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -4917,7 +4906,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_design",
             "observed_skill": "structural member design",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -4930,7 +4919,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "load analysis",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -5004,10 +4993,7 @@
         "ownership",
         "impact"
       ],
-      "coverage_gaps": [
-        "structural member design",
-        "load analysis"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -5098,7 +5084,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_design",
               "observed_skill": "structural member design",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -5111,7 +5097,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "load analysis",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -5304,7 +5290,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_design",
             "observed_skill": "structural member design",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -5317,7 +5303,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "load analysis",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -5391,10 +5377,7 @@
       "unknown_fields": [
         "ownership"
       ],
-      "coverage_gaps": [
-        "structural member design",
-        "load analysis"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -5485,7 +5468,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_design",
               "observed_skill": "structural member design",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -5498,7 +5481,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "load analysis",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -6006,7 +5989,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "embedded_digital_systems",
             "observed_skill": "sensor integration",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -6073,9 +6056,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "sensor integration"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -6166,7 +6147,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "embedded_digital_systems",
               "observed_skill": "sensor integration",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -6357,7 +6338,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "embedded_digital_systems",
             "observed_skill": "digital control design",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -6370,7 +6351,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "embedded_digital_systems",
             "observed_skill": "sensor characterization",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -6444,10 +6425,7 @@
       "unknown_fields": [
         "ownership"
       ],
-      "coverage_gaps": [
-        "digital control design",
-        "sensor characterization"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -6538,7 +6516,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "embedded_digital_systems",
               "observed_skill": "digital control design",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -6551,7 +6529,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "embedded_digital_systems",
               "observed_skill": "sensor characterization",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -7059,7 +7037,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "mechanical_design",
             "observed_skill": "CAD assembly modeling",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -7126,9 +7104,7 @@
         "ownership",
         "impact"
       ],
-      "coverage_gaps": [
-        "CAD assembly modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -7219,7 +7195,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "mechanical_design",
               "observed_skill": "CAD assembly modeling",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -7411,7 +7387,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "mechanical_design",
             "observed_skill": "mechanical assembly design",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -7424,7 +7400,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "engineering_simulation",
             "observed_skill": "simulation comparison",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -7517,10 +7493,7 @@
       "unknown_fields": [
         "ownership"
       ],
-      "coverage_gaps": [
-        "mechanical assembly design",
-        "simulation comparison"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -7611,7 +7584,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "mechanical_design",
               "observed_skill": "mechanical assembly design",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -7624,7 +7597,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "engineering_simulation",
               "observed_skill": "simulation comparison",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -7834,7 +7807,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "teaching_instruction",
             "observed_skill": "teaching design and evaluation",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -7900,9 +7873,7 @@
         ]
       },
       "unknown_fields": [],
-      "coverage_gaps": [
-        "teaching design and evaluation"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -7993,7 +7964,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "teaching_instruction",
               "observed_skill": "teaching design and evaluation",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -8193,7 +8164,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "structural calculations",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -8266,9 +8237,7 @@
         "ownership",
         "impact"
       ],
-      "coverage_gaps": [
-        "structural calculations"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -8371,7 +8340,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "structural calculations",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -8543,7 +8512,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "qualitative_research",
             "observed_skill": "qualitative research analysis",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -8610,9 +8579,7 @@
       "unknown_fields": [
         "impact"
       ],
-      "coverage_gaps": [
-        "qualitative research analysis"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [
         "programming code",
         "model training"
@@ -8706,7 +8673,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "qualitative_research",
               "observed_skill": "qualitative research analysis",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -17016,7 +16983,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "programming",
             "observed_skill": "SQL data analysis",
             "rationale": "The cited activity supports this skill independently of tool recognition.",
             "citations": [
@@ -17083,9 +17050,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "SQL data analysis"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",
@@ -17095,7 +17060,6 @@
         "regulatory compliance unless stated"
       ],
       "forbidden_competency_ids": [
-        "programming",
         "machine_learning"
       ],
       "annotation_status": "provisional_synthetic_reference",
@@ -17176,7 +17140,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "programming",
               "observed_skill": "SQL data analysis",
               "rationale": "The cited activity supports this skill independently of tool recognition.",
               "citations": [
@@ -17421,9 +17385,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "structural monitoring"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "external verification",

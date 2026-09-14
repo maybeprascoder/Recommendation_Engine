@@ -2625,7 +2625,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "Structural design comparison",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -2713,9 +2713,7 @@
       "unknown_fields": [
         "ownership"
       ],
-      "coverage_gaps": [
-        "Structural design comparison"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -2801,7 +2799,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "Structural design comparison",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -2882,7 +2880,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "structural_analysis"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -2899,7 +2899,7 @@
             "impact": "measured"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -7690,7 +7690,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "Structural load calculation",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -7803,9 +7803,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Structural load calculation"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -7905,7 +7903,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "Structural load calculation",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -8010,7 +8008,8 @@
             "activity"
           ],
           "competency_ids": [
-            "programming"
+            "programming",
+            "structural_analysis"
           ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
@@ -8032,7 +8031,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -8607,7 +8606,7 @@
           {
             "id": "s2",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "engineering_simulation",
             "observed_skill": "Suspension modeling",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -8720,9 +8719,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Suspension modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -8822,7 +8819,7 @@
             {
               "id": "s2",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "engineering_simulation",
               "observed_skill": "Suspension modeling",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -8927,7 +8924,8 @@
             "activity"
           ],
           "competency_ids": [
-            "programming"
+            "programming",
+            "engineering_simulation"
           ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
@@ -8949,7 +8947,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -9777,7 +9775,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "Structural modeling",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -9865,9 +9863,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Structural modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -9954,7 +9950,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "Structural modeling",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -10035,7 +10031,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "structural_analysis"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -10051,7 +10049,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -10149,7 +10147,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "structural_analysis",
             "observed_skill": "Structural modeling",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -10237,9 +10235,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "Structural modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -10325,7 +10321,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "structural_analysis",
               "observed_skill": "Structural modeling",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -10406,7 +10402,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "structural_analysis"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -10422,7 +10420,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -11981,7 +11979,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "engineering_simulation",
             "observed_skill": "Finite-element simulation",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -12069,9 +12067,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Finite-element simulation"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -12158,7 +12154,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "engineering_simulation",
               "observed_skill": "Finite-element simulation",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -12239,7 +12235,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "engineering_simulation"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -12255,7 +12253,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -12353,7 +12351,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "engineering_simulation",
             "observed_skill": "Finite-element simulation",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -12441,9 +12439,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "Finite-element simulation"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -12529,7 +12525,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "engineering_simulation",
               "observed_skill": "Finite-element simulation",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -12610,7 +12606,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "engineering_simulation"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -12626,7 +12624,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -13083,7 +13081,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "mechanical_design",
             "observed_skill": "Mechanical CAD modeling",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -13171,9 +13169,7 @@
         "impact",
         "ownership"
       ],
-      "coverage_gaps": [
-        "Mechanical CAD modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -13260,7 +13256,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "mechanical_design",
               "observed_skill": "Mechanical CAD modeling",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -13341,7 +13337,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "mechanical_design"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -13357,7 +13355,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }
@@ -13455,7 +13453,7 @@
           {
             "id": "s1",
             "claim_id": "c1",
-            "competency_id": null,
+            "competency_id": "mechanical_design",
             "observed_skill": "Mechanical CAD modeling",
             "rationale": "The source states the performed method or skill.",
             "citations": [
@@ -13543,9 +13541,7 @@
         "evaluation",
         "impact"
       ],
-      "coverage_gaps": [
-        "Mechanical CAD modeling"
-      ],
+      "coverage_gaps": [],
       "confirmed_absence": [],
       "forbidden_inferences": [
         "No venue prestige, acceptance rate, or citation count may be invented.",
@@ -13631,7 +13627,7 @@
             {
               "id": "s1",
               "claim_id": "c1",
-              "competency_id": null,
+              "competency_id": "mechanical_design",
               "observed_skill": "Mechanical CAD modeling",
               "rationale": "The source states the performed method or skill.",
               "citations": [
@@ -13712,7 +13708,9 @@
           "allowed_categories": [
             "activity"
           ],
-          "competency_ids": [],
+          "competency_ids": [
+            "mechanical_design"
+          ],
           "optional_competency_ids": [],
           "one_of_competency_ids": [],
           "contexts": [
@@ -13728,7 +13726,7 @@
             "impact": "unknown"
           },
           "forbid_skills": false,
-          "require_uncatalogued_skill": true,
+          "require_uncatalogued_skill": false,
           "require_clarification": false,
           "uncertainty_terms": []
         }

@@ -1,7 +1,31 @@
 aliases:
+  cad assembly modeling: mechanical_design
   crypto: cryptography
+  detection engineering: security
+  digital control design: embedded_digital_systems
+  digital systems: embedded_digital_systems
+  embedded control: embedded_digital_systems
+  embedded systems: embedded_digital_systems
+  engineering simulation: engineering_simulation
+  finite element analysis: engineering_simulation
+  finite-element simulation: engineering_simulation
   governance: policy_governance
+  instruction: teaching_instruction
+  load analysis: structural_analysis
+  mechanical cad modeling: mechanical_design
+  mechanical design: mechanical_design
   ml: machine_learning
+  network analysis: networking
   networks: networking
   os: operating_systems
+  packet analysis: networking
   policy: policy_governance
+  qualitative research: qualitative_research
+  structural analysis: structural_analysis
+  structural design: structural_design
+  structural member design: structural_design
+  structural modeling: structural_analysis
+  teaching: teaching_instruction
+  thematic analysis: qualitative_research
+  thematic coding: qualitative_research
+  tutoring: teaching_instruction

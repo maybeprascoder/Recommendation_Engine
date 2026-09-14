@@ -265,9 +265,12 @@ def test_explicit_independent_tool_work_is_distinct_from_bare_context(tool, taxo
 @pytest.mark.parametrize(
     "case_id,expected_nodes",
     [
-        ("mixed-civil-python", {"programming"}),
+        ("mixed-civil-python", {"programming", "structural_analysis"}),
         ("mixed-cyber-python", {"programming", "security"}),
-        ("mixed-mechanical-matlab", {"programming"}),
+        (
+            "mixed-mechanical-matlab",
+            {"programming", "engineering_simulation"},
+        ),
         ("mixed-ml-strong", {"machine_learning"}),
     ],
 )
@@ -281,12 +284,11 @@ def test_mixed_domain_programming_and_methods_are_both_retained(
         if item.id in result.supported_competency_ids and item.competency_id
     }
     assert nodes == expected_nodes
-    if case_id != "mixed-cyber-python" and case_id != "mixed-ml-strong":
-        assert any(
-            item.competency_id is None
-            for item in result.draft.competencies
-            if item.id in result.supported_competency_ids
-        )
+    assert all(
+        item.competency_id is not None
+        for item in result.draft.competencies
+        if item.id in result.supported_competency_ids
+    )
     assert result.supported_context_ids
 
 

@@ -406,7 +406,10 @@ def _impact_specs() -> list[CaseSpec]:
                 "impact": "measured",
             },
             "skills": [
-                {"label": "Structural design comparison", "competency_id": None}
+                {
+                    "label": "Structural design comparison",
+                    "competency_id": "structural_analysis",
+                }
             ],
             "contexts": [
                 {
@@ -552,7 +555,10 @@ def _mixed_specs() -> list[CaseSpec]:
             ],
             "skills": [
                 {"label": "Python scripting", "competency_id": "programming"},
-                {"label": "Structural load calculation", "competency_id": None},
+                {
+                    "label": "Structural load calculation",
+                    "competency_id": "structural_analysis",
+                },
             ],
             "live_focus": True,
         },
@@ -600,7 +606,10 @@ def _mixed_specs() -> list[CaseSpec]:
                     "label": "Optimization routine implementation",
                     "competency_id": "programming",
                 },
-                {"label": "Suspension modeling", "competency_id": None},
+                {
+                    "label": "Suspension modeling",
+                    "competency_id": "engineering_simulation",
+                },
             ],
         },
         {
@@ -629,7 +638,13 @@ def _mixed_specs() -> list[CaseSpec]:
 
 def _tool_specs() -> list[CaseSpec]:
     definitions = [
-        ("etabs", "ETABS", "modeled a frame", "Structural modeling", None),
+        (
+            "etabs",
+            "ETABS",
+            "modeled a frame",
+            "Structural modeling",
+            "structural_analysis",
+        ),
         (
             "autocad",
             "AutoCAD",
@@ -642,14 +657,14 @@ def _tool_specs() -> list[CaseSpec]:
             "ANSYS",
             "ran a stress simulation",
             "Finite-element simulation",
-            None,
+            "engineering_simulation",
         ),
         (
             "solidworks",
             "SolidWorks",
             "modeled an assembly",
             "Mechanical CAD modeling",
-            None,
+            "mechanical_design",
         ),
         (
             "matlab",

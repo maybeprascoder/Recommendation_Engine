@@ -68,6 +68,9 @@ class CompetencyNode(BaseModel):
     child_ids: tuple[str, ...]
     cip_anchor: str | None
     description: str
+    supporting_evidence: tuple[str, ...] = ()
+    insufficient_evidence: tuple[str, ...] = ()
+    common_false_positive_traps: tuple[str, ...] = ()
     provisional: bool
     validated_by: str | None
     source: str | None

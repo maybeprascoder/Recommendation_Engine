@@ -280,11 +280,13 @@ def main():
         "allowed_categories": ["activity", "project"],
         "tools": ["ETABS"],
         "rationale": (
-            "Modeling and comparing structural forces is a described analysis "
-            "method; the taxonomy has no structural-analysis node."
+            "Modeling and comparing structural forces is a described structural-"
+            "analysis method."
         ),
         "labels": {"depth": "applied", "evaluation": "compared"},
-        "skills": [("Structural modeling and force comparison", None)],
+        "skills": [
+            ("Structural modeling and force comparison", "structural_analysis")
+        ],
     }
     project = {
         **code,

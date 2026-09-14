@@ -5,7 +5,16 @@ competencies:
     parent_ids: []
     child_ids: []
     cip_anchor: null
-    description: Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.
+    description: Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.
+    supporting_evidence:
+      - Configured or diagnosed network behavior and explained the method used.
+      - Analyzed packets, protocols, or traffic to answer a stated networking question.
+    insufficient_evidence:
+      - Naming Wireshark, a network, or a packet capture without a performed method.
+      - Describing a security objective without network analysis or configuration.
+    common_false_positive_traps:
+      - Treating any use of Wireshark as demonstrated networking.
+      - Treating cloud deployment or web programming as network engineering.
     provisional: true
     validated_by: null
     source: docs/engine_build_spec_v1.md
@@ -75,7 +84,16 @@ competencies:
     parent_ids: []
     child_ids: []
     cip_anchor: null
-    description: Competency explicitly named in Build Spec section 4; definition pending human validation.
+    description: Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.
+    supporting_evidence:
+      - Investigated suspicious behavior and documented security-relevant indicators.
+      - Assessed vulnerabilities or implemented and evaluated a security control.
+    insufficient_evidence:
+      - Naming Nessus, Kali Linux, Wireshark, or a security topic without performed work.
+      - Handling packets without a stated security analysis or protection objective.
+    common_false_positive_traps:
+      - Treating every network-analysis task as security.
+      - Treating a security tool name as vulnerability-analysis evidence.
     provisional: true
     validated_by: null
     source: docs/engine_build_spec_v1.md
@@ -105,7 +123,152 @@ competencies:
     parent_ids: []
     child_ids: []
     cip_anchor: null
-    description: Competency explicitly named in Build Spec section 5.2; definition pending human validation.
+    description: Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.
+    supporting_evidence:
+      - Applied a stated quantitative method and interpreted its result.
+      - Constructed or evaluated a quantitative model with described variables, assumptions, or analysis.
+    insufficient_evidence:
+      - Reporting a number, percentage, measured outcome, or comparison by itself.
+      - Performing a domain calculation already represented by a specific engineering competency.
+      - Naming MATLAB, SQL, a spreadsheet, or another computational tool.
+    common_false_positive_traps:
+      - Converting any measured impact into quantitative-analysis evidence.
+      - Duplicating structural analysis because loads or reactions are numeric.
+      - Inferring a general analytical competency from a single arithmetic result.
     provisional: true
     validated_by: null
     source: docs/engine_build_spec_v1.md
+  - id: structural_analysis
+    name: Structural Analysis
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.
+    supporting_evidence:
+      - Calculated structural loads, reactions, forces, stresses, or deflections using a described method.
+      - Modeled a structure or compared structural response against calculations, alternatives, or constraints.
+    insufficient_evidence:
+      - Naming ETABS, a structure, a load, or a numerical result without performed analysis.
+      - Creating drawings or selecting member geometry without evaluating structural response.
+    common_false_positive_traps:
+      - Treating bare ETABS use as structural analysis.
+      - Treating every beam or building mention as analyzed evidence.
+      - Duplicating the same calculation as quantitative analysis.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: structural_design
+    name: Structural Design
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.
+    supporting_evidence:
+      - Designed or adapted structural members and described the requirements or constraints considered.
+      - Selected among structural alternatives using stated performance criteria.
+    insufficient_evidence:
+      - Modeling or analyzing an existing structural option without making design choices.
+      - Naming ETABS, AutoCAD, a member type, or a project titled structural design.
+    common_false_positive_traps:
+      - Treating comparison of two supplied designs as personal structural design.
+      - Treating structural analysis or technical drafting as structural design.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: mechanical_design
+    name: Mechanical Design
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.
+    supporting_evidence:
+      - Created or revised an assembly and evaluated fit, interference, or function.
+      - Designed mechanical alternatives against stated geometry, mass, or displacement constraints.
+    insufficient_evidence:
+      - Naming SolidWorks, AutoCAD, a CAD model, or a mechanical project without described work.
+      - Running a simulation without making a mechanical design choice.
+    common_false_positive_traps:
+      - Treating bare CAD-tool use as mechanical design.
+      - Treating generic technical drafting as mechanical design.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: engineering_simulation
+    name: Engineering Simulation
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.
+    supporting_evidence:
+      - Ran and interpreted a finite-element, stress, dynamic, thermal, or comparable engineering simulation.
+      - Implemented or compared numerical models for an explicitly described engineered system.
+    insufficient_evidence:
+      - Naming ANSYS, MATLAB, a simulation, or a numeric outcome without a performed modeling method.
+      - Designing a component without constructing, running, or interpreting a simulation.
+    common_false_positive_traps:
+      - Treating bare ANSYS or MATLAB use as engineering simulation.
+      - Treating any quantitative comparison as simulation work.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: embedded_digital_systems
+    name: Embedded and Digital Systems
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.
+    supporting_evidence:
+      - Designed digital control logic or firmware and integrated it with hardware or sensors.
+      - Integrated and characterized sensors as part of a functioning embedded system.
+    insufficient_evidence:
+      - Naming Arduino, Verilog, a sensor, or an electronics project without performed work.
+      - General programming that does not interact with embedded or digital hardware.
+    common_false_positive_traps:
+      - Treating an Arduino or Verilog mention as demonstrated embedded competency.
+      - Treating any sensor reading as system design or integration.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: qualitative_research
+    name: Qualitative Research
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.
+    supporting_evidence:
+      - Coded interview, observational, or textual evidence using a described qualitative method.
+      - Compared themes or interpretations through an explicit review or coder-agreement process.
+    insufficient_evidence:
+      - Claiming a publication, research role, interview, or writing activity without a qualitative method.
+      - Reporting opinions or anecdotes without systematic collection or analysis.
+    common_false_positive_traps:
+      - Treating every interview or publication as qualitative research.
+      - Treating thematic subject matter as evidence of thematic coding.
+    provisional: true
+    validated_by: null
+    source: null
+  - id: teaching_instruction
+    name: Teaching and Instruction
+    fields: []
+    parent_ids: []
+    child_ids: []
+    cip_anchor: null
+    description: Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners.
+    supporting_evidence:
+      - Designed and delivered an instructional or tutoring sequence.
+      - Compared or adapted instructional methods using learner work, feedback, or assessment evidence.
+    insufficient_evidence:
+      - Holding a mentor, tutor, teaching-assistant, or instructor title without described instructional work.
+      - Reporting a learner outcome without describing the student's instructional contribution.
+    common_false_positive_traps:
+      - Treating subject-matter knowledge as teaching competency.
+      - Treating attendance, mentoring contact, or presentation delivery alone as instruction design.
+    provisional: true
+    validated_by: null
+    source: null
