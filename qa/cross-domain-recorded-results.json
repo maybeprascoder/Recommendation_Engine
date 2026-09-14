@@ -1,0 +1,1009 @@
+[
+  {
+    "case": "software-tool",
+    "domain": "software",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "software-basic",
+    "domain": "software",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "programming": "0.640000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.02,
+    "human_review": "pending"
+  },
+  {
+    "case": "software-api-design",
+    "domain": "software",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "programming": "1.6000000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "software-deep-duplicate",
+    "domain": "software",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "programming": "2.4000000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ml-tool",
+    "domain": "machine_learning",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ml-basic",
+    "domain": "machine_learning",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "machine_learning": "0.640000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ml-compared",
+    "domain": "machine_learning",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "SQL data querying",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "machine_learning": "1.6000000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ml-deep",
+    "domain": "machine_learning",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "NLP classification",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "machine_learning": "2.4000000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "cyber-tool",
+    "domain": "cybersecurity",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "cyber-basic",
+    "domain": "cybersecurity",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "packet capture analysis",
+        "reason": "qualitative_route_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "cyber-investigation",
+    "domain": "cybersecurity",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "network traffic investigation",
+        "reason": "qualitative_route_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "security investigation",
+        "reason": "qualitative_route_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s3",
+        "observed_skill": "detection engineering",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "cyber-deep",
+    "domain": "cybersecurity",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "network analysis",
+        "reason": "qualitative_route_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s3",
+        "observed_skill": "security detection evaluation",
+        "reason": "qualitative_route_missing"
+      }
+    ],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "programming": "2.4000000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "civil-tool",
+    "domain": "civil",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "civil-basic",
+    "domain": "civil",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "structural modeling",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "civil-designed",
+    "domain": "civil",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "structural member design",
+        "reason": "taxonomy_node_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "load analysis",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "civil-deep",
+    "domain": "civil",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "structural member design",
+        "reason": "taxonomy_node_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "load analysis",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.03,
+    "human_review": "pending"
+  },
+  {
+    "case": "electrical-tool",
+    "domain": "electrical",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "electrical-basic",
+    "domain": "electrical",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "sensor integration",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "electrical-deep",
+    "domain": "electrical",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "digital control design",
+        "reason": "taxonomy_node_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "sensor characterization",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "mechanical-tool",
+    "domain": "mechanical",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.02,
+    "human_review": "pending"
+  },
+  {
+    "case": "mechanical-model",
+    "domain": "mechanical",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "CAD assembly modeling",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "mechanical-deep",
+    "domain": "mechanical",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "mechanical assembly design",
+        "reason": "taxonomy_node_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "simulation comparison",
+        "reason": "taxonomy_node_missing"
+      },
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s3",
+        "observed_skill": "numerical analysis",
+        "reason": "qualitative_route_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "neutral-teaching",
+    "domain": "interdisciplinary",
+    "strength": "strong",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "teaching design and evaluation",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "neutral-civil-python",
+    "domain": "interdisciplinary",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s2",
+        "observed_skill": "structural calculations",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 1,
+    "competency_contributions": {
+      "programming": "0.640000"
+    },
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.02,
+    "human_review": "pending"
+  },
+  {
+    "case": "neutral-research-absence",
+    "domain": "interdisciplinary",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "qualitative research analysis",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "bridge-vague",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "cyber-vague",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "kali-tool",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.02,
+    "human_review": "pending"
+  },
+  {
+    "case": "tensorflow-tool",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "pcb-assisted",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "publication-vague",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ansys-vague",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "ai-vague",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "aws-tool",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "sql-tool",
+    "domain": "adversarial",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-autocad",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.02,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-etabs",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-ansys",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-solidworks",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-matlab",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-arduino",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-verilog",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-wireshark",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-nessus",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-kali-linux",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-tensorflow",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-pytorch",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-react",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "tool-sql",
+    "domain": "tool_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "nessus-method",
+    "domain": "routing_probe",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "vulnerability scanning",
+        "reason": "qualitative_route_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "nessus-design",
+    "domain": "routing_probe",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "vulnerability management",
+        "reason": "qualitative_route_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "sql-analysis",
+    "domain": "routing_probe",
+    "strength": "basic",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "SQL data analysis",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "team-ambiguous",
+    "domain": "ownership_probe",
+    "strength": "weak",
+    "failures": [],
+    "coverage_gaps": [],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  },
+  {
+    "case": "measured-no-comparison",
+    "domain": "mapping_probe",
+    "strength": "medium",
+    "failures": [],
+    "coverage_gaps": [
+      {
+        "claim_id": "c1",
+        "suggestion_id": "s1",
+        "observed_skill": "workflow design",
+        "reason": "taxonomy_node_missing"
+      }
+    ],
+    "mapped_evidence_count": 0,
+    "competency_contributions": null,
+    "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+    "source_is_self_reported": true,
+    "validation": "passed",
+    "mode": "recorded",
+    "seconds": 0.01,
+    "human_review": "pending"
+  }
+]

@@ -323,6 +323,7 @@ def _shared_provisional_count(
     return (
         sum(node.provisional for node in taxonomy.competencies)
         + sum(rule.provisional for rule in taxonomy.evidence_rules)
+        + sum(mapping.provisional for mapping in taxonomy.qualitative_mappings)
         + int(taxonomy.evidence_configuration.get("provisional") is True)
         + int(scoring.values.provisional)
     )

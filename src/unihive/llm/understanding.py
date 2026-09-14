@@ -9,7 +9,9 @@ from pydantic import JsonValue, ValidationError
 
 from unihive.llm.provider import ProviderError, StructuredClient
 from unihive.understanding import (
+    ClaimPresence,
     Clarification,
+    EvidenceCategory,
     SourceDocument,
     SupportReview,
     SupportVerdict,
@@ -20,6 +22,8 @@ from unihive.understanding import (
     complete_unknown_dimensions,
     fingerprint,
     load_evaluation_rubric,
+    require_explicit_presence,
+    supported_context_ids,
     supported_ids,
     validate_draft,
 )
@@ -61,6 +65,7 @@ def analyze_documents(
     )
     try:
         draft = UnderstandingDraft.model_validate_json(first.text, strict=True)
+        require_explicit_presence(draft)
         draft = complete_unknown_dimensions(draft, rubric)
         validate_draft(draft, documents, rubric, competency_catalog)
     except ValidationError as exc:
@@ -75,6 +80,7 @@ def analyze_documents(
         [item.id for item in draft.claims]
         + [item.id for item in draft.judgments]
         + [item.id for item in draft.competencies]
+        + [item.id for item in draft.contexts]
     )
     second = None
     if payload["required_review_target_ids"]:
@@ -98,6 +104,7 @@ def analyze_documents(
     target_claims = {claim.id: claim.id for claim in draft.claims}
     target_claims.update({item.id: item.claim_id for item in draft.judgments})
     target_claims.update({item.id: item.claim_id for item in draft.competencies})
+    target_claims.update({item.id: item.claim_id for item in draft.contexts})
     questions = list(draft.questions)
     if not draft.claims and not questions:
         questions.append(
@@ -116,26 +123,58 @@ def analyze_documents(
                     reason=check.explanation,
                 )
             )
+    for claim in draft.claims:
+        if (
+            claim.duplicate_of is None
+            and claim.presence != ClaimPresence.REPORTED_ABSENT
+            and claim.category
+            in {
+                EvidenceCategory.PROJECT,
+                EvidenceCategory.WORK,
+                EvidenceCategory.RESEARCH,
+                EvidenceCategory.PUBLICATION,
+                EvidenceCategory.COURSEWORK,
+                EvidenceCategory.ACTIVITY,
+                EvidenceCategory.OTHER,
+            }
+            and not any(item.claim_id == claim.id for item in questions)
+            and not any(
+                item.claim_id == claim.id
+                and item.dimension == "depth"
+                and item.id in judgment_ids
+                for item in draft.judgments
+            )
+        ):
+            questions.append(
+                Clarification(
+                    claim_id=claim.id,
+                    question="What did you personally do, what methods did you use, "
+                    "and how did you evaluate the result?",
+                    reason="The source does not establish supported depth of work.",
+                )
+            )
     return UnderstandingResult(
+        response_version="understanding-v3",
         documents=documents,
         draft=draft,
         support_review=review,
         supported_claim_ids=claim_ids,
         supported_judgment_ids=judgment_ids,
         supported_competency_ids=competency_ids,
+        supported_context_ids=supported_context_ids(draft, review),
         questions=questions,
         limitations=[
-            "Provisional qualitative rubric; no expert validation or numeric scoring.",
+            "Provisional qualitative rubric; the LLM supplies no numeric scores.",
             "Model support review is not independent verification of achievements.",
             "Institutions and venues have not been researched in this stage.",
-            "Student confirmation and scoring integration are still required.",
+            "Student confirmation is required before configured mappings apply.",
         ],
         audit=UnderstandingAudit(
             provider=client.provider,
             model=client.model,
             completion_models=[first.model] + ([second.model] if second else []),
             response_ids=[first.response_id] + ([second.response_id] if second else []),
-            prompt_version="understanding-v2+support-review-v2",
+            prompt_version="understanding-v9+support-review-v9",
             prompt_sha256=fingerprint(instructions + "\n" + review_instructions),
             rubric_sha256=fingerprint(canonical_json(rubric)),
             rubric_snapshot=rubric,

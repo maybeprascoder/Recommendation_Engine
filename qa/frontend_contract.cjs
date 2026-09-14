@@ -31,10 +31,49 @@ vm.runInContext(fs.readFileSync(path.join(__dirname, '../web/app.js'), 'utf8'), 
 vm.runInContext(fs.readFileSync(path.join(__dirname, '../web/profile.js'), 'utf8'), context);
 vm.runInContext(fs.readFileSync(path.join(__dirname, '../web/review.js'), 'utf8'), context);
 vm.runInContext(fs.readFileSync(path.join(__dirname, '../web/followup.js'), 'utf8'), context);
+vm.runInContext(fs.readFileSync(path.join(__dirname, '../web/understanding.js'), 'utf8'), context);
 function allText(el) {
   return el.textContent + ' ' + el.children.map(allText).join(' ');
 }
 const checks = [
+  ['interpretation review separates context and absence and blocks presence edits', () => {
+    context.testDraft = {
+      understanding: {
+        draft: {
+          claims: [{id: 'c1', category: 'activity', statement: 'I did not use ETABS.',
+            attribution: 'student', presence: 'reported_absent', citations: [], duplicate_of: null}],
+          contexts: [{id: 't1', claim_id: 'c1', kind: 'tool', label: 'ETABS',
+            rationale: 'Named tool.', citations: [{document_id: 'resume', quote: 'ETABS'}]}],
+          academics: [], judgments: [], competencies: [], unassessed: [],
+        },
+        support_review: {checks: [
+          {target_id: 'c1', verdict: 'supported', explanation: 'Explicit absence.'},
+          {target_id: 't1', verdict: 'supported', explanation: 'Named tool.'},
+        ]}, supported_claim_ids: ['c1'], questions: [], limitations: [], audit: {},
+      },
+      claim_corrections: [{claim_id: 'c1', statement: 'I did not use ETABS.',
+        attribution: 'student', presence: 'reported_absent', decision: 'confirm', notes: ''}],
+      academic_corrections: [], judgment_corrections: [],
+    };
+    vm.runInContext('reviewDraft = testDraft; renderUnderstanding();', context);
+    assert.match(allText(elements.get('#understanding-review')), /Recognized tool: ETABS/);
+    assert.match(allText(elements.get('#understanding-review')), /Context only; no skill credit/);
+    assert.match(allText(elements.get('#understanding-review')), /Will preserve confirmed absence/);
+    assert.equal(context.collectClaimCorrections()[0].presence, 'reported_absent');
+    elements.get('#evidence-consent').checked = true;
+    vm.runInContext('claimEditors[0].controls.presence.value = "reported_present"; claimEditors[0].controls.presence.dispatch("change");', context);
+    assert.equal(elements.get('#evidence-consent').checked, false);
+    assert.match(allText(elements.get('#understanding-review')), /Will remain in the audit receipt only/);
+    assert.equal(context.collectClaimCorrections()[0].presence, 'reported_present');
+  }],
+  ['legacy interpretations render with present default and empty context', () => {
+    delete context.testDraft.understanding.draft.contexts;
+    delete context.testDraft.understanding.draft.claims[0].presence;
+    delete context.testDraft.claim_corrections[0].presence;
+    vm.runInContext('renderUnderstanding();', context);
+    assert.equal(context.collectClaimCorrections()[0].presence, 'reported_present');
+    assert.match(allText(elements.get('#understanding-review')), /Will import as self-reported/);
+  }],
   ['profile controls preserve nested records, false, zero and unknown', () => {
     context.inputProfile = JSON.parse(fs.readFileSync(path.join(__dirname, '../tests/fixtures/cli/profile.json'), 'utf8'));
     context.inputProfile.normalized_gpa = String(context.inputProfile.normalized_gpa);

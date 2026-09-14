@@ -1,9 +1,26 @@
+# Qualitative routing seeds are provisional product configuration, not calibrated outcomes.
 rules:
-  - id: machine_learning_publication_to_machine_learning
-    evidence_kind: machine_learning_publication
-    competency_id: machine_learning
-    quality_ladder: research_venue
-    relevance: 1.0
-    provisional: true
-    validated_by: null
-    source: docs/engine_build_spec_v1.md
+- id: machine_learning_publication_to_machine_learning
+  evidence_kind: machine_learning_publication
+  competency_id: machine_learning
+  quality_ladder: research_venue
+  relevance: 1.0
+  provisional: true
+  validated_by: null
+  source: docs/engine_build_spec_v1.md
+- id: qualitative_activity_to_programming
+  evidence_kind: qualitative_programming_activity
+  competency_id: programming
+  quality_ladder: intrinsic_activity_v1
+  relevance: 1.0
+  provisional: true
+  validated_by: null
+  source: null
+- id: qualitative_activity_to_machine_learning
+  evidence_kind: qualitative_machine_learning_activity
+  competency_id: machine_learning
+  quality_ladder: intrinsic_activity_v1
+  relevance: 1.0
+  provisional: true
+  validated_by: null
+  source: null

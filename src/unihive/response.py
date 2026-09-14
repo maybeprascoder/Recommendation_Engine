@@ -103,6 +103,7 @@ def build_scoring_response(
         or scoring_configuration.values.provisional
         or any(node.provisional for node in taxonomy.competencies)
         or any(rule.provisional for rule in taxonomy.evidence_rules)
+        or any(mapping.provisional for mapping in taxonomy.qualitative_mappings)
         or taxonomy.evidence_configuration.get("provisional") is True
     )
     return ScoringResponse(

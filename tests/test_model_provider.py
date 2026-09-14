@@ -80,6 +80,10 @@ def test_request_modes_have_strict_local_validation_contract(endpoint, mode):
         assert "response_format" not in request["body"]
     else:
         assert request["body"]["response_format"]["type"] == mode
+    schema_in_prompt = (
+        "Return JSON matching this schema" in request["body"]["messages"][0]["content"]
+    )
+    assert schema_in_prompt is (mode != "json_schema")
 
 
 @pytest.mark.parametrize("status", [302, 401, 429, 500])
@@ -123,6 +127,23 @@ def test_openai_key_is_not_forwarded_to_local_ollama(monkeypatch):
     assert client._api_key is None
 
 
+def test_output_budget_can_be_tuned_without_changing_schema_contract(monkeypatch):
+    monkeypatch.setenv("UNIHIVE_LLM_BASE_URL", "http://127.0.0.1:11434")
+    monkeypatch.setenv("UNIHIVE_LLM_MODEL", "qwen-local")
+    monkeypatch.setenv("UNIHIVE_LLM_MAX_TOKENS", "4096")
+    client = CompatibleChatClient.from_environment()
+    assert client._max_tokens == 4096
+
+
+@pytest.mark.parametrize("value", ["0", "16384", "not-a-number"])
+def test_invalid_environment_output_budget_fails_closed(monkeypatch, value):
+    monkeypatch.setenv("UNIHIVE_LLM_BASE_URL", "http://127.0.0.1:11434")
+    monkeypatch.setenv("UNIHIVE_LLM_MODEL", "qwen-local")
+    monkeypatch.setenv("UNIHIVE_LLM_MAX_TOKENS", value)
+    with pytest.raises((ProviderError, ValueError)):
+        CompatibleChatClient.from_environment()
+
+
 @pytest.mark.parametrize(
     "url",
     [
@@ -159,6 +180,11 @@ def test_native_ollama_sets_context_and_disables_thinking(endpoint):
     assert request["body"]["think"] is False
     assert request["body"]["options"]["num_ctx"] == 16384
     assert "response_format" not in request["body"]
+    assert (
+        "Return JSON matching this schema"
+        not in request["body"]["messages"][0]["content"]
+    )
+    assert request["body"]["format"] == strict_output_schema({})
     assert completion.model == "qwen-local"
 
 

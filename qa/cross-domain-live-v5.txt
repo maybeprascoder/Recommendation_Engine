@@ -1,0 +1,67 @@
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: machine_learning_publication_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_programming
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:346: ProvisionalTaxonomyWarning: Provisional scoring configuration: ladders.yaml
+  taxonomy = load_taxonomy()
+{"case": "software-api-design", "validation": "failed", "error": "Interpretation rejected: Only one judgment per claim and dimension is allowed", "mode": "live", "seconds": 47.43, "human_review": "pending"}
+{"case": "ml-deep", "domain": "machine_learning", "strength": "strong", "failures": ["label:ownership: expected unknown, got led", "false_positive_competency:programming", "false_positive_competency:statistics", "missing_supported_uncatalogued_skill"], "coverage_gaps": [{"claim_id": "c1", "suggestion_id": "s3", "observed_skill": "Evaluated model performance using macro-F1 metric.", "reason": "qualitative_route_missing"}], "mapped_evidence_count": 2, "competency_contributions": {"machine_learning": "2.4000000", "programming": "2.4000000"}, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "live", "seconds": 66.03, "human_review": "pending"}
+{"case": "cyber-basic", "domain": "cybersecurity", "strength": "basic", "failures": ["false_negative_competency:networking"], "coverage_gaps": [], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "live", "seconds": 42.31, "human_review": "pending"}
+{"case": "civil-deep", "validation": "failed", "error": "Interpretation rejected: Citation must be an exact nonblank source passage", "mode": "live", "seconds": 26.88, "human_review": "pending"}
+{"case": "electrical-deep", "validation": "failed", "error": "Model endpoint unavailable or timed out", "mode": "live", "seconds": 180.05, "human_review": "pending"}
+{"case": "mechanical-deep", "validation": "failed", "error": "Interpretation rejected: Citation must be an exact nonblank source passage", "mode": "live", "seconds": 37.8, "human_review": "pending"}
+{"case": "neutral-research-absence", "domain": "interdisciplinary", "strength": "medium", "failures": ["label:impact: expected unknown, got reported", "missing_supported_uncatalogued_skill", "canonical_claim_count_mismatch"], "coverage_gaps": [], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "live", "seconds": 98.15, "human_review": "pending"}
+{"case": "tool-etabs", "domain": "tool_probe", "strength": "weak", "failures": [], "coverage_gaps": [{"claim_id": "c1", "suggestion_id": "s1", "observed_skill": "ETABS usage", "reason": "taxonomy_node_missing"}], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "live", "seconds": 44.92, "human_review": "pending"}
+{"case": "tool-nessus", "domain": "tool_probe", "strength": "weak", "failures": ["missing_clarification"], "coverage_gaps": [{"claim_id": "c1", "suggestion_id": "s1", "observed_skill": "Tool usage: Nessus", "reason": "taxonomy_node_missing"}], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "live", "seconds": 41.24, "human_review": "pending"}

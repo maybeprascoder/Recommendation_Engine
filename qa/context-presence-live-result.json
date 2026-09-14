@@ -1,0 +1,518 @@
+{
+  "response_version": "understanding-v3",
+  "requires_confirmation": true,
+  "scoring_enabled": false,
+  "documents": [
+    {
+      "id": "document-1",
+      "text": "I used ETABS. I have no publications. I wrote Python code to clean survey records.\n"
+    }
+  ],
+  "draft": {
+    "claims": [
+      {
+        "id": "c1",
+        "category": "activity",
+        "statement": "I used ETABS.",
+        "attribution": "student",
+        "presence": "reported_present",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ],
+        "duplicate_of": null
+      },
+      {
+        "id": "c2",
+        "category": "research",
+        "statement": "I have no publications.",
+        "attribution": "student",
+        "presence": "reported_absent",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I have no publications."
+          }
+        ],
+        "duplicate_of": null
+      },
+      {
+        "id": "c3",
+        "category": "coursework",
+        "statement": "I wrote Python code to clean survey records.",
+        "attribution": "student",
+        "presence": "reported_present",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ],
+        "duplicate_of": null
+      }
+    ],
+    "academics": [],
+    "judgments": [
+      {
+        "id": "j1",
+        "claim_id": "c1",
+        "dimension": "ownership",
+        "label": "unknown",
+        "rationale": "The statement 'I used ETABS' describes tool usage but does not explicitly describe individual responsibility, direction, or independent ownership of the work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      },
+      {
+        "id": "j2",
+        "claim_id": "c1",
+        "dimension": "depth",
+        "label": "unknown",
+        "rationale": "Using a tool named ETABS alone does not describe the nature of the work (e.g., applied, designed, investigated) without further description of methods or design choices.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      },
+      {
+        "id": "j3",
+        "claim_id": "c1",
+        "dimension": "evaluation",
+        "label": "unknown",
+        "rationale": "No evaluation method is stated for the work involving ETABS.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      },
+      {
+        "id": "j4",
+        "claim_id": "c1",
+        "dimension": "impact",
+        "label": "unknown",
+        "rationale": "No result or outcome is stated for the work involving ETABS.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      },
+      {
+        "id": "j5",
+        "claim_id": "c2",
+        "dimension": "ownership",
+        "label": "unknown",
+        "rationale": "The statement 'I have no publications' is a denial of an activity, not a description of ownership for a specific work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I have no publications."
+          }
+        ]
+      },
+      {
+        "id": "j6",
+        "claim_id": "c2",
+        "dimension": "depth",
+        "label": "unknown",
+        "rationale": "The statement 'I have no publications' is a denial of an activity, not a description of depth for a specific work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I have no publications."
+          }
+        ]
+      },
+      {
+        "id": "j7",
+        "claim_id": "c2",
+        "dimension": "evaluation",
+        "label": "unknown",
+        "rationale": "The statement 'I have no publications' is a denial of an activity, not a description of evaluation for a specific work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I have no publications."
+          }
+        ]
+      },
+      {
+        "id": "j8",
+        "claim_id": "c2",
+        "dimension": "impact",
+        "label": "unknown",
+        "rationale": "The statement 'I have no publications' is a denial of an activity, not a description of impact for a specific work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I have no publications."
+          }
+        ]
+      },
+      {
+        "id": "j9",
+        "claim_id": "c3",
+        "dimension": "ownership",
+        "label": "unknown",
+        "rationale": "The statement 'I wrote Python code to clean survey records' uses an action verb ('wrote') but lacks explicit description of leading, directing, or independently owning the work beyond the act of writing. Possessive 'my' is not used here, and without further context on scope or decision-making, ownership remains unknown.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      },
+      {
+        "id": "j10",
+        "claim_id": "c3",
+        "dimension": "depth",
+        "label": "applied",
+        "rationale": "The student used established methods (Python code) to implement a described task (cleaning survey records).",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      },
+      {
+        "id": "j11",
+        "claim_id": "c3",
+        "dimension": "evaluation",
+        "label": "unknown",
+        "rationale": "No evaluation method is stated for the data cleaning work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      },
+      {
+        "id": "j12",
+        "claim_id": "c3",
+        "dimension": "impact",
+        "label": "unknown",
+        "rationale": "No result or outcome is stated for the data cleaning work.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      }
+    ],
+    "competencies": [
+      {
+        "id": "s1",
+        "claim_id": "c3",
+        "competency_id": null,
+        "observed_skill": "Python programming for data cleaning",
+        "rationale": "The student explicitly wrote Python code to clean survey records. This demonstrates a programming activity but does not automatically imply the broader 'programming' competency defined in the Build Spec without further context on scope or ownership.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "claim_id": "c1",
+        "competency_id": null,
+        "observed_skill": "Structural analysis software usage (ETABS)",
+        "rationale": "The student explicitly used ETABS. Tool recognition alone does not establish a demonstrated competency in structural engineering or system design.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      }
+    ],
+    "contexts": [
+      {
+        "id": "ctx1",
+        "claim_id": "c1",
+        "kind": "tool",
+        "label": "ETABS",
+        "rationale": "ETABS is a structural analysis software tool mentioned by the student.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I used ETABS."
+          }
+        ]
+      },
+      {
+        "id": "ctx2",
+        "claim_id": "c3",
+        "kind": "tool",
+        "label": "Python",
+        "rationale": "Python is a programming language mentioned by the student.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      },
+      {
+        "id": "ctx3",
+        "claim_id": "c3",
+        "kind": "domain",
+        "label": "Data Cleaning",
+        "rationale": "The activity of cleaning survey records falls under the domain of data processing.",
+        "citations": [
+          {
+            "document_id": "document-1",
+            "quote": "I wrote Python code to clean survey records."
+          }
+        ]
+      }
+    ],
+    "questions": [],
+    "unassessed": [
+      "The specific scope and complexity of the ETABS project are unknown.",
+      "The extent of the student's individual contribution versus team effort in the Python data cleaning task is unknown.",
+      "Whether the 'no publications' statement implies a lack of research experience or simply a current status is unknown."
+    ]
+  },
+  "support_review": {
+    "checks": [
+      {
+        "target_id": "c1",
+        "verdict": "supported",
+        "explanation": "The claim 'I used ETABS' is explicitly stated in document-1 and accurately reflects the reported presence of this activity."
+      },
+      {
+        "target_id": "c2",
+        "verdict": "supported",
+        "explanation": "The claim 'I have no publications' is explicitly stated in document-1. The label 'reported_absent' is appropriate for a denial of an activity, not an assertion of ability."
+      },
+      {
+        "target_id": "c3",
+        "verdict": "supported",
+        "explanation": "The claim 'I wrote Python code to clean survey records' is explicitly stated in document-1. The action verb 'wrote' supports the presence of this activity."
+      },
+      {
+        "target_id": "j1",
+        "verdict": "supported",
+        "explanation": "The statement 'I used ETABS' describes tool usage without establishing individual responsibility, direction, or independent ownership. The label 'unknown' for ownership is correct."
+      },
+      {
+        "target_id": "j2",
+        "verdict": "supported",
+        "explanation": "Using the tool name 'ETABS' alone does not describe the nature of the work (applied, designed, investigated). The label 'unknown' for depth is correct."
+      },
+      {
+        "target_id": "j3",
+        "verdict": "supported",
+        "explanation": "No evaluation method is stated for the ETABS usage. The label 'unknown' for evaluation is correct."
+      },
+      {
+        "target_id": "j4",
+        "verdict": "supported",
+        "explanation": "No result or outcome is stated for the ETABS usage. The label 'unknown' for impact is correct."
+      },
+      {
+        "target_id": "j5",
+        "verdict": "supported",
+        "explanation": "The statement denies an activity (publications) rather than describing ownership of a specific work. The label 'unknown' is appropriate as it does not describe ownership."
+      },
+      {
+        "target_id": "j6",
+        "verdict": "supported",
+        "explanation": "The statement denies an activity rather than describing the depth of a specific work. The label 'unknown' is appropriate."
+      },
+      {
+        "target_id": "j7",
+        "verdict": "supported",
+        "explanation": "The statement denies an activity rather than describing an evaluation method. The label 'unknown' is appropriate."
+      },
+      {
+        "target_id": "j8",
+        "verdict": "supported",
+        "explanation": "The statement denies an activity rather than describing an impact. The label 'unknown' is appropriate."
+      },
+      {
+        "target_id": "j9",
+        "verdict": "supported",
+        "explanation": "While the student used the verb 'wrote', there is no explicit description of leading, directing, or independently owning the work beyond the act itself. Without context on scope or decision-making, ownership remains unknown."
+      },
+      {
+        "target_id": "j10",
+        "verdict": "supported",
+        "explanation": "The student used established methods (Python code) to implement a described task (cleaning survey records). The label 'applied' for depth is correct."
+      },
+      {
+        "target_id": "j11",
+        "verdict": "supported",
+        "explanation": "No evaluation method is stated for the data cleaning work. The label 'unknown' for evaluation is correct."
+      },
+      {
+        "target_id": "j12",
+        "verdict": "supported",
+        "explanation": "No result or outcome is stated for the data cleaning work. The label 'unknown' for impact is correct."
+      },
+      {
+        "target_id": "s1",
+        "verdict": "supported",
+        "explanation": "The student explicitly wrote Python code to clean survey records, demonstrating a programming activity. The rationale correctly notes that this does not automatically imply the broader 'programming' competency without further context on scope or ownership."
+      },
+      {
+        "target_id": "s2",
+        "verdict": "supported",
+        "explanation": "The student explicitly used ETABS. Tool recognition alone does not establish a demonstrated competency in structural engineering or system design. The rationale correctly limits the observation to software usage."
+      },
+      {
+        "target_id": "ctx1",
+        "verdict": "supported",
+        "explanation": "ETABS is a structural analysis software tool mentioned by the student. The context identification is accurate."
+      },
+      {
+        "target_id": "ctx2",
+        "verdict": "supported",
+        "explanation": "Python is a programming language mentioned by the student. The context identification is accurate."
+      },
+      {
+        "target_id": "ctx3",
+        "verdict": "supported",
+        "explanation": "The activity of cleaning survey records falls under the domain of data processing. The context identification is accurate."
+      }
+    ],
+    "duplicate_groups": []
+  },
+  "supported_claim_ids": [
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "supported_judgment_ids": [
+    "j10"
+  ],
+  "supported_competency_ids": [
+    "s1",
+    "s2"
+  ],
+  "supported_context_ids": [
+    "ctx1",
+    "ctx2",
+    "ctx3"
+  ],
+  "questions": [
+    {
+      "claim_id": "c1",
+      "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+      "reason": "The source does not establish supported depth of work."
+    }
+  ],
+  "limitations": [
+    "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+    "Model support review is not independent verification of achievements.",
+    "Institutions and venues have not been researched in this stage.",
+    "Student confirmation is required before configured mappings apply."
+  ],
+  "audit": {
+    "provider": "ollama-local",
+    "model": "qwen3.5:9b",
+    "completion_models": [
+      "qwen3.5:9b",
+      "qwen3.5:9b"
+    ],
+    "response_ids": [
+      "2026-09-13T17:23:29.8655289Z",
+      "2026-09-13T17:24:20.1684049Z"
+    ],
+    "prompt_version": "understanding-v6+support-review-v6",
+    "prompt_sha256": "22aeb5e8e2d7cad6d3c0a49307e9d99c2e7b4187f197e578b4c4382c2658d6b8",
+    "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+    "rubric_snapshot": {
+      "version": "qualitative-v1",
+      "provisional": true,
+      "validated_by": null,
+      "source": null,
+      "dimensions": [
+        {
+          "id": "ownership",
+          "description": "Individual contribution explicitly described in the evidence.",
+          "labels": {
+            "unknown": "Individual responsibility is not established.",
+            "assisted": "Explicitly supported another contributor or followed guided work.",
+            "shared": "Explicit individual contribution within collaborative work.",
+            "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+          }
+        },
+        {
+          "id": "depth",
+          "description": "Nature of the work demonstrated by the description, not prestige.",
+          "labels": {
+            "unknown": "A title, skill list, or credential alone does not describe the work.",
+            "applied": "Used established methods to implement or complete a described task.",
+            "designed": "Made and explained design choices or adapted methods to constraints.",
+            "investigated": "Investigated a question through an explicit method and analysis."
+          }
+        },
+        {
+          "id": "evaluation",
+          "description": "How the work was evaluated; no implied ordering across disciplines.",
+          "labels": {
+            "unknown": "No evaluation method is stated.",
+            "described": "A concrete test, review, or assessment method is stated.",
+            "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+            "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+          }
+        },
+        {
+          "id": "impact",
+          "description": "Evidence describing results, separate from their independent verification.",
+          "labels": {
+            "unknown": "No result is stated.",
+            "reported": "A concrete outcome is reported without a measurement method.",
+            "measured": "An outcome and measurement method or comparison are stated.",
+            "adopted": "Actual use or adoption by identified users or an organization is stated."
+          }
+        }
+      ],
+      "category_guidance": {
+        "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+        "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+        "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+        "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+        "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+        "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+        "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+        "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+      }
+    },
+    "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+    "competency_catalog": {
+      "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+      "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+      "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+      "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+      "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+      "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+      "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+      "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+      "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+      "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+      "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+    },
+    "source_sha256": {
+      "document-1": "01d32f917eb9298150558403fb49dbceca6e03108cf8b19d6f1e4449721bb302"
+    },
+    "draft_response_sha256": "718e1e9f05df048b853fafb0e18f40ac6b84ec5abe168294fd793c712fa6f923",
+    "review_response_sha256": "64bfceaa689089a19fbbf391bb89856007be252aee1f4f8214966381ecb5ea2f"
+  }
+}

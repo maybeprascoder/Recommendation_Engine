@@ -1,0 +1,37 @@
+{
+  "evidence": [
+    {
+      "claim_id": "c1",
+      "kind": "activity",
+      "raw_text": "I used ETABS.",
+      "state": "SELF_REPORTED_PRESENT",
+      "scoring_exclusion": "awaiting_approved_mapping",
+      "mapping": null
+    },
+    {
+      "claim_id": "c2",
+      "kind": "research",
+      "raw_text": "I have no publications.",
+      "state": "CONFIRMED_ABSENT",
+      "scoring_exclusion": "awaiting_approved_mapping",
+      "mapping": null
+    },
+    {
+      "claim_id": "c3",
+      "kind": "coursework",
+      "raw_text": "I wrote Python code to clean survey records.",
+      "state": "SELF_REPORTED_PRESENT",
+      "scoring_exclusion": "awaiting_approved_mapping",
+      "mapping": null
+    }
+  ],
+  "supported_context_ids": [
+    "ctx1",
+    "ctx2",
+    "ctx3"
+  ],
+  "mapped_evidence_count": 0,
+  "reviewed_tool_as_skill_ids": [
+    "s2"
+  ]
+}

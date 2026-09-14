@@ -8,6 +8,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 from datetime import date
 from decimal import Decimal
+from enum import StrEnum
 from typing import Self
 
 from pydantic import ConfigDict, ValidationError, model_validator
@@ -43,11 +44,26 @@ class RecencyConfiguration(CoreModel):
     bands: tuple[RecencyBand, ...]
 
 
+class TailMode(StrEnum):
+    CONSTANT = "constant"
+    GEOMETRIC = "geometric"
+
+
 class CombinationCurve(CoreModel):
     """Rank multipliers used to combine evidence with diminishing returns."""
 
     multipliers: tuple[Decimal, ...]
     tail_multiplier: Decimal
+    tail_mode: TailMode = TailMode.CONSTANT
+
+    def multiplier_at(self, index: int) -> Decimal:
+        """Extend the configured curve without inventing a new decay weight."""
+        if index < len(self.multipliers):
+            return self.multipliers[index]
+        if self.tail_mode == TailMode.CONSTANT or not self.tail_multiplier:
+            return self.tail_multiplier
+        ratio = self.tail_multiplier / self.multipliers[-1]
+        return self.tail_multiplier * ratio ** (index - len(self.multipliers))
 
 
 class EvidenceConfiguration(CoreModel):
@@ -102,6 +118,12 @@ class EvidenceConfiguration(CoreModel):
             raise ValueError("combination multipliers must not increase")
         if self.combination_curve.tail_multiplier > multipliers[-1]:
             raise ValueError("tail multiplier must not exceed the final multiplier")
+        if (
+            self.combination_curve.tail_mode == TailMode.GEOMETRIC
+            and self.combination_curve.tail_multiplier
+            and self.combination_curve.tail_multiplier >= multipliers[-1]
+        ):
+            raise ValueError("geometric tail must decrease from the final multiplier")
 
         expected_levels = {level.name for level in CompetencyLevel}
         if self.level_thresholds.keys() != expected_levels:
@@ -147,7 +169,16 @@ def evaluate_evidence(
 ) -> EvidenceEvaluation:
     """Evaluate quality, relevance, depth, verification, and recency."""
     if evidence.scoring_exclusion is not None:
-        raise EvidenceValueError("Evidence requires a human-approved scoring mapping")
+        raise EvidenceValueError(
+            "Evidence requires a configured/approved scoring mapping"
+        )
+    if (
+        evidence.qualitative_mapping is not None
+        and evidence.qualitative_mapping.evidence_rule_id != rule.id
+    ):
+        raise EvidenceValueError(
+            "Mapped evidence cannot be routed through another rule"
+        )
     if evidence.state not in configuration.verification_factors:
         raise EvidenceValueError(
             f"Evidence {evidence.id} is not in a present state and cannot be scored"
@@ -163,9 +194,7 @@ def evaluate_evidence(
             f"Evidence {evidence.id} has an unconfigured quality value"
         ) from error
 
-    depth_label = _normalize_label(
-        evidence.depth or configuration.default_depth_label
-    )
+    depth_label = _normalize_label(evidence.depth or configuration.default_depth_label)
     try:
         depth = configuration.depth_factors[depth_label]
     except KeyError as error:

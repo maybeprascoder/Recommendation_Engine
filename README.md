@@ -145,7 +145,13 @@ with `support_review` verdicts and explicit supported-ID lists. Consumers must u
 those lists, not treat the entire draft as approved evidence. Unknown judgments
 and children of rejected claims are excluded from supported judgments. Model
 support means consistency with the source, not independent factual verification.
-No semantic interpretation is inserted into deterministic scoring in this milestone.
+After student confirmation, supported labels and competency suggestions can enter
+deterministic scoring through versioned `data/taxonomy/qualitative_mappings.yaml`.
+Its current seeds are explicitly provisional: they cover projects, work, research and
+publications for programming and machine learning, using intrinsic activity quality
+rather than venue prestige. A named expert is not required per student. The original
+claim stays excluded; a matching rule creates score-eligible self-reported evidence
+with mapping provenance. See `web/README.md` for confirmation and mapping safeguards.
 If the model omits a rubric dimension, the engine adds an explicitly labeled
 unknown judgment with a rationale stating that the model did not assess it.
 
@@ -182,8 +188,23 @@ These narrow checks do not replace expert evaluation of the complete explanation
 
 The rubric is a versioned, unvalidated draft, not admissions expertise. One model
 reviewing its own draft can repeat its mistakes. Remaining work includes human
-evaluation, broader live cases, clarification/confirmation integration, external
-source retrieval, reviewed competency mapping, and sourced program comparison.
+evaluation, broader live cases, calibration of provisional mappings, external
+source retrieval and sourced program comparison.
+
+Interpretation responses now use `understanding-v3`. Source-linked `contexts`
+separate recognized tools, domains and concepts from demonstrated competencies.
+Contexts receive the same provenance and support checks, stay visible in review
+and saved receipts, and never supply scoring mappings. A claim's `presence`
+distinguishes `reported_present`, `reported_absent` and `unknown`. Confirming an
+unchanged, supported personal absence preserves `CONFIRMED_ABSENT` evidence for
+that statement only; it does not infer absence of a whole competency. Presence
+edits require another support review. Existing v2 receipts retain their original
+fingerprints and legacy present defaults. See
+[`qa/CONTEXT_AND_PRESENCE.md`](qa/CONTEXT_AND_PRESENCE.md) for validation and limits.
+The follow-up [`context calibration report`](qa/CONTEXT_CALIBRATION.md) documents
+claim-level regression checks, v7 prompts and their live evaluation. The existing
+QA runner accepts `--suite tests/fixtures/understanding/context_presence_golden.json`
+to select these provisional references without replacing the historical suite.
 
 Protocol references: [Ollama native chat](https://docs.ollama.com/api/chat),
 [structured outputs](https://docs.ollama.com/capabilities/structured-outputs), and

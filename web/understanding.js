@@ -14,8 +14,9 @@ function renderUnderstanding() {
   panel.hidden = !result;
   if (!result) return;
   panel.append(textElement("h3", "Review the document interpretation"));
-  panel.append(textElement("p", "Confirm only your own supported claims. Every correction is saved. Duplicates, third-party, unsupported, uncertain and edited statements remain here for further review. Imported claims await approved scoring mappings and contribute no numerical score."));
-  panel.append(textElement("p", "Academic records retain their original grades and scales. They do not change your profile fields or normalized GPA. Qualitative judgments and skill suggestions are review notes only."));
+  panel.append(textElement("p", "Recognized tools and domain context are retained in the receipt and do not earn skill credit. Confirmed absence applies only to the stated activity; it does not establish that an entire competency is absent."));
+    panel.append(textElement("p", "Confirm only your own supported claims. Every correction is saved. Duplicates, third-party, unsupported, uncertain and edited statements remain here for further review. Supported judgments and skills can contribute to scoring through configured mappings after confirmation. These mappings are provisional until calibrated."));
+    panel.append(textElement("p", "Academic records retain their original grades and scales. They do not change your profile fields or normalized GPA. Source support does not independently verify an accomplishment. Confirmed activities remain self-reported; explicit absence retains its separate state."));
   const checks = new Map(result.support_review.checks.map(check => [check.target_id, check]));
   for (const claim of result.draft.claims) {
     const change = reviewDraft.claim_corrections.find(item => item.claim_id === claim.id);
@@ -25,6 +26,8 @@ function renderUnderstanding() {
     const duplicate = claim.duplicate_of || result.support_review.duplicate_groups?.find(
       group => group.duplicate_claim_ids.includes(claim.id))?.canonical_claim_id;
     const check = checks.get(claim.id);
+    const presence = claim.presence || "reported_present";
+    card.append(textElement("p", `Original presence: ${sentenceCase(presence)}.`));
     card.append(textElement("p", `Original attribution: ${claim.attribution}. Support: ${check.verdict}. ${check.explanation}${duplicate ? ` Duplicate of ${duplicate}.` : ""}`));
     for (const citation of claim.citations) {
       card.append(textElement("blockquote", `${citation.document_id}: ${citation.quote}`, "source-span"));
@@ -33,13 +36,14 @@ function renderUnderstanding() {
     for (const [key, label, options] of [
       ["statement", "Corrected statement", null],
       ["attribution", "Who did this work?", ["student", "team", "other", "unknown"]],
+      ["presence", "Was this activity reported?", ["reported_present", "reported_absent", "unknown"]],
       ["decision", "Your decision", ["confirm", "exclude", "uncertain"]],
       ["notes", "Corrections to academic records, judgments or other details", null],
     ]) {
       const wrapper = textElement("label", label, "field");
       const control = document.createElement(options ? "select" : "textarea");
       if (options) for (const option of options) control.add(new Option(sentenceCase(option), option));
-      control.value = change[key];
+      control.value = key === "presence" ? (change[key] || presence) : change[key];
       control.required = key === "statement";
       control.addEventListener("input", invalidateConfirmation);
       control.addEventListener("change", invalidateConfirmation);
@@ -49,14 +53,28 @@ function renderUnderstanding() {
     const updateDisposition = () => {
       const eligible = result.supported_claim_ids.includes(claim.id) &&
         claim.attribution === "student" && controls.attribution.value === "student" &&
+        controls.presence.value === presence &&
         controls.statement.value === claim.statement && controls.decision.value === "confirm";
-      disposition.textContent = eligible ? "Will import as self-reported evidence, without a numerical score." :
-        "Will remain in the audit receipt only. Changed statements or attribution need another support review before import.";
+      disposition.textContent = eligible ? (presence === "reported_absent" ?
+        "Will preserve confirmed absence of this stated activity. It will not activate a scoring mapping." :
+        presence === "unknown" ? "Will preserve unknown presence without scoring credit." :
+        "Will import as self-reported evidence. Supported judgments and skills may qualify for configured scoring mappings.") :
+        "Will remain in the audit receipt only. Changed statements, attribution or presence need another support review before import.";
     };
-    for (const control of Object.values(controls)) control.addEventListener("input", updateDisposition);
+    for (const control of Object.values(controls)) {
+      control.addEventListener("input", updateDisposition);
+      control.addEventListener("change", updateDisposition);
+    }
     updateDisposition(); card.append(disposition);
     const proposals = textElement("details", "");
     proposals.append(textElement("summary", "Academic records, qualitative judgments and skill suggestions"));
+    for (const item of (result.draft.contexts || []).filter(item => item.claim_id === claim.id)) {
+      proposals.append(textElement("p",
+        `Recognized ${item.kind}: ${item.label}. ${item.rationale} Support: ${checks.get(item.id).verdict}. ${checks.get(item.id).explanation} Context only; no skill credit.`));
+      for (const citation of item.citations) {
+        proposals.append(textElement("blockquote", `${citation.document_id}: ${citation.quote}`));
+      }
+    }
     for (const record of result.draft.academics.filter(item => item.claim_id === claim.id)) {
       const academic = reviewDraft.academic_corrections.find(
         item => item.claim_id === claim.id);

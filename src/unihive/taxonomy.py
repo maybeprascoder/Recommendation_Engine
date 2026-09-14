@@ -15,10 +15,11 @@ from pathlib import Path
 import yaml
 from jsonschema import Draft202012Validator
 from jsonschema.exceptions import SchemaError, ValidationError
-from pydantic import BaseModel, ConfigDict, JsonValue, TypeAdapter
+from pydantic import BaseModel, ConfigDict, JsonValue, TypeAdapter, model_validator
 from pydantic import ValidationError as PydanticValidationError
 
 from unihive.resources import DATA_ROOT
+from unihive.understanding import load_evaluation_rubric
 
 DEFAULT_TAXONOMY_DIR = DATA_ROOT / "taxonomy"
 DEFAULT_SCHEMA_DIR = DATA_ROOT / "schemas"
@@ -97,7 +98,7 @@ class JudgmentRequirement(BaseModel):
 
 
 class QualitativeEvidenceMapping(BaseModel):
-    """Human-approved bridge from reviewed labels to configured evidence."""
+    """System configuration, optionally provisional, never per-student approval."""
 
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -108,9 +109,19 @@ class QualitativeEvidenceMapping(BaseModel):
     evidence_rule_id: str
     quality_label: str
     depth_label: str
-    validated_by: str
-    validated_on: date
-    source: str
+    provisional: bool = False
+    priority: int = 0
+    validated_by: str | None
+    validated_on: date | None
+    source: str | None
+
+    @model_validator(mode="after")
+    def require_validation_for_calibrated_mapping(self) -> QualitativeEvidenceMapping:
+        if not self.provisional and not (
+            self.validated_by and self.validated_on and self.source
+        ):
+            raise ValueError("Non-provisional mappings require validation metadata")
+        return self
 
 
 class Taxonomy(BaseModel):
@@ -175,6 +186,23 @@ def load_taxonomy(
     if provisional_ids:
         warnings.warn(
             "Provisional competency nodes: " + ", ".join(provisional_ids),
+            ProvisionalTaxonomyWarning,
+            stacklevel=2,
+        )
+    provisional_records: tuple[EvidenceRule | QualitativeEvidenceMapping, ...] = (
+        *evidence_rules,
+        *qualitative_mappings,
+    )
+    for record in provisional_records:
+        if record.provisional:
+            warnings.warn(
+                f"Provisional scoring configuration: {record.id}",
+                ProvisionalTaxonomyWarning,
+                stacklevel=2,
+            )
+    if documents["ladders.yaml"].get("provisional") is True:
+        warnings.warn(
+            "Provisional scoring configuration: ladders.yaml",
             ProvisionalTaxonomyWarning,
             stacklevel=2,
         )
@@ -361,7 +389,7 @@ def _parse_qualitative_mappings(
     evidence_rules: tuple[EvidenceRule, ...],
     evidence_configuration: dict[str, JsonValue],
 ) -> tuple[str, tuple[QualitativeEvidenceMapping, ...]]:
-    """Validate approved qualitative mappings and all deterministic inputs."""
+    """Validate system mappings and all deterministic inputs, including seeds."""
     raw_version = document["version"]
     raw_mappings = document["mappings"]
     if not isinstance(raw_version, str) or not isinstance(raw_mappings, list):
@@ -382,11 +410,23 @@ def _parse_qualitative_mappings(
     raw_ladders = evidence_configuration.get("quality_ladders")
     raw_depths = evidence_configuration.get("depth_factors")
     assert isinstance(raw_ladders, dict) and isinstance(raw_depths, dict)
+    rubric_labels = {
+        item.id: set(item.labels) - {"unknown"}
+        for item in load_evaluation_rubric().dimensions
+    }
+    priorities: set[tuple[str, str, int]] = set()
     for mapping in mappings:
         dimensions = [item.dimension for item in mapping.judgment_requirements]
         if len(set(dimensions)) != len(dimensions):
             raise TaxonomyIntegrityError(
                 f"Duplicate judgment dimension in mapping {mapping.id}"
+            )
+        if any(
+            not set(item.labels).issubset(rubric_labels.get(item.dimension, set()))
+            for item in mapping.judgment_requirements
+        ):
+            raise TaxonomyIntegrityError(
+                f"Mapping {mapping.id} has unknown rubric labels"
             )
         try:
             rule = rules[mapping.evidence_rule_id]
@@ -395,10 +435,18 @@ def _parse_qualitative_mappings(
             raise TaxonomyIntegrityError(
                 f"Mapping {mapping.id} references an unknown scoring input"
             ) from error
-        if rule.provisional or not rule.validated_by or not rule.source:
+        if not mapping.provisional and (
+            rule.provisional or not rule.validated_by or not rule.source
+        ):
             raise TaxonomyIntegrityError(
                 f"Mapping {mapping.id} requires an expert-validated evidence rule"
             )
+        priority_key = (mapping.claim_category, rule.competency_id, mapping.priority)
+        if priority_key in priorities:
+            raise TaxonomyIntegrityError(
+                "Mapping priorities must be unique per category/competency"
+            )
+        priorities.add(priority_key)
         if not isinstance(ladder, dict) or mapping.quality_label not in ladder:
             raise TaxonomyIntegrityError(
                 f"Mapping {mapping.id} has an unknown quality label"

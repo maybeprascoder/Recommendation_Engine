@@ -111,6 +111,19 @@ class CompetencyLevel(IntEnum):
     EXPERT = 5
 
 
+class QualitativeMappingTrace(CoreModel):
+    """Reproducible mapping selection, separate from achievement verification."""
+
+    version: str
+    taxonomy_version: str
+    mapping_sha256: str
+    rubric_sha256: str
+    evidence_rule_id: str
+    provisional: bool
+    judgment_ids: list[str]
+    competency_suggestion_ids: list[str]
+
+
 class Evidence(CoreModel):
     """A single state-tagged item extracted from a student source."""
 
@@ -123,11 +136,12 @@ class Evidence(CoreModel):
     recency: date | None
     source: str | None
     extraction_confidence: Confidence
-    # Generic interpretation is evidence, but has no human-approved score mapping.
+    # Keep the legacy exclusion and mapping ID names for saved-profile compatibility.
     scoring_exclusion: Literal["awaiting_approved_mapping"] | None = None
     source_interpretation_sha256: str | None = None
     source_claim_id: str | None = None
     approved_mapping_id: str | None = None
+    qualitative_mapping: QualitativeMappingTrace | None = None
 
     @model_validator(mode="after")
     def validate_interpretation_provenance(self) -> Self:
@@ -142,6 +156,8 @@ class Evidence(CoreModel):
             not linked or self.scoring_exclusion is not None
         ):
             raise ValueError("Approved mappings require score-eligible provenance")
+        if self.qualitative_mapping is not None and self.approved_mapping_id is None:
+            raise ValueError("A mapping trace requires a mapping ID")
         return self
 
 

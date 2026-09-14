@@ -157,7 +157,10 @@ def test_followups_cover_missing_evidence_and_fields_then_disappear_when_answere
         "constraints",
         "normalized_gpa",
     ]
-    assert questions.questions[0].evidence_kinds == ["machine_learning_publication"]
+    assert questions.questions[0].evidence_kinds == [
+        "machine_learning_publication",
+        "qualitative_machine_learning_activity",
+    ]
     assert scored.model_dump_json() == original
     assert (
         build_followup_questions(scored, load_taxonomy(), load_question_bank())

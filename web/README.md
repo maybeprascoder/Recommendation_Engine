@@ -84,7 +84,7 @@ both extraction and support review, its statement is unchanged, and the student 
 it. Edited statements need another support review; confirmation alone cannot override
 unsupported, uncertain, duplicate or third-party status.
 
-Imported evidence is always `SELF_REPORTED_PRESENT`, with the source quotes preserved,
+The original imported claim is always `SELF_REPORTED_PRESENT`, with source quotes preserved,
 low extraction confidence, null quality/depth, and
 `scoring_exclusion: awaiting_approved_mapping`. Even if its category matches an existing
 rule, it cannot affect competency levels or readiness, including absence states. Its
@@ -95,14 +95,29 @@ original grade and original scale. Student corrections are marked `student_corre
 The projection does not set degree completion and never changes `normalized_gpa`.
 
 Qualitative judgments can enter scoring only through `data/taxonomy/qualitative_mappings.yaml`.
-The checked-in file is deliberately empty. Each future mapping must name its exact rubric
-hash, required reviewed labels, a named reviewer, review date and source. It must reference
-an existing non-provisional evidence rule with its own reviewer and source. The taxonomy
-loader rejects provisional rules, unknown quality/depth labels, duplicate conditions and
-dangling references. A matched mapping creates a separate evidence item carrying the
-mapping ID; the original generic claim remains preserved and score-excluded.
+The checked-in v2 configuration provides provisional project, work, research and publication
+mappings for the existing programming and machine-learning competencies. Every mapping
+requires its exact rubric hash, supported and unchanged confirmed labels, and a supported
+competency suggestion on the same claim for its target competency. Unknown labels never
+match. These are system rules; no expert reviews individual students. Provisional mappings
+may use provisional evidence rules and null validation metadata. Non-provisional mappings
+still require a named reviewer, date and source, plus a validated evidence rule.
+
+The loader rejects unknown rubric/quality/depth labels, duplicate conditions, dangling
+references and tied priorities for the same category/competency. Highest priority wins
+once per claim/competency. A match creates separate score-eligible self-reported Evidence
+carrying quality/depth labels and a `qualitative_mapping` trace: configuration version,
+taxonomy/rubric/mapping hashes, rule ID and supporting judgment/competency suggestion IDs.
+`approved_mapping_id` retains its legacy name for saved-profile compatibility; it identifies
+the configured rule and does not imply expert approval or external verification. The
+original generic claim remains score-excluded. Intrinsic quality uses a separate activity
+ladder; it never assigns venue prestige, peer review or first authorship from project depth.
+Publication metadata alone stays unscored until supported activity depth and a competency
+are available. Missing catalog skills remain in the interpretation receipt with null IDs.
 Mapping changes update the deterministic taxonomy/audit version without invalidating an
-existing interpretation whose extraction taxonomy inputs are unchanged.
+existing interpretation whose extraction taxonomy inputs are unchanged. Reconfirming
+replaces its earlier mapped items rather than accumulating credit. Mapping warnings,
+CLI provisional counts and the report's provisional flag disclose uncalibrated rules.
 
 `POST /review` accepts an optional `understanding` object containing the complete
 `UnderstandingResult`. The server uses `unihive review-understanding --json`, passing

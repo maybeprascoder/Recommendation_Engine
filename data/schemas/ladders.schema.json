@@ -59,7 +59,8 @@
           "minItems": 1,
           "items": {"type": "number", "minimum": 0}
         },
-        "tail_multiplier": {"type": "number", "minimum": 0}
+        "tail_multiplier": {"type": "number", "minimum": 0},
+        "tail_mode": {"enum": ["constant", "geometric"], "default": "constant"}
       }
     },
     "level_thresholds": {

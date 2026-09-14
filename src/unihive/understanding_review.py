@@ -15,15 +15,18 @@ from unihive.models import (
     CoreModel,
     Evidence,
     EvidenceState,
+    QualitativeMappingTrace,
     StudentProfile,
 )
 from unihive.taxonomy import Taxonomy
 from unihive.understanding import (
     ClaimAttribution,
+    ClaimPresence,
     SourcedClaim,
     UnderstandingResult,
     canonical_json,
     fingerprint,
+    supported_context_ids,
     supported_ids,
     validate_draft,
 )
@@ -39,6 +42,7 @@ class ClaimCorrection(CoreModel):
     claim_id: str = Field(min_length=1)
     statement: str = Field(min_length=1)
     attribution: ClaimAttribution
+    presence: ClaimPresence = ClaimPresence.REPORTED_PRESENT
     decision: ClaimDecision
     notes: str = ""
 
@@ -76,6 +80,7 @@ def validate_understanding(result: UnderstandingResult, taxonomy_version: str) -
     """Recheck provenance and derived support lists at the import boundary."""
     if result.audit.taxonomy_version != taxonomy_version:
         raise ValueError("Taxonomy changed; analyze the documents again")
+    UnderstandingResult.model_validate(result.model_dump(mode="json"))
     validate_draft(
         result.draft,
         result.documents,
@@ -98,6 +103,13 @@ def validate_understanding(result: UnderstandingResult, taxonomy_version: str) -
     )
     if actual != expected:
         raise ValueError("Understanding support lists do not match the support review")
+    if (
+        supported_context_ids(result.draft, result.support_review)
+        != result.supported_context_ids
+    ):
+        raise ValueError(
+            "Understanding context support does not match the support review"
+        )
 
 
 def initial_claim_corrections(result: UnderstandingResult) -> list[ClaimCorrection]:
@@ -107,10 +119,12 @@ def initial_claim_corrections(result: UnderstandingResult) -> list[ClaimCorrecti
             claim_id=claim.id,
             statement=claim.statement,
             attribution=claim.attribution,
+            presence=claim.presence,
             decision=(
                 ClaimDecision.CONFIRM
                 if claim.id in result.supported_claim_ids
                 and claim.attribution == ClaimAttribution.STUDENT
+                and claim.presence != ClaimPresence.UNKNOWN
                 else ClaimDecision.UNCERTAIN
             ),
         )
@@ -130,6 +144,7 @@ def initial_academic_corrections(
                 ClaimDecision.CONFIRM
                 if record.claim_id in result.supported_claim_ids
                 and claims[record.claim_id].attribution == ClaimAttribution.STUDENT
+                and claims[record.claim_id].presence == ClaimPresence.REPORTED_PRESENT
                 else ClaimDecision.UNCERTAIN
             ),
         )
@@ -163,7 +178,7 @@ def confirm_understanding(
     judgment_corrections: list[JudgmentCorrection],
     taxonomy: Taxonomy,
 ) -> StudentProfile:
-    """Project confirmed records and apply only expert-approved scoring mappings.
+    """Project confirmed records using versioned system scoring mappings.
 
     The original statement and attribution must also qualify: student edits
     cannot override a support check or turn another person's work into credit.
@@ -217,15 +232,21 @@ def confirm_understanding(
             and change.attribution == ClaimAttribution.STUDENT
             and change.decision == ClaimDecision.CONFIRM
             and change.statement == claim.statement
+            and change.presence == claim.presence
         ):
             continue
-        eligible_claims.add(claim.id)
+        if claim.presence == ClaimPresence.REPORTED_PRESENT:
+            eligible_claims.add(claim.id)
         evidence.append(
             Evidence(
                 id=evidence_ids[claim.id],
                 kind=claim.category.value,
                 raw_text=change.statement,
-                state=EvidenceState.SELF_REPORTED_PRESENT,
+                state={
+                    ClaimPresence.REPORTED_PRESENT: EvidenceState.SELF_REPORTED_PRESENT,
+                    ClaimPresence.REPORTED_ABSENT: EvidenceState.CONFIRMED_ABSENT,
+                    ClaimPresence.UNKNOWN: EvidenceState.UNKNOWN,
+                }[claim.presence],
                 quality=None,
                 depth=None,
                 recency=None,
@@ -240,7 +261,7 @@ def confirm_understanding(
             )
         )
     judgments = {
-        (item.claim_id, item.dimension): item.label
+        (item.claim_id, item.dimension): item
         for item in result.draft.judgments
         if item.id in result.supported_judgment_ids
         and judgment_by_id[item.id].decision == ClaimDecision.CONFIRM
@@ -248,17 +269,35 @@ def confirm_understanding(
     }
     rules = {rule.id: rule for rule in taxonomy.evidence_rules}
     claims = {claim.id: claim for claim in result.draft.claims}
-    for mapping in taxonomy.qualitative_mappings:
+    # Highest configured priority wins once per source claim and competency.
+    # Repeated labels and overlapping baseline/stronger mappings are not evidence.
+    selected: set[tuple[str, str]] = set()
+    for mapping in sorted(
+        taxonomy.qualitative_mappings, key=lambda item: (-item.priority, item.id)
+    ):
         if mapping.rubric_sha256 != result.audit.rubric_sha256:
             continue
         rule = rules[mapping.evidence_rule_id]
         for claim_id in sorted(eligible_claims):
             claim = claims[claim_id]
+            key = (claim_id, rule.competency_id)
+            suggestion_ids = sorted(
+                item.id
+                for item in result.draft.competencies
+                if item.id in result.supported_competency_ids
+                and item.claim_id == claim_id
+                and item.competency_id == rule.competency_id
+            )
+            if key in selected or not suggestion_ids:
+                continue
             if claim.category.value != mapping.claim_category or not all(
-                judgments.get((claim_id, requirement.dimension)) in requirement.labels
+                (judgment := judgments.get((claim_id, requirement.dimension)))
+                is not None
+                and judgment.label in requirement.labels
                 for requirement in mapping.judgment_requirements
             ):
                 continue
+            selected.add(key)
             evidence.append(
                 Evidence(
                     id=mapped_ids[(mapping.id, claim_id)],
@@ -269,7 +308,9 @@ def confirm_understanding(
                     depth=mapping.depth_label,
                     recency=None,
                     source=(
-                        f"Approved mapping {mapping.id}; validated by "
+                        f"Configured mapping {mapping.id} "
+                        f"({taxonomy.qualitative_mapping_version}); "
+                        f"provisional={mapping.provisional}; validated by "
                         f"{mapping.validated_by} on {mapping.validated_on}: "
                         f"{mapping.source}\n\n" + _citation_text(claim)
                     ),
@@ -277,6 +318,19 @@ def confirm_understanding(
                     source_interpretation_sha256=digest,
                     source_claim_id=claim_id,
                     approved_mapping_id=mapping.id,
+                    qualitative_mapping=QualitativeMappingTrace(
+                        version=taxonomy.qualitative_mapping_version,
+                        taxonomy_version=taxonomy.version,
+                        mapping_sha256=fingerprint(mapping.model_dump_json()),
+                        rubric_sha256=mapping.rubric_sha256,
+                        evidence_rule_id=rule.id,
+                        provisional=mapping.provisional,
+                        judgment_ids=sorted(
+                            judgments[(claim_id, requirement.dimension)].id
+                            for requirement in mapping.judgment_requirements
+                        ),
+                        competency_suggestion_ids=suggestion_ids,
+                    ),
                 )
             )
     academic_history = [

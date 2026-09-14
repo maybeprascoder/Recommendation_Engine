@@ -1,3 +1,4 @@
+# Intrinsic activity seeds are provisional; they do not rate venues or institutions.
 provisional: true
 validated_by: null
 source: docs/recommendation_experience_v1.md
@@ -11,26 +12,37 @@ quality_ladders:
     peer_reviewed_conference: 3.0
     top_tier_venue: 4.0
     top_venue: 4.0
+  intrinsic_activity_v1:
+    basic: 1.0
+    substantive: 2.0
+    evaluated_outcome: 3.0
 default_depth_label: unspecified
 depth_factors:
   unspecified: 1.0
   contributor: 0.75
   co_author: 1.0
   first_author: 1.25
+  applied: 1.0
+  designed_or_investigated: 1.25
 verification_factors:
   VERIFIED_PRESENT: 1.0
   SELF_REPORTED_PRESENT: 0.8
 recency:
   undated_factor: 0.8
   bands:
-    - max_age_days: 730
-      factor: 1.0
-    - max_age_days: 1825
-      factor: 0.9
-    - max_age_days: null
-      factor: 0.75
+  - max_age_days: 730
+    factor: 1.0
+  - max_age_days: 1825
+    factor: 0.9
+  - max_age_days: null
+    factor: 0.75
 combination_curve:
-  multipliers: [1.0, 0.25, 0.1]
+  # Extend the last configured ratio; a constant tail lets volume dominate depth.
+  tail_mode: geometric
+  multipliers:
+  - 1.0
+  - 0.25
+  - 0.1
   tail_multiplier: 0.05
 level_thresholds:
   INTRODUCTORY: 0.5

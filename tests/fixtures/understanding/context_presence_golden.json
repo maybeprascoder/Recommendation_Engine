@@ -1,0 +1,1937 @@
+{
+  "version": "context-presence-calibration-v1",
+  "provisional": true,
+  "validated_by": null,
+  "source": null,
+  "description": "Four provisional v3 references and adversarial support-review targets. Separate from the historical cross-domain-v1 snapshot.",
+  "cases": [
+    {
+      "id": "context-mixed",
+      "domain": "interdisciplinary",
+      "strength": "targeted_v3",
+      "source_text": "I used ETABS. I have no publications. I wrote Python code to clean survey records.",
+      "semantic_context": {
+        "domain_concepts": [],
+        "recognized_tools": [
+          "ETABS",
+          "Python"
+        ],
+        "methods_performed": [
+          "Python data-cleaning code"
+        ],
+        "note": "Provisional synthetic annotations for context, scope and routing; no score targets."
+      },
+      "expected_understanding": {
+        "claims": [
+          {
+            "id": "c1",
+            "category": "activity",
+            "statement": "I used ETABS.",
+            "attribution": "student",
+            "presence": "reported_present",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ],
+            "duplicate_of": null
+          },
+          {
+            "id": "c2",
+            "category": "publication",
+            "statement": "I have no publications.",
+            "attribution": "student",
+            "presence": "reported_absent",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I have no publications."
+              }
+            ],
+            "duplicate_of": null
+          },
+          {
+            "id": "c3",
+            "category": "activity",
+            "statement": "I wrote Python code to clean survey records.",
+            "attribution": "student",
+            "presence": "reported_present",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ],
+            "duplicate_of": null
+          }
+        ],
+        "academics": [],
+        "judgments": [
+          {
+            "id": "j1-ownership",
+            "claim_id": "c1",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-depth",
+            "claim_id": "c1",
+            "dimension": "depth",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-evaluation",
+            "claim_id": "c1",
+            "dimension": "evaluation",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-impact",
+            "claim_id": "c1",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j2-ownership",
+            "claim_id": "c2",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Explicit publication absence says nothing about research ability or other work.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I have no publications."
+              }
+            ]
+          },
+          {
+            "id": "j2-depth",
+            "claim_id": "c2",
+            "dimension": "depth",
+            "label": "unknown",
+            "rationale": "Explicit publication absence says nothing about research ability or other work.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I have no publications."
+              }
+            ]
+          },
+          {
+            "id": "j2-evaluation",
+            "claim_id": "c2",
+            "dimension": "evaluation",
+            "label": "unknown",
+            "rationale": "Explicit publication absence says nothing about research ability or other work.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I have no publications."
+              }
+            ]
+          },
+          {
+            "id": "j2-impact",
+            "claim_id": "c2",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Explicit publication absence says nothing about research ability or other work.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I have no publications."
+              }
+            ]
+          },
+          {
+            "id": "j3-ownership",
+            "claim_id": "c3",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j3-depth",
+            "claim_id": "c3",
+            "dimension": "depth",
+            "label": "applied",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j3-evaluation",
+            "claim_id": "c3",
+            "dimension": "evaluation",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j3-impact",
+            "claim_id": "c3",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "competencies": [
+          {
+            "id": "s1",
+            "claim_id": "c3",
+            "competency_id": "programming",
+            "observed_skill": "Python data-cleaning code",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "id": "t1",
+            "claim_id": "c1",
+            "kind": "tool",
+            "label": "ETABS",
+            "rationale": "Named tool or language, independent of skill.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "claim_id": "c3",
+            "kind": "tool",
+            "label": "Python",
+            "rationale": "Named tool or language, independent of skill.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "What did you do with ETABS, and which method did you use?",
+            "reason": "A tool name does not describe the method performed."
+          }
+        ],
+        "unassessed": []
+      },
+      "expected_support_review": {
+        "checks": [
+          {
+            "target_id": "c1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "c2",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "c3",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j2-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j2-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j2-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j2-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j3-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j3-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j3-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j3-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "s1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "t1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "t2",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          }
+        ],
+        "duplicate_groups": []
+      },
+      "expected_supported_ids": {
+        "claims": [
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "judgments": [
+          "j3-depth"
+        ],
+        "competencies": [
+          "s1"
+        ],
+        "contexts": [
+          "t1",
+          "t2"
+        ]
+      },
+      "unknown_fields": [
+        "depth",
+        "evaluation",
+        "impact",
+        "ownership"
+      ],
+      "coverage_gaps": [],
+      "confirmed_absence": [
+        "I have no publications."
+      ],
+      "forbidden_inferences": [
+        "Tool recognition alone is a skill",
+        "Missing publications means missing research ability",
+        "Coding requires leadership before a programming suggestion",
+        "Invented coursework or employment"
+      ],
+      "forbidden_competency_ids": [
+        "machine_learning"
+      ],
+      "annotation_status": "provisional_synthetic_reference",
+      "validated_by": null,
+      "review_challenge": {
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "I used ETABS.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ],
+              "duplicate_of": null
+            },
+            {
+              "id": "c2",
+              "category": "publication",
+              "statement": "I have no publications.",
+              "attribution": "student",
+              "presence": "reported_absent",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have no publications."
+                }
+              ],
+              "duplicate_of": null
+            },
+            {
+              "id": "c3",
+              "category": "coursework",
+              "statement": "I wrote Python code to clean survey records.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1-ownership",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-depth",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-evaluation",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-impact",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j2-ownership",
+              "claim_id": "c2",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Explicit publication absence says nothing about research ability or other work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have no publications."
+                }
+              ]
+            },
+            {
+              "id": "j2-depth",
+              "claim_id": "c2",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "Explicit publication absence says nothing about research ability or other work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have no publications."
+                }
+              ]
+            },
+            {
+              "id": "j2-evaluation",
+              "claim_id": "c2",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "Explicit publication absence says nothing about research ability or other work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have no publications."
+                }
+              ]
+            },
+            {
+              "id": "j2-impact",
+              "claim_id": "c2",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Explicit publication absence says nothing about research ability or other work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have no publications."
+                }
+              ]
+            },
+            {
+              "id": "j3-ownership",
+              "claim_id": "c3",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j3-depth",
+              "claim_id": "c3",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j3-evaluation",
+              "claim_id": "c3",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j3-impact",
+              "claim_id": "c3",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c3",
+              "competency_id": "programming",
+              "observed_skill": "Python data-cleaning code",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "t1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "ETABS",
+              "rationale": "Named tool or language, independent of skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "claim_id": "c3",
+              "kind": "tool",
+              "label": "Python",
+              "rationale": "Named tool or language, independent of skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "claim_id": "c1",
+              "question": "What did you do with ETABS, and which method did you use?",
+              "reason": "A tool name does not describe the method performed."
+            }
+          ],
+          "unassessed": []
+        },
+        "expected_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "c2",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "c3",
+              "verdict": "unsupported",
+              "explanation": "No course is mentioned; the category invents academic context."
+            },
+            {
+              "target_id": "j1-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j2-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j2-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j2-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j2-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j3-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j3-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j3-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j3-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "t1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "t2",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "rejected_ids": [
+          "c3"
+        ]
+      },
+      "claim_expectations": [
+        {
+          "source_quote": "I used ETABS.",
+          "presence": "reported_present",
+          "allowed_categories": [
+            "activity"
+          ],
+          "competency_ids": [],
+          "contexts": [
+            {
+              "kind": "tool",
+              "label": "ETABS"
+            }
+          ],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "unknown",
+            "evaluation": "unknown",
+            "impact": "unknown"
+          },
+          "forbid_skills": true,
+          "require_uncatalogued_skill": false,
+          "require_clarification": true
+        },
+        {
+          "source_quote": "I have no publications.",
+          "presence": "reported_absent",
+          "allowed_categories": [
+            "publication"
+          ],
+          "competency_ids": [],
+          "contexts": [],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "unknown",
+            "evaluation": "unknown",
+            "impact": "unknown"
+          },
+          "forbid_skills": true,
+          "require_uncatalogued_skill": false,
+          "require_clarification": false
+        },
+        {
+          "source_quote": "I wrote Python code to clean survey records.",
+          "presence": "reported_present",
+          "allowed_categories": [
+            "activity"
+          ],
+          "competency_ids": [
+            "programming"
+          ],
+          "contexts": [
+            {
+              "kind": "tool",
+              "label": "Python"
+            }
+          ],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "applied",
+            "evaluation": "unknown",
+            "impact": "unknown"
+          },
+          "forbid_skills": false,
+          "require_uncatalogued_skill": false,
+          "require_clarification": false
+        }
+      ]
+    },
+    {
+      "id": "context-tool-only",
+      "domain": "interdisciplinary",
+      "strength": "targeted_v3",
+      "source_text": "I used ETABS.",
+      "semantic_context": {
+        "domain_concepts": [],
+        "recognized_tools": [
+          "ETABS"
+        ],
+        "methods_performed": [],
+        "note": "Provisional synthetic annotations for context, scope and routing; no score targets."
+      },
+      "expected_understanding": {
+        "claims": [
+          {
+            "id": "c1",
+            "category": "activity",
+            "statement": "I used ETABS.",
+            "attribution": "student",
+            "presence": "reported_present",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ],
+            "duplicate_of": null
+          }
+        ],
+        "academics": [],
+        "judgments": [
+          {
+            "id": "j1-ownership",
+            "claim_id": "c1",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-depth",
+            "claim_id": "c1",
+            "dimension": "depth",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-evaluation",
+            "claim_id": "c1",
+            "dimension": "evaluation",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          },
+          {
+            "id": "j1-impact",
+            "claim_id": "c1",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          }
+        ],
+        "competencies": [],
+        "contexts": [
+          {
+            "id": "t1",
+            "claim_id": "c1",
+            "kind": "tool",
+            "label": "ETABS",
+            "rationale": "Named tool or language, independent of skill.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS."
+              }
+            ]
+          }
+        ],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "What did you do with ETABS, and which method did you use?",
+            "reason": "A tool name does not describe the method performed."
+          }
+        ],
+        "unassessed": []
+      },
+      "expected_support_review": {
+        "checks": [
+          {
+            "target_id": "c1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "t1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          }
+        ],
+        "duplicate_groups": []
+      },
+      "expected_supported_ids": {
+        "claims": [
+          "c1"
+        ],
+        "judgments": [],
+        "competencies": [],
+        "contexts": [
+          "t1"
+        ]
+      },
+      "unknown_fields": [
+        "depth",
+        "evaluation",
+        "impact",
+        "ownership"
+      ],
+      "coverage_gaps": [],
+      "confirmed_absence": [],
+      "forbidden_inferences": [
+        "Tool recognition alone is a skill",
+        "Missing publications means missing research ability",
+        "Coding requires leadership before a programming suggestion",
+        "Invented coursework or employment"
+      ],
+      "forbidden_competency_ids": [
+        "machine_learning"
+      ],
+      "annotation_status": "provisional_synthetic_reference",
+      "validated_by": null,
+      "review_challenge": {
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "I used ETABS.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1-ownership",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-depth",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-evaluation",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j1-impact",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Only a tool is named; no method, result or personal responsibility is described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "bad-tool-skill",
+              "claim_id": "c1",
+              "competency_id": null,
+              "observed_skill": "ETABS usage",
+              "rationale": "A mentioned tool is a demonstrated skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "t1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "ETABS",
+              "rationale": "Named tool or language, independent of skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "claim_id": "c1",
+              "question": "What did you do with ETABS, and which method did you use?",
+              "reason": "A tool name does not describe the method performed."
+            }
+          ],
+          "unassessed": []
+        },
+        "expected_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "t1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "bad-tool-skill",
+              "verdict": "unsupported",
+              "explanation": "The source names a tool but describes no performed method; null ID does not make it a demonstrated skill."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "rejected_ids": [
+          "bad-tool-skill"
+        ]
+      },
+      "claim_expectations": [
+        {
+          "source_quote": "I used ETABS.",
+          "presence": "reported_present",
+          "allowed_categories": [
+            "activity"
+          ],
+          "competency_ids": [],
+          "contexts": [
+            {
+              "kind": "tool",
+              "label": "ETABS"
+            }
+          ],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "unknown",
+            "evaluation": "unknown",
+            "impact": "unknown"
+          },
+          "forbid_skills": true,
+          "require_uncatalogued_skill": false,
+          "require_clarification": true
+        }
+      ]
+    },
+    {
+      "id": "context-performed-method",
+      "domain": "interdisciplinary",
+      "strength": "targeted_v3",
+      "source_text": "I used ETABS to model a frame and compare member forces against hand calculations.",
+      "semantic_context": {
+        "domain_concepts": [],
+        "recognized_tools": [
+          "ETABS"
+        ],
+        "methods_performed": [
+          "Structural modeling and force comparison"
+        ],
+        "note": "Provisional synthetic annotations for context, scope and routing; no score targets."
+      },
+      "expected_understanding": {
+        "claims": [
+          {
+            "id": "c1",
+            "category": "activity",
+            "statement": "I used ETABS to model a frame and compare member forces against hand calculations.",
+            "attribution": "student",
+            "presence": "reported_present",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ],
+            "duplicate_of": null
+          }
+        ],
+        "academics": [],
+        "judgments": [
+          {
+            "id": "j1-ownership",
+            "claim_id": "c1",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          },
+          {
+            "id": "j1-depth",
+            "claim_id": "c1",
+            "dimension": "depth",
+            "label": "applied",
+            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          },
+          {
+            "id": "j1-evaluation",
+            "claim_id": "c1",
+            "dimension": "evaluation",
+            "label": "compared",
+            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          },
+          {
+            "id": "j1-impact",
+            "claim_id": "c1",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          }
+        ],
+        "competencies": [
+          {
+            "id": "s1",
+            "claim_id": "c1",
+            "competency_id": null,
+            "observed_skill": "Structural modeling and force comparison",
+            "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "id": "t1",
+            "claim_id": "c1",
+            "kind": "tool",
+            "label": "ETABS",
+            "rationale": "Named tool or language, independent of skill.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+              }
+            ]
+          }
+        ],
+        "questions": [],
+        "unassessed": []
+      },
+      "expected_support_review": {
+        "checks": [
+          {
+            "target_id": "c1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "s1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "t1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          }
+        ],
+        "duplicate_groups": []
+      },
+      "expected_supported_ids": {
+        "claims": [
+          "c1"
+        ],
+        "judgments": [
+          "j1-depth",
+          "j1-evaluation"
+        ],
+        "competencies": [
+          "s1"
+        ],
+        "contexts": [
+          "t1"
+        ]
+      },
+      "unknown_fields": [
+        "impact",
+        "ownership"
+      ],
+      "coverage_gaps": [
+        "Structural modeling and force comparison"
+      ],
+      "confirmed_absence": [],
+      "forbidden_inferences": [
+        "Tool recognition alone is a skill",
+        "Missing publications means missing research ability",
+        "Coding requires leadership before a programming suggestion",
+        "Invented coursework or employment"
+      ],
+      "forbidden_competency_ids": [
+        "machine_learning"
+      ],
+      "annotation_status": "provisional_synthetic_reference",
+      "validated_by": null,
+      "review_challenge": {
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "I used ETABS to model a frame and compare member forces against hand calculations.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1-ownership",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j1-depth",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j1-evaluation",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "compared",
+              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j1-impact",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": "programming",
+              "observed_skill": "Structural modeling and force comparison",
+              "rationale": "Modeling and comparing structural forces is a described analysis method; the taxonomy has no structural-analysis node.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "t1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "ETABS",
+              "rationale": "Named tool or language, independent of skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "expected_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "unsupported",
+              "explanation": "Structural analysis does not establish code writing."
+            },
+            {
+              "target_id": "t1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "rejected_ids": [
+          "s1"
+        ]
+      },
+      "claim_expectations": [
+        {
+          "source_quote": "I used ETABS to model a frame and compare member forces against hand calculations.",
+          "presence": "reported_present",
+          "allowed_categories": [
+            "activity",
+            "project"
+          ],
+          "competency_ids": [],
+          "contexts": [
+            {
+              "kind": "tool",
+              "label": "ETABS"
+            }
+          ],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "applied",
+            "evaluation": "compared",
+            "impact": "unknown"
+          },
+          "forbid_skills": false,
+          "require_uncatalogued_skill": true,
+          "require_clarification": false
+        }
+      ]
+    },
+    {
+      "id": "context-programming-project",
+      "domain": "interdisciplinary",
+      "strength": "targeted_v3",
+      "source_text": "For my personal project, I wrote Python code to clean survey records.",
+      "semantic_context": {
+        "domain_concepts": [],
+        "recognized_tools": [
+          "Python"
+        ],
+        "methods_performed": [
+          "Python data-cleaning code"
+        ],
+        "note": "Provisional synthetic annotations for context, scope and routing; no score targets."
+      },
+      "expected_understanding": {
+        "claims": [
+          {
+            "id": "c1",
+            "category": "project",
+            "statement": "For my personal project, I wrote Python code to clean survey records.",
+            "attribution": "student",
+            "presence": "reported_present",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ],
+            "duplicate_of": null
+          }
+        ],
+        "academics": [],
+        "judgments": [
+          {
+            "id": "j1-ownership",
+            "claim_id": "c1",
+            "dimension": "ownership",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j1-depth",
+            "claim_id": "c1",
+            "dimension": "depth",
+            "label": "applied",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j1-evaluation",
+            "claim_id": "c1",
+            "dimension": "evaluation",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          },
+          {
+            "id": "j1-impact",
+            "claim_id": "c1",
+            "dimension": "impact",
+            "label": "unknown",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "competencies": [
+          {
+            "id": "s1",
+            "claim_id": "c1",
+            "competency_id": "programming",
+            "observed_skill": "Python data-cleaning code",
+            "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "contexts": [
+          {
+            "id": "t1",
+            "claim_id": "c1",
+            "kind": "tool",
+            "label": "Python",
+            "rationale": "Named tool or language, independent of skill.",
+            "citations": [
+              {
+                "document_id": "source",
+                "quote": "For my personal project, I wrote Python code to clean survey records."
+              }
+            ]
+          }
+        ],
+        "questions": [],
+        "unassessed": []
+      },
+      "expected_support_review": {
+        "checks": [
+          {
+            "target_id": "c1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-ownership",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-depth",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-evaluation",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "j1-impact",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "s1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          },
+          {
+            "target_id": "t1",
+            "verdict": "supported",
+            "explanation": "Consistent with the source and provisional rubric."
+          }
+        ],
+        "duplicate_groups": []
+      },
+      "expected_supported_ids": {
+        "claims": [
+          "c1"
+        ],
+        "judgments": [
+          "j1-depth"
+        ],
+        "competencies": [
+          "s1"
+        ],
+        "contexts": [
+          "t1"
+        ]
+      },
+      "unknown_fields": [
+        "evaluation",
+        "impact",
+        "ownership"
+      ],
+      "coverage_gaps": [],
+      "confirmed_absence": [],
+      "forbidden_inferences": [
+        "Tool recognition alone is a skill",
+        "Missing publications means missing research ability",
+        "Coding requires leadership before a programming suggestion",
+        "Invented coursework or employment"
+      ],
+      "forbidden_competency_ids": [
+        "machine_learning"
+      ],
+      "annotation_status": "provisional_synthetic_reference",
+      "validated_by": null,
+      "review_challenge": {
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "coursework",
+              "statement": "For my personal project, I wrote Python code to clean survey records.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1-ownership",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j1-depth",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j1-evaluation",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j1-impact",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": "programming",
+              "observed_skill": "Python data-cleaning code",
+              "rationale": "Explicit code writing supports a programming suggestion and applied depth without implying leadership or measured outcomes.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "t1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "Python",
+              "rationale": "Named tool or language, independent of skill.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "expected_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "unsupported",
+              "explanation": "No course is mentioned; the category invents academic context."
+            },
+            {
+              "target_id": "j1-ownership",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-depth",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-evaluation",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "j1-impact",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            },
+            {
+              "target_id": "t1",
+              "verdict": "supported",
+              "explanation": "Consistent with the source and provisional rubric."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "rejected_ids": [
+          "c1"
+        ]
+      },
+      "claim_expectations": [
+        {
+          "source_quote": "For my personal project, I wrote Python code to clean survey records.",
+          "presence": "reported_present",
+          "allowed_categories": [
+            "project"
+          ],
+          "competency_ids": [
+            "programming"
+          ],
+          "contexts": [
+            {
+              "kind": "tool",
+              "label": "Python"
+            }
+          ],
+          "labels": {
+            "ownership": "unknown",
+            "depth": "applied",
+            "evaluation": "unknown",
+            "impact": "unknown"
+          },
+          "forbid_skills": false,
+          "require_uncatalogued_skill": false,
+          "require_clarification": false
+        }
+      ]
+    }
+  ],
+  "probes": []
+}

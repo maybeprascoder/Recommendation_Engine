@@ -479,3 +479,59 @@ def test_interpretation_import_rejects_forged_support_lists(
         },
     )
     assert code == 422, response
+
+
+def test_context_and_absence_survive_confirmation_receipt_and_reopen(server):
+    from test_understanding_context import analyze, recorded
+
+    result = analyze(*recorded("I did not use ETABS.", "reported_absent", "ETABS"))
+    base, _ = server
+    code, review = post(
+        base,
+        "/review",
+        {
+            "profile_path": "profile.json",
+            "program_path": "program.yaml",
+            "understanding": result.model_dump(mode="json"),
+        },
+    )
+    assert code == 200, review
+    assert review["claim_corrections"][0]["presence"] == "reported_absent"
+    corrections = [
+        {
+            "evidence_id": item["id"],
+            **{
+                key: item[key]
+                for key in ("raw_text", "kind", "state", "quality", "depth", "recency")
+            },
+        }
+        for item in review["profile"]["evidence"]
+    ]
+    code, confirmed = post(
+        base,
+        "/confirm",
+        {
+            "review_id": review["review_id"],
+            "confirmed": True,
+            "corrections": corrections,
+            "claim_corrections": review["claim_corrections"],
+            "academic_corrections": review["academic_corrections"],
+            "judgment_corrections": review["judgment_corrections"],
+        },
+    )
+    assert code == 200, confirmed
+    imported = [
+        e for e in confirmed["profile"]["evidence"] if e["source_claim_id"] == "c1"
+    ]
+    assert len(imported) == 1 and imported[0]["state"] == "CONFIRMED_ABSENT"
+    selection = {"confirmation_id": confirmed["confirmation_id"]}
+    code, receipt = post(base, "/receipt", selection)
+    assert code == 200, receipt
+    assert receipt["submission"]["understanding"] == result.model_dump(mode="json")
+    code, continued = post(base, "/continue-review", selection)
+    assert code == 200, continued
+    assert continued["understanding"]["supported_context_ids"] == ["t1"]
+    assert continued["claim_corrections"][0]["presence"] == "reported_absent"
+    code, scored = post(base, "/score", selection)
+    assert code == 200, scored
+    assert imported[0]["id"] not in scored["assessment"]["audit"]["evidence_ids_used"]

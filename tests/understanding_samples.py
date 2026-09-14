@@ -93,3 +93,81 @@ def mixed_result() -> UnderstandingResult:
         taxonomy_version=load_taxonomy().understanding_version,
         competency_catalog={},
     )
+
+
+def qualitative_result(
+    text: str,
+    *,
+    category: str = "project",
+    labels: dict[str, str] | None = None,
+    skills: dict[str, str | None] | None = None,
+    rejected: tuple[str, ...] = (),
+    attribution: str = "student",
+) -> UnderstandingResult:
+    """Mock both bounded LLM calls; run production schema and support filtering."""
+    citation = {"document_id": "resume", "quote": text}
+    draft = complete_unknown_dimensions(
+        UnderstandingDraft.model_validate(
+            {
+                "claims": [
+                    {
+                        "id": "c1",
+                        "category": category,
+                        "statement": text,
+                        "attribution": attribution,
+                        "citations": [citation],
+                        "duplicate_of": None,
+                    }
+                ],
+                "academics": [],
+                "judgments": [
+                    {
+                        "id": dimension,
+                        "claim_id": "c1",
+                        "dimension": dimension,
+                        "label": label,
+                        "rationale": "Mock source interpretation.",
+                        "citations": [citation],
+                    }
+                    for dimension, label in (labels or {}).items()
+                ],
+                "competencies": [
+                    {
+                        "id": skill,
+                        "claim_id": "c1",
+                        "competency_id": competency,
+                        "observed_skill": skill,
+                        "rationale": "Mock source interpretation.",
+                        "citations": [citation],
+                    }
+                    for skill, competency in (skills or {}).items()
+                ],
+                "questions": [],
+                "unassessed": [],
+            }
+        ),
+        load_evaluation_rubric(),
+    )
+    review = SupportReview.model_validate(
+        {
+            "checks": [
+                {
+                    "target_id": item.id,
+                    "verdict": "unsupported" if item.id in rejected else "supported",
+                    "explanation": "Source does not support this proposal."
+                    if item.id in rejected
+                    else "Consistent with the source.",
+                }
+                for item in [*draft.claims, *draft.judgments, *draft.competencies]
+            ]
+        }
+    )
+    taxonomy = load_taxonomy()
+    return analyze_documents(
+        [SourceDocument(id="resume", text=text)],
+        RecordedClient(RecordedResponses(draft=draft, review=review)),
+        taxonomy_version=taxonomy.understanding_version,
+        competency_catalog={
+            node.id: node.description for node in taxonomy.competencies
+        },
+    )

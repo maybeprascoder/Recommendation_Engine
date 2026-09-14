@@ -7,6 +7,7 @@ from collections.abc import Callable
 from pathlib import Path
 
 import pytest
+import yaml
 
 from unihive.taxonomy import (
     DEFAULT_SCHEMA_DIR,
@@ -224,3 +225,70 @@ def test_mapping_cannot_reference_provisional_scoring_rule(
 
     with pytest.raises(TaxonomyIntegrityError, match="expert-validated"):
         load_taxonomy(taxonomy_dir, DEFAULT_SCHEMA_DIR)
+
+
+def test_provisional_mapping_and_rule_need_no_named_reviewer(
+    taxonomy_dir: Path,
+    write_taxonomy: WriteTaxonomy,
+) -> None:
+    write_taxonomy(node_yaml("networking"))
+    write_mapping_inputs(taxonomy_dir, rule_provisional=True)
+    path = taxonomy_dir / "qualitative_mappings.yaml"
+    document = yaml.safe_load(path.read_text())
+    document["mappings"][0].update(
+        provisional=True,
+        validated_by=None,
+        validated_on=None,
+        source=None,
+    )
+    path.write_text(yaml.safe_dump(document))
+    with pytest.warns(ProvisionalTaxonomyWarning) as captured:
+        taxonomy = load_taxonomy(taxonomy_dir)
+    (mapping,) = taxonomy.qualitative_mappings
+    assert mapping.provisional and mapping.validated_by is None
+    assert any(mapping.id in str(w.message) for w in captured)
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    [
+        "unknown_label",
+        "unknown_dimension",
+        "unknown_quality",
+        "unknown_depth",
+        "unknown_rule",
+        "unknown_as_condition",
+        "missing_validation",
+        "tied_priority",
+    ],
+)
+def test_invalid_mapping_configuration_fails_closed(
+    taxonomy_dir: Path,
+    write_taxonomy: WriteTaxonomy,
+    mutation: str,
+) -> None:
+    write_taxonomy(node_yaml("networking"))
+    write_mapping_inputs(taxonomy_dir, rule_provisional=False)
+    path = taxonomy_dir / "qualitative_mappings.yaml"
+    document = yaml.safe_load(path.read_text())
+    mapping = document["mappings"][0]
+    if mutation == "unknown_label":
+        mapping["judgment_requirements"][0]["labels"] = ["expert"]
+    elif mutation == "unknown_dimension":
+        mapping["judgment_requirements"][0]["dimension"] = "prestige"
+    elif mutation == "unknown_as_condition":
+        mapping["judgment_requirements"][0]["labels"] = ["unknown"]
+    elif mutation == "missing_validation":
+        mapping["validated_by"] = None
+    elif mutation == "tied_priority":
+        document["mappings"].append({**mapping, "id": "ambiguous"})
+    else:
+        key = {
+            "unknown_quality": "quality_label",
+            "unknown_depth": "depth_label",
+            "unknown_rule": "evidence_rule_id",
+        }[mutation]
+        mapping[key] = "missing"
+    path.write_text(yaml.safe_dump(document))
+    with pytest.raises((TaxonomyIntegrityError, TaxonomySchemaError)):
+        load_taxonomy(taxonomy_dir)

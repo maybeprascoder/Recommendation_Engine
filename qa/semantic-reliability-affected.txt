@@ -1,0 +1,123 @@
+........................................................................ [ 27%]
+........................................................................ [ 55%]
+........................................................................ [ 82%]
+.............................................                            [100%]
+============================== warnings summary ===============================
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: machine_learning_publication_to_machine_learning
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_programming
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_machine_learning
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_basic_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_substantive_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_evaluated_outcome_v1
+    return load_taxonomy()
+
+tests/test_semantic_reliability.py::test_all_references_pass_existing_pipeline[evaluation-civil]
+  C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\tests\test_semantic_reliability.py:49: ProvisionalTaxonomyWarning: Provisional scoring configuration: ladders.yaml
+    return load_taxonomy()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+261 passed, 29 warnings in 9.43s

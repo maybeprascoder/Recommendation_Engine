@@ -49,11 +49,18 @@ class ClaimAttribution(StrEnum):
     UNKNOWN = "unknown"
 
 
+class ClaimPresence(StrEnum):
+    REPORTED_PRESENT = "reported_present"
+    REPORTED_ABSENT = "reported_absent"
+    UNKNOWN = "unknown"
+
+
 class SourcedClaim(CoreModel):
     id: Text
     category: EvidenceCategory
     statement: Text
     attribution: ClaimAttribution = ClaimAttribution.UNKNOWN
+    presence: ClaimPresence = ClaimPresence.REPORTED_PRESENT
     citations: Annotated[list[Citation], Field(min_length=1)]
     # Repeated descriptions retain provenance but do not become new achievements.
     duplicate_of: str | None
@@ -90,6 +97,23 @@ class CompetencySuggestion(CoreModel):
     citations: Annotated[list[Citation], Field(min_length=1)]
 
 
+class ContextKind(StrEnum):
+    TOOL = "tool"
+    DOMAIN = "domain"
+    CONCEPT = "concept"
+
+
+class RecognizedContext(CoreModel):
+    """Cited terminology only; never a demonstrated skill or scoring input."""
+
+    id: Text
+    claim_id: Text
+    kind: ContextKind
+    label: Text
+    rationale: Text
+    citations: Annotated[list[Citation], Field(min_length=1)]
+
+
 class Clarification(CoreModel):
     claim_id: str | None
     question: Text
@@ -101,6 +125,7 @@ class UnderstandingDraft(CoreModel):
     academics: list[AcademicRecord]
     judgments: list[Judgment]
     competencies: list[CompetencySuggestion]
+    contexts: list[RecognizedContext] = Field(default_factory=list)
     questions: list[Clarification]
     unassessed: list[str]
 
@@ -171,7 +196,9 @@ class UnderstandingAudit(CoreModel):
 
 
 class UnderstandingResult(CoreModel):
-    response_version: Literal["understanding-v2"] = "understanding-v2"
+    response_version: Literal["understanding-v2", "understanding-v3"] = (
+        "understanding-v2"
+    )
     requires_confirmation: Literal[True] = True
     scoring_enabled: Literal[False] = False
     # Full sources make the interpretation reviewable, even when a file changes.
@@ -181,9 +208,31 @@ class UnderstandingResult(CoreModel):
     supported_claim_ids: list[str]
     supported_judgment_ids: list[str]
     supported_competency_ids: list[str]
+    supported_context_ids: list[str] = Field(default_factory=list)
     questions: list[Clarification]
     limitations: list[str]
     audit: UnderstandingAudit
+
+    @model_validator(mode="after")
+    def validate_version(self) -> UnderstandingResult:
+        if self.response_version == "understanding-v3":
+            require_explicit_presence(self.draft)
+        if self.response_version == "understanding-v2" and (
+            self.draft.contexts
+            or self.supported_context_ids
+            or any(
+                claim.presence != ClaimPresence.REPORTED_PRESENT
+                for claim in self.draft.claims
+            )
+        ):
+            raise ValueError("Typed presence and context require understanding-v3")
+        return self
+
+
+def require_explicit_presence(draft: UnderstandingDraft) -> None:
+    """Legacy defaults are for old receipts, never omissions in new model output."""
+    if any("presence" not in claim.model_fields_set for claim in draft.claims):
+        raise ValueError("New interpretations must explicitly state claim presence")
 
 
 def fingerprint(text: str) -> str:
@@ -208,6 +257,7 @@ def complete_unknown_dimensions(
         {item.id for item in draft.claims}
         | {item.id for item in draft.judgments}
         | {item.id for item in draft.competencies}
+        | {item.id for item in draft.contexts}
     )
     judgments = list(draft.judgments)
     for claim in draft.claims:
@@ -279,9 +329,12 @@ def validate_draft(
         [item.id for item in draft.claims]
         + [item.id for item in draft.judgments]
         + [item.id for item in draft.competencies]
+        + [item.id for item in draft.contexts]
     )
     if len(set(all_ids)) != len(all_ids):
-        raise ValueError("All claim, judgment and competency IDs must be unique")
+        raise ValueError(
+            "All claim, judgment, competency and context IDs must be unique"
+        )
 
     def check_citations(citations: list[Citation]) -> None:
         for citation in citations:
@@ -298,9 +351,10 @@ def validate_draft(
             original = claims.get(claim.duplicate_of)
             if original is None or original.id == claim.id or original.duplicate_of:
                 raise ValueError("Duplicate must point to a distinct canonical claim")
-    linked_items: list[Judgment | CompetencySuggestion] = [
+    linked_items: list[Judgment | CompetencySuggestion | RecognizedContext] = [
         *draft.judgments,
         *draft.competencies,
+        *draft.contexts,
     ]
     for item in linked_items:
         if item.claim_id not in claims:
@@ -366,6 +420,7 @@ def supported_ids(
         {item.id for item in draft.claims}
         | {item.id for item in draft.judgments}
         | {item.id for item in draft.competencies}
+        | {item.id for item in draft.contexts}
     )
     actual = [check.target_id for check in review.checks]
     if len(set(actual)) != len(actual) or set(actual) != expected:
@@ -403,6 +458,7 @@ def supported_ids(
         and item.claim_id in claims
         and item.label != "unknown"
         and claim_map[item.claim_id].attribution == ClaimAttribution.STUDENT
+        and claim_map[item.claim_id].presence == ClaimPresence.REPORTED_PRESENT
     )
     competencies = sorted(
         item.id
@@ -410,9 +466,37 @@ def supported_ids(
         if item.id in accepted
         and item.claim_id in claims
         and claim_map[item.claim_id].attribution == ClaimAttribution.STUDENT
+        and claim_map[item.claim_id].presence == ClaimPresence.REPORTED_PRESENT
     )
     return claims, judgments, competencies
 
 
+def supported_context_ids(
+    draft: UnderstandingDraft, review: SupportReview
+) -> list[str]:
+    """Retain reviewed context, including team context, without granting credit."""
+    claims, _, _ = supported_ids(draft, review)
+    accepted = {
+        check.target_id
+        for check in review.checks
+        if check.verdict == SupportVerdict.SUPPORTED
+    }
+    return sorted(
+        item.id
+        for item in draft.contexts
+        if item.id in accepted and item.claim_id in claims
+    )
+
+
 def canonical_json(value: CoreModel) -> str:
-    return json.dumps(value.model_dump(mode="json"), sort_keys=True, ensure_ascii=False)
+    data = value.model_dump(mode="json")
+    if (
+        isinstance(value, UnderstandingResult)
+        and value.response_version == "understanding-v2"
+    ):
+        # Preserve historical receipt fingerprints when reading older results.
+        data.pop("supported_context_ids", None)
+        data["draft"].pop("contexts", None)
+        for claim in data["draft"]["claims"]:
+            claim.pop("presence", None)
+    return json.dumps(data, sort_keys=True, ensure_ascii=False)

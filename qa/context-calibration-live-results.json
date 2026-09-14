@@ -1,0 +1,995 @@
+{
+  "prompt_version": "understanding-v7+support-review-v7",
+  "provisional": true,
+  "human_review": "pending",
+  "attempts": [
+    {
+      "original_run": {
+        "case": "context-mixed",
+        "validation": "failed",
+        "error": "Model endpoint unavailable or timed out",
+        "mode": "live",
+        "seconds": 180.08,
+        "human_review": "pending"
+      }
+    },
+    {
+      "original_run": {
+        "case": "context-tool-only",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [],
+        "coverage_gaps": [],
+        "mapped_evidence_count": 0,
+        "competency_contributions": null,
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true,
+        "validation": "passed",
+        "mode": "live",
+        "seconds": 76.52,
+        "human_review": "pending"
+      },
+      "understanding": {
+        "response_version": "understanding-v3",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "I used ETABS."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "I used ETABS.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement 'I used ETABS' describes tool usage but does not explicitly describe individual responsibility, leadership, or independent ownership of the work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "Using a tool name alone ('ETABS') does not describe the nature of the work performed (e.g., applied, designed, investigated). No specific actions or methods are described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results, outcomes, or impacts are stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            }
+          ],
+          "competencies": [],
+          "contexts": [
+            {
+              "id": "ctx1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "ETABS",
+              "rationale": "ETABS is a structural analysis and design software tool.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim 'I used ETABS' is directly supported by the source text quote 'I used ETABS.' The attribution to 'student' matches the first-person statement."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The judgment that ownership is 'unknown' is supported because the source text only states tool usage ('I used ETABS') without describing individual responsibility, leadership, or independent ownership of a deliverable."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The judgment that depth is 'unknown' is supported because the source text provides only a tool name without describing specific actions, methods, design choices, or analysis performed."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The judgment that evaluation is 'unknown' is supported because the source text contains no mention of tests, reviews, assessments, baselines, or comparison methods."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The judgment that impact is 'unknown' is supported because the source text reports no results, outcomes, impacts, or measured improvements."
+            },
+            {
+              "target_id": "ctx1",
+              "verdict": "supported",
+              "explanation": "The context identifying 'ETABS' as a tool is supported by the explicit mention of the tool name in the source text. The rationale correctly identifies it as structural analysis software, which aligns with general knowledge without inventing facts."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [],
+        "supported_competency_ids": [],
+        "supported_context_ids": [
+          "ctx1"
+        ],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+            "reason": "The source does not establish supported depth of work."
+          }
+        ],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-13T22:30:56.8052045Z",
+            "2026-09-13T22:31:27.4080149Z"
+          ],
+          "prompt_version": "understanding-v7+support-review-v7",
+          "prompt_sha256": "ac0a0b826c049fc0247aa9cb6f50fa5e5989647d260291ad8f2e1ef91ad3b09a",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "e91b70aa0860551eb25a40c541147144717ff520f91075f567408cdc28b5e03e"
+          },
+          "draft_response_sha256": "800958a818669d83e7084e9879b8eb9763464289da90ab194720b4215954fb85",
+          "review_response_sha256": "7936cf34ee953482eba9073213cb845a72bb5509a96c488f853478bf6a210009"
+        }
+      },
+      "current_diagnostics": {
+        "case": "context-tool-only",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [],
+        "coverage_gaps": [],
+        "mapped_evidence_count": 0,
+        "competency_contributions": null,
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true
+      }
+    },
+    {
+      "original_run": {
+        "case": "context-performed-method",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [
+          "claim[1]:label:impact:expected unknown, got reported"
+        ],
+        "coverage_gaps": [
+          {
+            "claim_id": "c1",
+            "suggestion_id": "s1",
+            "observed_skill": "Structural analysis modeling and verification using ETABS",
+            "reason": "taxonomy_node_missing"
+          }
+        ],
+        "mapped_evidence_count": 0,
+        "competency_contributions": null,
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true,
+        "validation": "passed",
+        "mode": "live",
+        "seconds": 145.71,
+        "human_review": "pending"
+      },
+      "understanding": {
+        "response_version": "understanding-v3",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "I used ETABS to model a frame and compare member forces against hand calculations."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "I used ETABS to model a frame and compare member forces against hand calculations.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement uses a possessive ('I used') which indicates the student performed the action, but does not explicitly describe leading, directing, or independently owning the deliverable versus simply executing a task. Per rubric, 'my thesis' or similar possessives alone are insufficient for 'led'.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "The student used an established tool (ETABS) to implement a specific task (modeling a frame). This fits 'applied' as they used established methods to complete a described task. There is no evidence of adapting methods or making design choices ('designed') or investigating a question through analysis ('investigated').",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "compared",
+              "rationale": "The student explicitly compared the software results against hand calculations. This constitutes an explicit baseline for evaluation.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "reported",
+              "rationale": "The statement reports the action taken and the comparison performed, but does not state a concrete outcome or result of that comparison (e.g., 'the results matched within 5%'). Thus, it is reported without measurement.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": null,
+              "observed_skill": "Structural analysis modeling and verification using ETABS",
+              "rationale": "The student explicitly modeled a frame in ETABS and compared forces to hand calculations. This demonstrates the skill of structural analysis and verification. However, no allowed competency node (programming, security, etc.) matches this specific domain activity directly without inventing taxonomy IDs. Therefore, it is recorded as an observed_skill with null competency_id.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "ctx1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "ETABS",
+              "rationale": "ETABS is explicitly named as the software tool used for modeling.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "ctx2",
+              "claim_id": "c1",
+              "kind": "concept",
+              "label": "member forces",
+              "rationale": "The concept of 'member forces' is explicitly mentioned as the quantity being compared.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            },
+            {
+              "id": "ctx3",
+              "claim_id": "c1",
+              "kind": "concept",
+              "label": "hand calculations",
+              "rationale": "The method of 'hand calculations' is explicitly mentioned as the baseline for comparison.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I used ETABS to model a frame and compare member forces against hand calculations."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim accurately reflects the source text which states 'I used ETABS to model a frame and compare member forces against hand calculations.' The category 'activity' is appropriate for this described work."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' for ownership is correct. While the student says 'I used', the rubric explicitly states that possessives like 'my thesis' or similar alone are insufficient to establish 'led'. The rationale correctly identifies that leading/directing/independent ownership is not explicitly described, making 'unknown' the appropriate description of the source's uncertainty regarding leadership."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The label 'applied' for depth is supported. The student used an established tool (ETABS) to implement a specific task (modeling). There is no evidence in the text of adapting methods ('designed') or investigating a question ('investigated'), so 'applied' fits the description."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The label 'compared' for evaluation is supported. The text explicitly mentions comparing software results against hand calculations, which constitutes an explicit baseline for evaluation as defined in the rubric."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The label 'reported' for impact is supported. The text reports the action and comparison but does not state a concrete outcome (e.g., specific error margins or pass/fail status), fitting the definition of 'reported' without measurement."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "The observed skill 'Structural analysis modeling and verification using ETABS' is supported by the text. The competency_id is correctly null because no allowed competency node (programming, security, etc.) matches this specific domain activity directly without inventing taxonomy IDs. The rationale correctly distinguishes between a demonstrated skill missing from the catalog (null) versus unsupported evidence."
+            },
+            {
+              "target_id": "ctx1",
+              "verdict": "supported",
+              "explanation": "The context 'ETABS' is supported as a tool explicitly named in the source text. Recognition of domain terminology and tool names is allowed, even if no method or skill is demonstrated beyond usage."
+            },
+            {
+              "target_id": "ctx2",
+              "verdict": "supported",
+              "explanation": "The context 'member forces' is supported as a concept explicitly mentioned in the source text. Recognition of domain concepts is allowed."
+            },
+            {
+              "target_id": "ctx3",
+              "verdict": "supported",
+              "explanation": "The context 'hand calculations' is supported as a concept/method explicitly mentioned in the source text. Recognition of domain concepts is allowed."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [
+          "j2",
+          "j3",
+          "j4"
+        ],
+        "supported_competency_ids": [
+          "s1"
+        ],
+        "supported_context_ids": [
+          "ctx1",
+          "ctx2",
+          "ctx3"
+        ],
+        "questions": [],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-13T22:32:58.0867975Z",
+            "2026-09-13T22:33:53.1566429Z"
+          ],
+          "prompt_version": "understanding-v7+support-review-v7",
+          "prompt_sha256": "ac0a0b826c049fc0247aa9cb6f50fa5e5989647d260291ad8f2e1ef91ad3b09a",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "c4c103ba6c59f2bb11f316b0c5ab87587629212f1b026c463872751e4a038520"
+          },
+          "draft_response_sha256": "cb5a255e490e10403c22b96caadf956c893fd27d4fcc025ee9637b0e978b6543",
+          "review_response_sha256": "f8d0572c7fe132eb87d4a33ff4598238f7b44eff422f2dc711ee33c7455ea6f3"
+        }
+      },
+      "current_diagnostics": {
+        "case": "context-performed-method",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [
+          "claim[1]:label:impact:expected unknown, got reported"
+        ],
+        "coverage_gaps": [
+          {
+            "claim_id": "c1",
+            "suggestion_id": "s1",
+            "observed_skill": "Structural analysis modeling and verification using ETABS",
+            "reason": "unmapped_skill_needs_review"
+          }
+        ],
+        "mapped_evidence_count": 0,
+        "competency_contributions": null,
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true
+      }
+    },
+    {
+      "original_run": {
+        "case": "context-programming-project",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [],
+        "coverage_gaps": [],
+        "mapped_evidence_count": 1,
+        "competency_contributions": {
+          "programming": "0.640000"
+        },
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true,
+        "validation": "passed",
+        "mode": "live",
+        "seconds": 115.98,
+        "human_review": "pending"
+      },
+      "understanding": {
+        "response_version": "understanding-v3",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "For my personal project, I wrote Python code to clean survey records."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "project",
+              "statement": "For my personal project, I wrote Python code to clean survey records.",
+              "attribution": "student",
+              "presence": "reported_present",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "led",
+              "rationale": "The student explicitly states 'I wrote Python code', indicating individual action and ownership of the specific task within their personal project.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "The student used established methods (Python code) to implement a described task (cleaning survey records). No design choices or adaptations are explicitly described.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No evaluation method, test, or review process is stated for the cleaned records.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results, outcomes, or usage of the cleaned records are stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": "programming",
+              "observed_skill": "Writing Python code to clean data records",
+              "rationale": "The student explicitly wrote Python code, which supports the programming competency.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "s2",
+              "claim_id": "c1",
+              "competency_id": "quantitative_analysis",
+              "observed_skill": "Cleaning survey records",
+              "rationale": "The activity of cleaning survey records involves handling data, which supports quantitative analysis skills.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "contexts": [
+            {
+              "id": "ctx1",
+              "claim_id": "c1",
+              "kind": "tool",
+              "label": "Python",
+              "rationale": "The student explicitly named Python as the tool used for coding.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            },
+            {
+              "id": "ctx2",
+              "claim_id": "c1",
+              "kind": "domain",
+              "label": "Data Cleaning",
+              "rationale": "The task described is cleaning survey records, which falls under the domain of data processing/cleaning.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "For my personal project, I wrote Python code to clean survey records."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim accurately reflects the source text stating a personal project involving Python code for cleaning survey records."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "unsupported",
+              "explanation": "Attribution 'led' is unsupported. The phrase 'I wrote Python code' indicates individual action but does not explicitly describe directing the work or independently owning the entire deliverable; it could be a small task within a larger context, and 'my personal project' alone is insufficient to prove leading per rubric guidance."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The label 'applied' is supported. The student used an established method (Python code) to implement a described task (cleaning survey records), with no design choices or adaptations explicitly described, matching the definition of 'applied'."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' is supported. No evaluation method, test, review, or assessment process is stated in the source text for the cleaned records."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' is supported. No results, outcomes, usage, or impact of the cleaned records are stated in the source text."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "The competency 'programming' is supported. The student explicitly wrote Python code, which constitutes a demonstrated skill supporting the programming competency, even if the specific task was data cleaning."
+            },
+            {
+              "target_id": "s2",
+              "verdict": "unsupported",
+              "explanation": "The competency 'quantitative_analysis' is unsupported. While cleaning survey records involves data handling, the source text does not describe an explicit method or analysis of a question; it describes a task (cleaning) rather than an investigation or quantitative analysis process."
+            },
+            {
+              "target_id": "ctx1",
+              "verdict": "supported",
+              "explanation": "The context 'tool' with label 'Python' is supported. The source text explicitly names Python as the tool used for coding."
+            },
+            {
+              "target_id": "ctx2",
+              "verdict": "supported",
+              "explanation": "The context 'domain' with label 'Data Cleaning' is supported. The task described (cleaning survey records) falls under the domain of data processing/cleaning."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [
+          "j2"
+        ],
+        "supported_competency_ids": [
+          "s1"
+        ],
+        "supported_context_ids": [
+          "ctx1",
+          "ctx2"
+        ],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "Can you clarify the source and your contribution?",
+            "reason": "Attribution 'led' is unsupported. The phrase 'I wrote Python code' indicates individual action but does not explicitly describe directing the work or independently owning the entire deliverable; it could be a small task within a larger context, and 'my personal project' alone is insufficient to prove leading per rubric guidance."
+          },
+          {
+            "claim_id": "c1",
+            "question": "Can you clarify the source and your contribution?",
+            "reason": "The competency 'quantitative_analysis' is unsupported. While cleaning survey records involves data handling, the source text does not describe an explicit method or analysis of a question; it describes a task (cleaning) rather than an investigation or quantitative analysis process."
+          }
+        ],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-13T22:35:15.3567006Z",
+            "2026-09-13T22:35:49.19035Z"
+          ],
+          "prompt_version": "understanding-v7+support-review-v7",
+          "prompt_sha256": "ac0a0b826c049fc0247aa9cb6f50fa5e5989647d260291ad8f2e1ef91ad3b09a",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "ffea55bf9a01f101e50c562ae5e186daba115a4f0bbd46ad6141e316ab435170"
+          },
+          "draft_response_sha256": "427baf9eb2389530eb501675c2f426529457c7add8a6168a454207c55a58d928",
+          "review_response_sha256": "354d6ac35929452c7642473933e6270b7af501cbf2386c7cb72917f27c9f457a"
+        }
+      },
+      "current_diagnostics": {
+        "case": "context-programming-project",
+        "domain": "interdisciplinary",
+        "strength": "targeted_v3",
+        "failures": [],
+        "coverage_gaps": [],
+        "mapped_evidence_count": 1,
+        "competency_contributions": {
+          "programming": "0.640000"
+        },
+        "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+        "source_is_self_reported": true
+      }
+    }
+  ]
+}

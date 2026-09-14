@@ -1,0 +1,62 @@
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: machine_learning_publication_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_programming
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\qa\cross_domain_evidence.py:491: ProvisionalTaxonomyWarning: Provisional scoring configuration: ladders.yaml
+  taxonomy = load_taxonomy()
+{"case": "context-mixed", "domain": "interdisciplinary", "strength": "targeted_v3", "failures": [], "coverage_gaps": [{"claim_id": "c3", "suggestion_id": "s1", "observed_skill": "Python data-cleaning code", "reason": "qualitative_route_missing"}], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "recorded", "seconds": 0.02, "human_review": "pending"}
+{"case": "context-tool-only", "domain": "interdisciplinary", "strength": "targeted_v3", "failures": [], "coverage_gaps": [], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "recorded", "seconds": 0.02, "human_review": "pending"}
+{"case": "context-performed-method", "domain": "interdisciplinary", "strength": "targeted_v3", "failures": [], "coverage_gaps": [{"claim_id": "c1", "suggestion_id": "s1", "observed_skill": "Structural modeling and force comparison", "reason": "unmapped_skill_needs_review"}], "mapped_evidence_count": 0, "competency_contributions": null, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "recorded", "seconds": 0.02, "human_review": "pending"}
+{"case": "context-programming-project", "domain": "interdisciplinary", "strength": "targeted_v3", "failures": [], "coverage_gaps": [], "mapped_evidence_count": 1, "competency_contributions": {"programming": "0.640000"}, "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5", "source_is_self_reported": true, "validation": "passed", "mode": "recorded", "seconds": 0.03, "human_review": "pending"}

@@ -1,0 +1,1849 @@
+{
+  "model": "qwen3.5:9b",
+  "provider": "ollama-local",
+  "note": "Nine targeted v5 cases, not all 25. Original receipts rechecked with the corrected multi-claim/tool oracle. No additional model inference in rechecking. All cases synthetic. Runtime failures are not semantic failures.",
+  "baseline_v4_civil": {
+    "response_version": "understanding-v2",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.",
+          "attribution": "student",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The statement explicitly describes individual actions ('Designed', 'evaluated', 'compared') performed by the student to achieve specific project outcomes, establishing explicit individual contribution.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student made design choices ('Designed reinforced-concrete members') and adapted methods to constraints ('satisfying the stated project constraints on deflection and geometry').",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The work included explicit baselines or alternatives ('evaluated multiple load combinations, compared two alternatives').",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "A concrete outcome is reported with a specific measurement method/comparison ('reduced estimated material usage by 11%').",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": null,
+          "observed_skill": "Structural Engineering Design and Analysis",
+          "rationale": "The student performed tasks specific to structural engineering (designing reinforced-concrete members, evaluating load combinations). No explicit programming, ML, or other allowed competency keywords were used in the description.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text which describes a specific project involving design, evaluation, comparison, and material reduction."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The verb forms 'Designed', 'evaluated', and 'compared' explicitly describe individual actions performed by the student, establishing individual contribution as required for the 'led' label in this context."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The phrase 'Designed reinforced-concrete members' indicates making design choices, and 'satisfying... constraints' indicates adapting methods to specific requirements, supporting the 'designed' depth label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The text explicitly states 'evaluated multiple load combinations, compared two alternatives', which provides concrete baselines and alternatives required for the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The statement reports a specific quantitative outcome ('reduced estimated material usage by 11%') with an implied comparison method (reduction), supporting the 'measured' impact label."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "uncertain",
+          "explanation": "The source text describes structural engineering tasks. The proposed competency is null (missing taxonomy coverage). While this is a legitimate absence of a matching allowed competency rather than unsupported evidence, the verdict 'uncertain' is appropriate here to indicate that the specific skill observed does not map to any of the provided 'allowed_competencies' list without further verification or mapping."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The source text describes structural engineering tasks. The proposed competency is null (missing taxonomy coverage). While this is a legitimate absence of a matching allowed competency rather than unsupported evidence, the verdict 'uncertain' is appropriate here to indicate that the specific skill observed does not map to any of the provided 'allowed_competencies' list without further verification or mapping."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-12T20:56:00.8904212Z",
+        "2026-09-12T20:56:18.0708923Z"
+      ],
+      "prompt_version": "understanding-v4+support-review-v4",
+      "prompt_sha256": "7716aa028afd2aae73099dc389ad576c943c56054e68b2161e2012cd84b6d489",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+      "competency_catalog": {
+        "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+      },
+      "source_sha256": {
+        "source": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290"
+      },
+      "draft_response_sha256": "c3a737c430516bc2eeac93af8e9d47849847d9f6a14c8d5580a8607f76705906",
+      "review_response_sha256": "7d818e5ee14acd5e8ccf6116ac64c7d553eb3cf56d86e738d5aa8e7f3360b91e"
+    }
+  },
+  "v5_results": [
+    {
+      "case": "software-api-design",
+      "validation": "failed",
+      "error": "Interpretation rejected: Only one judgment per claim and dimension is allowed",
+      "mode": "live",
+      "seconds": 47.43,
+      "human_review": "pending",
+      "rechecked_oracle_failures": [],
+      "receipt": null
+    },
+    {
+      "case": "ml-deep",
+      "domain": "machine_learning",
+      "strength": "strong",
+      "coverage_gaps": [
+        {
+          "claim_id": "c1",
+          "suggestion_id": "s3",
+          "observed_skill": "Evaluated model performance using macro-F1 metric.",
+          "reason": "qualitative_route_missing"
+        }
+      ],
+      "mapped_evidence_count": 2,
+      "competency_contributions": {
+        "machine_learning": "2.4000000",
+        "programming": "2.4000000"
+      },
+      "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+      "source_is_self_reported": true,
+      "validation": "passed",
+      "mode": "live",
+      "seconds": 66.03,
+      "human_review": "pending",
+      "original_oracle_failures": [
+        "label:ownership: expected unknown, got led",
+        "false_positive_competency:programming",
+        "false_positive_competency:statistics",
+        "missing_supported_uncatalogued_skill"
+      ],
+      "rechecked_oracle_failures": [
+        "label:ownership: expected unknown, got led",
+        "false_positive_competency:programming",
+        "false_positive_competency:statistics",
+        "missing_supported_uncatalogued_skill"
+      ],
+      "receipt": {
+        "response_version": "understanding-v2",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "project",
+              "statement": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "led",
+              "rationale": "The statement uses explicit action verbs ('Designed', 'deployed') indicating individual ownership of the work, rather than just a title or possessive.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "designed",
+              "rationale": "The student explicitly states they 'Designed' a classifier and 'compared four baselines', indicating design choices and adaptation of methods rather than just applying established tools.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "compared",
+              "rationale": "The work explicitly involved comparing against 'four baselines' and used a 'held-out evaluation', satisfying the criteria for explicit comparison and control.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "measured",
+              "rationale": "A concrete outcome ('improved macro-F1 by 12%') is reported alongside a specific measurement method ('macro-F1') and comparison context.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": "machine_learning",
+              "observed_skill": "Designed and evaluated a multilingual BERT classifier with baseline comparisons.",
+              "rationale": "The activity involves designing a specific ML model (BERT), selecting baselines, and measuring performance metrics, which directly supports the machine learning competency.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            },
+            {
+              "id": "s2",
+              "claim_id": "c1",
+              "competency_id": "programming",
+              "observed_skill": "Deployed inference for a designed model.",
+              "rationale": "The statement explicitly mentions 'deployed inference', which implies writing code or scripts to serve the model, supporting the programming competency.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            },
+            {
+              "id": "s3",
+              "claim_id": "c1",
+              "competency_id": "statistics",
+              "observed_skill": "Evaluated model performance using macro-F1 metric.",
+              "rationale": "The use of 'macro-F1' as a specific measurement method for classification performance demonstrates the application of statistical evaluation techniques.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim statement is a verbatim quote from the source document and accurately reflects the described activity without invention or misattribution."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The rationale correctly distinguishes between mere titles/possessives and explicit action verbs ('Designed', 'deployed') that establish individual ownership, satisfying the rubric requirement for 'led'."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The statement explicitly mentions 'Designed' and 'compared four baselines', which constitutes making design choices and adapting methods, supporting the 'designed' depth label."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The text explicitly states 'compared four baselines' and used a 'held-out evaluation', providing concrete evidence for the 'compared' evaluation label."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The statement reports a specific outcome ('improved macro-F1 by 12%') alongside a defined measurement method ('macro-F1'), supporting the 'measured' impact label."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "The activity involves designing a specific model architecture (BERT), selecting baselines, and measuring performance, which directly supports the machine_learning competency without relying solely on tool names."
+            },
+            {
+              "target_id": "s2",
+              "verdict": "supported",
+              "explanation": "The explicit mention of 'deployed inference' implies writing code or scripts to serve the model, which supports the programming competency independently of the domain activity."
+            },
+            {
+              "target_id": "s3",
+              "verdict": "supported",
+              "explanation": "The use of 'macro-F1' as a specific metric for classification performance demonstrates the application of statistical evaluation techniques, supporting the statistics competency."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [
+          "j1",
+          "j2",
+          "j3",
+          "j4"
+        ],
+        "supported_competency_ids": [
+          "s1",
+          "s2",
+          "s3"
+        ],
+        "questions": [],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-12T20:59:34.3544992Z",
+            "2026-09-12T20:59:55.6127675Z"
+          ],
+          "prompt_version": "understanding-v5+support-review-v5",
+          "prompt_sha256": "39464446c57b625772e20033cc9e070877cde7663697218c7de47875fbb91fd0",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "101ed730ce3ce517fde17087daf68c3eebe0f0214b1e851335255fb5c58f7867"
+          },
+          "draft_response_sha256": "cbcfb8007ab87ae90bbf6c56e7ceaf7cd9d001eff48e764bd9dfb97686d13115",
+          "review_response_sha256": "e7f7fd3b2075559f9d0ad33747a5b78bd19fa4dc4092d00052d3f9ddc1c63e0e"
+        }
+      }
+    },
+    {
+      "case": "cyber-basic",
+      "domain": "cybersecurity",
+      "strength": "basic",
+      "coverage_gaps": [],
+      "mapped_evidence_count": 0,
+      "competency_contributions": null,
+      "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+      "source_is_self_reported": true,
+      "validation": "passed",
+      "mode": "live",
+      "seconds": 42.31,
+      "human_review": "pending",
+      "original_oracle_failures": [
+        "false_negative_competency:networking"
+      ],
+      "rechecked_oracle_failures": [
+        "false_negative_competency:networking"
+      ],
+      "receipt": {
+        "response_version": "understanding-v2",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "Analyzed packet captures using Wireshark to list protocol exchanges."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "Analyzed packet captures using Wireshark to list protocol exchanges.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement uses the verb 'Analyzed' which describes an action, but does not explicitly state that the student independently owned or directed the work. Possessives are absent. Without explicit leading or owning language, ownership remains unknown.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "applied",
+              "rationale": "The student used an established tool (Wireshark) to perform a described task (listing protocol exchanges). This demonstrates application of a method rather than design or investigation.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No method for evaluating the packet captures or the resulting list is stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results, outcomes, or specific findings from the analysis are stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+                }
+              ]
+            }
+          ],
+          "competencies": [],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The statement 'Analyzed packet captures using Wireshark to list protocol exchanges' explicitly describes a personal task performed by the student. While ownership is labeled unknown in j1, the claim itself accurately reflects the source text without invention or misattribution."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "uncertain",
+              "explanation": "The rationale claims 'Analyzed' does not establish ownership. However, the rubric states that a stated personal task supports attribution unless leading is falsely claimed. The source text describes a specific action ('Analyzed... to list') performed by the student, which establishes individual contribution (shared or assisted) rather than leaving it strictly unknown. The label 'unknown' is too restrictive given the explicit description of a personal action."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The student used Wireshark (an established tool) to list protocol exchanges. This matches the 'applied' label which requires using established methods to complete a task, rather than designing or investigating."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The source text mentions analyzing captures and listing exchanges but provides no details on how the quality of the analysis or the list was evaluated (e.g., accuracy checks, peer review). Thus, 'unknown' is appropriate."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The source text describes the activity but reports no specific outcomes, findings, or results from the analysis. Therefore, 'unknown' for impact is correct."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [
+          "j2"
+        ],
+        "supported_competency_ids": [],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "Can you clarify the source and your contribution?",
+            "reason": "The rationale claims 'Analyzed' does not establish ownership. However, the rubric states that a stated personal task supports attribution unless leading is falsely claimed. The source text describes a specific action ('Analyzed... to list') performed by the student, which establishes individual contribution (shared or assisted) rather than leaving it strictly unknown. The label 'unknown' is too restrictive given the explicit description of a personal action."
+          }
+        ],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-12T21:00:21.2002782Z",
+            "2026-09-12T21:00:37.9323197Z"
+          ],
+          "prompt_version": "understanding-v5+support-review-v5",
+          "prompt_sha256": "39464446c57b625772e20033cc9e070877cde7663697218c7de47875fbb91fd0",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "dbda32fbb134fcfe35c271f1e5a962d6e429019ce71c55f93b68c31535dac0ec"
+          },
+          "draft_response_sha256": "4832d3f036189e48b38d9b9c99f75e0d206176a3886eb9a0811fe9e094554c66",
+          "review_response_sha256": "fe8f2b99255bc2cc6ed0d8a36300c9f24b9e18041213f475815b8b0c60bf33b7"
+        }
+      }
+    },
+    {
+      "case": "civil-deep",
+      "validation": "failed",
+      "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+      "mode": "live",
+      "seconds": 26.88,
+      "human_review": "pending",
+      "rechecked_oracle_failures": [],
+      "receipt": null
+    },
+    {
+      "case": "electrical-deep",
+      "validation": "failed",
+      "error": "Model endpoint unavailable or timed out",
+      "mode": "live",
+      "seconds": 180.05,
+      "human_review": "pending",
+      "rechecked_oracle_failures": [],
+      "receipt": null
+    },
+    {
+      "case": "mechanical-deep",
+      "validation": "failed",
+      "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+      "mode": "live",
+      "seconds": 37.8,
+      "human_review": "pending",
+      "rechecked_oracle_failures": [],
+      "receipt": null
+    },
+    {
+      "case": "neutral-research-absence",
+      "domain": "interdisciplinary",
+      "strength": "medium",
+      "coverage_gaps": [],
+      "mapped_evidence_count": 0,
+      "competency_contributions": null,
+      "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+      "source_is_self_reported": true,
+      "validation": "passed",
+      "mode": "live",
+      "seconds": 98.15,
+      "human_review": "pending",
+      "original_oracle_failures": [
+        "label:impact: expected unknown, got reported",
+        "missing_supported_uncatalogued_skill",
+        "canonical_claim_count_mismatch"
+      ],
+      "rechecked_oracle_failures": [
+        "label:evaluation: expected compared, got compared,externally_reviewed",
+        "label:impact: expected unknown, got reported",
+        "missing_supported_uncatalogued_skill",
+        "canonical_claim_count_mismatch"
+      ],
+      "receipt": {
+        "response_version": "understanding-v2",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "publication",
+              "statement": "Published a research paper in Journal XYZ.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Published a research paper in Journal XYZ."
+                }
+              ],
+              "duplicate_of": null
+            },
+            {
+              "id": "c2",
+              "category": "research",
+              "statement": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+                }
+              ],
+              "duplicate_of": null
+            },
+            {
+              "id": "c3",
+              "category": "activity",
+              "statement": "I have not written programming code or trained machine-learning models.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have not written programming code or trained machine-learning models."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement 'Published a research paper' indicates the existence of a publication but does not explicitly describe the student's individual responsibilities, leadership, or specific contribution to the work. Possessive phrasing is absent; only the outcome is stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Published a research paper in Journal XYZ."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "The evidence states the publication venue but does not describe the specific methods, design choices, or nature of the research work performed by the student.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Published a research paper in Journal XYZ."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "externally_reviewed",
+              "rationale": "The term 'Published' in a 'Journal' implies external review, though the specific status (e.g., peer-reviewed) is not explicitly detailed beyond the publication claim.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Published a research paper in Journal XYZ."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "reported",
+              "rationale": "The publication itself is a reported outcome, but no specific measurement of impact (e.g., citations, adoption) is stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Published a research paper in Journal XYZ."
+                }
+              ]
+            },
+            {
+              "id": "j5",
+              "claim_id": "c2",
+              "dimension": "ownership",
+              "label": "assisted",
+              "rationale": "The student explicitly states 'I assisted the study', indicating support for another contributor or guided work rather than independent ownership.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+                }
+              ]
+            },
+            {
+              "id": "j6",
+              "claim_id": "c2",
+              "dimension": "depth",
+              "label": "investigated",
+              "rationale": "The student explicitly describes investigating interview responses through thematic coding and comparing themes, which constitutes investigation via an explicit method.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+                }
+              ]
+            },
+            {
+              "id": "j7",
+              "claim_id": "c2",
+              "dimension": "evaluation",
+              "label": "compared",
+              "rationale": "The student describes 'comparing themes with a second coder', which includes explicit baselines or controls (inter-coder comparison).",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+                }
+              ]
+            },
+            {
+              "id": "j8",
+              "claim_id": "c2",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No specific results or outcomes of this coding work are stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+                }
+              ]
+            },
+            {
+              "id": "j9",
+              "claim_id": "c3",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "This statement is a negative claim about what was not done; it does not establish ownership of any specific deliverable.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have not written programming code or trained machine-learning models."
+                }
+              ]
+            },
+            {
+              "id": "j10",
+              "claim_id": "c3",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "The statement clarifies the absence of certain technical activities but does not describe the depth of work performed in other areas.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have not written programming code or trained machine-learning models."
+                }
+              ]
+            },
+            {
+              "id": "j11",
+              "claim_id": "c3",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No evaluation method is stated for the work performed.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have not written programming code or trained machine-learning models."
+                }
+              ]
+            },
+            {
+              "id": "j12",
+              "claim_id": "c3",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results are stated.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "I have not written programming code or trained machine-learning models."
+                }
+              ]
+            }
+          ],
+          "competencies": [],
+          "questions": [],
+          "unassessed": [
+            "The specific role of the student in the publication (c1) is unknown; it is unclear if they were a lead author, co-author, or contributor.",
+            "The specific topic or domain of the research paper (c1) is not described.",
+            "The specific context or organization for the research study where thematic coding was performed (c2) is not described."
+          ]
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The source text explicitly states 'Published a research paper in Journal XYZ', which directly supports the claim statement."
+            },
+            {
+              "target_id": "c2",
+              "verdict": "supported",
+              "explanation": "The source text explicitly states 'I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder', which directly supports the claim statement."
+            },
+            {
+              "target_id": "c3",
+              "verdict": "supported",
+              "explanation": "The source text explicitly states 'I have not written programming code or trained machine-learning models', which directly supports the claim statement."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that the text only mentions publication existence without describing individual responsibilities, leadership, or specific contributions, justifying the 'unknown' ownership label per rubric guidance."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that the text mentions the venue but lacks description of specific methods or design choices performed by the student, justifying the 'unknown' depth label."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The rationale correctly infers external review from the term 'Published' in a 'Journal', noting the lack of explicit peer-review detail but supporting the 'externally_reviewed' label based on standard publication context."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that the publication itself is a reported outcome without specific measurement metrics, justifying the 'reported' impact label."
+            },
+            {
+              "target_id": "j5",
+              "verdict": "supported",
+              "explanation": "The rationale correctly interprets the phrase 'I assisted the study' as explicit support for another contributor, justifying the 'assisted' ownership label."
+            },
+            {
+              "target_id": "j6",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that investigating interview responses through thematic coding constitutes investigation via an explicit method, supporting the 'investigated' depth label."
+            },
+            {
+              "target_id": "j7",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that comparing themes with a second coder includes explicit baselines/controls (inter-coder comparison), supporting the 'compared' evaluation label."
+            },
+            {
+              "target_id": "j8",
+              "verdict": "supported",
+              "explanation": "The rationale correctly notes the absence of specific results or outcomes for this coding work, justifying the 'unknown' impact label."
+            },
+            {
+              "target_id": "j9",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that a negative claim about what was not done does not establish ownership of a deliverable, supporting the 'unknown' ownership label."
+            },
+            {
+              "target_id": "j10",
+              "verdict": "supported",
+              "explanation": "The rationale correctly notes that clarifying the absence of certain activities does not describe the depth of work performed in other areas, supporting the 'unknown' depth label."
+            },
+            {
+              "target_id": "j11",
+              "verdict": "supported",
+              "explanation": "The rationale correctly notes that no evaluation method is stated for the work described (which is a negative claim), supporting the 'unknown' evaluation label."
+            },
+            {
+              "target_id": "j12",
+              "verdict": "supported",
+              "explanation": "The rationale correctly notes that no results are stated in the text, supporting the 'unknown' impact label."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1",
+          "c2",
+          "c3"
+        ],
+        "supported_judgment_ids": [
+          "j3",
+          "j4",
+          "j5",
+          "j6",
+          "j7"
+        ],
+        "supported_competency_ids": [],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "What did you personally implement or investigate, and how did you test it or measure the result?",
+            "reason": "The source does not establish supported depth of work."
+          }
+        ],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-12T21:05:46.8785518Z",
+            "2026-09-12T21:06:20.8696532Z"
+          ],
+          "prompt_version": "understanding-v5+support-review-v5",
+          "prompt_sha256": "39464446c57b625772e20033cc9e070877cde7663697218c7de47875fbb91fd0",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f"
+          },
+          "draft_response_sha256": "17b38ca69059f3d3888fd448a6243af2a4d8f063786205aa88fdc04b6f55ef61",
+          "review_response_sha256": "e3f3919b1a0f4a02c34d190db8b6fc943aee29a9b81c10b8a28a1ebcfac60f01"
+        }
+      }
+    },
+    {
+      "case": "tool-etabs",
+      "domain": "tool_probe",
+      "strength": "weak",
+      "coverage_gaps": [
+        {
+          "claim_id": "c1",
+          "suggestion_id": "s1",
+          "observed_skill": "ETABS usage",
+          "reason": "taxonomy_node_missing"
+        }
+      ],
+      "mapped_evidence_count": 0,
+      "competency_contributions": null,
+      "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+      "source_is_self_reported": true,
+      "validation": "passed",
+      "mode": "live",
+      "seconds": 44.92,
+      "human_review": "pending",
+      "original_oracle_failures": [],
+      "rechecked_oracle_failures": [
+        "tool_recognition_promoted_to_demonstrated_skill"
+      ],
+      "receipt": {
+        "response_version": "understanding-v2",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "Used ETABS."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "project",
+              "statement": "Used ETABS.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement 'Used ETABS' describes a tool usage but does not explicitly describe individual responsibilities, leading, or independent ownership of the work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "The statement 'Used ETABS' is a tool mention alone. It does not describe the nature of the work, design choices, or methods implemented.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results, outcomes, or impacts are stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": null,
+              "observed_skill": "ETABS usage",
+              "rationale": "The student explicitly used ETABS software. However, tool usage alone does not demonstrate expertise in structural engineering design, programming, or system architecture without further context on the specific tasks performed.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used ETABS."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim accurately reflects the source text 'Used ETABS.' The attribution to 'student' is appropriate as the draft does not explicitly describe a team context or shared ownership, so individual attribution is the default interpretation of the statement."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The judgment correctly identifies that 'Used ETABS' describes tool usage without establishing explicit individual responsibility, leading, or independent ownership. The label 'unknown' for the ownership dimension is appropriate given the lack of evidence regarding who performed the work or directed it."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The judgment correctly notes that mentioning a tool name alone does not describe the nature of the work, design choices, or methods implemented. The label 'unknown' for the depth dimension is appropriate because the source text provides no details on how the task was executed."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The judgment correctly observes that no evaluation method, test, review, or assessment is stated in the evidence. The label 'unknown' for the evaluation dimension is appropriate."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The judgment correctly notes that no results, outcomes, or impacts are stated in the evidence. The label 'unknown' for the impact dimension is appropriate."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "The competency observation identifies 'ETABS usage' as the observed skill with a null competency_id. This is legitimate missing taxonomy coverage, not unsupported evidence. The rationale correctly distinguishes between tool usage and domain expertise (e.g., structural design), avoiding false routing to programming or other competencies."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [],
+        "supported_competency_ids": [
+          "s1"
+        ],
+        "questions": [
+          {
+            "claim_id": "c1",
+            "question": "What did you personally implement or investigate, and how did you test it or measure the result?",
+            "reason": "The source does not establish supported depth of work."
+          }
+        ],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-12T21:06:47.6375339Z",
+            "2026-09-12T21:07:05.8043622Z"
+          ],
+          "prompt_version": "understanding-v5+support-review-v5",
+          "prompt_sha256": "39464446c57b625772e20033cc9e070877cde7663697218c7de47875fbb91fd0",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "8cfbf2ccf33341e3130234efbcff642abf8aec67b3f8779b399c1c4acfd99029"
+          },
+          "draft_response_sha256": "d7c88cde797ca635cf2eaafa7a978d96fa11efa7fc9453d1c8cf0cac8c09fa96",
+          "review_response_sha256": "64e123df9c38e0946cf5416a646ee6e98d284334967177b73dbb7583c575fc36"
+        }
+      }
+    },
+    {
+      "case": "tool-nessus",
+      "domain": "tool_probe",
+      "strength": "weak",
+      "coverage_gaps": [
+        {
+          "claim_id": "c1",
+          "suggestion_id": "s1",
+          "observed_skill": "Tool usage: Nessus",
+          "reason": "taxonomy_node_missing"
+        }
+      ],
+      "mapped_evidence_count": 0,
+      "competency_contributions": null,
+      "taxonomy_version": "1e435ab9b2a2d7c433f60a785b663fd90ed2cbd3a2f207485573655d099f74d5",
+      "source_is_self_reported": true,
+      "validation": "passed",
+      "mode": "live",
+      "seconds": 41.24,
+      "human_review": "pending",
+      "original_oracle_failures": [
+        "missing_clarification"
+      ],
+      "rechecked_oracle_failures": [
+        "tool_recognition_promoted_to_demonstrated_skill",
+        "missing_clarification"
+      ],
+      "receipt": {
+        "response_version": "understanding-v2",
+        "requires_confirmation": true,
+        "scoring_enabled": false,
+        "documents": [
+          {
+            "id": "source",
+            "text": "Used Nessus."
+          }
+        ],
+        "draft": {
+          "claims": [
+            {
+              "id": "c1",
+              "category": "activity",
+              "statement": "Used Nessus.",
+              "attribution": "student",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ],
+              "duplicate_of": null
+            }
+          ],
+          "academics": [],
+          "judgments": [
+            {
+              "id": "j1",
+              "claim_id": "c1",
+              "dimension": "ownership",
+              "label": "unknown",
+              "rationale": "The statement 'Used Nessus' describes a tool usage but does not explicitly describe individual responsibilities, leading, or independent ownership of the work.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ]
+            },
+            {
+              "id": "j2",
+              "claim_id": "c1",
+              "dimension": "depth",
+              "label": "unknown",
+              "rationale": "The statement 'Used Nessus' is a tool mention alone. It does not describe the nature of the work performed, methods implemented, or design choices made.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ]
+            },
+            {
+              "id": "j3",
+              "claim_id": "c1",
+              "dimension": "evaluation",
+              "label": "unknown",
+              "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ]
+            },
+            {
+              "id": "j4",
+              "claim_id": "c1",
+              "dimension": "impact",
+              "label": "unknown",
+              "rationale": "No results, outcomes, or impacts are stated in the evidence.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ]
+            }
+          ],
+          "competencies": [
+            {
+              "id": "s1",
+              "claim_id": "c1",
+              "competency_id": null,
+              "observed_skill": "Tool usage: Nessus",
+              "rationale": "The student explicitly stated they used the tool 'Nessus'. However, per instructions, tool recognition alone (especially for security tools like Nessus) does not imply advanced security competency or successful remediation. Therefore, no allowed competency ID is assigned.",
+              "citations": [
+                {
+                  "document_id": "source",
+                  "quote": "Used Nessus."
+                }
+              ]
+            }
+          ],
+          "questions": [],
+          "unassessed": []
+        },
+        "support_review": {
+          "checks": [
+            {
+              "target_id": "c1",
+              "verdict": "supported",
+              "explanation": "The claim accurately reflects the source text 'Used Nessus' and correctly attributes the activity to the student without inventing ownership or results."
+            },
+            {
+              "target_id": "j1",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' for ownership is appropriate because the source text only mentions tool usage ('Used Nessus') and provides no evidence of individual responsibility, leading, or independent ownership."
+            },
+            {
+              "target_id": "j2",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' for depth is correct; the text mentions a tool name but describes no methods, design choices, or nature of the work performed."
+            },
+            {
+              "target_id": "j3",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' for evaluation is accurate as the source text contains no mention of tests, reviews, or assessment methods."
+            },
+            {
+              "target_id": "j4",
+              "verdict": "supported",
+              "explanation": "The label 'unknown' for impact is correct because the source text reports no results, outcomes, or impacts."
+            },
+            {
+              "target_id": "s1",
+              "verdict": "supported",
+              "explanation": "The rationale correctly identifies that tool usage alone does not establish an allowed competency ID. The verdict of null competency_id is supported by the instruction to reject inflated tool-to-competency proposals."
+            }
+          ],
+          "duplicate_groups": []
+        },
+        "supported_claim_ids": [
+          "c1"
+        ],
+        "supported_judgment_ids": [],
+        "supported_competency_ids": [
+          "s1"
+        ],
+        "questions": [],
+        "limitations": [
+          "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+          "Model support review is not independent verification of achievements.",
+          "Institutions and venues have not been researched in this stage.",
+          "Student confirmation is required before configured mappings apply."
+        ],
+        "audit": {
+          "provider": "ollama-local",
+          "model": "qwen3.5:9b",
+          "completion_models": [
+            "qwen3.5:9b",
+            "qwen3.5:9b"
+          ],
+          "response_ids": [
+            "2026-09-12T21:07:31.655801Z",
+            "2026-09-12T21:07:47.055602Z"
+          ],
+          "prompt_version": "understanding-v5+support-review-v5",
+          "prompt_sha256": "39464446c57b625772e20033cc9e070877cde7663697218c7de47875fbb91fd0",
+          "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+          "rubric_snapshot": {
+            "version": "qualitative-v1",
+            "provisional": true,
+            "validated_by": null,
+            "source": null,
+            "dimensions": [
+              {
+                "id": "ownership",
+                "description": "Individual contribution explicitly described in the evidence.",
+                "labels": {
+                  "unknown": "Individual responsibility is not established.",
+                  "assisted": "Explicitly supported another contributor or followed guided work.",
+                  "shared": "Explicit individual contribution within collaborative work.",
+                  "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+                }
+              },
+              {
+                "id": "depth",
+                "description": "Nature of the work demonstrated by the description, not prestige.",
+                "labels": {
+                  "unknown": "A title, skill list, or credential alone does not describe the work.",
+                  "applied": "Used established methods to implement or complete a described task.",
+                  "designed": "Made and explained design choices or adapted methods to constraints.",
+                  "investigated": "Investigated a question through an explicit method and analysis."
+                }
+              },
+              {
+                "id": "evaluation",
+                "description": "How the work was evaluated; no implied ordering across disciplines.",
+                "labels": {
+                  "unknown": "No evaluation method is stated.",
+                  "described": "A concrete test, review, or assessment method is stated.",
+                  "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+                  "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+                }
+              },
+              {
+                "id": "impact",
+                "description": "Evidence describing results, separate from their independent verification.",
+                "labels": {
+                  "unknown": "No result is stated.",
+                  "reported": "A concrete outcome is reported without a measurement method.",
+                  "measured": "An outcome and measurement method or comparison are stated.",
+                  "adopted": "Actual use or adoption by identified users or an organization is stated."
+                }
+              }
+            ],
+            "category_guidance": {
+              "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+              "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+              "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+              "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+              "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+              "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+              "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+              "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+            }
+          },
+          "taxonomy_version": "c5f40ccb7a042bcc843656c5c64d02dfb37d0bca5a7f9be2d364336d94088b41",
+          "competency_catalog": {
+            "networking": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+            "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+            "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "security": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+            "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+            "quantitative_analysis": "Competency explicitly named in Build Spec section 5.2; definition pending human validation."
+          },
+          "source_sha256": {
+            "source": "0d3f08731bf6979cac1aad2fdbd55bddb89c2513db1324b4e2a1e72bee3726f0"
+          },
+          "draft_response_sha256": "6ee90ff0faad9b219439334f481f0a315546730811dcf502676d8a0f42416b39",
+          "review_response_sha256": "171c21d5a197e041e75b038ec067fef38dea0d175e5000194c4b6716297c39ec"
+        }
+      }
+    }
+  ]
+}

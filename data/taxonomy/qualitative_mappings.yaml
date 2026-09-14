@@ -1,3 +1,429 @@
-version: qualitative-mappings-v1
-# Intentionally empty until a named expert approves mappings and scoring inputs.
-mappings: []
+# MVP product configuration: provisional, uncalibrated, no per-student expert approval.
+# A supported suggestion for the target competency is also mandatory.
+# Highest priority wins per claim/competency; unknown is never a matching label.
+version: qualitative-mappings-v2
+mappings:
+- id: project_programming_basic_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: project_programming_substantive_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: project_programming_evaluated_outcome_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: project_machine_learning_basic_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: project_machine_learning_substantive_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: project_machine_learning_evaluated_outcome_v1
+  claim_category: project
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_programming_basic_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_programming_substantive_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_programming_evaluated_outcome_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_machine_learning_basic_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_machine_learning_substantive_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: work_machine_learning_evaluated_outcome_v1
+  claim_category: work
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_programming_basic_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_programming_substantive_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_programming_evaluated_outcome_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_machine_learning_basic_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_machine_learning_substantive_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: research_machine_learning_evaluated_outcome_v1
+  claim_category: research
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_programming_basic_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_programming_substantive_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_programming_evaluated_outcome_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_programming
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_machine_learning_basic_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - applied
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: basic
+  depth_label: applied
+  priority: 10
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_machine_learning_substantive_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: substantive
+  depth_label: designed_or_investigated
+  priority: 20
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null
+- id: publication_machine_learning_evaluated_outcome_v1
+  claim_category: publication
+  rubric_sha256: 57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40
+  judgment_requirements:
+  - dimension: depth
+    labels:
+    - designed
+    - investigated
+  - dimension: evaluation
+    labels:
+    - compared
+  - dimension: impact
+    labels:
+    - measured
+  evidence_rule_id: qualitative_activity_to_machine_learning
+  quality_label: evaluated_outcome
+  depth_label: designed_or_investigated
+  priority: 30
+  provisional: true
+  validated_by: null
+  validated_on: null
+  source: null

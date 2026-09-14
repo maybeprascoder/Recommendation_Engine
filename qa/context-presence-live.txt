@@ -1,0 +1,59 @@
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional competency nodes: cryptography, distributed_systems, machine_learning, networking, operating_systems, policy_governance, programming, quantitative_analysis, risk, security, statistics
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: machine_learning_publication_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_programming
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: qualitative_activity_to_machine_learning
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: project_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: work_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: research_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_programming_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_basic_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_substantive_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: publication_machine_learning_evaluated_outcome_v1
+  taxonomy = load_taxonomy()
+C:\Users\praso\OneDrive\Documents\Recommendation Engine\unihive-engine\src\unihive\llm\analysis_cli.py:75: ProvisionalTaxonomyWarning: Provisional scoring configuration: ladders.yaml
+  taxonomy = load_taxonomy()
+Provisional evaluation rubrics in use: 1

@@ -148,6 +148,7 @@ class CompatibleChatClient:
             api_key=key,
             output_mode=mode,
             timeout=float(os.getenv("UNIHIVE_LLM_TIMEOUT", "60")),
+            max_tokens=int(os.getenv("UNIHIVE_LLM_MAX_TOKENS", "8192")),
             ollama_native=os.getenv("UNIHIVE_LLM_PROVIDER") == "ollama",
             context_tokens=int(os.getenv("UNIHIVE_LLM_CONTEXT", "16384")),
         )
@@ -169,14 +170,17 @@ class CompatibleChatClient:
             }
         else:
             response_format = {"type": "json_object"}
+        system_content = instructions
+        if not self._ollama_native and self._output_mode != "json_schema":
+            system_content += "\nReturn JSON matching this schema:\n" + json.dumps(
+                schema
+            )
         body = {
             "model": self.model,
             "messages": [
                 {
                     "role": "system",
-                    "content": instructions
-                    + "\nReturn JSON matching this schema:\n"
-                    + json.dumps(schema),
+                    "content": system_content,
                 },
                 {"role": "user", "content": payload},
             ],

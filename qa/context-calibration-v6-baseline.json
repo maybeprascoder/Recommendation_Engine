@@ -1,0 +1,11 @@
+{
+  "case": "context-mixed",
+  "prompt_version": "understanding-v6+support-review-v6",
+  "failures": [
+    "claim[1]:context_or_absence_promoted_to_skill",
+    "claim[2]:unsupported_category:research",
+    "claim[3]:unsupported_category:coursework",
+    "claim[3]:false_negative_competency:programming"
+  ],
+  "scope": "Narrow provisional claim-scoped oracle; independent of numeric diagnostics."
+}

@@ -65,6 +65,8 @@ def _resolve_one(
         (evidence, rule)
         for rule in rules
         for evidence in evidence_by_kind.get(rule.evidence_kind, ())
+        if evidence.qualitative_mapping is None
+        or evidence.qualitative_mapping.evidence_rule_id == rule.id
     ]
     evaluations = [
         evaluate_evidence(evidence, rule, configuration, as_of=as_of)
@@ -123,14 +125,8 @@ def _combine_present_evidence(
 ) -> tuple[list[EvidenceContribution], Decimal]:
     trace: list[EvidenceContribution] = []
     total = Decimal("0")
-    multipliers = configuration.combination_curve.multipliers
-
     for index, evaluation in enumerate(evaluations):
-        multiplier = (
-            multipliers[index]
-            if index < len(multipliers)
-            else configuration.combination_curve.tail_multiplier
-        )
+        multiplier = configuration.combination_curve.multiplier_at(index)
         contribution = evaluation.raw_contribution * multiplier
         total += contribution
         trace.append(

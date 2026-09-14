@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 
 import pytest
-from understanding_samples import mixed_result
+from understanding_samples import mixed_result, qualitative_result
 
 from unihive.competency import resolve_competencies
 from unihive.evidence import (
@@ -126,10 +126,14 @@ def test_academic_correction_projects_original_scale_without_normalizing() -> No
     assert confirm_result(profile, result, academics=academics).academic_history == []
 
 
-def test_expert_approved_mapping_is_the_only_qualitative_scoring_bridge() -> None:
-    result = mixed_result()
+def test_calibrated_mapping_still_requires_supported_unchanged_labels() -> None:
+    result = qualitative_result(
+        "I designed and evaluated a multilingual classifier.",
+        labels={"depth": "designed"},
+        skills={"classifier design": "machine_learning"},
+    )
     taxonomy = load_taxonomy()
-    rule = taxonomy.evidence_rules[0].model_copy(
+    rule = taxonomy.evidence_rules[-1].model_copy(
         update={
             "provisional": False,
             "validated_by": "Synthetic expert",
@@ -144,8 +148,8 @@ def test_expert_approved_mapping_is_the_only_qualitative_scoring_bridge() -> Non
             JudgmentRequirement(dimension="depth", labels=("designed",)),
         ),
         evidence_rule_id=rule.id,
-        quality_label="preprint",
-        depth_label="first_author",
+        quality_label="substantive",
+        depth_label="designed_or_investigated",
         validated_by="Synthetic expert",
         validated_on=date(2026, 9, 11),
         source="Synthetic expert review record",
@@ -176,7 +180,7 @@ def test_expert_approved_mapping_is_the_only_qualitative_scoring_bridge() -> Non
     index = next(
         index
         for index, change in enumerate(judgment_changes)
-        if change.judgment_id == "depth-student"
+        if change.judgment_id == "depth"
     )
     judgment_changes[index] = judgment_changes[index].model_copy(
         update={"label": "applied", "notes": "Student corrected the label."}
