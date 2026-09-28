@@ -10,7 +10,9 @@ from qa.human_review_dataset import (
     HumanReview,
     ReviewLabel,
     build_seed_record,
+    digest_bytes,
     load_dataset,
+    portable_fixture_digests,
     validate_no_scoring_fields,
     validate_record,
 )
@@ -64,6 +66,13 @@ def test_seed_builder_never_promotes_a_reference_or_prediction_to_gold():
         disputed_fields=[],
         notes=[],
     )
+
+
+def test_fixture_provenance_is_portable_across_checkout_line_endings():
+    lf = b'{"cases":[]}\n'
+    crlf = b'{"cases":[]}\r\n'
+    assert digest_bytes(lf) in portable_fixture_digests(crlf)
+    assert digest_bytes(crlf) in portable_fixture_digests(lf)
 
 
 def test_dataset_contract_has_no_numeric_scoring_fields():
