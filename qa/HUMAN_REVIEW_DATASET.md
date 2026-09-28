@@ -20,9 +20,12 @@ demonstrated methods, competency suggestions, ownership, depth, evaluation,
 impact, questions, unassessed facts, and per-item support verdicts. It contains no
 numeric scoring fields.
 
-Eight pending records cover computer science, machine learning, cybersecurity,
-civil, mechanical, electrical/embedded, qualitative research, and teaching. Five
-have historical live-model predictions; three truthfully record that none exists.
+The canonical file currently contains 100 pending records across computer
+science, machine learning, cybersecurity, civil, mechanical,
+electrical/embedded, research, teaching, interdisciplinary, and semantic-trap
+domains. The first 30-case adjudication subset is listed in
+[`HUMAN_REVIEW_BATCH_STAGE4C.md`](HUMAN_REVIEW_BATCH_STAGE4C.md) and its compact
+manifest; no model output or provisional reference is promoted automatically.
 
 Run `python -m qa.human_review_dataset` to validate the file. Validation rejects
 changed or missing source references, altered embedded prediction snapshots,
