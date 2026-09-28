@@ -248,6 +248,16 @@ def digest_bytes(value: bytes) -> str:
     return sha256(value).hexdigest()
 
 
+def portable_fixture_digests(value: bytes) -> set[str]:
+    """Return fixture digests that differ only by checkout line endings."""
+    normalized = value.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return {
+        digest_bytes(value),
+        digest_bytes(normalized),
+        digest_bytes(normalized.replace(b"\n", b"\r\n")),
+    }
+
+
 def canonical_digest(value: JsonValue) -> str:
     encoded = json.dumps(
         value, sort_keys=True, separators=(",", ":"), ensure_ascii=False
@@ -452,14 +462,17 @@ def build_seed_record(spec: SeedSpec) -> HumanReviewRecord:
 
 def validate_record(record: HumanReviewRecord, taxonomy: Taxonomy) -> None:
     validate_no_scoring_fields(record.model_dump(mode="json"))
-    case, fixture_digest, case_digest = load_fixture_case(
+    case, _fixture_digest, case_digest = load_fixture_case(
         record.source.fixture_path, record.source.fixture_case_id
     )
     if record.source.text != case.source_text:
         raise ValueError(f"Broken source text reference: {record.review_id}")
     if record.source.text_sha256 != digest_bytes(record.source.text.encode("utf-8")):
         raise ValueError(f"Broken source text digest: {record.review_id}")
-    if record.source.fixture_sha256 != fixture_digest:
+    fixture_path = repository_path(record.source.fixture_path)
+    if record.source.fixture_sha256 not in portable_fixture_digests(
+        fixture_path.read_bytes()
+    ):
         raise ValueError(f"Changed fixture file: {record.review_id}")
     if record.source.fixture_case_sha256 != case_digest:
         raise ValueError(f"Changed fixture case: {record.review_id}")

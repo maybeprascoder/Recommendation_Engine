@@ -10,7 +10,9 @@ from qa.human_review_dataset import (
     HumanReview,
     ReviewLabel,
     build_seed_record,
+    digest_bytes,
     load_dataset,
+    portable_fixture_digests,
     validate_no_scoring_fields,
     validate_record,
 )
@@ -27,18 +29,23 @@ def nested_keys(value):
             yield from nested_keys(item)
 
 
-def test_representative_dataset_is_ready_but_has_no_gold_labels():
+def test_provisional_dataset_is_ready_but_has_no_gold_labels():
     records = load_dataset(DATASET_PATH)
-    assert len(records) == 8
-    assert {record.review_domain for record in records} == {
-        "computer_science",
-        "machine_learning",
-        "cybersecurity",
-        "civil",
-        "mechanical",
-        "electrical_embedded",
-        "research",
-        "teaching",
+    assert len(records) == 100
+    assert {
+        domain: sum(record.review_domain == domain for record in records)
+        for domain in {record.review_domain for record in records}
+    } == {
+        "computer_science": 12,
+        "machine_learning": 12,
+        "cybersecurity": 12,
+        "civil": 12,
+        "mechanical": 10,
+        "electrical_embedded": 10,
+        "research": 10,
+        "teaching": 6,
+        "interdisciplinary": 8,
+        "semantic_traps": 8,
     }
     assert sum(record.model_prediction.status == "available" for record in records) == 5
     assert all(record.human_review.status == "pending" for record in records)
@@ -59,6 +66,13 @@ def test_seed_builder_never_promotes_a_reference_or_prediction_to_gold():
         disputed_fields=[],
         notes=[],
     )
+
+
+def test_fixture_provenance_is_portable_across_checkout_line_endings():
+    lf = b'{"cases":[]}\n'
+    crlf = b'{"cases":[]}\r\n'
+    assert digest_bytes(lf) in portable_fixture_digests(crlf)
+    assert digest_bytes(crlf) in portable_fixture_digests(lf)
 
 
 def test_dataset_contract_has_no_numeric_scoring_fields():
