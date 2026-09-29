@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-ml-feature-design",
+  "review_domain": "machine_learning",
+  "lineage_group": "ml_pipeline_progression",
+  "source_sha256": "5225b9c3e6ad5b43345d8e982f399f9d8d5a7b367e2ecd1bf0c600e30200f196",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 63.26,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 63.21,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "856481b3f038e1512b95eb4786cf8578d0cad8c0927aeb106e30ac1ce8ca09dd",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:00:14.3934701Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"I designed a feature pipeline for fraud detection, used stratified cross-validation, and compared logistic regression with gradient boosting on the same folds.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed a feature pipeline for fraud detection, used stratified cross-validation, and compared logistic regression with gradient boosting on the same folds.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I designed', indicating individual ownership of the feature pipeline design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed a feature pipeline for fraud detection...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student describes designing a specific pipeline and making methodological choices (stratified cross-validation, comparing specific models), indicating design rather than just application.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed a feature pipeline... used stratified cross-validation...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly states they 'compared logistic regression with gradient boosting', which constitutes an evaluation method involving baselines/alternatives.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and compared logistic regression with gradient boosting...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the methods used (design, validation strategy, model comparison) but does not state any specific results, performance metrics, or outcomes of this comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...compared logistic regression with gradient boosting on the same folds.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"feature engineering, cross-validation strategy implementation, model comparison (logistic regression vs gradient boosting)\",\n      \"rationale\": \"The student performed tasks central to machine learning workflows: designing a feature pipeline, implementing stratified cross-validation, and comparing two distinct ML models.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed a feature pipeline for fraud detection, used stratified cross-validation, and compared logistic regression with gradient boosting...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"stratified cross-validation\",\n      \"rationale\": \"The use of stratified cross-validation demonstrates the application of statistical methods for model evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...used stratified cross-validation...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"model comparison analysis\",\n      \"rationale\": \"Comparing models on the same folds implies a quantitative analysis of model performance differences.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...compared logistic regression with gradient boosting...\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

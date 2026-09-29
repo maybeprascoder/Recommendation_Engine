@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-research-interviews-only",
+  "review_domain": "research",
+  "lineage_group": "qualitative_research_progression",
+  "source_sha256": "bc2c89bdff6ce28fdb3e5dc72f6f6d7f6d3b32df22fb17d7666b310372c77475",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+  "seconds": 33.99,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 33.98,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "3067a0c6593c7cfce4dbe184627b1e5f26bc591346cc780905c51b9bc5e5ee76",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:30:26.9271008Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I conducted six interviews for the project.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states they 'conducted' the interviews, indicating an individual contribution within a project context. Possessive phrasing ('my') is absent, but the active verb 'conducted' establishes shared or individual contribution rather than mere assistance or unknown status.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student performed a described task (conducting interviews) using established methods. There is no evidence of designing the interview protocol, adapting methods to constraints, or investigating a specific research question through analysis; thus, 'applied' is the appropriate depth label.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states that interviews were conducted but provides no information on how the data from these interviews was evaluated, analyzed, or compared.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or specific impacts resulting from the six interviews are stated in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"competency_suggestion\",\n      \"label\": \"qualitative_research\",\n      \"rationale\": \"Conducting interviews is a primary method for qualitative research. The activity supports the competency of systematic collection of nonnumeric evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"qualitative_research\",\n      \"observed_skill\": \"conducting interviews\",\n      \"rationale\": \"The student explicitly performed the action of conducting interviews, which aligns with the definition of qualitative research (systematic collection... of nonnumeric evidence).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I conducted six interviews for the project.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

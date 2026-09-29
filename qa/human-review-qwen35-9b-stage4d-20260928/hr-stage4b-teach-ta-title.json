@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-teach-ta-title",
+  "review_domain": "teaching",
+  "lineage_group": "teaching_progression",
+  "source_sha256": "7064a5c2d8b5d85f52f8147a3ae1db96f7b0648efec1e1285d3a72ed31b22fd4",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+  "seconds": 44.08,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 44.07,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "f922d6d715768a5561ba05201c9eed896b4eb4ff0d04e369fdf14d2d68869488",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:32:19.2827403Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"work\",\n      \"statement\": \"Teaching Assistant for Introduction to Programming.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement 'Teaching Assistant for Introduction to Programming' indicates a role title. Possessive titles or role names alone do not establish individual responsibility, leadership, or independent ownership of specific tasks. Without explicit description of duties (e.g., 'designed curriculum', 'graded assignments', 'led lab sessions'), the level of ownership remains unknown.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text provides only a role title. It does not describe the nature of the work performed (e.g., whether the student applied standard TA duties, designed new teaching materials, or investigated pedagogical questions). A title alone does not describe the depth of work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No method of evaluation is stated. It is unknown if the student's performance was assessed via peer review, supervisor feedback, student surveys, or self-assessment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results or outcomes are stated. It is unknown if the student's work led to improved student understanding, successful course completion rates, or specific feedback metrics.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"competency_suggestion\",\n      \"label\": \"teaching_instruction\",\n      \"rationale\": \"The role 'Teaching Assistant' implies activities related to planning, delivering, or evaluating instruction for identified learners. However, without explicit description of these actions (e.g., 'taught', 'tutored'), this remains a suggestion based on the role title rather than evidenced action.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j6\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"competency_suggestion\",\n      \"label\": \"programming\",\n      \"rationale\": \"The course title 'Introduction to Programming' suggests the domain context. However, being a TA for this course does not automatically demonstrate programming competency unless specific coding tasks are described. This is recorded as a suggestion based on the course context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Introduction to Programming\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific responsibilities did the student perform as a Teaching Assistant? (e.g., grading, leading labs, creating content, tutoring).\",\n      \"reason\": \"To determine 'ownership' and 'depth' of the work.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"How was the student's performance as a TA evaluated?\",\n      \"reason\": \"To determine the 'evaluation' dimension.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific outcomes or impacts resulted from the student's TA work?\",\n      \"reason\": \"To determine the 'impact' dimension.\"\n    }\n  ],\n  \"unassessed\": [\n    \"The specific actions performed by the student in their role as Teaching Assistant are not described, preventing a definitive assessment of ownership, depth, evaluation, or impact beyond the role title.\",\n    \"It is unknown if the student contributed to the design of the course material or simply assisted with existing materials.\"\n  ]\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

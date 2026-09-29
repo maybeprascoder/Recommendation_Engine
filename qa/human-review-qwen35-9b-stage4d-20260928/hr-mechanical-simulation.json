@@ -1,0 +1,457 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-mechanical-simulation",
+  "review_domain": "mechanical",
+  "lineage_group": "mechanical_simulation_evidence",
+  "source_sha256": "55be07d99fb22e3f7787fbf630879b72094967779bfa630e4ea964ded72f27cf",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 125.13,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 77.71,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "63c09bb6c4b4c1907171f23334f993b244d5b81e2d7025e01f375080a7e4c7e7",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:45:11.7383275Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Implemented MATLAB optimization routines for a suspension model.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement 'Implemented...' describes an action but does not explicitly state if the student led, shared, or assisted in this specific implementation. Possessive pronouns are absent; no team context is provided to infer shared ownership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods ('MATLAB optimization routines') to complete a described task ('suspension model'). There is no evidence of designing new methods, adapting to specific constraints, or investigating a novel question beyond the application of existing tools.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method, test, review, or assessment is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result, outcome, or adoption is stated. The implementation itself is an action, not a reported impact.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"MATLAB implementation\",\n      \"rationale\": \"The student wrote or utilized code/scripts in MATLAB to implement optimization routines. This supports the programming competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Optimization modeling\",\n      \"rationale\": \"The work involves using mathematical methods (optimization routines) to analyze or model behavior of a suspension system.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"engineering_simulation\",\n      \"observed_skill\": \"Numerical modeling of engineered systems\",\n      \"rationale\": \"The student constructed or executed a numerical model (suspension model) using simulation tools (MATLAB).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s4\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"mechanical_design\",\n      \"observed_skill\": \"Suspension system analysis/refinement\",\n      \"rationale\": \"The context of a 'suspension model' implies work related to mechanical parts and assemblies. The optimization routines suggest refinement or functional choices regarding the suspension.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s5\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"Suspension response analysis\",\n      \"rationale\": \"Optimization of a suspension model often involves analyzing structural response under loads or constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Implemented MATLAB optimization routines for a suspension model.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 47.36,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "66ae30b785182d54ce3c3661731157b71344828e3c695493c29f24b1c7ff598a",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:45:59.1060566Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing an implemented action. The category 'activity' is appropriate for this type of evidence.\"},{\"target_id\":\"j1\",\"verdict\":\"uncertain\",\"explanation\":\"The label 'unknown' is inappropriate because the source explicitly states 'Implemented', which establishes individual execution. While 'led' cannot be confirmed without explicit direction or sole ownership claims, the work is not 'assisted' or 'shared' based on the text; it is an individual action. The verdict should reflect that individual contribution is present (execution), even if leadership is unproven.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is supported. The student used established methods ('MATLAB optimization routines') to complete a described task. There is no evidence of designing new methods or investigating a novel question beyond application.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is supported. No evaluation method, test, review, or assessment is stated in the source text.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is supported. The source describes an action ('Implemented') but states no result, outcome, or adoption occurred.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'programming' is supported by the explicit mention of implementing routines in MATLAB. Tool usage without a described method belongs only in context/claim, but here the act of implementation supports the skill.\"},{\"target_id\":\"s2\",\"verdict\":\"uncertain\",\"explanation\":\"The label 'quantitative_analysis' is unsupported/inflated. The source mentions 'optimization routines' which implies mathematical methods, but the text does not explicitly describe a systematic use and interpretation of these methods to analyze data or relationships; it describes implementation. Without explicit description of the analysis process, assigning this competency is an invention beyond the text.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"The competency 'engineering_simulation' is supported. The source describes constructing/executing a numerical model ('suspension model') using simulation tools ('MATLAB'). Tool names alone do not establish depth, but the context of building a model supports this specific competency.\"},{\"target_id\":\"s4\",\"verdict\":\"uncertain\",\"explanation\":\"The label 'mechanical_design' is unsupported/inflated. The source mentions a 'suspension model', which implies mechanical context, but does not explicitly describe selection, sizing, or detailing of structural systems/members to satisfy requirements. Optimization routines do not automatically equate to design choices; this is an invented scope.\"},{\"target_id\":\"s5\",\"verdict\":\"uncertain\",\"explanation\":\"The label 'structural_analysis' is unsupported/inflated. The source mentions a 'suspension model', but does not explicitly describe application of mechanics/analytical methods to model response under stated loads. Optimization implies analysis, but the text lacks explicit description of the structural analysis method itself; this is an invented scope.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Implemented MATLAB optimization routines for a suspension model."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Implemented MATLAB optimization routines for a suspension model.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement 'Implemented...' describes an action but does not explicitly state if the student led, shared, or assisted in this specific implementation. Possessive pronouns are absent; no team context is provided to infer shared ownership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods ('MATLAB optimization routines') to complete a described task ('suspension model'). There is no evidence of designing new methods, adapting to specific constraints, or investigating a novel question beyond the application of existing tools.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result, outcome, or adoption is stated. The implementation itself is an action, not a reported impact.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "MATLAB implementation",
+          "rationale": "The student wrote or utilized code/scripts in MATLAB to implement optimization routines. This supports the programming competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Optimization modeling",
+          "rationale": "The work involves using mathematical methods (optimization routines) to analyze or model behavior of a suspension system.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "engineering_simulation",
+          "observed_skill": "Numerical modeling of engineered systems",
+          "rationale": "The student constructed or executed a numerical model (suspension model) using simulation tools (MATLAB).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "claim_id": "c1",
+          "competency_id": "mechanical_design",
+          "observed_skill": "Suspension system analysis/refinement",
+          "rationale": "The context of a 'suspension model' implies work related to mechanical parts and assemblies. The optimization routines suggest refinement or functional choices regarding the suspension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "claim_id": "c1",
+          "competency_id": "structural_analysis",
+          "observed_skill": "Suspension response analysis",
+          "rationale": "Optimization of a suspension model often involves analyzing structural response under loads or constraints.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Implemented MATLAB optimization routines for a suspension model."
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing an implemented action. The category 'activity' is appropriate for this type of evidence."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "uncertain",
+          "explanation": "The label 'unknown' is inappropriate because the source explicitly states 'Implemented', which establishes individual execution. While 'led' cannot be confirmed without explicit direction or sole ownership claims, the work is not 'assisted' or 'shared' based on the text; it is an individual action. The verdict should reflect that individual contribution is present (execution), even if leadership is unproven."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is supported. The student used established methods ('MATLAB optimization routines') to complete a described task. There is no evidence of designing new methods or investigating a novel question beyond application."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is supported. No evaluation method, test, review, or assessment is stated in the source text."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is supported. The source describes an action ('Implemented') but states no result, outcome, or adoption occurred."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'programming' is supported by the explicit mention of implementing routines in MATLAB. Tool usage without a described method belongs only in context/claim, but here the act of implementation supports the skill."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "uncertain",
+          "explanation": "The label 'quantitative_analysis' is unsupported/inflated. The source mentions 'optimization routines' which implies mathematical methods, but the text does not explicitly describe a systematic use and interpretation of these methods to analyze data or relationships; it describes implementation. Without explicit description of the analysis process, assigning this competency is an invention beyond the text."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "supported",
+          "explanation": "The competency 'engineering_simulation' is supported. The source describes constructing/executing a numerical model ('suspension model') using simulation tools ('MATLAB'). Tool names alone do not establish depth, but the context of building a model supports this specific competency."
+        },
+        {
+          "target_id": "s4",
+          "verdict": "uncertain",
+          "explanation": "The label 'mechanical_design' is unsupported/inflated. The source mentions a 'suspension model', which implies mechanical context, but does not explicitly describe selection, sizing, or detailing of structural systems/members to satisfy requirements. Optimization routines do not automatically equate to design choices; this is an invented scope."
+        },
+        {
+          "target_id": "s5",
+          "verdict": "uncertain",
+          "explanation": "The label 'structural_analysis' is unsupported/inflated. The source mentions a 'suspension model', but does not explicitly describe application of mechanics/analytical methods to model response under stated loads. Optimization implies analysis, but the text lacks explicit description of the structural analysis method itself; this is an invented scope."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s3"
+    ],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'unknown' is inappropriate because the source explicitly states 'Implemented', which establishes individual execution. While 'led' cannot be confirmed without explicit direction or sole ownership claims, the work is not 'assisted' or 'shared' based on the text; it is an individual action. The verdict should reflect that individual contribution is present (execution), even if leadership is unproven."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'quantitative_analysis' is unsupported/inflated. The source mentions 'optimization routines' which implies mathematical methods, but the text does not explicitly describe a systematic use and interpretation of these methods to analyze data or relationships; it describes implementation. Without explicit description of the analysis process, assigning this competency is an invention beyond the text."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'mechanical_design' is unsupported/inflated. The source mentions a 'suspension model', which implies mechanical context, but does not explicitly describe selection, sizing, or detailing of structural systems/members to satisfy requirements. Optimization routines do not automatically equate to design choices; this is an invented scope."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'structural_analysis' is unsupported/inflated. The source mentions a 'suspension model', but does not explicitly describe application of mechanics/analytical methods to model response under stated loads. Optimization implies analysis, but the text lacks explicit description of the structural analysis method itself; this is an invented scope."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:45:11.7383275Z",
+        "2026-09-28T19:45:59.1060566Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "55be07d99fb22e3f7787fbf630879b72094967779bfa630e4ea964ded72f27cf"
+      },
+      "draft_response_sha256": "15ad8552b53e66a8b00a82d0b0298711a42e100fcbbe3b39fd9f9b044b9628ea",
+      "review_response_sha256": "da6b4d5b73217a522d588165ac5c31226f7e723fd0c768f48a5806db7891f6b2"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "suspension optimization"
+        },
+        {
+          "kind": "tool",
+          "label": "MATLAB"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Optimization routine implementation",
+        "Suspension modeling"
+      ],
+      "model_prediction": [
+        "MATLAB implementation",
+        "Numerical modeling of engineered systems"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "engineering_simulation",
+          "observed_skill": "Suspension modeling"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "Optimization routine implementation"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "engineering_simulation",
+          "observed_skill": "Numerical modeling of engineered systems"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "MATLAB implementation"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

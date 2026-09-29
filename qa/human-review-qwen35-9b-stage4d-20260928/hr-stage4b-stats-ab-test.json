@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-stats-ab-test",
+  "review_domain": "machine_learning",
+  "lineage_group": "data_analysis_boundaries",
+  "source_sha256": "4fcd76544b27f97af01aa5acb46df756efc963a561d8c3a8cdbd424678be6c77",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 42.56,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 42.53,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "cf1656d62240ecdfea3bfdfae8fb50a3823ef512165bae953da38fe7b913064b",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T20:52:42.047405Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I estimated the checkout experiment effect with a two-proportion test, reported the confidence interval, and checked the result against the pre-registered primary metric.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I estimated the checkout experiment effect with a two-proportion test, reported the confidence interval, and checked the result against the pre-registered primary metric.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly describes performing specific actions ('I estimated', 'reported', 'checked') within the context of an experiment. While the text uses 'I', it refers to a 'checkout experiment' which implies a structured study (likely A/B testing) often involving teams or pre-registration protocols, suggesting individual contribution within collaborative work rather than sole ownership of the entire experimental design or execution without context. The specific statistical actions are clearly attributed to the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I estimated the checkout experiment effect...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student describes investigating a specific question (the effect of a checkout experiment) through an explicit method (two-proportion test) and analysis (reporting confidence intervals, checking against pre-registered metrics). This goes beyond simple application or design; it constitutes an investigation into a research question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I estimated the checkout experiment effect with a two-proportion test...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly states they 'checked the result against the pre-registered primary metric.' This establishes a concrete evaluation method involving comparison against a baseline or control (the pre-registered metric).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and checked the result against the pre-registered primary metric.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The student reports that they 'estimated the effect' and 'reported the confidence interval.' A concrete outcome (the estimation/reporting) is stated. However, no specific measured result (e.g., 'reduced cart abandonment by 5%') or adoption by users is mentioned.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...reported the confidence interval...\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"two-proportion test\",\n      \"rationale\": \"The student explicitly performed a 'two-proportion test' to estimate an effect. This demonstrates the application of statistical methods.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...estimated the checkout experiment effect with a two-proportion test...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"confidence interval calculation and interpretation\",\n      \"rationale\": \"The student 'reported the confidence interval,' which involves calculating and interpreting quantitative uncertainty measures.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...reported the confidence interval...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"hypothesis testing against pre-registered metrics\",\n      \"rationale\": \"The action of checking results 'against the pre-registered primary metric' demonstrates systematic analysis of data relationships and uncertainty in a research context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...checked the result against the pre-registered primary metric.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

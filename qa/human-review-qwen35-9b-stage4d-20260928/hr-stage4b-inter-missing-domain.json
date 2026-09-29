@@ -1,0 +1,377 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-inter-missing-domain",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "unmapped_and_ambiguous_work",
+  "source_sha256": "fcbfada580bb10e3086c45ab8c50ba9074540f610729c273c86a6e12c58c5d64",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 56.47,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 35.02,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "80e32afc4097f922ecbe361d6893a02fcfce328f025ee393e25a35bc44bd815f",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:41:08.5535565Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Built an innovative solution using advanced technology.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement 'Built an innovative solution' uses the verb 'built' which describes an action, but does not explicitly state that the student independently owned the deliverable, led a team, or directed the work. Possessives or titles are absent. Per rubric rules, individual responsibility is not established without explicit description of leading or independent ownership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The phrase 'advanced technology' is a generic descriptor and does not describe specific methods, design choices, adaptations to constraints, or established implementation steps. Per rubric rules, a title, skill list, or credential alone (or vague descriptors like 'advanced') does not describe the work depth.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete test, review, assessment method, baseline, alternative, or external assessment is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete outcome, measurement method, comparison, or statement of adoption by users is stated. The word 'innovative' describes the nature of the solution but does not constitute a reported result or measured impact.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"advanced technology\",\n      \"rationale\": \"Generic term used in the claim without specific tool or domain identification.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"innovative solution\",\n      \"rationale\": \"Generic descriptor of the deliverable without specific technical context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built an innovative solution using advanced technology.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 21.43,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "5fbb387d72a7b16304fecc89376263039c391953e35a8fc7176b4ae8a33773b8",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T21:41:29.9901861Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text 'Built an innovative solution using advanced technology.' The category 'activity' is appropriate for a general description of work. Attribution as 'student' is neutral; without explicit evidence of team leadership or sole ownership, 'student' (individual context) is the correct default over 'team', and 'reported_present' correctly indicates the activity was mentioned.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment 'unknown' for ownership is appropriate. The source uses 'Built', which describes an action but lacks explicit qualifiers like 'solely', 'independently owned', or 'led a team'. Per rubric rules, titles or possessives alone are insufficient; without explicit description of leading or independent ownership, 'unknown' is the correct label.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment 'unknown' for depth is appropriate. The phrase 'advanced technology' is a vague descriptor and does not specify methods, design choices, adaptations, or implementation steps. Per rubric rules, generic descriptors do not establish work depth; 'unknown' correctly reflects that the specific nature of the work is not described.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The judgment 'unknown' for evaluation is appropriate. The source text contains no mention of tests, reviews, assessments, baselines, or external review. The absence of such terms means no evaluation method is stated, justifying the 'unknown' label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The judgment 'unknown' for impact is appropriate. The word 'innovative' describes the nature of the solution but does not constitute a reported result, measured outcome, or statement of adoption. No concrete outcome or measurement method is stated, so 'unknown' is correct.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context 'advanced technology' correctly identifies a generic concept mentioned in the source. It is supported as a recognized term/concept in the claim, even though it lacks specific tool identification or methodological depth. This does not imply competency mastery, only recognition of the domain terminology.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context 'innovative solution' correctly identifies a generic descriptor of the deliverable mentioned in the source. It is supported as a concept recognized in the claim text, without implying specific technical implementation or methodological depth.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Built an innovative solution using advanced technology."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Built an innovative solution using advanced technology.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement 'Built an innovative solution' uses the verb 'built' which describes an action, but does not explicitly state that the student independently owned the deliverable, led a team, or directed the work. Possessives or titles are absent. Per rubric rules, individual responsibility is not established without explicit description of leading or independent ownership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The phrase 'advanced technology' is a generic descriptor and does not describe specific methods, design choices, adaptations to constraints, or established implementation steps. Per rubric rules, a title, skill list, or credential alone (or vague descriptors like 'advanced') does not describe the work depth.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No concrete test, review, assessment method, baseline, alternative, or external assessment is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No concrete outcome, measurement method, comparison, or statement of adoption by users is stated. The word 'innovative' describes the nature of the solution but does not constitute a reported result or measured impact.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "advanced technology",
+          "rationale": "Generic term used in the claim without specific tool or domain identification.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "innovative solution",
+          "rationale": "Generic descriptor of the deliverable without specific technical context.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Built an innovative solution using advanced technology."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text 'Built an innovative solution using advanced technology.' The category 'activity' is appropriate for a general description of work. Attribution as 'student' is neutral; without explicit evidence of team leadership or sole ownership, 'student' (individual context) is the correct default over 'team', and 'reported_present' correctly indicates the activity was mentioned."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment 'unknown' for ownership is appropriate. The source uses 'Built', which describes an action but lacks explicit qualifiers like 'solely', 'independently owned', or 'led a team'. Per rubric rules, titles or possessives alone are insufficient; without explicit description of leading or independent ownership, 'unknown' is the correct label."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment 'unknown' for depth is appropriate. The phrase 'advanced technology' is a vague descriptor and does not specify methods, design choices, adaptations, or implementation steps. Per rubric rules, generic descriptors do not establish work depth; 'unknown' correctly reflects that the specific nature of the work is not described."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The judgment 'unknown' for evaluation is appropriate. The source text contains no mention of tests, reviews, assessments, baselines, or external review. The absence of such terms means no evaluation method is stated, justifying the 'unknown' label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The judgment 'unknown' for impact is appropriate. The word 'innovative' describes the nature of the solution but does not constitute a reported result, measured outcome, or statement of adoption. No concrete outcome or measurement method is stated, so 'unknown' is correct."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context 'advanced technology' correctly identifies a generic concept mentioned in the source. It is supported as a recognized term/concept in the claim, even though it lacks specific tool identification or methodological depth. This does not imply competency mastery, only recognition of the domain terminology."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context 'innovative solution' correctly identifies a generic descriptor of the deliverable mentioned in the source. It is supported as a concept recognized in the claim text, without implying specific technical implementation or methodological depth."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+        "reason": "The source does not establish supported depth of work."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T21:41:08.5535565Z",
+        "2026-09-29T21:41:29.9901861Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "fcbfada580bb10e3086c45ab8c50ba9074540f610729c273c86a6e12c58c5d64"
+      },
+      "draft_response_sha256": "e3fc89164cd9f72a057aa0c0f1f6e7a5e803b37825fd8e5717ee4b4a2f75111c",
+      "review_response_sha256": "f22270df2c085d6e1746e4c93ce2725abb28ee2c4fd3bbd89bbfc9b6968791bc"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Built an innovative solution using advanced technology.",
+          "category": "other",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Built an innovative solution using advanced technology.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "advanced technology"
+        },
+        {
+          "kind": "concept",
+          "label": "innovative solution"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What did you build, which methods did you use, what was your contribution, and how was it evaluated?"
+      ],
+      "model_prediction": [
+        "What did you personally do, what methods did you use, and how did you evaluate the result?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Domain, method, contribution, evaluation, and outcome are unspecified."
+      ],
+      "model_prediction": [],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

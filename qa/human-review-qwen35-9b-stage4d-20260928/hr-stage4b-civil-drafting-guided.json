@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-civil-drafting-guided",
+  "review_domain": "civil",
+  "lineage_group": "drafting_to_design",
+  "source_sha256": "4cb078d6bee7e0974c26f1c6465df0c0158f8d267264788bef4ed6414b0f5d9a",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 40.63,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 40.61,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "59c06657a1f3925e007af99dab0a5abc6fd8f8b76f849dd37d009688ef015e64",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:08:56.4045081Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I converted the engineer's marked-up plans into AutoCAD drawings using the firm's layer and dimension standards.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I converted the engineer's marked-up plans into AutoCAD drawings using the firm's layer and dimension standards.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states they converted 'the engineer's marked-up plans'. This indicates the student followed guided work or supported another contributor (the engineer) rather than independently owning the design or directing the project. The input of the work was provided by an engineer.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I converted the engineer's marked-up plans...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (AutoCAD) and followed specific standards ('firm's layer and dimension standards') to complete a described task (conversion). There is no evidence of making design choices, adapting methods to constraints, or investigating a new question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...using the firm's layer and dimension standards.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the conversion process but does not state how the resulting drawings were evaluated, tested, or reviewed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I converted the engineer's marked-up plans into AutoCAD drawings using the firm's layer and dimension standards.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or adoption of the drawings are stated in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I converted the engineer's marked-up plans into AutoCAD drawings using the firm's layer and dimension standards.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"AutoCAD\",\n      \"rationale\": \"The student explicitly named AutoCAD as the software used to convert plans.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...into AutoCAD drawings...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"d1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Engineering/Architecture Drafting\",\n      \"rationale\": \"The activity involves converting 'engineer's marked-up plans' and using 'layer and dimension standards', indicating a domain related to engineering or architectural drafting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...engineer's marked-up plans...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c1_ctx\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Layer and Dimension Standards\",\n      \"rationale\": \"The student mentions adhering to specific 'layer and dimension standards' provided by the firm.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...using the firm's layer and dimension standards.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

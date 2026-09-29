@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-ee-control-adopted",
+  "review_domain": "electrical_embedded",
+  "lineage_group": "arduino_progression",
+  "source_sha256": "59634763471014f00152faa97e860b4afaf72bc2fa8ef3606fce7c68aa05fdc3",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 49.21,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 49.2,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "2766c24afd2b37317870aaeffba94d3be8870a6ff1dc35a7772500d6dd50bf6b",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:26:43.2367861Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"I designed the motor-control state machine and fault handling, tested it on the hardware-in-the-loop bench, and the vehicle team integrated it into the final prototype.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the motor-control state machine and fault handling, tested it on the hardware-in-the-loop bench, and the vehicle team integrated it into the final prototype.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states they 'designed' and 'tested' specific components (state machine, fault handling), establishing individual contribution. However, the integration into the final prototype was performed by 'the vehicle team,' indicating a collaborative outcome where the student's work was part of a larger team effort rather than sole ownership of the entire deliverable.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the motor-control state machine and fault handling, tested it on the hardware-in-the-loop bench, and the vehicle team integrated it into the final prototype.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student explicitly claims to have 'designed' the motor-control state machine and fault handling. This goes beyond simple application or implementation, indicating active design choices were made for these specific embedded control elements.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the motor-control state machine and fault handling...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student states they 'tested it on the hardware-in-the-loop bench.' This describes a concrete evaluation method (hardware-in-the-loop testing) used to assess the designed system.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...tested it on the hardware-in-the-loop bench...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"adopted\",\n      \"rationale\": \"The text states the work was 'integrated it into the final prototype.' Integration into a final prototype implies actual use or adoption of the student's design within the vehicle system context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and the vehicle team integrated it into the final prototype.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"embedded_digital_systems\",\n      \"observed_skill\": \"Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.\",\n      \"rationale\": \"The student explicitly 'designed the motor-control state machine and fault handling' and 'tested it on the hardware-in-the-loop bench.' This demonstrates design and testing of control behavior (state machines) within an embedded context (vehicle hardware).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the motor-control state machine and fault handling, tested it on the hardware-in-the-loop bench...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Writing code or scripts to implement logic.\",\n      \"rationale\": \"Designing a 'state machine' and 'fault handling' logic inherently requires programming implementation, though the specific language is not named. The activity supports the general competency of programming within an embedded context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the motor-control state machine and fault handling...\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific programming language or tooling was used to implement the motor-control state machine?\",\n      \"reason\": \"The evidence mentions designing and testing a state machine but does not specify the implementation language (e.g., C, C++, Verilog), which would help distinguish between high-level logic design and low-level firmware development.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific fault conditions were handled in the state machine?\",\n      \"reason\": \"The evidence mentions 'fault handling' generally but does not list the specific faults (e.g., over-current, sensor failure), which would clarify the scope of the design work.\"\n    }\n  ],\n  \"unassessed\": [\n    \"No explicit mention of formal documentation or code review processes beyond the hardware-in-the-loop test.\",\n    \"The specific role within 'the vehicle team' for the integration phase is not detailed; it is assumed to be a collective action without individual attribution.\"\n  ]\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

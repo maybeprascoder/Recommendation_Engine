@@ -1,0 +1,370 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-research-thematic-coding",
+  "review_domain": "research",
+  "lineage_group": "qualitative_research_progression",
+  "source_sha256": "2ba7919e0aaad3e2ea450e6c508fd2ae52cc1eb4b67049da941c827e5c49699c",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 81.88,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 60.06,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "855e663cd8b4d9cdb7b90c0787934d84724cc0035f96abb4845421e795101ab1",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:25:11.4831184Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"research\",\n      \"statement\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly describes creating a codebook and coding transcripts individually, but the revision of themes involved comparing a sample with a second coder. This indicates an explicit individual contribution within collaborative work rather than sole ownership or merely assisting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student investigated a research question (implied by the creation of themes from interview transcripts) through an explicit method: creating a codebook, coding transcripts, and revising themes via inter-coder comparison. This goes beyond simple application or design to systematic investigation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The evaluation method explicitly includes comparing a sample with a second coder to revise themes. This constitutes an explicit baseline or control (the second coder's coding) used to assess the quality of the initial coding.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The source text describes the process (coding, revising) but does not state any concrete outcome, result, or measurement of the impact of this research work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"qualitative_research\",\n      \"observed_skill\": \"Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.\",\n      \"rationale\": \"The student explicitly created a codebook, coded interview transcripts (nonnumeric evidence), and revised themes. This aligns directly with the definition of qualitative_research.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 21.76,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "977be4fddbe37170cdb476025b942a7ea0acb9a3cf7b6353245f109c51aab556",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:25:33.2512663Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text's description of creating a codebook, coding transcripts, and revising themes with a second coder. The category 'research' is appropriate for this qualitative study context.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'shared' is correct because the student explicitly describes collaborating with a second coder to revise themes, establishing an explicit individual contribution within collaborative work rather than sole ownership or mere assistance.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'investigated' is supported as the student described a systematic method (codebook creation, coding, inter-coder comparison) to address a research question implied by the thematic analysis process.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'compared' is accurate because the source explicitly states comparing a sample with a second coder, which constitutes an explicit baseline or control used for evaluation.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate because the source text describes only the process (coding, revising) without stating any concrete outcome, result, measurement, or impact of the research work.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'qualitative_research' is correctly identified as the student explicitly performed systematic collection, coding, and interpretation of nonnumeric evidence (interview transcripts) to investigate a question.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "research",
+          "statement": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly describes creating a codebook and coding transcripts individually, but the revision of themes involved comparing a sample with a second coder. This indicates an explicit individual contribution within collaborative work rather than sole ownership or merely assisting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student investigated a research question (implied by the creation of themes from interview transcripts) through an explicit method: creating a codebook, coding transcripts, and revising themes via inter-coder comparison. This goes beyond simple application or design to systematic investigation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The evaluation method explicitly includes comparing a sample with a second coder to revise themes. This constitutes an explicit baseline or control (the second coder's coding) used to assess the quality of the initial coding.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The source text describes the process (coding, revising) but does not state any concrete outcome, result, or measurement of the impact of this research work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "qualitative_research",
+          "observed_skill": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+          "rationale": "The student explicitly created a codebook, coded interview transcripts (nonnumeric evidence), and revised themes. This aligns directly with the definition of qualitative_research.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I created a codebook, coded all interview transcripts, and revised themes after comparing a sample with a second coder."
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text's description of creating a codebook, coding transcripts, and revising themes with a second coder. The category 'research' is appropriate for this qualitative study context."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'shared' is correct because the student explicitly describes collaborating with a second coder to revise themes, establishing an explicit individual contribution within collaborative work rather than sole ownership or mere assistance."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'investigated' is supported as the student described a systematic method (codebook creation, coding, inter-coder comparison) to address a research question implied by the thematic analysis process."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'compared' is accurate because the source explicitly states comparing a sample with a second coder, which constitutes an explicit baseline or control used for evaluation."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate because the source text describes only the process (coding, revising) without stating any concrete outcome, result, measurement, or impact of the research work."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'qualitative_research' is correctly identified as the student explicitly performed systematic collection, coding, and interpretation of nonnumeric evidence (interview transcripts) to investigate a question."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [],
+    "questions": [],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:25:11.4831184Z",
+        "2026-09-28T19:25:33.2512663Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "2ba7919e0aaad3e2ea450e6c508fd2ae52cc1eb4b67049da941c827e5c49699c"
+      },
+      "draft_response_sha256": "6c716207510db82758e1d59a8e497af4fa4f08c4030499a8b5ba0b4d33cf869b",
+      "review_response_sha256": "aee09314068dbca4f76fc2e04b0a65066e3ebc955d088fa83cd57efb0d0f60d1"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Thematic coding"
+        },
+        {
+          "kind": "domain",
+          "label": "Interview research"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Developed a codebook and conducted coder comparison"
+      ],
+      "model_prediction": [
+        "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "Developed a codebook and conducted coder comparison"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

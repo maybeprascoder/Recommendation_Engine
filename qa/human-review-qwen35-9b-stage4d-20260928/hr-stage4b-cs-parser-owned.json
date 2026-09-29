@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-cs-parser-owned",
+  "review_domain": "computer_science",
+  "lineage_group": "programming_progression",
+  "source_sha256": "c0a376a5699e0d52ce80666ed81c8a875976697274defd2cdc3c6d6a1418f61e",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 175.45,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 175.39,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "ec730ab3e468ecf24f74db7eb8490a33002ea09175eec9049241fdbbb419a100",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T18:56:32.7682961Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"I independently built a CSV parser in Go, chose a streaming design to handle large files, and wrote tests for malformed rows and escaped delimiters.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently built a CSV parser in Go, chose a streaming design to handle large files, and wrote tests for malformed rows and escaped delimiters.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states they 'independently built' the parser, indicating independent ownership of the deliverable.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently built a CSV parser...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student made an explicit design choice ('chose a streaming design') to address a specific constraint ('handle large files'), demonstrating adaptation of methods to constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...chose a streaming design to handle large files...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student states they 'wrote tests for malformed rows and escaped delimiters', which constitutes a concrete test method used to assess the implementation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and wrote tests for malformed rows and escaped delimiters.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the construction and testing of the parser but does not state any resulting outcomes, performance metrics, or adoption by users.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently built a CSV parser in Go, chose a streaming design to handle large files, and wrote tests for malformed rows and escaped delimiters.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Go programming\",\n      \"rationale\": \"The student explicitly states they built a parser 'in Go', demonstrating the use of the Go programming language.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...built a CSV parser in Go...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Software testing\",\n      \"rationale\": \"The student explicitly states they 'wrote tests', demonstrating the ability to write unit or integration tests.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and wrote tests for malformed rows and escaped delimiters.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Stream processing design\",\n      \"rationale\": \"The student chose a 'streaming design', demonstrating knowledge and application of stream processing patterns for handling large data.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...chose a streaming design to handle large files...\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Go\",\n      \"rationale\": \"The student explicitly mentions using the Go programming language.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...built a CSV parser in Go...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Streaming design\",\n      \"rationale\": \"The student explicitly mentions choosing a streaming design pattern.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...chose a streaming design...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Malformed data handling\",\n      \"rationale\": \"The student explicitly mentions writing tests for malformed rows.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...tests for malformed rows...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Escaped delimiters\",\n      \"rationale\": \"The student explicitly mentions writing tests for escaped delimiters.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and escaped delimiters.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

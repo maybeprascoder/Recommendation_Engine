@@ -1,0 +1,831 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-qualitative-research",
+  "review_domain": "research",
+  "lineage_group": "qualitative_research_evidence",
+  "source_sha256": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 225.98,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 136.56,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "54e0429f5f1e8cc83211ee3a63b7bb226c642dfcaf0010947627feeaf5b30d03",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:51:15.7796653Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"research\",\n      \"statement\": \"Published a research paper in Journal XYZ.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c2\",\n      \"category\": \"research\",\n      \"statement\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c3\",\n      \"category\": \"publication\",\n      \"statement\": \"The research paper was published in Journal XYZ.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c4\",\n      \"category\": \"activity\",\n      \"statement\": \"I have not written programming code or trained machine-learning models.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have not written programming code or trained machine-learning models.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states 'I assisted the study', indicating support rather than independent ownership or leadership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student describes investigating interview responses through thematic coding, which constitutes an explicit method and analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student mentions 'comparing themes with a second coder', which serves as an explicit baseline or control method for evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No specific result, outcome, or adoption is stated for the research paper in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states 'I assisted the study', indicating support rather than independent ownership or leadership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j6\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student describes investigating interview responses through thematic coding, which constitutes an explicit method and analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j7\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student mentions 'comparing themes with a second coder', which serves as an explicit baseline or control method for evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j8\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No specific result, outcome, or adoption is stated for the research paper in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j9\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement 'Published a research paper' describes the outcome but does not explicitly describe the student's individual contribution level (assisted, shared, led) within that specific publication claim.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j10\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement 'Published a research paper' describes the outcome but does not explicitly describe the depth of work performed by the student within that specific publication claim.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j11\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"externally_reviewed\",\n      \"rationale\": \"The statement 'Published a research paper in Journal XYZ' implies external review, but the rubric states this remains a claim until verified. However, given the explicit mention of 'Journal XYZ', we can infer external review exists as per standard publication norms, but strictly adhering to 'never invent achievements', we mark it as externally_reviewed only if explicitly stated or strongly implied by context like 'peer-reviewed'. Here, 'Published' implies acceptance which usually entails review. Let's stick to the strict instruction: 'Peer-reviewed' can support externally_reviewed. 'Published' alone might not be enough without 'peer-reviewed' keyword. However, standard interpretation of 'Published in Journal XYZ' implies external review. To be safe and strictly follow 'explicitly stated', I will mark it as unknown unless 'peer-reviewed' is used. Wait, the instruction says: '\",\"citations\": [ { \"document_id\": \"source\", \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\" } ] }\n      ],\n      \"competencies\": [],\n      \"contexts\": [\n        {\n          \"id\": \"t1\",\n          \"claim_id\": \"c2\",\n          \"kind\": \"concept\",\n          \"label\": \"Thematic Coding\",\n          \"rationale\": \"The student explicitly mentions using 'thematic coding' to investigate interview responses.\",\n          \"citations\": [\n            {\n              \"document_id\": \"source\",\n              \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n            }\n          ]\n        },\n        {\n          \"id\": \"t2\",\n          \"claim_id\": \"c2\",\n          \"kind\": \"concept\",\n          \"label\": \"Second Coder Comparison\",\n          \"rationale\": \"The student explicitly mentions 'comparing themes with a second coder'.\",\n          \"citations\": [\n            {\n              \"document_id\": \"source\",\n              \"quote\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\"\n            }\n          ]\n        },\n        {\n          \"id\": \"t3\",\n          \"claim_id\": \"c1\",\n          \"kind\": \"domain\",\n          \"label\": \"Journal XYZ\",\n          \"rationale\": \"The student states the paper was published in 'Journal XYZ'.\",\n          \"citations\": [\n            {\n              \"document_id\": \"source\",\n              \"quote\": \"Published a research paper in Journal XYZ.\"\n            }\n          ]\n        },\n        {\n          \"id\": \"t4\",\n          \"claim_id\": \"c4\",\n          \"kind\": \"concept\",\n          \"label\": \"Programming Code\",\n          \"rationale\": \"The student explicitly states they have 'not written programming code'.\",\n          \"citations\": [\n            {\n              \"document_id\": \"source\",\n              \"quote\": \"I have not written programming code or trained machine-learning models.\"\n            }\n          ]\n        },\n        {\n          \"id\": \"t5\",\n          \"claim_id\": \"c4\",\n          \"kind\": \"concept\",\n          \"label\": \"Machine Learning Models\",\n          \"rationale\": \"The student explicitly states they have 'not ... trained machine-learning models'.\",\n          \"citations\": [\n            {\n              \"document_id\": \"source\",\n              \"quote\": \"I have not written programming code or trained machine-learning models.\"\n            }\n          ]\n        }\n      ],\n      \"questions\": [],\n      \"unassessed\": []\n    }",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 89.34,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "b90eca8b5fc2f103bd0dcd1f7b214b6dc884a04c7a9e64f2f81c746c4001b6c3",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:52:45.129718Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly states 'Published a research paper in Journal XYZ', which directly supports the claim's statement and category.\"},{\"target_id\":\"c2\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly states 'I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder', supporting the full statement.\"},{\"target_id\":\"c3\",\"verdict\":\"unsupported\",\"explanation\":\"While the source mentions publication, claim c3 is a separate assertion about the paper's status. However, strictly checking against the instruction to not invent achievements: 'Published' implies acceptance but does not explicitly state 'peer-reviewed'. The rubric requires explicit external review for 'externally_reviewed'. Claim c3 itself is just a statement of fact present in text, so it is supported as a reported fact, but if the judgment j11 relies on this to claim 'externally_reviewed', that specific judgment is unsupported. For the claim object itself, it accurately reflects the text.\"},{\"target_id\":\"c4\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly states 'I have not written programming code or trained machine-learning models', supporting the reported_absent presence label for these activities.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly uses the phrase 'I assisted the study', which directly supports the 'assisted' ownership label as per rubric definitions regarding support rather than independent ownership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The description 'investigating interview responses through thematic coding' constitutes an explicit method and analysis, supporting the 'investigated' depth label.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'comparing themes with a second coder' serves as an explicit baseline or control method, supporting the 'compared' evaluation label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"No specific result, outcome, or adoption is stated for the paper in the text; only publication is mentioned. This supports the 'unknown' impact label correctly.\"},{\"target_id\":\"j5\",\"verdict\":\"supported\",\"explanation\":\"Same rationale as j1: explicit use of 'I assisted the study' supports the 'assisted' ownership label.\"},{\"target_id\":\"j6\",\"verdict\":\"supported\",\"explanation\":\"Same rationale as j2: thematic coding constitutes an explicit method, supporting 'investigated' depth.\"},{\"target_id\":\"j7\",\"verdict\":\"supported\",\"explanation\":\"Same rationale as j3: comparing themes supports the 'compared' evaluation label.\"},{\"target_id\":\"j8\",\"verdict\":\"supported\",\"explanation\":\"Same rationale as j4: no results stated for the specific work described in c2/c1 context, supporting 'unknown' impact.\"},{\"target_id\":\"j9\",\"verdict\":\"supported\",\"explanation\":\"The statement 'Published a research paper' describes an outcome but does not explicitly describe the student's individual contribution level (assisted vs led) within that specific publication claim. The text says 'I assisted the study', which applies to c2, not necessarily the authorship of the paper in c1/c3 without further clarification. Thus, 'unknown' is appropriate for ownership on c3 specifically if c3 refers to the paper itself distinct from the assistance task.\"},{\"target_id\":\"j10\",\"verdict\":\"supported\",\"explanation\":\"The statement describes an outcome but does not explicitly describe the depth of work performed by the student within that specific publication claim (c3). The text links 'investigating' to c2, not c3. Thus, 'unknown' is appropriate for c3's depth.\"},{\"target_id\":\"j11\",\"verdict\":\"unsupported\",\"explanation\":\"The source text states 'Published a research paper in Journal XYZ'. It does not explicitly state 'peer-reviewed' or 'externally reviewed'. The rubric instruction says: 'Support externally_reviewed only when external/peer review is explicit in the source.' Inferring review from 'Journal XYZ' or 'Published' violates the rule to never invent achievements. Therefore, marking it as 'externally_reviewed' is unsupported.\"},{\"target_id\":\"unassessed_c3_impact\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate the claim rather than an assessment of the source's content. The verdict should reflect that the dimension was not assessed in the draft, but the instruction requires checking if the label is appropriate. Since it wasn't assessed, labeling it 'unknown' based on lack of evidence in text would be correct, but the rationale here admits non-assessment. However, the task is to review the proposed interpretation. If the model failed to assess, the judgment is effectively missing or invalid. But strictly, if the claim c3 has no impact mentioned in source, 'unknown' is the correct label. The draft's rationale is wrong ('model did not assess'), but the label 'unknown' might be correct for the source. However, the instruction says 'Return exactly one check...'. If the rationale is flawed, the judgment is unsupported because the reasoning is invalid.\"},{\"target_id\":\"unassessed_c4_ownership\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale states 'The model did not assess this dimension.' This is a failure to evaluate. The source text explicitly denies programming code writing ('I have not written...'). For ownership, if the activity is denied, ownership for that specific activity is 'unknown' (absence of evidence) or 'reported_absent' for presence. The claim c4 is 'reported_absent'. Ownership dimension on an absent activity: usually 'unknown' because we don't know their general research ability from one denial. But the draft rationale admits non-assessment. A judgment with a 'model did not assess' rationale is invalid/unsupported.\"},{\"target_id\":\"unassessed_c4_depth\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Depth for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment rather than deriving 'unknown' from lack of evidence.\"},{\"target_id\":\"unassessed_c4_evaluation\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Evaluation for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment.\"},{\"target_id\":\"unassessed_c4_impact\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Impact for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions using 'thematic coding' in the quote, which supports recognizing this concept as a context/tool used.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions 'comparing themes with a second coder', supporting recognition of this concept/context.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The student states the paper was published in 'Journal XYZ', supporting recognition of this domain/publication context.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they have 'not written programming code', supporting recognition of this concept/tool (even as a denial).\"},{\"target_id\":\"t5\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they have 'not ... trained machine-learning models', supporting recognition of this concept/tool.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "research",
+          "statement": "Published a research paper in Journal XYZ.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c2",
+          "category": "research",
+          "statement": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c3",
+          "category": "publication",
+          "statement": "The research paper was published in Journal XYZ.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c4",
+          "category": "activity",
+          "statement": "I have not written programming code or trained machine-learning models.",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states 'I assisted the study', indicating support rather than independent ownership or leadership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student describes investigating interview responses through thematic coding, which constitutes an explicit method and analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student mentions 'comparing themes with a second coder', which serves as an explicit baseline or control method for evaluation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No specific result, outcome, or adoption is stated for the research paper in the provided text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "j5",
+          "claim_id": "c2",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states 'I assisted the study', indicating support rather than independent ownership or leadership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j6",
+          "claim_id": "c2",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student describes investigating interview responses through thematic coding, which constitutes an explicit method and analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j7",
+          "claim_id": "c2",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student mentions 'comparing themes with a second coder', which serves as an explicit baseline or control method for evaluation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "j8",
+          "claim_id": "c2",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No specific result, outcome, or adoption is stated for the research paper in the provided text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "j9",
+          "claim_id": "c3",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement 'Published a research paper' describes the outcome but does not explicitly describe the student's individual contribution level (assisted, shared, led) within that specific publication claim.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "j10",
+          "claim_id": "c3",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The statement 'Published a research paper' describes the outcome but does not explicitly describe the depth of work performed by the student within that specific publication claim.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "j11",
+          "claim_id": "c3",
+          "dimension": "evaluation",
+          "label": "externally_reviewed",
+          "rationale": "The statement 'Published a research paper in Journal XYZ' implies external review, but the rubric states this remains a claim until verified. However, given the explicit mention of 'Journal XYZ', we can infer external review exists as per standard publication norms, but strictly adhering to 'never invent achievements', we mark it as externally_reviewed only if explicitly stated or strongly implied by context like 'peer-reviewed'. Here, 'Published' implies acceptance which usually entails review. Let's stick to the strict instruction: 'Peer-reviewed' can support externally_reviewed. 'Published' alone might not be enough without 'peer-reviewed' keyword. However, standard interpretation of 'Published in Journal XYZ' implies external review. To be safe and strictly follow 'explicitly stated', I will mark it as unknown unless 'peer-reviewed' is used. Wait, the instruction says: '",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c3_impact",
+          "claim_id": "c3",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c4_ownership",
+          "claim_id": "c4",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c4_depth",
+          "claim_id": "c4",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c4_evaluation",
+          "claim_id": "c4",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c4_impact",
+          "claim_id": "c4",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c2",
+          "kind": "concept",
+          "label": "Thematic Coding",
+          "rationale": "The student explicitly mentions using 'thematic coding' to investigate interview responses.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c2",
+          "kind": "concept",
+          "label": "Second Coder Comparison",
+          "rationale": "The student explicitly mentions 'comparing themes with a second coder'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Journal XYZ",
+          "rationale": "The student states the paper was published in 'Journal XYZ'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c4",
+          "kind": "concept",
+          "label": "Programming Code",
+          "rationale": "The student explicitly states they have 'not written programming code'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "t5",
+          "claim_id": "c4",
+          "kind": "concept",
+          "label": "Machine Learning Models",
+          "rationale": "The student explicitly states they have 'not ... trained machine-learning models'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have not written programming code or trained machine-learning models."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly states 'Published a research paper in Journal XYZ', which directly supports the claim's statement and category."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "supported",
+          "explanation": "The source text explicitly states 'I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder', supporting the full statement."
+        },
+        {
+          "target_id": "c3",
+          "verdict": "unsupported",
+          "explanation": "While the source mentions publication, claim c3 is a separate assertion about the paper's status. However, strictly checking against the instruction to not invent achievements: 'Published' implies acceptance but does not explicitly state 'peer-reviewed'. The rubric requires explicit external review for 'externally_reviewed'. Claim c3 itself is just a statement of fact present in text, so it is supported as a reported fact, but if the judgment j11 relies on this to claim 'externally_reviewed', that specific judgment is unsupported. For the claim object itself, it accurately reflects the text."
+        },
+        {
+          "target_id": "c4",
+          "verdict": "supported",
+          "explanation": "The source text explicitly states 'I have not written programming code or trained machine-learning models', supporting the reported_absent presence label for these activities."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The student explicitly uses the phrase 'I assisted the study', which directly supports the 'assisted' ownership label as per rubric definitions regarding support rather than independent ownership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The description 'investigating interview responses through thematic coding' constitutes an explicit method and analysis, supporting the 'investigated' depth label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The phrase 'comparing themes with a second coder' serves as an explicit baseline or control method, supporting the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "No specific result, outcome, or adoption is stated for the paper in the text; only publication is mentioned. This supports the 'unknown' impact label correctly."
+        },
+        {
+          "target_id": "j5",
+          "verdict": "supported",
+          "explanation": "Same rationale as j1: explicit use of 'I assisted the study' supports the 'assisted' ownership label."
+        },
+        {
+          "target_id": "j6",
+          "verdict": "supported",
+          "explanation": "Same rationale as j2: thematic coding constitutes an explicit method, supporting 'investigated' depth."
+        },
+        {
+          "target_id": "j7",
+          "verdict": "supported",
+          "explanation": "Same rationale as j3: comparing themes supports the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j8",
+          "verdict": "supported",
+          "explanation": "Same rationale as j4: no results stated for the specific work described in c2/c1 context, supporting 'unknown' impact."
+        },
+        {
+          "target_id": "j9",
+          "verdict": "supported",
+          "explanation": "The statement 'Published a research paper' describes an outcome but does not explicitly describe the student's individual contribution level (assisted vs led) within that specific publication claim. The text says 'I assisted the study', which applies to c2, not necessarily the authorship of the paper in c1/c3 without further clarification. Thus, 'unknown' is appropriate for ownership on c3 specifically if c3 refers to the paper itself distinct from the assistance task."
+        },
+        {
+          "target_id": "j10",
+          "verdict": "supported",
+          "explanation": "The statement describes an outcome but does not explicitly describe the depth of work performed by the student within that specific publication claim (c3). The text links 'investigating' to c2, not c3. Thus, 'unknown' is appropriate for c3's depth."
+        },
+        {
+          "target_id": "j11",
+          "verdict": "unsupported",
+          "explanation": "The source text states 'Published a research paper in Journal XYZ'. It does not explicitly state 'peer-reviewed' or 'externally reviewed'. The rubric instruction says: 'Support externally_reviewed only when external/peer review is explicit in the source.' Inferring review from 'Journal XYZ' or 'Published' violates the rule to never invent achievements. Therefore, marking it as 'externally_reviewed' is unsupported."
+        },
+        {
+          "target_id": "unassessed_c3_impact",
+          "verdict": "unsupported",
+          "explanation": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate the claim rather than an assessment of the source's content. The verdict should reflect that the dimension was not assessed in the draft, but the instruction requires checking if the label is appropriate. Since it wasn't assessed, labeling it 'unknown' based on lack of evidence in text would be correct, but the rationale here admits non-assessment. However, the task is to review the proposed interpretation. If the model failed to assess, the judgment is effectively missing or invalid. But strictly, if the claim c3 has no impact mentioned in source, 'unknown' is the correct label. The draft's rationale is wrong ('model did not assess'), but the label 'unknown' might be correct for the source. However, the instruction says 'Return exactly one check...'. If the rationale is flawed, the judgment is unsupported because the reasoning is invalid."
+        },
+        {
+          "target_id": "unassessed_c4_ownership",
+          "verdict": "unsupported",
+          "explanation": "The rationale states 'The model did not assess this dimension.' This is a failure to evaluate. The source text explicitly denies programming code writing ('I have not written...'). For ownership, if the activity is denied, ownership for that specific activity is 'unknown' (absence of evidence) or 'reported_absent' for presence. The claim c4 is 'reported_absent'. Ownership dimension on an absent activity: usually 'unknown' because we don't know their general research ability from one denial. But the draft rationale admits non-assessment. A judgment with a 'model did not assess' rationale is invalid/unsupported."
+        },
+        {
+          "target_id": "unassessed_c4_depth",
+          "verdict": "unsupported",
+          "explanation": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Depth for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment rather than deriving 'unknown' from lack of evidence."
+        },
+        {
+          "target_id": "unassessed_c4_evaluation",
+          "verdict": "unsupported",
+          "explanation": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Evaluation for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment."
+        },
+        {
+          "target_id": "unassessed_c4_impact",
+          "verdict": "unsupported",
+          "explanation": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Impact for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions using 'thematic coding' in the quote, which supports recognizing this concept as a context/tool used."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions 'comparing themes with a second coder', supporting recognition of this concept/context."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The student states the paper was published in 'Journal XYZ', supporting recognition of this domain/publication context."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they have 'not written programming code', supporting recognition of this concept/tool (even as a denial)."
+        },
+        {
+          "target_id": "t5",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they have 'not ... trained machine-learning models', supporting recognition of this concept/tool."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1",
+      "c2",
+      "c4"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3",
+      "j5",
+      "j6",
+      "j7"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5"
+    ],
+    "questions": [
+      {
+        "claim_id": "c3",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "While the source mentions publication, claim c3 is a separate assertion about the paper's status. However, strictly checking against the instruction to not invent achievements: 'Published' implies acceptance but does not explicitly state 'peer-reviewed'. The rubric requires explicit external review for 'externally_reviewed'. Claim c3 itself is just a statement of fact present in text, so it is supported as a reported fact, but if the judgment j11 relies on this to claim 'externally_reviewed', that specific judgment is unsupported. For the claim object itself, it accurately reflects the text."
+      },
+      {
+        "claim_id": "c3",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The source text states 'Published a research paper in Journal XYZ'. It does not explicitly state 'peer-reviewed' or 'externally reviewed'. The rubric instruction says: 'Support externally_reviewed only when external/peer review is explicit in the source.' Inferring review from 'Journal XYZ' or 'Published' violates the rule to never invent achievements. Therefore, marking it as 'externally_reviewed' is unsupported."
+      },
+      {
+        "claim_id": "c3",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate the claim rather than an assessment of the source's content. The verdict should reflect that the dimension was not assessed in the draft, but the instruction requires checking if the label is appropriate. Since it wasn't assessed, labeling it 'unknown' based on lack of evidence in text would be correct, but the rationale here admits non-assessment. However, the task is to review the proposed interpretation. If the model failed to assess, the judgment is effectively missing or invalid. But strictly, if the claim c3 has no impact mentioned in source, 'unknown' is the correct label. The draft's rationale is wrong ('model did not assess'), but the label 'unknown' might be correct for the source. However, the instruction says 'Return exactly one check...'. If the rationale is flawed, the judgment is unsupported because the reasoning is invalid."
+      },
+      {
+        "claim_id": "c4",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale states 'The model did not assess this dimension.' This is a failure to evaluate. The source text explicitly denies programming code writing ('I have not written...'). For ownership, if the activity is denied, ownership for that specific activity is 'unknown' (absence of evidence) or 'reported_absent' for presence. The claim c4 is 'reported_absent'. Ownership dimension on an absent activity: usually 'unknown' because we don't know their general research ability from one denial. But the draft rationale admits non-assessment. A judgment with a 'model did not assess' rationale is invalid/unsupported."
+      },
+      {
+        "claim_id": "c4",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Depth for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment rather than deriving 'unknown' from lack of evidence."
+      },
+      {
+        "claim_id": "c4",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Evaluation for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment."
+      },
+      {
+        "claim_id": "c4",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale states 'The model did not assess this dimension.' This indicates a failure to evaluate. The source text denies programming code writing. Impact for an absent activity is 'unknown'. However, the rationale provided in the draft is invalid because it admits non-assessment."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:51:15.7796653Z",
+        "2026-09-28T19:52:45.129718Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f"
+      },
+      "draft_response_sha256": "e4d0b53d256ed0791319974e847b23e0ae053fdd1ab67898b0b61ba7f0e6c59a",
+      "review_response_sha256": "40f0d43fb126057898c04a94dff53efff25b6bf6b6f765525564ac7db0d811ab"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.",
+          "category": "publication",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I have not written programming code or trained machine-learning models.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_absent"
+        },
+        {
+          "statement": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        },
+        {
+          "statement": "Published a research paper in Journal XYZ.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "Machine Learning Models"
+        },
+        {
+          "kind": "concept",
+          "label": "Programming Code"
+        },
+        {
+          "kind": "concept",
+          "label": "Second Coder Comparison"
+        },
+        {
+          "kind": "concept",
+          "label": "Thematic Coding"
+        },
+        {
+          "kind": "domain",
+          "label": "Journal XYZ"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "coder comparison",
+        "thematic coding"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "qualitative research analysis"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "assisted"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "investigated",
+          "investigated"
+        ],
+        "evaluation": [
+          "compared",
+          "compared"
+        ],
+        "ownership": [
+          "assisted",
+          "assisted"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "explicit_absence",
+      "provisional_reference": [],
+      "model_prediction": [
+        "I have not written programming code or trained machine-learning models."
+      ],
+      "question": "Is each absence explicit and narrowly scoped?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Missing taxonomy coverage: qualitative research analysis"
+      ],
+      "model_prediction": [],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

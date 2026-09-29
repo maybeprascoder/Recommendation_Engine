@@ -1,0 +1,405 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-machine-learning-evaluation",
+  "review_domain": "machine_learning",
+  "lineage_group": "machine_learning_evidence",
+  "source_sha256": "101ed730ce3ce517fde17087daf68c3eebe0f0214b1e851335255fb5c58f7867",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 104.74,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 76.06,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "03a686d66ccbafd272b358c7d7aca63008df94f22a1ff3ad270e596a9215c396",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:01:30.492857Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The statement explicitly uses the verb 'Designed' to describe the student's individual contribution to the classifier, establishing independent ownership of the design and implementation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed a multilingual BERT classifier\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The use of the verb 'Designed' indicates that the student made design choices for the classifier rather than merely applying a pre-existing tool or following a guided replication. The specific task of creating a 'multilingual BERT classifier' implies adapting methods to constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed a multilingual BERT classifier\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The text explicitly states that the student 'compared four baselines', which constitutes an evaluation method involving explicit alternatives or controls.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"compared four baselines\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The text reports a specific quantitative outcome ('improved macro-F1 by 12%') derived from a 'held-out evaluation', satisfying the criteria for a measured result with a stated measurement method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"improved macro-F1 by 12% on the held-out evaluation\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"multilingual BERT classifier design and deployment\",\n      \"rationale\": \"The student designed a multilingual BERT classifier, which involves machine learning model architecture and training. The activity supports the machine_learning competency node.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed a multilingual BERT classifier\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"deployment of inference code\",\n      \"rationale\": \"The statement mentions 'deployed inference', which implies writing and executing code to serve the model. This supports the programming competency node.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"deployed inference\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"comparison of model baselines and metric analysis\",\n      \"rationale\": \"The student 'compared four baselines' and analyzed the 'macro-F1' metric. This systematic use of mathematical methods to analyze model behavior supports the quantitative_analysis competency node.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"compared four baselines, improved macro-F1 by 12%\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 28.63,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "cea9347eef00dbbb4c2e15216ae797bd63e42096dea8b6ee717b569fd1812aeb",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:01:59.1399719Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim statement is a verbatim quote from the source document and accurately reflects the reported activity without inventing context or scope.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale incorrectly equates the verb 'Designed' with leading the work. Per instructions, 'Designed' establishes personal execution/ownership but does not by itself support 'led'. Leadership requires explicit direction of a team or independent ownership of the entire deliverable beyond just design; without evidence of directing others or sole ownership of the full project lifecycle, 'led' is an unsupported upgrade from 'shared' or 'assisted'.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The verb 'Designed' explicitly indicates making design choices rather than mere application, satisfying the criteria for the 'designed' depth label.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly states 'compared four baselines', which constitutes an evaluation method involving explicit alternatives or controls, supporting the 'compared' label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The text reports a specific quantitative outcome ('improved macro-F1 by 12%') derived from a 'held-out evaluation', satisfying the criteria for a measured result with a stated measurement method.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"Designing a multilingual BERT classifier involves machine learning model architecture and training, supporting the machine_learning competency node. The activity is explicitly described in the source.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"Deploying inference implies writing and executing code to serve the model, which supports the programming competency node based on the explicit mention of 'deployed inference'.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"Comparing baselines and analyzing metrics like macro-F1 involves systematic use of mathematical methods to analyze data/behavior, supporting the quantitative_analysis competency node.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed a multilingual BERT classifier, compared four baselines, improved macro-F1 by 12% on the held-out evaluation, and deployed inference."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The statement explicitly uses the verb 'Designed' to describe the student's individual contribution to the classifier, establishing independent ownership of the design and implementation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed a multilingual BERT classifier"
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The use of the verb 'Designed' indicates that the student made design choices for the classifier rather than merely applying a pre-existing tool or following a guided replication. The specific task of creating a 'multilingual BERT classifier' implies adapting methods to constraints.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed a multilingual BERT classifier"
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The text explicitly states that the student 'compared four baselines', which constitutes an evaluation method involving explicit alternatives or controls.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "compared four baselines"
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "The text reports a specific quantitative outcome ('improved macro-F1 by 12%') derived from a 'held-out evaluation', satisfying the criteria for a measured result with a stated measurement method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "improved macro-F1 by 12% on the held-out evaluation"
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "machine_learning",
+          "observed_skill": "multilingual BERT classifier design and deployment",
+          "rationale": "The student designed a multilingual BERT classifier, which involves machine learning model architecture and training. The activity supports the machine_learning competency node.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed a multilingual BERT classifier"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "deployment of inference code",
+          "rationale": "The statement mentions 'deployed inference', which implies writing and executing code to serve the model. This supports the programming competency node.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "deployed inference"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "comparison of model baselines and metric analysis",
+          "rationale": "The student 'compared four baselines' and analyzed the 'macro-F1' metric. This systematic use of mathematical methods to analyze model behavior supports the quantitative_analysis competency node.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "compared four baselines, improved macro-F1 by 12%"
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim statement is a verbatim quote from the source document and accurately reflects the reported activity without inventing context or scope."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The rationale incorrectly equates the verb 'Designed' with leading the work. Per instructions, 'Designed' establishes personal execution/ownership but does not by itself support 'led'. Leadership requires explicit direction of a team or independent ownership of the entire deliverable beyond just design; without evidence of directing others or sole ownership of the full project lifecycle, 'led' is an unsupported upgrade from 'shared' or 'assisted'."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The verb 'Designed' explicitly indicates making design choices rather than mere application, satisfying the criteria for the 'designed' depth label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The text explicitly states 'compared four baselines', which constitutes an evaluation method involving explicit alternatives or controls, supporting the 'compared' label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The text reports a specific quantitative outcome ('improved macro-F1 by 12%') derived from a 'held-out evaluation', satisfying the criteria for a measured result with a stated measurement method."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "Designing a multilingual BERT classifier involves machine learning model architecture and training, supporting the machine_learning competency node. The activity is explicitly described in the source."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "Deploying inference implies writing and executing code to serve the model, which supports the programming competency node based on the explicit mention of 'deployed inference'."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "supported",
+          "explanation": "Comparing baselines and analyzing metrics like macro-F1 involves systematic use of mathematical methods to analyze data/behavior, supporting the quantitative_analysis competency node."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale incorrectly equates the verb 'Designed' with leading the work. Per instructions, 'Designed' establishes personal execution/ownership but does not by itself support 'led'. Leadership requires explicit direction of a team or independent ownership of the entire deliverable beyond just design; without evidence of directing others or sole ownership of the full project lifecycle, 'led' is an unsupported upgrade from 'shared' or 'assisted'."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:01:30.492857Z",
+        "2026-09-28T19:01:59.1399719Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "101ed730ce3ce517fde17087daf68c3eebe0f0214b1e851335255fb5c58f7867"
+      },
+      "draft_response_sha256": "077d1f2f3f280a2857f10fe811b664cdda87eab4fc5d1bd34dbc926d9cf2bc0c",
+      "review_response_sha256": "2cb6e671169f0b297afe65ff5de89fc3cf2e19619763507a25c896d2508c26d8"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "baseline comparison",
+        "inference deployment",
+        "macro-F1 evaluation"
+      ],
+      "model_prediction": [
+        "comparison of model baselines and metric analysis",
+        "deployment of inference code",
+        "multilingual BERT classifier design and deployment"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "classifier design and evaluation"
+        },
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "NLP classification"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "multilingual BERT classifier design and deployment"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "deployment of inference code"
+        },
+        {
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "comparison of model baselines and metric analysis"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Missing taxonomy coverage: NLP classification"
+      ],
+      "model_prediction": [],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

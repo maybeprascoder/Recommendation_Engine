@@ -1,0 +1,464 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-cs-runbook-script",
+  "review_domain": "computer_science",
+  "lineage_group": "programming_progression",
+  "source_sha256": "d901ce1e769e7f5f0a7d85f15830a7ae567e445ffc968625d99d279604c7fb1a",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 63.29,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 44.23,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "b141efc848ced801360afc82e6cd869b8959a487292ed1548bfdb57805b51f12",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T20:44:01.1614614Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states they followed a 'team's runbook' to perform the action. This indicates guided work rather than independent ownership or leading.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used an established method (following a runbook) to complete a described task (changing values in a script). No design choices or investigation are described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method, test, review, or assessment is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result, outcome, or measurement is stated regarding the change to the deployment script.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": null,\n      \"observed_skill\": \"script_modification\",\n      \"rationale\": \"The student modified a Bash script. While 'programming' is an allowed competency, the evidence describes a specific administrative task (changing values in an existing script) rather than writing code to solve a problem or demonstrate programming logic. Per instructions, tool usage alone does not imply expertise or ownership sufficient for a competency suggestion without explicit design/implementation context. Thus, it remains an observed_skill with null competency_id.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"bash_script_usage\",\n      \"rationale\": \"The student used Bash, a programming language. However, the action was modifying an existing script via a runbook, not writing new code or demonstrating algorithmic thinking. Per rubric: 'Tool recognition alone can be recorded in contexts; it must not become a demonstrated competency suggestion.' Therefore, this is recorded as a context/tool usage supporting the activity, but no competency mastery is suggested.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Bash\",\n      \"rationale\": \"The student explicitly named 'Bash' as the language used in the deployment script.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"existing Bash deployment script\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"deployment_script\",\n      \"rationale\": \"The student worked on a 'deployment script', indicating the domain of software deployment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"existing Bash deployment script\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"runbook\",\n      \"rationale\": \"The student followed a 'runbook', indicating a procedural guide or standard operating procedure.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 19.01,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "cf3138e4aba6b4bfd83df1d73cdee6f3e8e7c132d6c7a2892f7af1e55d621194",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T20:44:20.180881Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text, correctly attributing the action to the student ('I changed') within a team context.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'assisted' is appropriate because the student explicitly states they followed a 'team's runbook,' indicating guided work rather than independent ownership or leading.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is correct; the student used an established method (the runbook) to complete the task without describing design choices or investigation.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct as no evaluation method, test, review, or assessment is stated in the evidence.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct as no result, outcome, or measurement regarding the change is stated in the source text.\"},{\"target_id\":\"s1\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale incorrectly downgrades the skill to null. The student explicitly wrote/modified a Bash script ('I changed two values...'). Explicit code writing supports identifying the programming node. A supported skill with null competency_id is legitimate missing taxonomy coverage, not unsupported evidence. The verdict should be 'supported' with null competency_id if the specific skill isn't in the catalog, but the rationale's dismissal of the explicit action as insufficient for a competency suggestion contradicts the instruction that explicit code writing supports identifying the programming node.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"The claim suggests 'programming' competency. The source describes modifying an existing script via a runbook, not writing new code or demonstrating algorithmic thinking. Per rubric, tool usage alone does not establish method/mastery/ownership sufficient for a competency suggestion without explicit design/implementation context. This is a false positive routing of tool usage to a demonstrated competency.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly names 'Bash' as the language used in the deployment script, supporting this tool context.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly mentions working on a 'deployment script', supporting this concept context.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly states the student followed a 'runbook', supporting this concept context.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states they followed a 'team's runbook' to perform the action. This indicates guided work rather than independent ownership or leading.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used an established method (following a runbook) to complete a described task (changing values in a script). No design choices or investigation are described.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result, outcome, or measurement is stated regarding the change to the deployment script.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": null,
+          "observed_skill": "script_modification",
+          "rationale": "The student modified a Bash script. While 'programming' is an allowed competency, the evidence describes a specific administrative task (changing values in an existing script) rather than writing code to solve a problem or demonstrate programming logic. Per instructions, tool usage alone does not imply expertise or ownership sufficient for a competency suggestion without explicit design/implementation context. Thus, it remains an observed_skill with null competency_id.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "bash_script_usage",
+          "rationale": "The student used Bash, a programming language. However, the action was modifying an existing script via a runbook, not writing new code or demonstrating algorithmic thinking. Per rubric: 'Tool recognition alone can be recorded in contexts; it must not become a demonstrated competency suggestion.' Therefore, this is recorded as a context/tool usage supporting the activity, but no competency mastery is suggested.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I changed two values in an existing Bash deployment script."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Bash",
+          "rationale": "The student explicitly named 'Bash' as the language used in the deployment script.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "existing Bash deployment script"
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "deployment_script",
+          "rationale": "The student worked on a 'deployment script', indicating the domain of software deployment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "existing Bash deployment script"
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "runbook",
+          "rationale": "The student followed a 'runbook', indicating a procedural guide or standard operating procedure.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook"
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text, correctly attributing the action to the student ('I changed') within a team context."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'assisted' is appropriate because the student explicitly states they followed a 'team's runbook,' indicating guided work rather than independent ownership or leading."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is correct; the student used an established method (the runbook) to complete the task without describing design choices or investigation."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct as no evaluation method, test, review, or assessment is stated in the evidence."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct as no result, outcome, or measurement regarding the change is stated in the source text."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "unsupported",
+          "explanation": "The rationale incorrectly downgrades the skill to null. The student explicitly wrote/modified a Bash script ('I changed two values...'). Explicit code writing supports identifying the programming node. A supported skill with null competency_id is legitimate missing taxonomy coverage, not unsupported evidence. The verdict should be 'supported' with null competency_id if the specific skill isn't in the catalog, but the rationale's dismissal of the explicit action as insufficient for a competency suggestion contradicts the instruction that explicit code writing supports identifying the programming node."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "The claim suggests 'programming' competency. The source describes modifying an existing script via a runbook, not writing new code or demonstrating algorithmic thinking. Per rubric, tool usage alone does not establish method/mastery/ownership sufficient for a competency suggestion without explicit design/implementation context. This is a false positive routing of tool usage to a demonstrated competency."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source explicitly names 'Bash' as the language used in the deployment script, supporting this tool context."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source explicitly mentions working on a 'deployment script', supporting this concept context."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The source explicitly states the student followed a 'runbook', supporting this concept context."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale incorrectly downgrades the skill to null. The student explicitly wrote/modified a Bash script ('I changed two values...'). Explicit code writing supports identifying the programming node. A supported skill with null competency_id is legitimate missing taxonomy coverage, not unsupported evidence. The verdict should be 'supported' with null competency_id if the specific skill isn't in the catalog, but the rationale's dismissal of the explicit action as insufficient for a competency suggestion contradicts the instruction that explicit code writing supports identifying the programming node."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The claim suggests 'programming' competency. The source describes modifying an existing script via a runbook, not writing new code or demonstrating algorithmic thinking. Per rubric, tool usage alone does not establish method/mastery/ownership sufficient for a competency suggestion without explicit design/implementation context. This is a false positive routing of tool usage to a demonstrated competency."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T20:44:01.1614614Z",
+        "2026-09-29T20:44:20.180881Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "d901ce1e769e7f5f0a7d85f15830a7ae567e445ffc968625d99d279604c7fb1a"
+      },
+      "draft_response_sha256": "8c2be6dfd094fe6a84931a1596ddc858af6a3fda46308412b1befe20a6301506",
+      "review_response_sha256": "fa1644cf21eb2489dad3ad92625aa0c486178aa3962665ae00ef7d1f04ad6297"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Deployment"
+        },
+        {
+          "kind": "tool",
+          "label": "Bash"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "deployment_script"
+        },
+        {
+          "kind": "concept",
+          "label": "runbook"
+        },
+        {
+          "kind": "tool",
+          "label": "Bash"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Modified an existing Bash script under documented guidance"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Modified an existing Bash script under documented guidance"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

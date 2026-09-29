@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-teaching-instruction",
+  "review_domain": "teaching",
+  "lineage_group": "teaching_instruction_evidence",
+  "source_sha256": "bd7bcb667d3222a76e7c655193e079920cee8a1402eac84ff783d124557a9424",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 54.49,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 54.41,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "a6d8d92ea11c91dede83a06972f0085f23ed6b87c01066dbe831ef246f718603",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:53:39.6419577Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I independently designed a tutoring sequence, compared two exercise formats with the same assessment rubric, and measured an improvement in quiz completion from 14 to 19 students.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently designed a tutoring sequence, compared two exercise formats with the same assessment rubric, and measured an improvement in quiz completion from 14 to 19 students.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I independently designed', establishing individual responsibility and ownership of the tutoring sequence design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently designed a tutoring sequence\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student 'designed' a tutoring sequence and 'compared two exercise formats', indicating design choices were made and methods adapted (comparing formats) rather than just applying established methods or investigating without design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently designed a tutoring sequence, compared two exercise formats\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly 'compared two exercise formats with the same assessment rubric', establishing a baseline (same rubric) and an alternative (two different formats) for evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"compared two exercise formats with the same assessment rubric\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The student reports a specific quantitative outcome ('improvement in quiz completion from 14 to 19 students') which constitutes a measured result.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"measured an improvement in quiz completion from 14 to 19 students\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"teaching_instruction\",\n      \"observed_skill\": \"Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners.\",\n      \"rationale\": \"The activity involves designing a 'tutoring sequence' and comparing exercise formats for students, which directly aligns with planning and evaluating instructional activities. The explicit mention of 'tutoring' supports this competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I independently designed a tutoring sequence\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.\",\n      \"rationale\": \"The student 'compared two exercise formats' and 'measured an improvement in quiz completion from 14 to 19 students'. This involves using quantitative data (student counts) to analyze the effectiveness of different instructional methods.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"compared two exercise formats... measured an improvement in quiz completion from 14 to 19 students\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}
