@@ -1,0 +1,506 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-civil-structural-design",
+  "review_domain": "civil",
+  "lineage_group": "structural_engineering_evidence",
+  "source_sha256": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 93.71,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 67.58,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "88e5005fa76c117f644c184844fd8a2887b125f0531caef08b5eb6b959ebfb4d",
+      "schema_sha256": "4384df5f4567bda2f8bbf5d0f3ee5eabcb8b45669ce5071780a0c533549ed9e0",
+      "response_id": "2026-09-30T16:24:50.1414132Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The text explicitly states 'Designed reinforced-concrete members' and 'reduced estimated material usage', indicating individual ownership of the design and optimization tasks. The use of active verbs like 'Designed', 'evaluated', and 'compared' supports independent contribution.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student 'Designed reinforced-concrete members' and 'reduced estimated material usage... while satisfying the stated project constraints'. This indicates making design choices and adapting methods to specific constraints (deflection, geometry).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The text explicitly mentions 'evaluated multiple load combinations' and 'compared two alternatives'. This constitutes explicit baselines or alternatives used for evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The text reports a specific quantitative outcome: 'reduced estimated material usage by 11%'. This is a measured result with a specified metric.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_design\",\n      \"observed_skill\": \"Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.\",\n      \"rationale\": \"The student 'Designed reinforced-concrete members' and satisfied 'project constraints on deflection and geometry', which directly maps to the competency of structural design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.\",\n      \"rationale\": \"The student 'evaluated multiple load combinations' and checked against 'constraints on deflection', which implies the application of analytical methods to evaluate structural response.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.\",\n      \"rationale\": \"The student 'reduced estimated material usage by 11%', implying the systematic use of quantitative methods to analyze material efficiency and optimize design parameters.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Reinforced-concrete design\",\n      \"rationale\": \"The text mentions 'reinforced-concrete members', indicating the domain of structural engineering.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Load combinations\",\n      \"rationale\": \"The text mentions 'evaluated multiple load combinations', a specific concept in structural analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Deflection constraints\",\n      \"rationale\": \"The text mentions 'constraints on deflection', a specific concept in structural design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Material usage optimization\",\n      \"rationale\": \"The text mentions 'reduced estimated material usage', indicating a concept related to resource efficiency in design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 26.1,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "f765d62f06a123ff464f6f09d5bef461a0eff96dc6cbd63a5b9d2f60e963445e",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:25:16.2458799Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing specific actions (designing, evaluating, comparing) and outcomes. The category 'project' is appropriate for this description of work.\"},{\"target_id\":\"j1\",\"verdict\":\"uncertain\",\"explanation\":\"The label 'led' requires explicit direction of work or independent ownership of a deliverable. The text uses active verbs ('Designed', 'evaluated') which establish personal execution but do not explicitly state that the student directed the team, owned the design independently to the exclusion of others, or led the project. Per instructions, 'Designed' alone does not support 'led'. Without explicit mention of leading or sole ownership, this is uncertain.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly states 'Designed reinforced-concrete members' and mentions satisfying specific constraints ('deflection', 'geometry'). This supports the label 'designed' as it indicates making design choices and adapting methods to constraints.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly mentions 'evaluated multiple load combinations' and 'compared two alternatives'. This provides explicit baselines or alternatives, supporting the label 'compared' for evaluation.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The text reports a specific quantitative outcome: 'reduced estimated material usage by 11%'. This is a concrete result with a specified metric, supporting the label 'measured' for impact.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The statement 'Designed reinforced-concrete members' and satisfying constraints on 'deflection and geometry' directly maps to the competency of structural_design (selection, sizing, or detailing). The source supports this specific skill.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The action 'evaluated multiple load combinations' and checking against 'constraints on deflection' implies the application of mechanics and analytical methods to model response. This supports the competency structural_analysis.\"},{\"target_id\":\"s3\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. The text mentions reducing material usage by 11%, which is a reported outcome/impact, but does not describe the systematic quantitative method used to derive this (e.g., optimization algorithms, statistical analysis). Mere reporting of a metric reduction does not support the competency of quantitative_analysis; it supports impact.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The text mentions 'reinforced-concrete members', which correctly identifies the domain/tool context. Recognition of domain terminology is allowed.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The text mentions 'evaluated multiple load combinations', correctly identifying a specific concept in structural analysis.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The text mentions 'constraints on deflection', correctly identifying a specific concept in structural design.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The text mentions 'reduced estimated material usage', correctly identifying a concept related to resource efficiency.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The text explicitly states 'Designed reinforced-concrete members' and 'reduced estimated material usage', indicating individual ownership of the design and optimization tasks. The use of active verbs like 'Designed', 'evaluated', and 'compared' supports independent contribution.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student 'Designed reinforced-concrete members' and 'reduced estimated material usage... while satisfying the stated project constraints'. This indicates making design choices and adapting methods to specific constraints (deflection, geometry).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The text explicitly mentions 'evaluated multiple load combinations' and 'compared two alternatives'. This constitutes explicit baselines or alternatives used for evaluation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "The text reports a specific quantitative outcome: 'reduced estimated material usage by 11%'. This is a measured result with a specified metric.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "structural_design",
+          "observed_skill": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+          "rationale": "The student 'Designed reinforced-concrete members' and satisfied 'project constraints on deflection and geometry', which directly maps to the competency of structural design.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "structural_analysis",
+          "observed_skill": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+          "rationale": "The student 'evaluated multiple load combinations' and checked against 'constraints on deflection', which implies the application of analytical methods to evaluate structural response.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+          "rationale": "The student 'reduced estimated material usage by 11%', implying the systematic use of quantitative methods to analyze material efficiency and optimize design parameters.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Reinforced-concrete design",
+          "rationale": "The text mentions 'reinforced-concrete members', indicating the domain of structural engineering.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "Load combinations",
+          "rationale": "The text mentions 'evaluated multiple load combinations', a specific concept in structural analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "Deflection constraints",
+          "rationale": "The text mentions 'constraints on deflection', a specific concept in structural design.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "Material usage optimization",
+          "rationale": "The text mentions 'reduced estimated material usage', indicating a concept related to resource efficiency in design.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing specific actions (designing, evaluating, comparing) and outcomes. The category 'project' is appropriate for this description of work."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "uncertain",
+          "explanation": "The label 'led' requires explicit direction of work or independent ownership of a deliverable. The text uses active verbs ('Designed', 'evaluated') which establish personal execution but do not explicitly state that the student directed the team, owned the design independently to the exclusion of others, or led the project. Per instructions, 'Designed' alone does not support 'led'. Without explicit mention of leading or sole ownership, this is uncertain."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The text explicitly states 'Designed reinforced-concrete members' and mentions satisfying specific constraints ('deflection', 'geometry'). This supports the label 'designed' as it indicates making design choices and adapting methods to constraints."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The text explicitly mentions 'evaluated multiple load combinations' and 'compared two alternatives'. This provides explicit baselines or alternatives, supporting the label 'compared' for evaluation."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The text reports a specific quantitative outcome: 'reduced estimated material usage by 11%'. This is a concrete result with a specified metric, supporting the label 'measured' for impact."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The statement 'Designed reinforced-concrete members' and satisfying constraints on 'deflection and geometry' directly maps to the competency of structural_design (selection, sizing, or detailing). The source supports this specific skill."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The action 'evaluated multiple load combinations' and checking against 'constraints on deflection' implies the application of mechanics and analytical methods to model response. This supports the competency structural_analysis."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. The text mentions reducing material usage by 11%, which is a reported outcome/impact, but does not describe the systematic quantitative method used to derive this (e.g., optimization algorithms, statistical analysis). Mere reporting of a metric reduction does not support the competency of quantitative_analysis; it supports impact."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The text mentions 'reinforced-concrete members', which correctly identifies the domain/tool context. Recognition of domain terminology is allowed."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The text mentions 'evaluated multiple load combinations', correctly identifying a specific concept in structural analysis."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The text mentions 'constraints on deflection', correctly identifying a specific concept in structural design."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The text mentions 'reduced estimated material usage', correctly identifying a concept related to resource efficiency."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'led' requires explicit direction of work or independent ownership of a deliverable. The text uses active verbs ('Designed', 'evaluated') which establish personal execution but do not explicitly state that the student directed the team, owned the design independently to the exclusion of others, or led the project. Per instructions, 'Designed' alone does not support 'led'. Without explicit mention of leading or sole ownership, this is uncertain."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. The text mentions reducing material usage by 11%, which is a reported outcome/impact, but does not describe the systematic quantitative method used to derive this (e.g., optimization algorithms, statistical analysis). Mere reporting of a metric reduction does not support the competency of quantitative_analysis; it supports impact."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:24:50.1414132Z",
+        "2026-09-30T16:25:16.2458799Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290"
+      },
+      "draft_response_sha256": "409062f69dc20960af437fd6aee3a9b1c6210d2388d16f9c5869babd0029aff9",
+      "review_response_sha256": "579d154495a3ebe99b0f082c00074e731019ae849b67a63f9e2eb1ea52c330a4"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "Deflection constraints"
+        },
+        {
+          "kind": "concept",
+          "label": "Load combinations"
+        },
+        {
+          "kind": "concept",
+          "label": "Material usage optimization"
+        },
+        {
+          "kind": "tool",
+          "label": "Reinforced-concrete design"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "design alternative comparison",
+        "estimated material measurement"
+      ],
+      "model_prediction": [
+        "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "load analysis"
+        },
+        {
+          "competency_id": "structural_design",
+          "observed_skill": "structural member design"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints."
+        },
+        {
+          "competency_id": "structural_design",
+          "observed_skill": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Missing taxonomy coverage: load analysis",
+        "Missing taxonomy coverage: structural member design"
+      ],
+      "model_prediction": [],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

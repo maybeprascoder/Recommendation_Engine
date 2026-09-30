@@ -1,0 +1,345 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-trap-action-verb",
+  "review_domain": "semantic_traps",
+  "lineage_group": "unsupported_inference_traps",
+  "source_sha256": "46d94e91a25ef92e5af88761f5f2f2acac4a2f3bdf3fdcdfa6d6358229e4c52e",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 39.29,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 25.55,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "e384794305d47848b979b262bb17f015e34e7772623cd35cff8d02639a38eb42",
+      "schema_sha256": "05e17cea9b988449d8c5f824c4a86e0aa38582749915d47219b318722a6d0558",
+      "response_id": "2026-09-30T16:17:16.5131377Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Spearheaded data migration activities.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Spearheaded data migration activities.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The verb 'Spearheaded' explicitly indicates that the student directed or independently owned the data migration activities.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Spearheaded data migration activities.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The description indicates the implementation or completion of a described task ('data migration activities') using established methods, without explicit mention of design choices, adaptation to constraints, or investigation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Spearheaded data migration activities.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No specific test, review, assessment method, baseline, or external assessment is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Spearheaded data migration activities.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete outcome, measurement method, or adoption by users is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Spearheaded data migration activities.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": [\n    \"The specific technical methods used for the data migration (e.g., scripting, ETL tools, database protocols) are not described; therefore, no programming or networking competency can be suggested based solely on this text.\",\n    \"The scope of the 'data migration activities' is unknown; it could range from simple file copying to complex distributed system migration.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 13.72,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "49ec6fb8066d08c7972f89ffe01840a1ae54f8717c80edb28bf38657a9f73df8",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:17:30.2350909Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text 'Spearheaded data migration activities.' The category 'activity' is appropriate for a general work description, and the attribution 'student' aligns with the draft's context of reviewing student interpretations. No invented settings or broadened categories are present.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'led' is supported by the verb 'Spearheaded,' which explicitly indicates directing or independently owning the work, satisfying the rubric requirement that a title alone is insufficient but an explicit action like this is valid. The rationale correctly identifies the linguistic evidence.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is appropriate because the text describes completing a task ('data migration activities') without claiming design choices or investigation. The rationale correctly notes the absence of explicit design or adaptation details, fitting the 'applied' definition of using established methods to complete a described task.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct because the source text contains no mention of tests, reviews, baselines, or external assessments. The rationale accurately states that no evaluation method is stated in the evidence.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct because the source text reports an action but provides no concrete outcome, measurement method, or statement of adoption by users. The rationale correctly distinguishes between the action performed and the lack of reported results.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Spearheaded data migration activities."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Spearheaded data migration activities.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Spearheaded data migration activities."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The verb 'Spearheaded' explicitly indicates that the student directed or independently owned the data migration activities.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Spearheaded data migration activities."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The description indicates the implementation or completion of a described task ('data migration activities') using established methods, without explicit mention of design choices, adaptation to constraints, or investigation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Spearheaded data migration activities."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No specific test, review, assessment method, baseline, or external assessment is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Spearheaded data migration activities."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No concrete outcome, measurement method, or adoption by users is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Spearheaded data migration activities."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [],
+      "questions": [],
+      "unassessed": [
+        "The specific technical methods used for the data migration (e.g., scripting, ETL tools, database protocols) are not described; therefore, no programming or networking competency can be suggested based solely on this text.",
+        "The scope of the 'data migration activities' is unknown; it could range from simple file copying to complex distributed system migration."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text 'Spearheaded data migration activities.' The category 'activity' is appropriate for a general work description, and the attribution 'student' aligns with the draft's context of reviewing student interpretations. No invented settings or broadened categories are present."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'led' is supported by the verb 'Spearheaded,' which explicitly indicates directing or independently owning the work, satisfying the rubric requirement that a title alone is insufficient but an explicit action like this is valid. The rationale correctly identifies the linguistic evidence."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is appropriate because the text describes completing a task ('data migration activities') without claiming design choices or investigation. The rationale correctly notes the absence of explicit design or adaptation details, fitting the 'applied' definition of using established methods to complete a described task."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct because the source text contains no mention of tests, reviews, baselines, or external assessments. The rationale accurately states that no evaluation method is stated in the evidence."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct because the source text reports an action but provides no concrete outcome, measurement method, or statement of adoption by users. The rationale correctly distinguishes between the action performed and the lack of reported results."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [],
+    "questions": [],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:17:16.5131377Z",
+        "2026-09-30T16:17:30.2350909Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "46d94e91a25ef92e5af88761f5f2f2acac4a2f3bdf3fdcdfa6d6358229e4c52e"
+      },
+      "draft_response_sha256": "8b6965995ccefa3ad207b242f4b33e0db28591bf8d0f716bd643998791ff430c",
+      "review_response_sha256": "1a21c8c3d3ec430be12304574138ff9d65bfb873ae427d74a71e7718a360c3d0"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Spearheaded data migration activities.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Spearheaded data migration activities.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Data migration"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {},
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What decisions, tasks, and people did you personally direct?"
+      ],
+      "model_prediction": [],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "The scope of the 'data migration activities' is unknown; it could range from simple file copying to complex distributed system migration.",
+        "The specific technical methods used for the data migration (e.g., scripting, ETL tools, database protocols) are not described; therefore, no programming or networking competency can be suggested based solely on this text."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

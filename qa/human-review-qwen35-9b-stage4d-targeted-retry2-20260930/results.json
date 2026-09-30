@@ -1,0 +1,21 @@
+[
+  {
+    "review_id": "hr-stage4b-bio-ml-pipeline",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 110.23,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-bio-ml-pipeline.json"
+  }
+]

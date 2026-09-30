@@ -36,6 +36,7 @@ from unihive.understanding import (
     UnderstandingDraft,
     UnderstandingResult,
     load_evaluation_rubric,
+    normalize_model_draft,
     supported_context_ids,
     supported_ids,
     validate_draft,
@@ -236,14 +237,39 @@ def interpret(
     client: StructuredClient | None = None,
 ) -> UnderstandingResult:
     if client is None:
+        raw_draft = (
+            case.review_challenge.draft
+            if challenge
+            else case.expected_understanding
+        )
+        draft = normalize_model_draft(raw_draft, load_evaluation_rubric())
+        raw_review = (
+            case.review_challenge.expected_review
+            if challenge
+            else case.expected_support_review
+        )
+        target_ids = {
+            item.id
+            for item in [
+                *draft.claims,
+                *draft.judgments,
+                *draft.competencies,
+                *draft.contexts,
+            ]
+        }
+        review = raw_review.model_copy(
+            update={
+                "checks": [
+                    check
+                    for check in raw_review.checks
+                    if check.target_id in target_ids
+                ]
+            }
+        )
         client = RecordedClient(
             RecordedResponses(
-                draft=case.review_challenge.draft
-                if challenge
-                else case.expected_understanding,
-                review=case.review_challenge.expected_review
-                if challenge
-                else case.expected_support_review,
+                draft=draft,
+                review=review,
             )
         )
     return analyze_documents(

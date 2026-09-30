@@ -1,0 +1,473 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-inter-finance-workflow",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "cross_domain_methods",
+  "source_sha256": "80f4b4e6f8fc34adf13b4129b1a01ee897f5e1c006e0abe3deaacc55cab69a07",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 71.32,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 48.16,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "8313ec36603ce17c413fdcbe704eb613cfccb460f0de9219664849ad5c18a067",
+      "schema_sha256": "2a4b87e6015bfb295716deb95bee7e044759aba48a200f6a5d7e83ec02cc3c77",
+      "response_id": "2026-09-29T23:15:10.2940379Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states they 'built' the workflow, indicating individual contribution. However, the output was used for 'accountant review', implying a collaborative context where the accountant is another contributor reviewing the work, rather than the student solely owning the final decision or directing the entire process independently without collaboration.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student describes using a 'Python workflow' to perform specific tasks (reconciling files, flagging mismatches). This indicates the application of established methods (programming) to implement a described task. There is no evidence in the text of making design choices, adapting methods to constraints, or investigating a question through analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the action of building and flagging, but does not state how the workflow itself was evaluated (e.g., tested against a specific dataset, reviewed by code standards, compared to other methods). The 'accountant review' refers to the usage of the output, not the evaluation of the tool's correctness or performance.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The text reports a concrete outcome: the workflow 'flagged mismatches for accountant review'. This is a stated result of the work performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Python workflow development\",\n      \"rationale\": \"The student explicitly states they 'built a Python workflow', which demonstrates the action of writing code and developing software using Python.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Data reconciliation and mismatch detection\",\n      \"rationale\": \"The activity involves 'reconciling transaction files against ledger exports' and 'flagging mismatches'. This requires systematic comparison of numerical or categorical data points to identify discrepancies, which constitutes a form of quantitative analysis (data validation/comparison).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Python\",\n      \"rationale\": \"The student explicitly names 'Python' as the language used to build the workflow.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Financial Data Processing\",\n      \"rationale\": \"The context involves 'transaction files', 'ledger exports', and 'accountant review', indicating work within the domain of financial data processing and accounting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 23.14,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "db57f004f5045e77ddc152ecfbc1d3c2337f46d841da447e444a23c31fc204fa",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T23:15:33.438112Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the student's activity. It accurately reflects the text provided.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work or shared ownership. The source text states 'I built...', which indicates individual execution. While the output was used for review, this does not establish that the student shared ownership of the workflow's creation or design with the accountant; it only describes the downstream usage. Therefore, 'assisted' or 'shared' is an incorrect attribution based on the text.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' fits because the student used a 'Python workflow' (an established method/tool) to perform specific tasks. The rationale correctly notes the absence of evidence for design choices or investigation, which aligns with the 'applied' label rather than 'designed' or 'investigated'.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate because the text describes the action of building and flagging but does not state how the workflow itself was evaluated (e.g., unit tests, code review standards). The mention of 'accountant review' refers to business usage, not technical evaluation of the tool's correctness.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'reported' is correct because the text states a concrete outcome: mismatches were flagged for review. This is a reported result without a specific measurement method or metric being cited (e.g., percentage reduction in errors).\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly stated they 'built a Python workflow', which constitutes an explicit programming action and artifact. This supports the programming competency.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"While the activity involves comparing data, the rubric requires 'systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior'. Mere reconciliation and flagging mismatches (data validation/comparison) often falls short of 'quantitative_analysis' which implies deeper analysis of relationships or models. Without explicit mention of statistical methods, modeling, or complex relationship analysis, labeling this as 'quantitative_analysis' is an inflated tool-to-competency proposal.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly names 'Python' in the text. Recognizing the tool name is allowed and supported by the citation.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context of 'transaction files', 'ledger exports', and 'accountant review' clearly places the work within the domain of financial data processing. This is a valid recognition of the domain terminology.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states they 'built' the workflow, indicating individual contribution. However, the output was used for 'accountant review', implying a collaborative context where the accountant is another contributor reviewing the work, rather than the student solely owning the final decision or directing the entire process independently without collaboration.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student describes using a 'Python workflow' to perform specific tasks (reconciling files, flagging mismatches). This indicates the application of established methods (programming) to implement a described task. There is no evidence in the text of making design choices, adapting methods to constraints, or investigating a question through analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text describes the action of building and flagging, but does not state how the workflow itself was evaluated (e.g., tested against a specific dataset, reviewed by code standards, compared to other methods). The 'accountant review' refers to the usage of the output, not the evaluation of the tool's correctness or performance.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The text reports a concrete outcome: the workflow 'flagged mismatches for accountant review'. This is a stated result of the work performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Python workflow development",
+          "rationale": "The student explicitly states they 'built a Python workflow', which demonstrates the action of writing code and developing software using Python.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Data reconciliation and mismatch detection",
+          "rationale": "The activity involves 'reconciling transaction files against ledger exports' and 'flagging mismatches'. This requires systematic comparison of numerical or categorical data points to identify discrepancies, which constitutes a form of quantitative analysis (data validation/comparison).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Python",
+          "rationale": "The student explicitly names 'Python' as the language used to build the workflow.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Financial Data Processing",
+          "rationale": "The context involves 'transaction files', 'ledger exports', and 'accountant review', indicating work within the domain of financial data processing and accounting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the student's activity. It accurately reflects the text provided."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work or shared ownership. The source text states 'I built...', which indicates individual execution. While the output was used for review, this does not establish that the student shared ownership of the workflow's creation or design with the accountant; it only describes the downstream usage. Therefore, 'assisted' or 'shared' is an incorrect attribution based on the text."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' fits because the student used a 'Python workflow' (an established method/tool) to perform specific tasks. The rationale correctly notes the absence of evidence for design choices or investigation, which aligns with the 'applied' label rather than 'designed' or 'investigated'."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate because the text describes the action of building and flagging but does not state how the workflow itself was evaluated (e.g., unit tests, code review standards). The mention of 'accountant review' refers to business usage, not technical evaluation of the tool's correctness."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'reported' is correct because the text states a concrete outcome: mismatches were flagged for review. This is a reported result without a specific measurement method or metric being cited (e.g., percentage reduction in errors)."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly stated they 'built a Python workflow', which constitutes an explicit programming action and artifact. This supports the programming competency."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "While the activity involves comparing data, the rubric requires 'systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior'. Mere reconciliation and flagging mismatches (data validation/comparison) often falls short of 'quantitative_analysis' which implies deeper analysis of relationships or models. Without explicit mention of statistical methods, modeling, or complex relationship analysis, labeling this as 'quantitative_analysis' is an inflated tool-to-competency proposal."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly names 'Python' in the text. Recognizing the tool name is allowed and supported by the citation."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context of 'transaction files', 'ledger exports', and 'accountant review' clearly places the work within the domain of financial data processing. This is a valid recognition of the domain terminology."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work or shared ownership. The source text states 'I built...', which indicates individual execution. While the output was used for review, this does not establish that the student shared ownership of the workflow's creation or design with the accountant; it only describes the downstream usage. Therefore, 'assisted' or 'shared' is an incorrect attribution based on the text."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "While the activity involves comparing data, the rubric requires 'systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior'. Mere reconciliation and flagging mismatches (data validation/comparison) often falls short of 'quantitative_analysis' which implies deeper analysis of relationships or models. Without explicit mention of statistical methods, modeling, or complex relationship analysis, labeling this as 'quantitative_analysis' is an inflated tool-to-competency proposal."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T23:15:10.2940379Z",
+        "2026-09-29T23:15:33.438112Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "80f4b4e6f8fc34adf13b4129b1a01ee897f5e1c006e0abe3deaacc55cab69a07"
+      },
+      "draft_response_sha256": "14c37794bc0fd2ccc9f3b4ae3e6e09a73cfb9bbf3c807af9bbd0e251ce72b18d",
+      "review_response_sha256": "cb1abf92bfacdb85601e41c0ba62c736b985fea6de516ae1d887384cc75abee8"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I built a Python workflow that reconciled transaction files against ledger exports and flagged mismatches for accountant review.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Accounting operations"
+        },
+        {
+          "kind": "tool",
+          "label": "Python"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "domain",
+          "label": "Financial Data Processing"
+        },
+        {
+          "kind": "tool",
+          "label": "Python"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Implemented a transaction-reconciliation workflow"
+      ],
+      "model_prediction": [
+        "Python workflow development"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Implemented a transaction-reconciliation workflow"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Python workflow development"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "applied"
+        ],
+        "impact": [
+          "adopted"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "impact": [
+          "reported"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

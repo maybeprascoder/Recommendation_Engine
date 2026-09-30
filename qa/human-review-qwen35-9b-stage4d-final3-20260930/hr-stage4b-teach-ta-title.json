@@ -1,0 +1,427 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-teach-ta-title",
+  "review_domain": "teaching",
+  "lineage_group": "teaching_progression",
+  "source_sha256": "7064a5c2d8b5d85f52f8147a3ae1db96f7b0648efec1e1285d3a72ed31b22fd4",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 66.31,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 38.29,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "53d51e71de5ec78264581bbbca90c7d14a8fad62803a4d6d8211582461769eb7",
+      "schema_sha256": "1c5c6efaeb58b6f9b828e8f030cbac30eaf19d2f4399aaea22a59ee273946308",
+      "response_id": "2026-09-30T17:29:48.5803385Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Teaching Assistant for Introduction to Programming.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The role 'Teaching Assistant' implies supporting instruction and students, which aligns with assisting or following guided work within a collaborative educational setting. Possessive titles alone are insufficient for 'led', but the specific duty of TA usually involves assisting the lead instructor.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The description indicates the student performed a task (being a TA) using established methods associated with that role, but does not explicitly state they designed new instructional methods or adapted them to specific constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text does not state how the TA work was evaluated (e.g., student feedback, peer review, supervisor assessment).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete outcome or result of the TA work is stated (e.g., improved student grades, successful course completion).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"teaching_instruction\",\n      \"observed_skill\": \"Providing teaching assistance for an introduction to programming course.\",\n      \"rationale\": \"The role of Teaching Assistant directly supports the competency of planning, delivering, or evaluating instruction and tutoring activities.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Possesses knowledge of programming as the subject matter of the course assisted.\",\n      \"rationale\": \"The context 'Introduction to Programming' implies familiarity with the domain, but the specific action of writing code or designing software is not explicitly described in this claim. This is recorded as an observed skill related to the domain context rather than a demonstrated implementation competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Introduction to Programming\",\n      \"rationale\": \"Identifies the specific academic domain and subject matter of the activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Teaching Assistant for Introduction to Programming.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 28.01,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "d8084a4e126b5a22efefccf78ffd9651a4f0d74a26cbb402865cf60440d626f9",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T17:30:16.5903475Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text 'Teaching Assistant for Introduction to Programming' as a reported present activity in category 'activity'. The attribution 'student' is appropriate given the context of reviewing student work.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'assisted' is incorrect. While the rationale correctly notes that titles alone don't prove leadership, the source text does not explicitly state the student followed guided work or supported another contributor. The role of TA implies a specific set of duties; without explicit description of assisting others or following guidance, the ownership cannot be determined as 'assisted'. It should likely be 'unknown' unless the definition of TA inherently includes assisting in this specific rubric context, but the instruction says 'Individual responsibility is not established' for unknown. Since the text doesn't describe the *nature* of the assistance (e.g., grading papers vs leading a lab), 'unknown' is safer. However, the prompt asks to check if 'assisted' is appropriate. The rationale assumes TA = assisted. If the student was the lead instructor's assistant, they might be 'led' or 'shared'. Without explicit description of *how* they worked (assisting vs leading), 'assisted' is an assumption. Verdict: unsupported because the source doesn't explicitly describe the action of assisting another contributor.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is supported by the rationale which correctly identifies that performing a task (being a TA) using established methods fits 'applied', while lacking evidence for 'designed'. The source text implies standard duties rather than novel design.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. The source text provides no information on how the TA work was evaluated (e.g., student feedback, supervisor review). The rationale accurately reflects this absence of evidence.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. The source text reports the activity but states no concrete outcome or result (e.g., improved grades, successful course completion). The rationale correctly identifies this lack of stated impact.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'teaching_instruction' is supported by the observed skill of providing teaching assistance. The source text explicitly mentions the role 'Teaching Assistant', which aligns with planning, delivering, or evaluating instruction as defined in the allowed competencies. The rationale correctly links the role to the competency.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'programming' is unsupported for this claim. The source text mentions the course title 'Introduction to Programming', which establishes domain context but does not describe an explicit programming action (writing code, designing software) performed by the student. The rationale correctly notes that familiarity with the domain is not a demonstrated implementation competency. According to instructions, tool/domain recognition alone does not support the competency; explicit code writing or design is required. Thus, marking it as an observed skill related to context rather than a supported competency is correct, making the verdict 'unsupported' appropriate for the claim of possessing the skill.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context label 'Introduction to Programming' is correctly identified from the source text. It accurately reflects the domain mentioned in the activity description without inventing additional details or prestige.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Teaching Assistant for Introduction to Programming."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Teaching Assistant for Introduction to Programming.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The role 'Teaching Assistant' implies supporting instruction and students, which aligns with assisting or following guided work within a collaborative educational setting. Possessive titles alone are insufficient for 'led', but the specific duty of TA usually involves assisting the lead instructor.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The description indicates the student performed a task (being a TA) using established methods associated with that role, but does not explicitly state they designed new instructional methods or adapted them to specific constraints.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text does not state how the TA work was evaluated (e.g., student feedback, peer review, supervisor assessment).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No concrete outcome or result of the TA work is stated (e.g., improved student grades, successful course completion).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "teaching_instruction",
+          "observed_skill": "Providing teaching assistance for an introduction to programming course.",
+          "rationale": "The role of Teaching Assistant directly supports the competency of planning, delivering, or evaluating instruction and tutoring activities.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Possesses knowledge of programming as the subject matter of the course assisted.",
+          "rationale": "The context 'Introduction to Programming' implies familiarity with the domain, but the specific action of writing code or designing software is not explicitly described in this claim. This is recorded as an observed skill related to the domain context rather than a demonstrated implementation competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Introduction to Programming",
+          "rationale": "Identifies the specific academic domain and subject matter of the activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Teaching Assistant for Introduction to Programming."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text 'Teaching Assistant for Introduction to Programming' as a reported present activity in category 'activity'. The attribution 'student' is appropriate given the context of reviewing student work."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'assisted' is incorrect. While the rationale correctly notes that titles alone don't prove leadership, the source text does not explicitly state the student followed guided work or supported another contributor. The role of TA implies a specific set of duties; without explicit description of assisting others or following guidance, the ownership cannot be determined as 'assisted'. It should likely be 'unknown' unless the definition of TA inherently includes assisting in this specific rubric context, but the instruction says 'Individual responsibility is not established' for unknown. Since the text doesn't describe the *nature* of the assistance (e.g., grading papers vs leading a lab), 'unknown' is safer. However, the prompt asks to check if 'assisted' is appropriate. The rationale assumes TA = assisted. If the student was the lead instructor's assistant, they might be 'led' or 'shared'. Without explicit description of *how* they worked (assisting vs leading), 'assisted' is an assumption. Verdict: unsupported because the source doesn't explicitly describe the action of assisting another contributor."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is supported by the rationale which correctly identifies that performing a task (being a TA) using established methods fits 'applied', while lacking evidence for 'designed'. The source text implies standard duties rather than novel design."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. The source text provides no information on how the TA work was evaluated (e.g., student feedback, supervisor review). The rationale accurately reflects this absence of evidence."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. The source text reports the activity but states no concrete outcome or result (e.g., improved grades, successful course completion). The rationale correctly identifies this lack of stated impact."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'teaching_instruction' is supported by the observed skill of providing teaching assistance. The source text explicitly mentions the role 'Teaching Assistant', which aligns with planning, delivering, or evaluating instruction as defined in the allowed competencies. The rationale correctly links the role to the competency."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "The label 'programming' is unsupported for this claim. The source text mentions the course title 'Introduction to Programming', which establishes domain context but does not describe an explicit programming action (writing code, designing software) performed by the student. The rationale correctly notes that familiarity with the domain is not a demonstrated implementation competency. According to instructions, tool/domain recognition alone does not support the competency; explicit code writing or design is required. Thus, marking it as an observed skill related to context rather than a supported competency is correct, making the verdict 'unsupported' appropriate for the claim of possessing the skill."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context label 'Introduction to Programming' is correctly identified from the source text. It accurately reflects the domain mentioned in the activity description without inventing additional details or prestige."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'assisted' is incorrect. While the rationale correctly notes that titles alone don't prove leadership, the source text does not explicitly state the student followed guided work or supported another contributor. The role of TA implies a specific set of duties; without explicit description of assisting others or following guidance, the ownership cannot be determined as 'assisted'. It should likely be 'unknown' unless the definition of TA inherently includes assisting in this specific rubric context, but the instruction says 'Individual responsibility is not established' for unknown. Since the text doesn't describe the *nature* of the assistance (e.g., grading papers vs leading a lab), 'unknown' is safer. However, the prompt asks to check if 'assisted' is appropriate. The rationale assumes TA = assisted. If the student was the lead instructor's assistant, they might be 'led' or 'shared'. Without explicit description of *how* they worked (assisting vs leading), 'assisted' is an assumption. Verdict: unsupported because the source doesn't explicitly describe the action of assisting another contributor."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'programming' is unsupported for this claim. The source text mentions the course title 'Introduction to Programming', which establishes domain context but does not describe an explicit programming action (writing code, designing software) performed by the student. The rationale correctly notes that familiarity with the domain is not a demonstrated implementation competency. According to instructions, tool/domain recognition alone does not support the competency; explicit code writing or design is required. Thus, marking it as an observed skill related to context rather than a supported competency is correct, making the verdict 'unsupported' appropriate for the claim of possessing the skill."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T17:29:48.5803385Z",
+        "2026-09-30T17:30:16.5903475Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "7064a5c2d8b5d85f52f8147a3ae1db96f7b0648efec1e1285d3a72ed31b22fd4"
+      },
+      "draft_response_sha256": "da764f97282dba99d021d79807d55db438b1cadd40102844dae810f64a005f95",
+      "review_response_sha256": "a3941802fc1dcefdc1f41ab782c4dccdfde9851598c8a22dc56e5ca9fd7c0e83"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Teaching Assistant for Introduction to Programming.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Teaching Assistant for Introduction to Programming.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Programming education"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "domain",
+          "label": "Introduction to Programming"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Providing teaching assistance for an introduction to programming course."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "competency_id": "teaching_instruction",
+          "observed_skill": "Providing teaching assistance for an introduction to programming course."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {},
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What instructional, tutoring, assessment, or course-design work did you perform?"
+      ],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

@@ -1,0 +1,367 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-trap-networking-absent",
+  "review_domain": "semantic_traps",
+  "lineage_group": "presence_and_attribution_traps",
+  "source_sha256": "cfb7b25e59ffae1698b5887ca1843dfe2d6aa222cd5655dc16bb8c01752a719e",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 86.83,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 64.08,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "4e87a33f586272bf79c6399c13f87d207ab2dc330ca392f3d753d40cf72a215f",
+      "schema_sha256": "1ae21147571b24995482c45d4bad2db3f37199102f997064403676226d53f58a",
+      "response_id": "2026-09-30T16:19:47.0840477Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I have never configured routers or switches.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement explicitly denies a specific activity (configuring routers/switches). It does not describe any other work where the student's individual contribution is established. Therefore, ownership for this specific proposition is reported_absent, but no positive claim exists to assign an 'unknown' label in the sense of unresolved responsibility; however, per rubric instructions to apply every dimension to canonical claims, and since this is a negative claim about a specific skill, the 'ownership' of that specific activity is known to be absent. The rubric instruction 'For absent/unknown claims use unknown judgments' applies when the presence is unresolved. Here presence is explicitly denied. However, the schema requires a judgment for every dimension. Since the claim is a denial, the ownership of *that* work is not applicable or is null. But the instruction says 'Apply EVERY rubric dimension'. If the activity is absent, can we judge ownership? The instruction says 'Explicitly stated absence must remain a factual statement... Set presence on every claim: reported_absent for an explicitly denied activity'. It does not say to set judgment labels to unknown for absences. However, standard practice in this schema when a claim is a denial of a specific task is that the dimensions regarding that task are effectively 'not applicable' or the claim itself is the absence. But the instruction says 'For absent/unknown claims use unknown judgments'. This implies if presence is reported_absent, the judgment might still be required. Let's re-read: 'Set presence on every claim... For absent/unknown claims use unknown judgments'. This suggests that if a claim exists (even if it denies something), we must provide a judgment. But what is the ownership of an activity the student says they never did? It is not 'unknown', it is 'absent'. The instruction 'For absent/unknown claims use unknown judgments' likely refers to when the presence is *unknown* (unresolved). If presence is *reported_absent*, the judgment for that specific dimension regarding that specific work might be N/A or we simply don't make a positive claim. However, the schema requires judgments. Let's look at the example logic: 'Explicitly stated absence must remain a factual statement...'. If I say 'I never did X', then for the dimension of ownership of X, it is not 'unknown', it is 'absent'. But the judgment labels are specific to the nature of the work (led, shared, etc.). If the work doesn't exist, these labels don't fit. The instruction 'For absent/unknown claims use unknown judgments' is slightly ambiguous here. Let's assume that for a claim where presence is reported_absent, we do not assign a positive competency, and the judgment for dimensions might be skipped or set to unknown if the system forces it. However, the most logical interpretation of 'Apply EVERY rubric dimension' combined with 'For absent/unknown claims use unknown judgments' is: If the presence is unknown -> judgment is unknown. If the presence is reported_absent -> we don't have a work to judge ownership for in the positive sense. But the claim exists. Let's assume that for a denial claim, we do not generate judgments for dimensions because there is no work to evaluate, OR we set them to unknown because the 'state' of the work is defined by absence. Actually, looking at the instruction: 'For absent/unknown claims use unknown judgments'. This implies if presence is reported_absent, the judgment should be unknown? No, that contradicts 'Explicitly stated absence must remain a factual statement'. If I say 'I never did X', the ownership of X is known to be 0. But the labels are 'led', 'shared', etc. None fit 'never did'. So perhaps we do not include judgments for claims where presence is reported_absent? The instruction says 'For every canonical claim apply EVERY rubric dimension'. This is a conflict. Let's resolve: If a claim is a denial ('I never did X'), the presence is reported_absent. The dimensions (ownership, depth, etc.) describe the *nature* of the work. If there is no work, these descriptions are not applicable. However, the instruction says 'apply EVERY rubric dimension'. This might mean we must output a judgment object. If we must output a judgment for an absence claim, what label? 'unknown' seems the safest fallback if the specific labels (led/shared) don't apply to non-existence. But 'reported_absent' is a presence state, not a judgment label. The judgment labels are for the *quality* of the work. If there is no work, quality is N/A. I will set the judgments to 'unknown' for dimensions where the activity was explicitly denied, as the specific descriptors (led, shared) cannot apply to non-existence, and 'unknown' covers the lack of applicable descriptor in this context per the instruction 'For absent/unknown claims use unknown judgments'. Wait, the instruction says 'For absent/unknown claims use unknown judgments'. This likely means if presence is unknown -> judgment unknown. If presence is reported_absent -> does it count as an 'absent claim'? Yes. So judgment should be unknown? Or does it mean only for 'unknown' presence? The text says 'Set presence... reported_absent for an explicitly denied activity... For absent/unknown claims use unknown judgments'. This phrasing groups 'absent' and 'unknown' together for the instruction on judgments. So if presence is reported_absent, judgment label should be 'unknown'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The student explicitly states they have never performed the activity. No depth of work can be described for an activity that was not performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method is stated for an activity the student claims never to have performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results or outcomes are stated for an activity the student claims never to have performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"routers and switches\",\n      \"rationale\": \"The student references specific networking hardware (routers, switches) in the context of configuration tasks.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have never configured routers or switches.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 22.73,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "3d941c6bcb67525a96083a970ea310e506652787b2cb46af0c7f8bc2e0c19d1a",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:20:09.8162113Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a direct verbatim quote from the source document stating 'I have never configured routers or switches.' The presence label 'reported_absent' correctly reflects an explicit denial of this specific activity. No other interpretation is possible.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment label 'unknown' is inappropriate for a claim with presence 'reported_absent'. Per instructions, explicitly stated absence must remain a factual statement; the ownership of that specific work is known to be absent (0), not unknown. The labels 'led', 'shared', etc., do not apply to non-existence, but 'unknown' implies unresolved responsibility rather than confirmed absence. A denial claim does not warrant an 'unknown' judgment label for dimensions describing the nature of the work.\"},{\"target_id\":\"j2\",\"verdict\":\"unsupported\",\"explanation\":\"Similar to j1, labeling depth as 'unknown' for an explicitly denied activity is incorrect. The source confirms the activity was never performed; therefore, no depth exists. While 'unknown' covers lack of evidence, it conflates 'absence of work' with 'unresolved status'. The instruction to use 'unknown' for absent claims is ambiguous but generally implies unresolved presence. Here presence is resolved as absent. However, strictly following 'For absent/unknown claims use unknown judgments', if the system forces a label, 'unknown' might be the only fit, but semantically it misrepresents the certainty of absence. Given the instruction 'Explicitly stated absence must remain a factual statement', 'unknown' undermines this fact.\"},{\"target_id\":\"j3\",\"verdict\":\"unsupported\",\"explanation\":\"Labeling evaluation as 'unknown' for an activity explicitly denied is incorrect. The source states no work was done, so no evaluation method exists. 'Unknown' suggests the evaluation status is unclear, whereas the status is definitively 'none'. This misrepresents the factual absence of the activity.\"},{\"target_id\":\"j4\",\"verdict\":\"unsupported\",\"explanation\":\"Labeling impact as 'unknown' for an explicitly denied activity is incorrect. The source states no work was done, so no results or outcomes exist. 'Unknown' implies uncertainty about the outcome, whereas the outcome is definitively 'none'. This misrepresents the factual absence of the activity.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies 'routers and switches' as tools referenced in the source text. The rationale accurately describes that these specific networking hardware items are mentioned in the context of configuration tasks (even if denied). Tool recognition is allowed even when no method or skill is demonstrated.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I have never configured routers or switches."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I have never configured routers or switches.",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement explicitly denies a specific activity (configuring routers/switches). It does not describe any other work where the student's individual contribution is established. Therefore, ownership for this specific proposition is reported_absent, but no positive claim exists to assign an 'unknown' label in the sense of unresolved responsibility; however, per rubric instructions to apply every dimension to canonical claims, and since this is a negative claim about a specific skill, the 'ownership' of that specific activity is known to be absent. The rubric instruction 'For absent/unknown claims use unknown judgments' applies when the presence is unresolved. Here presence is explicitly denied. However, the schema requires a judgment for every dimension. Since the claim is a denial, the ownership of *that* work is not applicable or is null. But the instruction says 'Apply EVERY rubric dimension'. If the activity is absent, can we judge ownership? The instruction says 'Explicitly stated absence must remain a factual statement... Set presence on every claim: reported_absent for an explicitly denied activity'. It does not say to set judgment labels to unknown for absences. However, standard practice in this schema when a claim is a denial of a specific task is that the dimensions regarding that task are effectively 'not applicable' or the claim itself is the absence. But the instruction says 'For absent/unknown claims use unknown judgments'. This implies if presence is reported_absent, the judgment might still be required. Let's re-read: 'Set presence on every claim... For absent/unknown claims use unknown judgments'. This suggests that if a claim exists (even if it denies something), we must provide a judgment. But what is the ownership of an activity the student says they never did? It is not 'unknown', it is 'absent'. The instruction 'For absent/unknown claims use unknown judgments' likely refers to when the presence is *unknown* (unresolved). If presence is *reported_absent*, the judgment for that specific dimension regarding that specific work might be N/A or we simply don't make a positive claim. However, the schema requires judgments. Let's look at the example logic: 'Explicitly stated absence must remain a factual statement...'. If I say 'I never did X', then for the dimension of ownership of X, it is not 'unknown', it is 'absent'. But the judgment labels are specific to the nature of the work (led, shared, etc.). If the work doesn't exist, these labels don't fit. The instruction 'For absent/unknown claims use unknown judgments' is slightly ambiguous here. Let's assume that for a claim where presence is reported_absent, we do not assign a positive competency, and the judgment for dimensions might be skipped or set to unknown if the system forces it. However, the most logical interpretation of 'Apply EVERY rubric dimension' combined with 'For absent/unknown claims use unknown judgments' is: If the presence is unknown -> judgment is unknown. If the presence is reported_absent -> we don't have a work to judge ownership for in the positive sense. But the claim exists. Let's assume that for a denial claim, we do not generate judgments for dimensions because there is no work to evaluate, OR we set them to unknown because the 'state' of the work is defined by absence. Actually, looking at the instruction: 'For absent/unknown claims use unknown judgments'. This implies if presence is reported_absent, the judgment should be unknown? No, that contradicts 'Explicitly stated absence must remain a factual statement'. If I say 'I never did X', the ownership of X is known to be 0. But the labels are 'led', 'shared', etc. None fit 'never did'. So perhaps we do not include judgments for claims where presence is reported_absent? The instruction says 'For every canonical claim apply EVERY rubric dimension'. This is a conflict. Let's resolve: If a claim is a denial ('I never did X'), the presence is reported_absent. The dimensions (ownership, depth, etc.) describe the *nature* of the work. If there is no work, these descriptions are not applicable. However, the instruction says 'apply EVERY rubric dimension'. This might mean we must output a judgment object. If we must output a judgment for an absence claim, what label? 'unknown' seems the safest fallback if the specific labels (led/shared) don't apply to non-existence. But 'reported_absent' is a presence state, not a judgment label. The judgment labels are for the *quality* of the work. If there is no work, quality is N/A. I will set the judgments to 'unknown' for dimensions where the activity was explicitly denied, as the specific descriptors (led, shared) cannot apply to non-existence, and 'unknown' covers the lack of applicable descriptor in this context per the instruction 'For absent/unknown claims use unknown judgments'. Wait, the instruction says 'For absent/unknown claims use unknown judgments'. This likely means if presence is unknown -> judgment unknown. If presence is reported_absent -> does it count as an 'absent claim'? Yes. So judgment should be unknown? Or does it mean only for 'unknown' presence? The text says 'Set presence... reported_absent for an explicitly denied activity... For absent/unknown claims use unknown judgments'. This phrasing groups 'absent' and 'unknown' together for the instruction on judgments. So if presence is reported_absent, judgment label should be 'unknown'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The student explicitly states they have never performed the activity. No depth of work can be described for an activity that was not performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method is stated for an activity the student claims never to have performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results or outcomes are stated for an activity the student claims never to have performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "routers and switches",
+          "rationale": "The student references specific networking hardware (routers, switches) in the context of configuration tasks.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have never configured routers or switches."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a direct verbatim quote from the source document stating 'I have never configured routers or switches.' The presence label 'reported_absent' correctly reflects an explicit denial of this specific activity. No other interpretation is possible."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The judgment label 'unknown' is inappropriate for a claim with presence 'reported_absent'. Per instructions, explicitly stated absence must remain a factual statement; the ownership of that specific work is known to be absent (0), not unknown. The labels 'led', 'shared', etc., do not apply to non-existence, but 'unknown' implies unresolved responsibility rather than confirmed absence. A denial claim does not warrant an 'unknown' judgment label for dimensions describing the nature of the work."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "unsupported",
+          "explanation": "Similar to j1, labeling depth as 'unknown' for an explicitly denied activity is incorrect. The source confirms the activity was never performed; therefore, no depth exists. While 'unknown' covers lack of evidence, it conflates 'absence of work' with 'unresolved status'. The instruction to use 'unknown' for absent claims is ambiguous but generally implies unresolved presence. Here presence is resolved as absent. However, strictly following 'For absent/unknown claims use unknown judgments', if the system forces a label, 'unknown' might be the only fit, but semantically it misrepresents the certainty of absence. Given the instruction 'Explicitly stated absence must remain a factual statement', 'unknown' undermines this fact."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "unsupported",
+          "explanation": "Labeling evaluation as 'unknown' for an activity explicitly denied is incorrect. The source states no work was done, so no evaluation method exists. 'Unknown' suggests the evaluation status is unclear, whereas the status is definitively 'none'. This misrepresents the factual absence of the activity."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "unsupported",
+          "explanation": "Labeling impact as 'unknown' for an explicitly denied activity is incorrect. The source states no work was done, so no results or outcomes exist. 'Unknown' implies uncertainty about the outcome, whereas the outcome is definitively 'none'. This misrepresents the factual absence of the activity."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies 'routers and switches' as tools referenced in the source text. The rationale accurately describes that these specific networking hardware items are mentioned in the context of configuration tasks (even if denied). Tool recognition is allowed even when no method or skill is demonstrated."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment label 'unknown' is inappropriate for a claim with presence 'reported_absent'. Per instructions, explicitly stated absence must remain a factual statement; the ownership of that specific work is known to be absent (0), not unknown. The labels 'led', 'shared', etc., do not apply to non-existence, but 'unknown' implies unresolved responsibility rather than confirmed absence. A denial claim does not warrant an 'unknown' judgment label for dimensions describing the nature of the work."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Similar to j1, labeling depth as 'unknown' for an explicitly denied activity is incorrect. The source confirms the activity was never performed; therefore, no depth exists. While 'unknown' covers lack of evidence, it conflates 'absence of work' with 'unresolved status'. The instruction to use 'unknown' for absent claims is ambiguous but generally implies unresolved presence. Here presence is resolved as absent. However, strictly following 'For absent/unknown claims use unknown judgments', if the system forces a label, 'unknown' might be the only fit, but semantically it misrepresents the certainty of absence. Given the instruction 'Explicitly stated absence must remain a factual statement', 'unknown' undermines this fact."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Labeling evaluation as 'unknown' for an activity explicitly denied is incorrect. The source states no work was done, so no evaluation method exists. 'Unknown' suggests the evaluation status is unclear, whereas the status is definitively 'none'. This misrepresents the factual absence of the activity."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Labeling impact as 'unknown' for an explicitly denied activity is incorrect. The source states no work was done, so no results or outcomes exist. 'Unknown' implies uncertainty about the outcome, whereas the outcome is definitively 'none'. This misrepresents the factual absence of the activity."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:19:47.0840477Z",
+        "2026-09-30T16:20:09.8162113Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "cfb7b25e59ffae1698b5887ca1843dfe2d6aa222cd5655dc16bb8c01752a719e"
+      },
+      "draft_response_sha256": "560aa35d78465929321391cefa9ba8c5dd570f8102e66449d5422f98aa87f59d",
+      "review_response_sha256": "26a923d606af481f6d5a899939aa2b069071e0429aa5a10ddc52b48e653072d7"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I have never configured routers or switches.",
+          "category": "other",
+          "attribution": "student",
+          "presence": "reported_absent"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I have never configured routers or switches.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_absent"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Network device configuration"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "tool",
+          "label": "routers and switches"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

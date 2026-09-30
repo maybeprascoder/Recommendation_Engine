@@ -1,0 +1,10 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "dataset_path": "qa/human_review_cases.jsonl",
+  "manifest_path": "qa/human_review_batch_stage4c.json",
+  "human_review_status": "pending",
+  "provisional_reference_is_gold": false,
+  "accuracy_reported": false
+}

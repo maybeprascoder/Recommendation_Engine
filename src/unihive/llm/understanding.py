@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from pathlib import Path
 
 from pydantic import JsonValue, ValidationError
@@ -11,6 +12,7 @@ from unihive.llm.provider import ProviderError, StructuredClient
 from unihive.understanding import (
     ClaimPresence,
     Clarification,
+    EvaluationRubric,
     EvidenceCategory,
     SourceDocument,
     SupportReview,
@@ -19,9 +21,10 @@ from unihive.understanding import (
     UnderstandingDraft,
     UnderstandingResult,
     canonical_json,
-    complete_unknown_dimensions,
+    enforce_support_policies,
     fingerprint,
     load_evaluation_rubric,
+    normalize_model_draft,
     require_explicit_presence,
     supported_context_ids,
     supported_ids,
@@ -29,6 +32,53 @@ from unihive.understanding import (
 )
 
 PROMPTS = Path(__file__).parent / "prompts"
+
+
+def _citation_passages(document: SourceDocument) -> list[str]:
+    """Return exact, bounded source passages for constrained generation."""
+    passages: set[str] = set()
+    for raw_line in document.text.splitlines() or [document.text]:
+        line = raw_line.strip()
+        if not line:
+            continue
+        if len(line) <= 2_000:
+            passages.add(line)
+            continue
+        start = 0
+        while start < len(line):
+            passages.add(line[start : start + 2_000])
+            if start + 2_000 >= len(line):
+                break
+            start += 1_800
+    return sorted(passages)
+
+
+def _draft_schema(
+    documents: list[SourceDocument], rubric: EvaluationRubric
+) -> dict[str, JsonValue]:
+    """Constrain citations and rubric tokens while retaining strict validation."""
+    schema = deepcopy(UnderstandingDraft.model_json_schema())
+    definitions = schema.get("$defs")
+    assert isinstance(definitions, dict)
+    citation = definitions["Citation"]
+    judgment = definitions["Judgment"]
+    assert isinstance(citation, dict) and isinstance(judgment, dict)
+    citation_properties = citation["properties"]
+    judgment_properties = judgment["properties"]
+    assert isinstance(citation_properties, dict)
+    assert isinstance(judgment_properties, dict)
+    document_ids = [document.id for document in documents]
+    passages = sorted(
+        {passage for document in documents for passage in _citation_passages(document)}
+    )
+    citation_properties["document_id"]["enum"] = document_ids
+    citation_properties["quote"]["enum"] = passages
+    dimensions = rubric.dimensions
+    judgment_properties["dimension"]["enum"] = [item.id for item in dimensions]
+    judgment_properties["label"]["enum"] = sorted(
+        {label for item in dimensions for label in item.labels}
+    )
+    return schema
 
 
 def analyze_documents(
@@ -54,19 +104,22 @@ def analyze_documents(
     review_instructions = (PROMPTS / "support_review_v1.txt").read_text("utf-8")
     payload: dict[str, JsonValue] = {
         "documents": [doc.model_dump(mode="json") for doc in documents],
+        "citation_passages": {
+            doc.id: _citation_passages(doc) for doc in documents
+        },
         "rubric": rubric.model_dump(mode="json"),
         "allowed_competencies": dict(competency_catalog),
     }
     first = client.complete(
         instructions=instructions,
         payload=json.dumps(payload, ensure_ascii=False),
-        schema=UnderstandingDraft.model_json_schema(),
+        schema=_draft_schema(documents, rubric),
         name="student_understanding",
     )
     try:
         draft = UnderstandingDraft.model_validate_json(first.text, strict=True)
         require_explicit_presence(draft)
-        draft = complete_unknown_dimensions(draft, rubric)
+        draft = normalize_model_draft(draft, rubric)
         validate_draft(draft, documents, rubric, competency_catalog)
     except ValidationError as exc:
         # Pydantic errors can contain source text. Do not leak that into logs.
@@ -96,6 +149,7 @@ def analyze_documents(
             if second is not None
             else SupportReview(checks=[])
         )
+        review = enforce_support_policies(draft, review)
         claim_ids, judgment_ids, competency_ids = supported_ids(draft, review)
     except (ValidationError, ValueError) as exc:
         raise ProviderError(
@@ -174,7 +228,7 @@ def analyze_documents(
             model=client.model,
             completion_models=[first.model] + ([second.model] if second else []),
             response_ids=[first.response_id] + ([second.response_id] if second else []),
-            prompt_version="understanding-v9+support-review-v9",
+            prompt_version="understanding-v10+support-review-v10",
             prompt_sha256=fingerprint(instructions + "\n" + review_instructions),
             rubric_sha256=fingerprint(canonical_json(rubric)),
             rubric_snapshot=rubric,

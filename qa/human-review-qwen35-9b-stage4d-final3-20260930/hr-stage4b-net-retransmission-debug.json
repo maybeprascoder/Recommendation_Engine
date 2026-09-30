@@ -1,0 +1,503 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-net-retransmission-debug",
+  "review_domain": "cybersecurity",
+  "lineage_group": "wireshark_progression",
+  "source_sha256": "7a148e42967675c29e558593223458aa3e53ae619c04689ad9c93e241b13f148",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 96.55,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 69.22,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "9d815f60f98b8ef8f00956361de8861ca4ab84417974706a219734d1aab69c3e",
+      "schema_sha256": "3190c4611d996c70ef3f777b3b152662005e6bc27b424c9b9fe3f4a59b187a71",
+      "response_id": "2026-09-30T16:55:41.9534326Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly describes performing a diagnostic action ('I diagnosed...'). While 'led' requires explicit direction or independent ownership of the deliverable, and 'assisted' implies supporting others, this statement describes an individual contribution within a technical context. Without explicit mention of a team or collaboration, 'shared' is often used for individual contributions in technical contexts where the rubric distinguishes between 'unknown' (no responsibility established) and 'shared' (explicit individual contribution). However, strictly adhering to the definition 'Explicit individual contribution within collaborative work', if no collaboration is mentioned, 'unknown' might be safer. But looking at the instruction 'Do not require leadership... merely to name an evidenced skill', and the fact that it is a specific technical task performed by the student, 'shared' fits 'Explicit individual contribution'. Let's re-read: 'led': Explicitly directed... 'assisted': Supported another... 'shared': Explicit individual contribution within collaborative work. 'unknown': Individual responsibility is not established. Since the text says 'I diagnosed', it establishes individual responsibility. Is it collaborative? Not stated. If not collaborative, is it 'unknown'? Or does 'shared' cover 'individual contribution' generally? The definition says 'within collaborative work'. If no collaboration is mentioned, 'unknown' is technically more accurate per the strict definition provided in the rubric for 'unknown'. However, often 'shared' is used for 'I did this'. Let's look at the instruction: 'Possessives such as \",\"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student investigated a question (slow file transfers) through an explicit method (measuring TCP retransmissions in packet captures) and analysis (comparing before/after MTU change). This goes beyond just 'applied' (using established methods to complete a task) because it involves diagnosing a specific issue via measurement and comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The evaluation includes explicit baselines and alternatives. The student measured retransmissions 'before and after an MTU change', establishing a control/baseline (before) and an alternative condition (after), then comparing the results.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"An outcome and measurement method are stated. The student reports a specific quantitative result ('retransmissions fell from 9.4% to 0.8%') derived from the measurement method (measuring TCP retransmissions). This constitutes a measured impact.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"Analysis of network communication, protocols, traffic, and packet behavior.\",\n      \"rationale\": \"The student performed actions related to TCP retransmissions, MTU changes, and packet captures. These are specific activities within the domain of networking (protocols, traffic analysis). The activity supports the 'networking' competency node.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Systematic use and interpretation of mathematical or quantitative methods to analyze data.\",\n      \"rationale\": \"The student measured specific percentages (9.4%, 0.8%) and compared them to determine the effect of an intervention. This systematic use of quantitative data to analyze a network issue supports the 'quantitative_analysis' competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"packet captures\",\n      \"rationale\": \"The student explicitly mentions using 'packet captures' as a method to measure TCP retransmissions.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"TCP retransmissions\",\n      \"rationale\": \"The student explicitly mentions measuring 'TCP retransmissions', a specific networking concept.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"MTU change\",\n      \"rationale\": \"The student explicitly mentions performing an 'MTU change' as part of the diagnostic process.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 27.31,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "7309dc45b1cc457bb036fa02ed3d2f324e01a744b97489aeee354e86dc5bcf59",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:56:09.2605026Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text, which explicitly describes diagnosing slow file transfers via measuring TCP retransmissions in packet captures before and after an MTU change, noting the specific reduction from 9.4% to 0.8%. The attribution 'student' is appropriate as the text uses first-person ('I diagnosed').\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' requires explicit mention of collaborative work or a team context per the rubric definition ('Explicit individual contribution within collaborative work'). The source text describes an individual action ('I diagnosed') with no mention of collaboration, teammates, or shared responsibility. Therefore, 'unknown' is the appropriate label for ownership when individual responsibility is established but collaboration is absent.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'investigated' is supported because the student described a specific diagnostic question (slow file transfers) and employed an explicit method (measuring TCP retransmissions in packet captures) with analysis (comparing before/after states). This goes beyond simple application of a tool to implementing a task.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'compared' is supported as the text explicitly states measurements were taken 'before and after an MTU change', establishing a baseline and an alternative condition for comparison, which fits the definition of evaluation including explicit baselines or controls.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'measured' is supported because the source states a concrete outcome ('retransmissions fell from 9.4% to 0.8%') derived from a specific measurement method (measuring TCP retransmissions). This satisfies the requirement for an outcome and measurement method.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'networking' is supported as the activity involves analyzing network communication protocols (TCP), traffic behavior (retransmissions), and packet data (packet captures, MTU change). The observed skill description accurately reflects these specific networking activities.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The competency 'quantitative_analysis' is supported because the student systematically used quantitative methods (measuring percentages) to analyze data (retransmission rates) and interpret relationships (the effect of the MTU change on transfer speed). The specific numeric values (9.4%, 0.8%) constitute the required quantitative analysis.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context 'packet captures' is correctly identified as a tool mentioned in the source text used to measure TCP retransmissions. The rationale accurately reflects that this tool was explicitly named and utilized in the described activity.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context 'TCP retransmissions' is correctly identified as a networking concept explicitly mentioned and measured by the student. The rationale accurately notes this specific concept was part of the diagnostic process.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The context 'MTU change' is correctly identified as a concept/action explicitly mentioned in the source text as part of the intervention performed during the diagnostic process.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly describes performing a diagnostic action ('I diagnosed...'). While 'led' requires explicit direction or independent ownership of the deliverable, and 'assisted' implies supporting others, this statement describes an individual contribution within a technical context. Without explicit mention of a team or collaboration, 'shared' is often used for individual contributions in technical contexts where the rubric distinguishes between 'unknown' (no responsibility established) and 'shared' (explicit individual contribution). However, strictly adhering to the definition 'Explicit individual contribution within collaborative work', if no collaboration is mentioned, 'unknown' might be safer. But looking at the instruction 'Do not require leadership... merely to name an evidenced skill', and the fact that it is a specific technical task performed by the student, 'shared' fits 'Explicit individual contribution'. Let's re-read: 'led': Explicitly directed... 'assisted': Supported another... 'shared': Explicit individual contribution within collaborative work. 'unknown': Individual responsibility is not established. Since the text says 'I diagnosed', it establishes individual responsibility. Is it collaborative? Not stated. If not collaborative, is it 'unknown'? Or does 'shared' cover 'individual contribution' generally? The definition says 'within collaborative work'. If no collaboration is mentioned, 'unknown' is technically more accurate per the strict definition provided in the rubric for 'unknown'. However, often 'shared' is used for 'I did this'. Let's look at the instruction: 'Possessives such as ",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student investigated a question (slow file transfers) through an explicit method (measuring TCP retransmissions in packet captures) and analysis (comparing before/after MTU change). This goes beyond just 'applied' (using established methods to complete a task) because it involves diagnosing a specific issue via measurement and comparison.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The evaluation includes explicit baselines and alternatives. The student measured retransmissions 'before and after an MTU change', establishing a control/baseline (before) and an alternative condition (after), then comparing the results.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "An outcome and measurement method are stated. The student reports a specific quantitative result ('retransmissions fell from 9.4% to 0.8%') derived from the measurement method (measuring TCP retransmissions). This constitutes a measured impact.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "networking",
+          "observed_skill": "Analysis of network communication, protocols, traffic, and packet behavior.",
+          "rationale": "The student performed actions related to TCP retransmissions, MTU changes, and packet captures. These are specific activities within the domain of networking (protocols, traffic analysis). The activity supports the 'networking' competency node.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Systematic use and interpretation of mathematical or quantitative methods to analyze data.",
+          "rationale": "The student measured specific percentages (9.4%, 0.8%) and compared them to determine the effect of an intervention. This systematic use of quantitative data to analyze a network issue supports the 'quantitative_analysis' competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "packet captures",
+          "rationale": "The student explicitly mentions using 'packet captures' as a method to measure TCP retransmissions.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "TCP retransmissions",
+          "rationale": "The student explicitly mentions measuring 'TCP retransmissions', a specific networking concept.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "MTU change",
+          "rationale": "The student explicitly mentions performing an 'MTU change' as part of the diagnostic process.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text, which explicitly describes diagnosing slow file transfers via measuring TCP retransmissions in packet captures before and after an MTU change, noting the specific reduction from 9.4% to 0.8%. The attribution 'student' is appropriate as the text uses first-person ('I diagnosed')."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' requires explicit mention of collaborative work or a team context per the rubric definition ('Explicit individual contribution within collaborative work'). The source text describes an individual action ('I diagnosed') with no mention of collaboration, teammates, or shared responsibility. Therefore, 'unknown' is the appropriate label for ownership when individual responsibility is established but collaboration is absent."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'investigated' is supported because the student described a specific diagnostic question (slow file transfers) and employed an explicit method (measuring TCP retransmissions in packet captures) with analysis (comparing before/after states). This goes beyond simple application of a tool to implementing a task."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'compared' is supported as the text explicitly states measurements were taken 'before and after an MTU change', establishing a baseline and an alternative condition for comparison, which fits the definition of evaluation including explicit baselines or controls."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'measured' is supported because the source states a concrete outcome ('retransmissions fell from 9.4% to 0.8%') derived from a specific measurement method (measuring TCP retransmissions). This satisfies the requirement for an outcome and measurement method."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'networking' is supported as the activity involves analyzing network communication protocols (TCP), traffic behavior (retransmissions), and packet data (packet captures, MTU change). The observed skill description accurately reflects these specific networking activities."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context 'packet captures' is correctly identified as a tool mentioned in the source text used to measure TCP retransmissions. The rationale accurately reflects that this tool was explicitly named and utilized in the described activity."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context 'TCP retransmissions' is correctly identified as a networking concept explicitly mentioned and measured by the student. The rationale accurately notes this specific concept was part of the diagnostic process."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The context 'MTU change' is correctly identified as a concept/action explicitly mentioned in the source text as part of the intervention performed during the diagnostic process."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' requires explicit mention of collaborative work or a team context per the rubric definition ('Explicit individual contribution within collaborative work'). The source text describes an individual action ('I diagnosed') with no mention of collaboration, teammates, or shared responsibility. Therefore, 'unknown' is the appropriate label for ownership when individual responsibility is established but collaboration is absent."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:55:41.9534326Z",
+        "2026-09-30T16:56:09.2605026Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "7a148e42967675c29e558593223458aa3e53ae619c04689ad9c93e241b13f148"
+      },
+      "draft_response_sha256": "d4729e450ba4da450ca3a9065a729f02ac043718da3f98860e14f4da61981150",
+      "review_response_sha256": "2055aa30eb07c3f1c2ec8b76b0dfa59771e5b8f71da2e6212d5211c40f4b294c"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I diagnosed slow file transfers by measuring TCP retransmissions in packet captures before and after an MTU change; retransmissions fell from 9.4% to 0.8%.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "MTU"
+        },
+        {
+          "kind": "concept",
+          "label": "TCP"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "MTU change"
+        },
+        {
+          "kind": "concept",
+          "label": "TCP retransmissions"
+        },
+        {
+          "kind": "tool",
+          "label": "packet captures"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Diagnosed TCP retransmissions and evaluated an MTU change"
+      ],
+      "model_prediction": [
+        "Analysis of network communication, protocols, traffic, and packet behavior."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "networking",
+          "observed_skill": "Diagnosed TCP retransmissions and evaluated an MTU change"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "networking",
+          "observed_skill": "Analysis of network communication, protocols, traffic, and packet behavior."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

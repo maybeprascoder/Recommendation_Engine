@@ -7,6 +7,7 @@ scores. Keeping them separate prevents unreviewed LLM labels entering arithmetic
 from __future__ import annotations
 
 import json
+import re
 from enum import StrEnum
 from hashlib import sha256
 from pathlib import Path
@@ -312,6 +313,278 @@ def complete_unknown_dimensions(
             "questions": questions,
         }
     )
+
+
+_NEGATIVE_SKILL_PATTERNS = (
+    re.compile(r"\b(?:absent|absence|unrelated|unsupported)\b", re.IGNORECASE),
+    re.compile(
+        r"\b(?:not|never)\s+(?:demonstrated|evidenced|supported|related)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"\bno\s+(?:evidence|demonstration|support)\s+(?:of|for)\b",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\bcompetency\s+is\s+not\s+evidenced\b", re.IGNORECASE),
+)
+_EMPTY_SKILL_LABELS = {"null", "none", "n/a", "na", "unknown"}
+
+
+def _is_negative_competency_suggestion(item: CompetencySuggestion) -> bool:
+    observed = item.observed_skill.strip().casefold()
+    if observed in _EMPTY_SKILL_LABELS:
+        return True
+    text = f"{item.observed_skill}\n{item.rationale}"
+    return any(pattern.search(text) for pattern in _NEGATIVE_SKILL_PATTERNS)
+
+
+def normalize_model_draft(
+    draft: UnderstandingDraft, rubric: EvaluationRubric
+) -> UnderstandingDraft:
+    """Fail closed on recoverable small-model structural mistakes.
+
+    Invalid or competing positive judgments are removed so the existing unknown
+    completion can expose them without selecting a winner. Academic records for
+    non-education claims and negative competency checklists are not evidence.
+    The returned draft still passes the same strict provenance validation.
+    """
+    dimensions = {dimension.id: dimension for dimension in rubric.dimensions}
+    valid_judgments = [
+        item
+        for item in draft.judgments
+        if (dimension := dimensions.get(item.dimension)) is not None
+        and item.label in dimension.labels
+    ]
+    pair_counts: dict[tuple[str, str], int] = {}
+    for item in valid_judgments:
+        pair = (item.claim_id, item.dimension)
+        pair_counts[pair] = pair_counts.get(pair, 0) + 1
+    valid_judgments = [
+        item
+        for item in valid_judgments
+        if pair_counts[(item.claim_id, item.dimension)] == 1
+    ]
+
+    claims = {claim.id: claim for claim in draft.claims}
+    education_ids = {
+        claim.id
+        for claim in draft.claims
+        if claim.category == EvidenceCategory.EDUCATION and claim.duplicate_of is None
+    }
+    academic_counts: dict[str, int] = {}
+    for record in draft.academics:
+        academic_counts[record.claim_id] = academic_counts.get(record.claim_id, 0) + 1
+    academics = [
+        record
+        for record in draft.academics
+        if record.claim_id in education_ids
+        and record.claim_id in claims
+        and academic_counts[record.claim_id] == 1
+    ]
+    competencies = [
+        item
+        for item in draft.competencies
+        if not _is_negative_competency_suggestion(item)
+    ]
+    used_ids = {claim.id for claim in draft.claims}
+
+    def unique_id(identifier: str, prefix: str) -> str:
+        if identifier in used_ids:
+            base = f"{prefix}_{identifier}"
+            identifier = base
+            suffix = 2
+            while identifier in used_ids:
+                identifier = f"{base}_{suffix}"
+                suffix += 1
+        used_ids.add(identifier)
+        return identifier
+
+    judgments = [
+        item.model_copy(update={"id": unique_id(item.id, "j")})
+        for item in valid_judgments
+    ]
+    competency_items = [
+        item.model_copy(update={"id": unique_id(item.id, "s")})
+        for item in competencies
+    ]
+    contexts = [
+        item.model_copy(update={"id": unique_id(item.id, "t")})
+        for item in draft.contexts
+    ]
+
+    normalized = draft.model_copy(
+        update={
+            "judgments": judgments,
+            "academics": academics,
+            "competencies": competency_items,
+            "contexts": contexts,
+        }
+    )
+    return complete_unknown_dimensions(normalized, rubric)
+
+
+_PROGRAMMING_ACTION = re.compile(
+    r"\b(?:wrote|coded|programmed|implemented|developed|build|built|created|rewrote|"
+    r"scripted)\b",
+    re.IGNORECASE,
+)
+_PROGRAMMING_ARTIFACT = re.compile(
+    r"\b(?:code|script|software|program|application|app|api|parser|pipeline|query|"
+    r"sql|python|java|golang|go|rust|c\+\+|verilog|firmware|classifier|model|"
+    r"solver|interface|component|dashboard)\b",
+    re.IGNORECASE,
+)
+_PROGRAMMING_SERVICE_ACTION = re.compile(
+    r"\b(?:designed|implemented|developed|built|created)\s+(?:an?\s+|the\s+)?"
+    r"(?:[\w-]+\s+){0,3}(?:service|system)\b|"
+    r"\bused\s+sql\s+to\s+(?:analy\w*|quer\w*|transform\w*|aggregate\w*)\b",
+    re.IGNORECASE,
+)
+_QUANTITATIVE_METHOD = re.compile(
+    r"\b(?:quantitative analysis|statistical|statistics|regression|hypothesis|"
+    r"confidence interval|anova|correlation|probability|standard deviation|"
+    r"variance|mean|median|distribution|forecast(?:ing)?|optimization|"
+    r"numerical analysis)\b",
+    re.IGNORECASE,
+)
+_MEASUREMENT_WITHOUT_OUTCOME = re.compile(
+    r"\b(?:compar(?:e|ed|ing|ison)|metric|latency|"
+    r"memory|accuracy|reaction)\b|\b\d+(?:\.\d+)?\s*(?:%|ms|s|minutes?|"
+    r"hours?|kb|mb|gb|kn|n)\b",
+    re.IGNORECASE,
+)
+_OUTCOME = re.compile(
+    r"\b(?:reduc(?:e|ed|tion)|improv(?:e|ed|ement)|increas(?:e|ed)|"
+    r"decreas(?:e|ed)|faster|slower|lower|higher|less|more|saved|cut|"
+    r"fell|rose|dropped|gained|eliminat(?:e|ed)|closed|resolved|prevented|"
+    r"enabled|resulted|achieved|"
+    r"adopt(?:ed|ion)|deployed\s+to|used\s+by|satisf(?:y|ied)|compliant|"
+    r"instead\s+of|from\s+\S+\s+to\s+\S+|f1|error\s+reduction)\b",
+    re.IGNORECASE,
+)
+_DISTINCTIVE_COMPETENCY_EVIDENCE = {
+    "networking": re.compile(
+        r"\b(?:network(?:ing)?|protocol|packet|traffic|tcp|udp|router|switch|"
+        r"routing|dns|dhcp|subnet|retransmission)\b",
+        re.IGNORECASE,
+    ),
+    "operating_systems": re.compile(
+        r"\b(?:operating system|kernel|system call|process schedul|virtual memory|"
+        r"memory management|file system|filesystem|deadlock)\b",
+        re.IGNORECASE,
+    ),
+    "cryptography": re.compile(
+        r"\b(?:cryptograph|encrypt|decrypt|cipher|hash(?:ing|ed)?|digital signature|"
+        r"key exchange|public key|private key)\b",
+        re.IGNORECASE,
+    ),
+    "machine_learning": re.compile(
+        r"\b(?:machine learning|neural network|classifiers?|classification|"
+        r"regression model|trained? (?:a |the )?model|feature engineering|"
+        r"cross-validation|inference|transformer)\b",
+        re.IGNORECASE,
+    ),
+    "distributed_systems": re.compile(
+        r"\b(?:distributed system|cluster|replica(?:tion|ted)?|shard(?:ing|ed)?|"
+        r"consensus|leader election|fault toleran|failover|load balanc|"
+        r"multiple (?:services|nodes)|microservices?)\b",
+        re.IGNORECASE,
+    ),
+    "security": re.compile(
+        r"\b(?:security|vulnerabilit(?:y|ies)|threat|attack|exploit|malicious|"
+        r"incident|intrusion|suspicious|penetration test|authenticated scan|"
+        r"access control|authentication|authorization|security control|"
+        r"security-relevant indicator)\b",
+        re.IGNORECASE,
+    ),
+    "policy_governance": re.compile(
+        r"\b(?:policy|governance|regulat|compliance|audit requirement)\b",
+        re.IGNORECASE,
+    ),
+    "risk": re.compile(
+        r"\b(?:risk assessment|risk analysis|risk register|threat model|"
+        r"risk mitigation|likelihood and impact)\b",
+        re.IGNORECASE,
+    ),
+}
+
+
+def _deterministic_rejection(
+    item: Judgment | CompetencySuggestion,
+) -> str | None:
+    evidence = "\n".join(citation.quote for citation in item.citations)
+    if isinstance(item, CompetencySuggestion):
+        if _is_negative_competency_suggestion(item):
+            return "A competency suggestion must describe demonstrated evidence."
+        evidence_pattern = (
+            _DISTINCTIVE_COMPETENCY_EVIDENCE.get(item.competency_id)
+            if item.competency_id is not None
+            else None
+        )
+        if evidence_pattern is not None and not evidence_pattern.search(evidence):
+            return (
+                f"{item.competency_id} requires explicit domain-specific evidence; "
+                "an unrelated activity, generic service, comparison, metric, or "
+                "tool context is not enough."
+            )
+        if item.competency_id == "programming" and not (
+            (
+                _PROGRAMMING_ACTION.search(evidence)
+                and _PROGRAMMING_ARTIFACT.search(evidence)
+            )
+            or _PROGRAMMING_SERVICE_ACTION.search(evidence)
+        ):
+            return (
+                "Programming requires an explicit programming action and artifact; "
+                "comparison, deployment, measurement, or tool context alone is "
+                "not enough."
+            )
+        if (
+            item.competency_id == "quantitative_analysis"
+            and not _QUANTITATIVE_METHOD.search(evidence)
+        ):
+            return (
+                "Quantitative analysis requires an explicit quantitative method; "
+                "a comparison, metric, or numeric measurement alone is not enough."
+            )
+    elif (
+        item.dimension == "impact"
+        and item.label != "unknown"
+        and _MEASUREMENT_WITHOUT_OUTCOME.search(evidence)
+        and not _OUTCOME.search(evidence)
+    ):
+        return (
+            "Impact requires a stated outcome; a comparison or numeric measurement "
+            "alone is only evaluation context."
+        )
+    return None
+
+
+def enforce_support_policies(
+    draft: UnderstandingDraft, review: SupportReview
+) -> SupportReview:
+    """Apply narrow fail-closed evidence gates after semantic support review."""
+    targets: dict[str, Judgment | CompetencySuggestion] = {}
+    for judgment in draft.judgments:
+        targets[judgment.id] = judgment
+    for suggestion in draft.competencies:
+        targets[suggestion.id] = suggestion
+    checks = []
+    for check in review.checks:
+        target = targets.get(check.target_id)
+        rejection = _deterministic_rejection(target) if target is not None else None
+        if rejection is not None and check.verdict == SupportVerdict.SUPPORTED:
+            checks.append(
+                check.model_copy(
+                    update={
+                        "verdict": SupportVerdict.UNSUPPORTED,
+                        "explanation": rejection,
+                    }
+                )
+            )
+        else:
+            checks.append(check)
+    return review.model_copy(update={"checks": checks})
 
 
 def validate_draft(

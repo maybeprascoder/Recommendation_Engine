@@ -1,144 +1,190 @@
 # Qwen 3.5 9B provisional-data diagnostics
 
-Run `stage4d-qwen35-9b-20260928` used the existing Understanding →
-SupportReview pipeline with local Ollama `qwen3.5:9b`. The Stage 4C manifest
-ran first, followed by the other 70 canonical cases. Provisional references
-were comparison material, not gold labels, so this report does not calculate
-accuracy.
+This report records diagnostic runs of the Understanding → SupportReview
+pipeline with local Ollama `qwen3.5:9b`. Provisional references are comparison
+material, not human gold labels. No accuracy is calculated, and no model output
+is treated as correct merely because it matches a provisional reference.
 
-The run attempted all 100 cases. It produced 56 accepted pipeline receipts and
-44 structural failures. Of the failures, 36 violated exact-citation rules, five
-used an invalid rubric dimension or label, one duplicated a judgment dimension,
-one omitted a required academic record, and one timed out during the first
-Understanding call. Raw completions, call-level prompt versions and hashes,
-response IDs, source hashes, failures, and accepted results are retained in
-`qa/human-review-qwen35-9b-stage4d-20260928/`.
+## Root-cause inspection
 
-| Domain | Attempted | Accepted | Structural failures |
+Before the pipeline changed, the saved raw calls in
+`qa/human-review-qwen35-9b-stage4d-20260928/` were inspected case by case. That
+baseline attempted all 100 canonical cases and produced 56 accepted receipts
+and 44 structural failures:
+
+| Baseline structural cause | Cases |
+| --- | ---: |
+| Non-exact citation | 36 |
+| Invalid rubric dimension or label | 5 |
+| Duplicate judgment dimension | 1 |
+| Academic record attached to a non-education claim | 1 |
+| Understanding-call timeout | 1 |
+
+The 36 citation failures were not validator false positives. Qwen shortened,
+spliced, or inserted ellipses into source text—for example, returning only the
+opening of a longer sentence—so the quotations were not exact substrings. The
+validator correctly rejected every one.
+
+The exact causes in the old pipeline were:
+
+- Citation `document_id` and `quote`, rubric `dimension`, and rubric `label`
+  were unconstrained strings in the provider schema. The prompt asked for
+  exactness, but constrained decoding could still produce paraphrases and
+  labels outside the rubric.
+- Duplicate or cross-dimension judgments, stray/missing academic records, and
+  non-claim target-ID collisions reached strict validation without a safe
+  normalization step.
+- The competency array could be interpreted as an exhaustive taxonomy
+  checklist. Because `observed_skill` was a required string, Qwen filled all 18
+  entries in `hr-stage4b-trap-comparison-impact`, using strings such as
+  `"null"` and explanations that a skill was absent or unrelated.
+- The old SupportReview prompt checked whether an explanation related to the
+  source, but did not state strongly enough that negative, absent, unrelated,
+  or merely not-demonstrated catalog entries must be rejected. It accepted all
+  18 checklist entries in the database case.
+- A comparison, metric, or numeric outcome was too easily routed to
+  programming, quantitative analysis, impact, or a nearby domain competency.
+
+## Pipeline changes
+
+The pipeline still uses exactly two model stages. No judge agent or additional
+LLM stage was added.
+
+- The provider schema now enumerates allowed document IDs, exact source
+  passages, rubric dimensions, and rubric labels. Deterministic normalization
+  fails closed when a label does not belong to its selected dimension, and
+  provenance validation remains strict after decoding.
+- The Understanding prompt explicitly requires copying one supplied citation
+  passage verbatim and prohibits ellipses, splicing, paraphrases, and invented
+  quotations.
+- Deterministic normalization fails closed on invalid/cross-dimension labels
+  and duplicate judgments, repairs only non-claim ID collisions, removes stray
+  academic records, supplies an unknown academic record for an education claim
+  when necessary, and drops negative/placeholder competency suggestions.
+- Understanding and SupportReview now say that competency suggestions must be
+  positive demonstrated skills, never an exhaustive checklist. Absence,
+  unsupported, unrelated, and `null` suggestions are invalid.
+- SupportReview now rejects comparison/measurement alone as programming,
+  quantitative analysis, impact, or unrelated domain evidence. Narrow
+  deterministic gates enforce explicit programming actions/artifacts,
+  quantitative methods, stated outcomes, and domain-specific signals for
+  distinctive catalog competencies.
+- No maximum number of competencies is imposed. A regression test retains 24
+  positive cross-domain suggestions.
+
+## Affected-case reruns
+
+The 44 old structural failures plus the database all-competency trap were run
+first. The initial targeted pass retained 40 accepted receipts and exposed four
+non-claim target-ID collisions plus one provider timeout. After target-ID
+normalization, four retries were accepted; the remaining provider timeout was
+accepted on the final retry. Taken together, all 45 affected cases have an
+accepted receipt in:
+
+- `qa/human-review-qwen35-9b-stage4d-targeted-20260929/`
+- `qa/human-review-qwen35-9b-stage4d-targeted-retry-20260930/`
+- `qa/human-review-qwen35-9b-stage4d-targeted-retry2-20260930/`
+
+These intermediate failures are retained as diagnostic evidence, not counted
+as results of the final run.
+
+## Final 100-case run
+
+Run `qwen35-9b-stage4d-final3-20260930` used local `qwen3.5:9b`, a
+16,384-token context, and a 180-second per-call timeout. Raw calls, hashes,
+response IDs, SupportReview checks, accepted pipeline receipts, and comparison
+differences are retained in
+`qa/human-review-qwen35-9b-stage4d-final3-20260930/`.
+
+| Domain | Attempted | Accepted receipts | Structural failures |
 | --- | ---: | ---: | ---: |
-| Civil | 12 | 4 | 8 |
-| Computer science | 12 | 9 | 3 |
-| Cybersecurity | 12 | 8 | 4 |
-| Electrical/embedded | 10 | 6 | 4 |
-| Interdisciplinary | 8 | 1 | 7 |
-| Machine learning | 12 | 5 | 7 |
-| Mechanical | 10 | 6 | 4 |
-| Research | 10 | 6 | 4 |
+| Civil | 12 | 12 | 0 |
+| Computer science | 12 | 12 | 0 |
+| Cybersecurity | 12 | 12 | 0 |
+| Electrical/embedded | 10 | 10 | 0 |
+| Interdisciplinary | 8 | 8 | 0 |
+| Machine learning | 12 | 12 | 0 |
+| Mechanical | 10 | 9 | 1 |
+| Research | 10 | 10 | 0 |
 | Semantic traps | 8 | 8 | 0 |
-| Teaching | 6 | 3 | 3 |
+| Teaching | 6 | 6 | 0 |
+| **Total** | **100** | **99** | **1** |
 
-All 13 accepted bare-tool or bare-technology cases kept the named item as
-context and produced zero supported competencies and zero supported judgments.
-This includes AutoCAD, ETABS, SQL, Kali, Nessus, Arduino, Verilog, ANSYS,
-SolidWorks, PyTorch, Wireshark, BERT, and a paper mentioning machine learning.
-The publication-prestige trap also produced context only. SupportReview rejected
-12 of 71 proposed competency suggestions and 179 of 256 proposed judgments in
-the 56 accepted receipts; those corrections are useful diagnostics, not a
-measure of correctness.
+Final structural failures by cause were: provider timeout 1, non-exact citation
+0, invalid rubric dimension/label 0, duplicate judgment dimension 0,
+academic-record mismatch 0, and other schema/provenance failure 0. The timeout
+was `hr-stage4b-mech-alternatives` during the Understanding call. An independent
+substring audit of every citation in the 99 accepted receipts found 0 non-exact
+citations.
 
-## Likely model mistakes
+Three isolated retries of `hr-stage4b-mech-alternatives` were retained in
+`final3-retry`, `final3-retry2`, and `final3-retry3` directories. They failed in
+`provider_student_understanding` after 180.17, 360.19, and 759.22 seconds,
+respectively. The last retry followed a clean Ollama model unload/reload and
+used a 600-second per-call transport timeout. These results confirm a
+reproducible model-latency failure; no draft reached schema, citation, or
+SupportReview validation in those attempts. The authoritative full-run result
+therefore remains 99 accepted receipts plus 1 timeout.
 
-- `hr-stage4b-trap-comparison-impact`: the source only compares two database
-  engines by latency and memory. The draft created all 18 allowed competency
-  nodes, usually with text saying the competency was not evidenced, and
-  SupportReview accepted every one. This is the highest-priority routing and
-  SupportReview failure.
-- `hr-stage4b-cs-cache-design`: the accepted result infers programming from
-  conducting load tests and infers `distributed_systems` from a cache in a
-  catalog service. It also routes the latency comparison to
-  `quantitative_analysis`. The source states design, comparison, and a measured
-  result, but does not state implementation, coding, or a distributed system.
-- `hr-machine-learning-evaluation`: SupportReview correctly rejects ownership
-  `led`, but accepts programming because inference was deployed and accepts
-  `quantitative_analysis` because baselines and macro-F1 were compared. Both
-  competency routes rely on implication rather than an explicit performed
-  method.
-- `hr-stage4b-trap-metric-quant`: input validation is routed to `security`
-  without a stated security purpose. The before/after error-count analysis may
-  support `quantitative_analysis`, but it does not itself establish security.
-- `hr-stage4b-teach-grading-only`: grading with the professor's rubric becomes
-  evaluation `described` and entering scores becomes impact `reported`. Those
-  labels appear to confuse evaluating students with evaluation and impact of
-  the applicant's work.
-- `hr-stage4b-research-preprint-method`: the accepted result omits programming
-  despite the explicit statement that the applicant implemented the
-  preprocessing pipeline.
+Replaying all 99 accepted results through the latest deterministic guard code
+produced 0 verdict changes and 0 supported-ID mismatches. Across those receipts,
+Qwen proposed 132 competencies and 416 judgments. The final pipeline supported
+62 competencies and 177 judgments; SupportReview or deterministic fail-closed
+policy withheld the other 70 competency suggestions and 239 judgments. These
+counts describe routing behavior, not correctness or accuracy.
 
-SupportReview did catch several first-pass mistakes. It rejected competencies
-for the isolated “beam reaction was 42 kN” result, rejected `led` for
-“spearheaded,” and rejected absence claims derived from a silent resume. These
-should remain regression cases.
+### Required boundary checks
 
-## Likely provisional-reference mistakes
+- `hr-stage4b-trap-comparison-impact` is fixed. Its final draft contains zero
+  competency suggestions and its accepted receipt contains zero supported
+  competencies. The database comparison supports investigation/comparison
+  judgments only; it does not create programming, quantitative-analysis, or
+  impact credit.
+- `hr-stage4b-cs-cache-design` still caused Qwen to propose distributed
+  systems, quantitative analysis, programming, and networking. SupportReview
+  plus deterministic policy rejected all four, leaving zero supported
+  competencies. Its explicit latency fall remains a measured outcome rather
+  than being confused with quantitative-analysis competency.
+- All 13 canonical bare-tool or bare-technology cases retain the named item as
+  context and have zero supported competencies and zero supported judgments:
+  AutoCAD, ETABS, SQL, Kali, Nessus, Arduino, Verilog, ANSYS, SolidWorks,
+  PyTorch, Wireshark, BERT, and a paper mentioning machine learning. The
+  multi-tool context case and publication-prestige trap satisfy the same
+  context-only rule.
 
-- `hr-stage4b-cs-cache-design` says the applicant “implemented” cache
-  invalidation and assigns programming, although the source only says
-  “designed.” Its `distributed_systems` route also needs evidence beyond a
-  service cache mention.
-- `hr-stage4b-ml-feature-design` says a feature/evaluation pipeline was
-  implemented and assigns programming, although the source states design,
-  cross-validation, and comparison without explicit coding. The real model
-  draft did not propose programming, but its paraphrased citations caused a
-  structural failure, so it is not an accepted prediction.
-- `hr-machine-learning-evaluation` contains two machine-learning suggestions
-  for one activity and separately claims missing taxonomy coverage for NLP
-  classification even though the existing machine-learning node represents the
-  work.
-- `hr-stage4b-trap-comparison-impact` provisionally assigns programming even
-  though comparing database engines does not explicitly state coding.
-- `hr-stage4b-soc-team-attribution` assigns investigation depth, evaluation,
-  and security to a team statement that explicitly withholds the applicant's
-  contribution. A human should decide whether those annotations are retained
-  solely as third-party/team evidence or removed from applicant competencies.
+## Remaining semantic problems requiring human review
 
-## Genuine ambiguities
+Structural acceptance is not a human correctness judgment. The following
+model behaviors remain review questions:
 
-- In `hr-machine-learning-evaluation`, a held-out macro-F1 improvement is a
-  measured evaluation result. A reviewer must decide whether the current
-  `impact=measured` rubric intentionally includes model-evaluation outcomes or
-  is reserved for downstream, real-world impact.
-- In the cache case, service caching may be evidence of distributed-systems
-  work in context, but the text does not describe distribution. The latency
-  comparison may be quantitative analysis or may belong only in evaluation and
-  measured result fields.
-- `hr-stage4b-research-thematic-coding` supports qualitative research, but
-  ownership could be `led` because the applicant created the codebook and coded
-  all transcripts, or `shared` because a second coder participated in the
-  comparison.
-- `hr-stage4b-trap-resume-silent` explicitly states absence of information, not
-  absence of cryptography experience. Reviewers should preserve `UNKNOWN` for
-  the skill while deciding how to encode the narrowly scoped absence of resume
-  evidence.
-- Team and third-party cases need a consistent policy for annotating methods
-  that are stated for the team or supervisor while keeping applicant ownership
-  unknown and preventing applicant competency credit.
+- `hr-stage4b-teach-ta-title` treats the title “Teaching Assistant for
+  Introduction to Programming” as demonstrated teaching instruction and
+  `depth=applied`, although the source describes no instructional action. This
+  is a clear semantic overreach by Qwen/SupportReview.
+- `hr-stage4b-trap-action-verb` accepts `ownership=led` from “Spearheaded data
+  migration activities” without a described ownership decision or scope.
+- `hr-stage4b-trap-third-party` classifies the supervisor's threat-model and
+  control-selection work as a student claim and supports `ownership=assisted`.
+  The source does not state an applicant contribution.
+- `hr-stage4b-research-preprint-method` omits programming competency despite
+  the explicit statement that the applicant implemented a preprocessing
+  pipeline.
+- `hr-stage4b-teach-grading-only` accepts evaluation `described` for grading
+  with a professor's rubric. A human should decide whether this describes
+  evaluation of the applicant's work or only an assigned grading task.
+- `hr-stage4b-research-peer-reviewed-explicit` supports statistics from “led
+  the analysis” of a survey without a stated statistical method. Likewise,
+  engineering-simulation suggestions inferred from CAD interference checks or
+  structural design iteration need human boundary review.
+- `hr-machine-learning-evaluation` supports measured impact for a held-out
+  macro-F1 improvement. A human should decide whether the rubric intends model
+  evaluation outcomes to count as impact or reserves impact for downstream
+  effects.
+- Team, third-party, and qualitative-coding cases still need a consistent human
+  policy for retaining methods as contextual evidence while preventing
+  unsupported applicant credit.
 
-## Prioritized human-review shortlist
-
-1. `hr-stage4b-trap-comparison-impact` — all-node competency routing and
-   SupportReview acceptance.
-2. `hr-stage4b-cs-cache-design` — unsupported implementation, programming,
-   distributed-systems, and quantitative-analysis boundaries.
-3. `hr-stage4b-ml-feature-design` — programming without explicit coding and
-   action-verb ownership; inspect the retained failed draft.
-4. `hr-machine-learning-evaluation` — duplicate provisional ML suggestions,
-   stale NLP gap, programming/quantitative routes, ownership, and the meaning
-   of measured impact.
-5. `hr-stage4b-soc-team-attribution` and `hr-stage4b-trap-third-party` — team
-   and supervisor evidence without applicant contribution.
-6. `hr-stage4b-trap-metric-quant` and
-   `hr-stage4b-civil-load-number-trap` — quantitative-analysis routing from
-   measured comparison versus a bare numeric result.
-7. `hr-stage4b-teach-grading-only` — teaching, evaluation, impact, and assisted
-   ownership boundaries.
-8. `hr-stage4b-research-preprint-method`,
-   `hr-stage4b-research-thematic-coding`, and
-   `hr-stage4b-trap-resume-silent` — explicit implementation, qualitative
-   ownership, publication inference, and narrowly scoped absence.
-
-The canonical JSONL remains unchanged: every case is still pending, every
-`human_review.final_label` remains null, and every split remains unassigned.
-The next action is for a human reviewer to open the shortlist cases beside their
-canonical records and saved diagnostic artifacts, adjudicate the source first,
-then record final labels, uncertainty, disagreements, reviewer ID, and review
-timestamp in the canonical workflow.
+No canonical case, provisional reference, human-review final label, split,
+scoring input, taxonomy mapping, or program-relevance field was changed. Every
+canonical case remains pending; human final labels remain null and splits
+remain unassigned.

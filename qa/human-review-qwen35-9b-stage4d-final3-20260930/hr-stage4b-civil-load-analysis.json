@@ -1,0 +1,520 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-civil-load-analysis",
+  "review_domain": "civil",
+  "lineage_group": "etabs_progression",
+  "source_sha256": "b6118101d09858cc955df743d1976100c2efb18e3cb60d1776bc54236ca69442",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 81.88,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 55.72,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "f2d732c8c3329cf71480b828ad7f1ca3eee0a8f151b9e32de6b276a16e5e0979",
+      "schema_sha256": "1926e6d3bd7a3e228014e122ee09cb91e23911a0c71964678832190072e56663",
+      "response_id": "2026-09-30T17:03:29.6001521Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"coursework\",\n      \"statement\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I calculated... modeled... checked...', indicating individual contribution within the context of a coursework assignment (implied by 'my hand calculations' and typical academic setting). The use of 'my' indicates personal execution, but without explicit claims of leading a team or owning an external deliverable independently outside of course constraints, 'shared' is appropriate for standard coursework contributions.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student performed standard engineering tasks: calculating loads, modeling in ETABS, and checking reactions. These are established methods applied to complete a task. There is no evidence of adapting methods to novel constraints (designed) or investigating a specific open-ended question through analysis (investigated).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly states they 'checked reactions against my hand calculations'. This establishes a comparison between the software model results and manual analytical calculations as an evaluation method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the process (calculating, modeling, checking) but does not state the result of the check (e.g., 'verified accuracy', 'found discrepancies', 'confirmed design'). Therefore, no concrete outcome or result is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"calculated gravity and lateral loads, checked reactions against hand calculations\",\n      \"rationale\": \"The student explicitly performed load calculations (gravity and lateral) and reaction checks, which are core activities of structural analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"engineering_simulation\",\n      \"observed_skill\": \"modeled the frame in ETABS\",\n      \"rationale\": \"The student explicitly constructed and executed a numerical model of a structural frame using ETABS.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"calculated gravity and lateral loads, checked reactions\",\n      \"rationale\": \"The student performed mathematical calculations for loads and reactions, utilizing quantitative methods to analyze structural behavior.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"ETABS\",\n      \"rationale\": \"The student explicitly named ETABS as the software used to model the frame.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"d1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"structural_engineering\",\n      \"rationale\": \"The activities (gravity/lateral loads, frame modeling, reactions) belong to the domain of structural engineering.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"hand_calculations\",\n      \"rationale\": \"The student explicitly referenced using hand calculations as a baseline for comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 26.13,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "e59d1ecc7f3676c376c64c4ed1c054bfd0246d20d8641fb9a1dc0778d7132714",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T17:03:55.7344421Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the specific activities performed (calculating loads, modeling in ETABS, checking reactions). The category 'coursework' is appropriate given the context of 'my hand calculations' and typical academic settings implied by the phrasing.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work or following guided work. The source text uses singular first-person pronouns ('I calculated', 'my hand calculations') without mentioning teammates, collaboration, or guidance. According to rubric rules, individual execution does not prove leading, but it also does not imply sharing; without explicit mention of others, 'unknown' is the appropriate description for unestablished responsibility.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' correctly describes performing established methods (calculating loads, modeling in ETABS) to complete a task. The rationale accurately notes the absence of evidence for novel design choices ('designed') or open-ended investigation ('investigated').\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'compared' is supported by the explicit phrase 'checked reactions against my hand calculations', which establishes a concrete evaluation method involving baselines (hand calculations) versus software results.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate because the source text describes the process of checking but does not state the outcome or result of that check (e.g., whether they matched, discrepancies found, or accuracy verified). No concrete outcome is reported.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The observed skill 'calculated gravity and lateral loads, checked reactions' is explicitly described in the source text. These activities constitute core structural analysis. The competency_id 'structural_analysis' matches the domain of mechanics and analytical methods used to model response under loads.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The observed skill 'modeled the frame in ETABS' is explicitly stated. This supports the engineering_simulation competency as it involves constructing and executing a numerical model of an engineered system.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"The observed skill 'calculated gravity and lateral loads, checked reactions' involves mathematical calculations to analyze structural behavior. This supports quantitative_analysis as it utilizes mathematical methods to analyze relationships or modeled behavior.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The tool 'ETABS' is explicitly named in the source text as the software used for modeling. Recognition of the tool name alone is sufficient to support a context claim identifying the tool, even if no advanced method is demonstrated.\"},{\"target_id\":\"d1\",\"verdict\":\"supported\",\"explanation\":\"The activities described (gravity/lateral loads, frame modeling, reactions) clearly belong to the domain of structural engineering. The rationale correctly identifies this domain based on the terminology used.\"},{\"target_id\":\"t_c1\",\"verdict\":\"supported\",\"explanation\":\"The concept 'hand_calculations' is explicitly referenced in the source text as a baseline for comparison. Recognition of this concept is allowed and supported by the verbatim quote.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "coursework",
+          "statement": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states 'I calculated... modeled... checked...', indicating individual contribution within the context of a coursework assignment (implied by 'my hand calculations' and typical academic setting). The use of 'my' indicates personal execution, but without explicit claims of leading a team or owning an external deliverable independently outside of course constraints, 'shared' is appropriate for standard coursework contributions.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student performed standard engineering tasks: calculating loads, modeling in ETABS, and checking reactions. These are established methods applied to complete a task. There is no evidence of adapting methods to novel constraints (designed) or investigating a specific open-ended question through analysis (investigated).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student explicitly states they 'checked reactions against my hand calculations'. This establishes a comparison between the software model results and manual analytical calculations as an evaluation method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the process (calculating, modeling, checking) but does not state the result of the check (e.g., 'verified accuracy', 'found discrepancies', 'confirmed design'). Therefore, no concrete outcome or result is stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "structural_analysis",
+          "observed_skill": "calculated gravity and lateral loads, checked reactions against hand calculations",
+          "rationale": "The student explicitly performed load calculations (gravity and lateral) and reaction checks, which are core activities of structural analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "engineering_simulation",
+          "observed_skill": "modeled the frame in ETABS",
+          "rationale": "The student explicitly constructed and executed a numerical model of a structural frame using ETABS.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "calculated gravity and lateral loads, checked reactions",
+          "rationale": "The student performed mathematical calculations for loads and reactions, utilizing quantitative methods to analyze structural behavior.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "ETABS",
+          "rationale": "The student explicitly named ETABS as the software used to model the frame.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "d1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "structural_engineering",
+          "rationale": "The activities (gravity/lateral loads, frame modeling, reactions) belong to the domain of structural engineering.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        },
+        {
+          "id": "t_c1",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "hand_calculations",
+          "rationale": "The student explicitly referenced using hand calculations as a baseline for comparison.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the specific activities performed (calculating loads, modeling in ETABS, checking reactions). The category 'coursework' is appropriate given the context of 'my hand calculations' and typical academic settings implied by the phrasing."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work or following guided work. The source text uses singular first-person pronouns ('I calculated', 'my hand calculations') without mentioning teammates, collaboration, or guidance. According to rubric rules, individual execution does not prove leading, but it also does not imply sharing; without explicit mention of others, 'unknown' is the appropriate description for unestablished responsibility."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' correctly describes performing established methods (calculating loads, modeling in ETABS) to complete a task. The rationale accurately notes the absence of evidence for novel design choices ('designed') or open-ended investigation ('investigated')."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'compared' is supported by the explicit phrase 'checked reactions against my hand calculations', which establishes a concrete evaluation method involving baselines (hand calculations) versus software results."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate because the source text describes the process of checking but does not state the outcome or result of that check (e.g., whether they matched, discrepancies found, or accuracy verified). No concrete outcome is reported."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The observed skill 'calculated gravity and lateral loads, checked reactions' is explicitly described in the source text. These activities constitute core structural analysis. The competency_id 'structural_analysis' matches the domain of mechanics and analytical methods used to model response under loads."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The observed skill 'modeled the frame in ETABS' is explicitly stated. This supports the engineering_simulation competency as it involves constructing and executing a numerical model of an engineered system."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The tool 'ETABS' is explicitly named in the source text as the software used for modeling. Recognition of the tool name alone is sufficient to support a context claim identifying the tool, even if no advanced method is demonstrated."
+        },
+        {
+          "target_id": "d1",
+          "verdict": "supported",
+          "explanation": "The activities described (gravity/lateral loads, frame modeling, reactions) clearly belong to the domain of structural engineering. The rationale correctly identifies this domain based on the terminology used."
+        },
+        {
+          "target_id": "t_c1",
+          "verdict": "supported",
+          "explanation": "The concept 'hand_calculations' is explicitly referenced in the source text as a baseline for comparison. Recognition of this concept is allowed and supported by the verbatim quote."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [
+      "d1",
+      "t1",
+      "t_c1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work or following guided work. The source text uses singular first-person pronouns ('I calculated', 'my hand calculations') without mentioning teammates, collaboration, or guidance. According to rubric rules, individual execution does not prove leading, but it also does not imply sharing; without explicit mention of others, 'unknown' is the appropriate description for unestablished responsibility."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T17:03:29.6001521Z",
+        "2026-09-30T17:03:55.7344421Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "b6118101d09858cc955df743d1976100c2efb18e3cb60d1776bc54236ca69442"
+      },
+      "draft_response_sha256": "45cc7c3122d6ed2f5dadd17af1957bfabd6561238270565acacc206d3a3e5a0c",
+      "review_response_sha256": "b45b77f9eedebcdbe3976da4ec01a4a7d839318cfaab02afc21d15b5e3a29421"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I calculated gravity and lateral loads, modeled the frame in ETABS, and checked reactions against my hand calculations.",
+          "category": "coursework",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Lateral loads"
+        },
+        {
+          "kind": "tool",
+          "label": "ETABS"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "hand_calculations"
+        },
+        {
+          "kind": "domain",
+          "label": "structural_engineering"
+        },
+        {
+          "kind": "tool",
+          "label": "ETABS"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Calculated loads and checked a structural model against hand calculations"
+      ],
+      "model_prediction": [
+        "calculated gravity and lateral loads, checked reactions against hand calculations",
+        "modeled the frame in ETABS"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "Calculated loads and checked a structural model against hand calculations"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "engineering_simulation",
+          "observed_skill": "modeled the frame in ETABS"
+        },
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "calculated gravity and lateral loads, checked reactions against hand calculations"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "compared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

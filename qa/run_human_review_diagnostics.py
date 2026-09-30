@@ -352,6 +352,12 @@ def main() -> int:
     )
     parser.add_argument("--offset", type=int, default=0)
     parser.add_argument("--limit", type=int)
+    parser.add_argument(
+        "--review-id",
+        action="append",
+        default=[],
+        help="Run one named canonical case; repeat to select multiple cases.",
+    )
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--dataset", type=Path, default=DATASET_PATH)
     parser.add_argument("--manifest", type=Path, default=BATCH_PATH)
@@ -366,6 +372,16 @@ def main() -> int:
         [item.review_id for item in manifest.cases],
         args.selection,
     )
+    if args.review_id:
+        selected_by_id = {record.review_id: record for record in selected}
+        missing = [
+            review_id
+            for review_id in args.review_id
+            if review_id not in selected_by_id
+        ]
+        if missing:
+            parser.error("Unknown or excluded review IDs: " + ", ".join(missing))
+        selected = [selected_by_id[review_id] for review_id in args.review_id]
     selected = selected[args.offset :]
     if args.limit is not None:
         selected = selected[: args.limit]

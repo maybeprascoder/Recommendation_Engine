@@ -1,0 +1,554 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-inter-digital-installation",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "cross_domain_methods",
+  "source_sha256": "88bdee4d33c7dff90c74c0ec623e858e88bfdb1d1d3608bfbb1ed6aa5eb286f2",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 89.12,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 64.69,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "7f0aa1545f295b3c1bb4f8f2ab7089eaadd16858f52d6cdd95015a2a5a1be45c",
+      "schema_sha256": "7e99796656f1201880b330e9f949409088bac851c6d821816a3d196b52ee4300",
+      "response_id": "2026-09-30T17:37:54.5886995Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I programmed' and 'I tuned', indicating individual contribution within the context of an art installation project. The setting implies a collaborative or guided environment typical of installations, but the specific actions are owned by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student describes making specific design choices: varying LED patterns based on sensor inputs and tuning thresholds. This implies adapting methods to constraints (sensor readings) rather than just applying a standard method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student mentions 'gallery tests' as the method used to tune thresholds. This constitutes a concrete test or assessment method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The successful operation of the installation ('vary LED patterns') and the completion of tuning during tests implies a concrete outcome was achieved, though no specific quantitative metric or adoption by an external organization is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests\",\n      \"rationale\": \"The student explicitly states they 'programmed a microcontroller', which is an explicit programming action.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"embedded_digital_systems\",\n      \"observed_skill\": \"programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests\",\n      \"rationale\": \"The activity involves integrating digital logic (microcontroller code) with sensors (proximity-sensor) and actuators (LED patterns) within an embedded hardware system.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"microcontroller\",\n      \"rationale\": \"The student explicitly names the tool used for programming.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"proximity-sensor\",\n      \"rationale\": \"The student explicitly names the sensor used for input.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"LED\",\n      \"rationale\": \"The student explicitly names the output device used.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"d1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"art installation\",\n      \"rationale\": \"The student explicitly identifies the domain/context of the project.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"thresholds\",\n      \"rationale\": \"The student explicitly mentions tuning thresholds as part of the process.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"gallery tests\",\n      \"rationale\": \"The student explicitly mentions conducting tests in a gallery setting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 24.42,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "0a1f130a0e278fdd845eb8833cb1e194c2a5b045a179705679ab4992f58e70ea",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T17:38:19.0133311Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing an art installation where the student programmed a microcontroller and tuned thresholds. The attribution 'student' matches the first-person 'I' in the text.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work, but the source text only states 'For an art installation, I programmed...'. While 'art installation' often implies a team, the text does not explicitly describe collaboration or shared ownership. The rationale assumes a collaborative environment without explicit evidence in the quote. Without explicit mention of teammates or shared tasks, individual contribution ('student') is more accurate than 'shared'.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student describes specific design choices: varying LED patterns based on sensor inputs and tuning thresholds to constraints (sensor readings). This goes beyond simple application; it involves adapting methods to specific artistic/functional constraints, fitting the 'designed' label.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'tuned thresholds during gallery tests' explicitly states a concrete test method used for evaluation. This supports the 'described' label for evaluation.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The text implies a successful outcome ('vary LED patterns', 'tuned thresholds') which constitutes a reported concrete outcome. No quantitative metric or external adoption is stated, so 'reported' is appropriate.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they 'programmed a microcontroller'. This is an explicit programming action and artifact (code/logic), supporting the 'programming' competency.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The activity involves integrating digital logic (microcontroller code) with sensors (proximity-sensor) and actuators (LED patterns) within a physical hardware system. This fits the definition of designing or integrating components within an embedded hardware system.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly names 'microcontroller' as the tool used for programming.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly names 'proximity-sensor' as the input device/tool.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly names 'LED' (implied by 'LED patterns') as the output device/tool.\"},{\"target_id\":\"d1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly identifies the context as an 'art installation'.\"},{\"target_id\":\"t_c1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly mentions 'thresholds' as a concept being tuned.\"},{\"target_id\":\"c2\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly mentions conducting tests in a 'gallery' setting.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states 'I programmed' and 'I tuned', indicating individual contribution within the context of an art installation project. The setting implies a collaborative or guided environment typical of installations, but the specific actions are owned by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student describes making specific design choices: varying LED patterns based on sensor inputs and tuning thresholds. This implies adapting methods to constraints (sensor readings) rather than just applying a standard method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "described",
+          "rationale": "The student mentions 'gallery tests' as the method used to tune thresholds. This constitutes a concrete test or assessment method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The successful operation of the installation ('vary LED patterns') and the completion of tuning during tests implies a concrete outcome was achieved, though no specific quantitative metric or adoption by an external organization is stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests",
+          "rationale": "The student explicitly states they 'programmed a microcontroller', which is an explicit programming action.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "embedded_digital_systems",
+          "observed_skill": "programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests",
+          "rationale": "The activity involves integrating digital logic (microcontroller code) with sensors (proximity-sensor) and actuators (LED patterns) within an embedded hardware system.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "microcontroller",
+          "rationale": "The student explicitly names the tool used for programming.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "proximity-sensor",
+          "rationale": "The student explicitly names the sensor used for input.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "LED",
+          "rationale": "The student explicitly names the output device used.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "d1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "art installation",
+          "rationale": "The student explicitly identifies the domain/context of the project.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "t_c1",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "thresholds",
+          "rationale": "The student explicitly mentions tuning thresholds as part of the process.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "gallery tests",
+          "rationale": "The student explicitly mentions conducting tests in a gallery setting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For an art installation, I programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing an art installation where the student programmed a microcontroller and tuned thresholds. The attribution 'student' matches the first-person 'I' in the text."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work, but the source text only states 'For an art installation, I programmed...'. While 'art installation' often implies a team, the text does not explicitly describe collaboration or shared ownership. The rationale assumes a collaborative environment without explicit evidence in the quote. Without explicit mention of teammates or shared tasks, individual contribution ('student') is more accurate than 'shared'."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student describes specific design choices: varying LED patterns based on sensor inputs and tuning thresholds to constraints (sensor readings). This goes beyond simple application; it involves adapting methods to specific artistic/functional constraints, fitting the 'designed' label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The phrase 'tuned thresholds during gallery tests' explicitly states a concrete test method used for evaluation. This supports the 'described' label for evaluation."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The text implies a successful outcome ('vary LED patterns', 'tuned thresholds') which constitutes a reported concrete outcome. No quantitative metric or external adoption is stated, so 'reported' is appropriate."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "unsupported",
+          "explanation": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The activity involves integrating digital logic (microcontroller code) with sensors (proximity-sensor) and actuators (LED patterns) within a physical hardware system. This fits the definition of designing or integrating components within an embedded hardware system."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly names 'microcontroller' as the tool used for programming."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source text explicitly names 'proximity-sensor' as the input device/tool."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The source text explicitly names 'LED' (implied by 'LED patterns') as the output device/tool."
+        },
+        {
+          "target_id": "d1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly identifies the context as an 'art installation'."
+        },
+        {
+          "target_id": "t_c1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly mentions 'thresholds' as a concept being tuned."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "supported",
+          "explanation": "The source text explicitly mentions conducting tests in a 'gallery' setting."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s2"
+    ],
+    "supported_context_ids": [
+      "c2",
+      "d1",
+      "t1",
+      "t2",
+      "t3",
+      "t_c1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work, but the source text only states 'For an art installation, I programmed...'. While 'art installation' often implies a team, the text does not explicitly describe collaboration or shared ownership. The rationale assumes a collaborative environment without explicit evidence in the quote. Without explicit mention of teammates or shared tasks, individual contribution ('student') is more accurate than 'shared'."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T17:37:54.5886995Z",
+        "2026-09-30T17:38:19.0133311Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "88bdee4d33c7dff90c74c0ec623e858e88bfdb1d1d3608bfbb1ed6aa5eb286f2"
+      },
+      "draft_response_sha256": "ff1c08c83e54b95195ea1e28cf175b88601a06147b5e397c91b2f78513d4dde0",
+      "review_response_sha256": "9b1c03fe4cdf6b59110bb04926df78092d6669f7ccc2371be02e6b125112d52c"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Proximity sensing"
+        },
+        {
+          "kind": "domain",
+          "label": "Interactive art"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "gallery tests"
+        },
+        {
+          "kind": "concept",
+          "label": "thresholds"
+        },
+        {
+          "kind": "domain",
+          "label": "art installation"
+        },
+        {
+          "kind": "tool",
+          "label": "LED"
+        },
+        {
+          "kind": "tool",
+          "label": "microcontroller"
+        },
+        {
+          "kind": "tool",
+          "label": "proximity-sensor"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Designed sensor-driven embedded behavior",
+        "Programmed microcontroller control logic"
+      ],
+      "model_prediction": [
+        "programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "embedded_digital_systems",
+          "observed_skill": "Designed sensor-driven embedded behavior"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "Programmed microcontroller control logic"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "embedded_digital_systems",
+          "observed_skill": "programmed a microcontroller to vary LED patterns from proximity-sensor readings and tuned thresholds during gallery tests"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "impact": [
+          "reported"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

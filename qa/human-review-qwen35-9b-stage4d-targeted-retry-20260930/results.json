@@ -1,0 +1,86 @@
+[
+  {
+    "review_id": "hr-stage4b-bio-ml-pipeline",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+    "status": "structural_failure",
+    "failure_stage": "provider_student_understanding",
+    "error": "Model endpoint unavailable or timed out",
+    "seconds": 300.33,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-bio-ml-pipeline.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-load-analysis",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "b6118101d09858cc955df743d1976100c2efb18e3cb60d1776bc54236ca69442",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 382.22,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-load-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-team-pcb",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "electrical_boundary_cases",
+    "source_sha256": "6612c4f9d23180a8f500464673d1d0082d9051afbe17197b054d95bd426c6e73",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 62.95,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-ee-team-pcb.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-digital-installation",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "88bdee4d33c7dff90c74c0ec623e858e88bfdb1d1d3608bfbb1ed6aa5eb286f2",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 89.42,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-digital-installation.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-drone-mixed",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "30e031be23184dfcc26b163b0789e5a231167625185025ff125dfbb1d9dc4418",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 141.4,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-drone-mixed.json"
+  }
+]

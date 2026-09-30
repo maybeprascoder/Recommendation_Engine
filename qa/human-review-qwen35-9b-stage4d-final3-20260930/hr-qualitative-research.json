@@ -1,0 +1,792 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-qualitative-research",
+  "review_domain": "research",
+  "lineage_group": "qualitative_research_evidence",
+  "source_sha256": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 163.54,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 120.15,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "629dd29d34647cd3cf37c69af6686ef599ebaafb43bf0182f2e0235b73ae21ff",
+      "schema_sha256": "6de13d73dbf48cf2f6a62a1c03e8d1e84bf9b30b3f200936e502b8bd9d928764",
+      "response_id": "2026-09-30T16:29:35.0072324Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"publication\",\n      \"statement\": \"Published a research paper in Journal XYZ.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c2\",\n      \"category\": \"research\",\n      \"statement\": \"I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c3\",\n      \"category\": \"activity\",\n      \"statement\": \"I have not written programming code or trained machine-learning models.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states they 'assisted the study', indicating support rather than independent ownership or leadership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement describes the publication status but does not describe the specific design choices, implementation details, or nature of the research work performed by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"externally_reviewed\",\n      \"rationale\": \"The student states the paper was 'Published in Journal XYZ', which implies external review, though the specific status remains self-reported.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No specific results, outcomes, or adoption of the research are stated in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly uses the phrase 'I assisted the study', clearly defining their role as a supporter rather than the lead.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j6\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student describes investigating interview responses through thematic coding and comparing themes, which constitutes an explicit method of investigation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j7\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly mentions 'comparing themes with a second coder', establishing an evaluation method involving comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j8\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the methods used but does not state any resulting outcomes or impacts of this specific research assistance.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j9\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement is a denial of specific activities (programming, ML training). Ownership of other potential activities is unknown based on this text alone.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j10\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement denies specific technical depths (programming, ML) but does not describe the depth of other activities performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j11\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement is a denial of activities; no evaluation method for the denied or other activities is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j12\",\n      \"claim_id\": \"c3\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement is a denial of activities; no impact is stated for the denied or other activities.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c2\",\n      \"competency_id\": \"qualitative_research\",\n      \"observed_skill\": \"thematic coding and comparing themes\",\n      \"rationale\": \"The student explicitly describes investigating interview responses through thematic coding and comparing themes, which aligns with the systematic collection, coding, and interpretation of nonnumeric evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c2\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"comparing themes with a second coder\",\n      \"rationale\": \"Comparing themes with a second coder involves systematic analysis and interpretation, potentially utilizing statistical or quantitative methods for inter-coder reliability or thematic validation, though the specific method is not detailed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"research publication\",\n      \"rationale\": \"The text explicitly mentions publishing a research paper in a journal.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c2\",\n      \"kind\": \"tool\",\n      \"label\": \"thematic coding\",\n      \"rationale\": \"The student explicitly mentions using thematic coding as a method for investigating interview responses.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c2\",\n      \"kind\": \"concept\",\n      \"label\": \"second coder comparison\",\n      \"rationale\": \"The student explicitly mentions comparing themes with a second coder, indicating a specific research methodology concept.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c3\",\n      \"kind\": \"tool\",\n      \"label\": \"programming code\",\n      \"rationale\": \"The student explicitly states they have not written programming code.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t5\",\n      \"claim_id\": \"c3\",\n      \"kind\": \"tool\",\n      \"label\": \"machine-learning models\",\n      \"rationale\": \"The student explicitly states they have not trained machine-learning models.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific role did the student play in the research paper published in Journal XYZ beyond 'assisting'?\",\n      \"reason\": \"The statement 'I assisted the study' is vague. Clarifying whether they led a section, designed the methodology, or simply collected data would help determine ownership and depth.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"question\": \"What specific methods were used for thematic coding and how was the comparison with the second coder conducted?\",\n      \"reason\": \"The statement mentions 'thematic coding' and 'comparing themes' but does not specify the software, framework, or detailed process used, which would clarify depth and evaluation.\"\n    },\n    {\n      \"claim_id\": \"c2\",\n      \"question\": \"What were the outcomes or impacts of the thematic analysis performed by the student?\",\n      \"reason\": \"The text describes the methods but does not state any results, findings, or impacts resulting from this work.\"\n    }\n  ],\n  \"unassessed\": [\n    \"No academic records are provided for the publication or research activities.\",\n    \"The specific venue tier or prestige of 'Journal XYZ' is unknown and not stated in the source.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 43.37,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "11cd6dc96b3e5f95227571bd988b103f00d4d71b288b6db0ca2f4ae4f3c38043",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:30:18.3828858Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly states 'Published a research paper in Journal XYZ', directly supporting the claim's presence and category.\"},{\"target_id\":\"c2\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly contains the statement 'I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder', fully supporting the claim.\"},{\"target_id\":\"c3\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly states 'I have not written programming code or trained machine-learning models', directly supporting the reported_absent presence label for these specific activities.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly uses the phrase 'I assisted the study', which aligns with the 'assisted' ownership label indicating support rather than independent ownership or leadership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The claim c1 describes publication status. The source text does not detail specific design choices, implementation details, or the nature of the research work performed by the student for that specific claim, supporting the 'unknown' depth label.\"},{\"target_id\":\"j3\",\"verdict\":\"unsupported\",\"explanation\":\"The source text states the paper was 'Published in Journal XYZ'. While publication often implies review, the rubric requires external assessment to be explicitly stated. The text does not explicitly state 'peer-reviewed' or 'externally reviewed', only that it was published. Therefore, claiming 'externally_reviewed' is an assumption not fully supported by the explicit text provided.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text describes methods and publication but contains no specific results, outcomes, or adoption statements for this work, supporting the 'unknown' impact label.\"},{\"target_id\":\"j5\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states 'I assisted the study', clearly defining their role as a supporter rather than the lead, which supports the 'assisted' ownership label.\"},{\"target_id\":\"j6\",\"verdict\":\"supported\",\"explanation\":\"The student describes investigating interview responses through thematic coding and comparing themes. This constitutes an explicit method of investigation, supporting the 'investigated' depth label.\"},{\"target_id\":\"j7\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions 'comparing themes with a second coder', establishing an evaluation method involving comparison, which supports the 'compared' evaluation label.\"},{\"target_id\":\"j8\",\"verdict\":\"supported\",\"explanation\":\"The text describes methods used but does not state any resulting outcomes or impacts of this specific research assistance, supporting the 'unknown' impact label.\"},{\"target_id\":\"j9\",\"verdict\":\"supported\",\"explanation\":\"The statement is a denial of specific activities (programming, ML). Ownership of other potential activities is unknown based on this text alone, supporting the 'unknown' ownership label for the denied context.\"},{\"target_id\":\"j10\",\"verdict\":\"supported\",\"explanation\":\"The statement denies specific technical depths (programming, ML) but does not describe the depth of other activities performed, supporting the 'unknown' depth label.\"},{\"target_id\":\"j11\",\"verdict\":\"supported\",\"explanation\":\"The statement is a denial of activities; no evaluation method for the denied or other activities is stated in the text, supporting the 'unknown' evaluation label.\"},{\"target_id\":\"j12\",\"verdict\":\"supported\",\"explanation\":\"The statement is a denial of activities; no impact is stated for the denied or other activities, supporting the 'unknown' impact label.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly describes investigating interview responses through thematic coding and comparing themes. This aligns with the systematic collection, coding, and interpretation of nonnumeric evidence required for qualitative_research.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"While comparing themes involves analysis, the source text does not describe a systematic use of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior. It describes thematic comparison, which is qualitative. Claiming 'statistics' competency based solely on 'comparing themes with a second coder' (often for inter-coder reliability in qualitative contexts) without explicit mention of statistical methods or quantitative analysis constitutes an unsupported broadening of the activity.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly mentions publishing a research paper in a journal, supporting the domain context of 'research publication'.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions using thematic coding as a method for investigating interview responses, supporting the tool context.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions comparing themes with a second coder, indicating a specific research methodology concept, supporting the concept context.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they have not written programming code. This supports the tool context of 'programming code' being recognized as absent in this specific claim.\"},{\"target_id\":\"t5\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they have not trained machine-learning models. This supports the tool context of 'machine-learning models' being recognized as absent in this specific claim.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "publication",
+          "statement": "Published a research paper in Journal XYZ.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c2",
+          "category": "research",
+          "statement": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c3",
+          "category": "activity",
+          "statement": "I have not written programming code or trained machine-learning models.",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states they 'assisted the study', indicating support rather than independent ownership or leadership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The statement describes the publication status but does not describe the specific design choices, implementation details, or nature of the research work performed by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "externally_reviewed",
+          "rationale": "The student states the paper was 'Published in Journal XYZ', which implies external review, though the specific status remains self-reported.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No specific results, outcomes, or adoption of the research are stated in the provided text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j5",
+          "claim_id": "c2",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly uses the phrase 'I assisted the study', clearly defining their role as a supporter rather than the lead.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j6",
+          "claim_id": "c2",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student describes investigating interview responses through thematic coding and comparing themes, which constitutes an explicit method of investigation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j7",
+          "claim_id": "c2",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student explicitly mentions 'comparing themes with a second coder', establishing an evaluation method involving comparison.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j8",
+          "claim_id": "c2",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the methods used but does not state any resulting outcomes or impacts of this specific research assistance.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j9",
+          "claim_id": "c3",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement is a denial of specific activities (programming, ML training). Ownership of other potential activities is unknown based on this text alone.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j10",
+          "claim_id": "c3",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The statement denies specific technical depths (programming, ML) but does not describe the depth of other activities performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j11",
+          "claim_id": "c3",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The statement is a denial of activities; no evaluation method for the denied or other activities is stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "j12",
+          "claim_id": "c3",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The statement is a denial of activities; no impact is stated for the denied or other activities.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c2",
+          "competency_id": "qualitative_research",
+          "observed_skill": "thematic coding and comparing themes",
+          "rationale": "The student explicitly describes investigating interview responses through thematic coding and comparing themes, which aligns with the systematic collection, coding, and interpretation of nonnumeric evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c2",
+          "competency_id": "statistics",
+          "observed_skill": "comparing themes with a second coder",
+          "rationale": "Comparing themes with a second coder involves systematic analysis and interpretation, potentially utilizing statistical or quantitative methods for inter-coder reliability or thematic validation, though the specific method is not detailed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "research publication",
+          "rationale": "The text explicitly mentions publishing a research paper in a journal.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c2",
+          "kind": "tool",
+          "label": "thematic coding",
+          "rationale": "The student explicitly mentions using thematic coding as a method for investigating interview responses.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c2",
+          "kind": "concept",
+          "label": "second coder comparison",
+          "rationale": "The student explicitly mentions comparing themes with a second coder, indicating a specific research methodology concept.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c3",
+          "kind": "tool",
+          "label": "programming code",
+          "rationale": "The student explicitly states they have not written programming code.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        },
+        {
+          "id": "t5",
+          "claim_id": "c3",
+          "kind": "tool",
+          "label": "machine-learning models",
+          "rationale": "The student explicitly states they have not trained machine-learning models.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "What specific role did the student play in the research paper published in Journal XYZ beyond 'assisting'?",
+          "reason": "The statement 'I assisted the study' is vague. Clarifying whether they led a section, designed the methodology, or simply collected data would help determine ownership and depth."
+        },
+        {
+          "claim_id": "c2",
+          "question": "What specific methods were used for thematic coding and how was the comparison with the second coder conducted?",
+          "reason": "The statement mentions 'thematic coding' and 'comparing themes' but does not specify the software, framework, or detailed process used, which would clarify depth and evaluation."
+        },
+        {
+          "claim_id": "c2",
+          "question": "What were the outcomes or impacts of the thematic analysis performed by the student?",
+          "reason": "The text describes the methods but does not state any results, findings, or impacts resulting from this work."
+        }
+      ],
+      "unassessed": [
+        "No academic records are provided for the publication or research activities.",
+        "The specific venue tier or prestige of 'Journal XYZ' is unknown and not stated in the source."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly states 'Published a research paper in Journal XYZ', directly supporting the claim's presence and category."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "supported",
+          "explanation": "The source text explicitly contains the statement 'I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder', fully supporting the claim."
+        },
+        {
+          "target_id": "c3",
+          "verdict": "supported",
+          "explanation": "The source text explicitly states 'I have not written programming code or trained machine-learning models', directly supporting the reported_absent presence label for these specific activities."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The student explicitly uses the phrase 'I assisted the study', which aligns with the 'assisted' ownership label indicating support rather than independent ownership or leadership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The claim c1 describes publication status. The source text does not detail specific design choices, implementation details, or the nature of the research work performed by the student for that specific claim, supporting the 'unknown' depth label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "unsupported",
+          "explanation": "The source text states the paper was 'Published in Journal XYZ'. While publication often implies review, the rubric requires external assessment to be explicitly stated. The text does not explicitly state 'peer-reviewed' or 'externally reviewed', only that it was published. Therefore, claiming 'externally_reviewed' is an assumption not fully supported by the explicit text provided."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text describes methods and publication but contains no specific results, outcomes, or adoption statements for this work, supporting the 'unknown' impact label."
+        },
+        {
+          "target_id": "j5",
+          "verdict": "supported",
+          "explanation": "The student explicitly states 'I assisted the study', clearly defining their role as a supporter rather than the lead, which supports the 'assisted' ownership label."
+        },
+        {
+          "target_id": "j6",
+          "verdict": "supported",
+          "explanation": "The student describes investigating interview responses through thematic coding and comparing themes. This constitutes an explicit method of investigation, supporting the 'investigated' depth label."
+        },
+        {
+          "target_id": "j7",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions 'comparing themes with a second coder', establishing an evaluation method involving comparison, which supports the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j8",
+          "verdict": "supported",
+          "explanation": "The text describes methods used but does not state any resulting outcomes or impacts of this specific research assistance, supporting the 'unknown' impact label."
+        },
+        {
+          "target_id": "j9",
+          "verdict": "supported",
+          "explanation": "The statement is a denial of specific activities (programming, ML). Ownership of other potential activities is unknown based on this text alone, supporting the 'unknown' ownership label for the denied context."
+        },
+        {
+          "target_id": "j10",
+          "verdict": "supported",
+          "explanation": "The statement denies specific technical depths (programming, ML) but does not describe the depth of other activities performed, supporting the 'unknown' depth label."
+        },
+        {
+          "target_id": "j11",
+          "verdict": "supported",
+          "explanation": "The statement is a denial of activities; no evaluation method for the denied or other activities is stated in the text, supporting the 'unknown' evaluation label."
+        },
+        {
+          "target_id": "j12",
+          "verdict": "supported",
+          "explanation": "The statement is a denial of activities; no impact is stated for the denied or other activities, supporting the 'unknown' impact label."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly describes investigating interview responses through thematic coding and comparing themes. This aligns with the systematic collection, coding, and interpretation of nonnumeric evidence required for qualitative_research."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "While comparing themes involves analysis, the source text does not describe a systematic use of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior. It describes thematic comparison, which is qualitative. Claiming 'statistics' competency based solely on 'comparing themes with a second coder' (often for inter-coder reliability in qualitative contexts) without explicit mention of statistical methods or quantitative analysis constitutes an unsupported broadening of the activity."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The text explicitly mentions publishing a research paper in a journal, supporting the domain context of 'research publication'."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions using thematic coding as a method for investigating interview responses, supporting the tool context."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions comparing themes with a second coder, indicating a specific research methodology concept, supporting the concept context."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they have not written programming code. This supports the tool context of 'programming code' being recognized as absent in this specific claim."
+        },
+        {
+          "target_id": "t5",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they have not trained machine-learning models. This supports the tool context of 'machine-learning models' being recognized as absent in this specific claim."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j5",
+      "j6",
+      "j7"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What specific role did the student play in the research paper published in Journal XYZ beyond 'assisting'?",
+        "reason": "The statement 'I assisted the study' is vague. Clarifying whether they led a section, designed the methodology, or simply collected data would help determine ownership and depth."
+      },
+      {
+        "claim_id": "c2",
+        "question": "What specific methods were used for thematic coding and how was the comparison with the second coder conducted?",
+        "reason": "The statement mentions 'thematic coding' and 'comparing themes' but does not specify the software, framework, or detailed process used, which would clarify depth and evaluation."
+      },
+      {
+        "claim_id": "c2",
+        "question": "What were the outcomes or impacts of the thematic analysis performed by the student?",
+        "reason": "The text describes the methods but does not state any results, findings, or impacts resulting from this work."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The source text states the paper was 'Published in Journal XYZ'. While publication often implies review, the rubric requires external assessment to be explicitly stated. The text does not explicitly state 'peer-reviewed' or 'externally reviewed', only that it was published. Therefore, claiming 'externally_reviewed' is an assumption not fully supported by the explicit text provided."
+      },
+      {
+        "claim_id": "c2",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "While comparing themes involves analysis, the source text does not describe a systematic use of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior. It describes thematic comparison, which is qualitative. Claiming 'statistics' competency based solely on 'comparing themes with a second coder' (often for inter-coder reliability in qualitative contexts) without explicit mention of statistical methods or quantitative analysis constitutes an unsupported broadening of the activity."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:29:35.0072324Z",
+        "2026-09-30T16:30:18.3828858Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f"
+      },
+      "draft_response_sha256": "333b608ebc0d918f2b33d3d4fba7640000fc837db9fd97fe6fe67f6a717316c0",
+      "review_response_sha256": "5f280a3859984acf76bf131dc7df092e6c1f948787ff18a73d1a1a7df7e0cb16"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Published a research paper in Journal XYZ. I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder. I have not written programming code or trained machine-learning models.",
+          "category": "publication",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I have not written programming code or trained machine-learning models.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_absent"
+        },
+        {
+          "statement": "Published a research paper in Journal XYZ.",
+          "category": "publication",
+          "attribution": "student",
+          "presence": "reported_present"
+        },
+        {
+          "statement": "I assisted the study by investigating interview responses through thematic coding and comparing themes with a second coder.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "second coder comparison"
+        },
+        {
+          "kind": "domain",
+          "label": "research publication"
+        },
+        {
+          "kind": "tool",
+          "label": "machine-learning models"
+        },
+        {
+          "kind": "tool",
+          "label": "programming code"
+        },
+        {
+          "kind": "tool",
+          "label": "thematic coding"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "coder comparison",
+        "thematic coding"
+      ],
+      "model_prediction": [
+        "thematic coding and comparing themes"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "qualitative research analysis"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "thematic coding and comparing themes"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "assisted"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "assisted",
+          "assisted"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "explicit_absence",
+      "provisional_reference": [],
+      "model_prediction": [
+        "I have not written programming code or trained machine-learning models."
+      ],
+      "question": "Is each absence explicit and narrowly scoped?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "What specific methods were used for thematic coding and how was the comparison with the second coder conducted?",
+        "What specific role did the student play in the research paper published in Journal XYZ beyond 'assisting'?",
+        "What were the outcomes or impacts of the thematic analysis performed by the student?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Missing taxonomy coverage: qualitative research analysis"
+      ],
+      "model_prediction": [
+        "No academic records are provided for the publication or research activities.",
+        "The specific venue tier or prestige of 'Journal XYZ' is unknown and not stated in the source."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

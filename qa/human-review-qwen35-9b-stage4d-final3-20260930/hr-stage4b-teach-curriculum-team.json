@@ -1,0 +1,525 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-teach-curriculum-team",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "academic_contribution_boundaries",
+  "source_sha256": "fd242ff321d95d9b2978fa0a10c410c2917f1933eb4bb165d8b7e3fe950556b2",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 86.68,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 58.37,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "3d958f20791b49b493d2af9145690b86620d970a215b5ed8f4c374983943575b",
+      "schema_sha256": "5a51c8ac21e187b4a14120591d340a00ffb4f8ff3b884526919350c424bd25f3",
+      "response_id": "2026-09-30T17:33:17.2689475Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states they wrote instructions as part of a 'faculty team' and piloted them, indicating an individual contribution within collaborative work. The approval by the course lead does not negate the student's active role in creation and piloting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student 'wrote' instructions and 'piloted' them. This describes the application of established methods to complete a described task (creating instructional materials and testing them). There is no evidence of designing new pedagogical frameworks or adapting methods to specific constraints beyond standard piloting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"externally_reviewed\",\n      \"rationale\": \"The 'course lead approved their use in all sections' constitutes an explicit external assessment of the work's quality and readiness for deployment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"adopted\",\n      \"rationale\": \"The course lead approved the instructions for 'use in all sections', indicating actual adoption by an organization (the faculty/course) across multiple sections.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"teaching_instruction\",\n      \"observed_skill\": \"Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners.\",\n      \"rationale\": \"Writing lab instructions and piloting them constitutes planning and developing instructional materials. The piloting phase involves testing the learning activity with a section of students (identified learners).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Competency explicitly named in Build Spec section 4; definition pending human validation.\",\n      \"rationale\": \"The student wrote 'database lab instructions'. While this involves technical knowledge, the action described is writing documentation/instructions, not necessarily writing code or implementing a software system. However, given the context of 'database' labs, it implies familiarity with database concepts. Without explicit mention of coding, SQL, or implementation, we cannot definitively claim programming competency based solely on 'wrote instructions'. Therefore, this competency is omitted as per instructions to not invent skills.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"database lab instructions\",\n      \"rationale\": \"The student created instructional materials specifically for a database lab context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"faculty team\",\n      \"rationale\": \"The work was conducted within a faculty team environment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"piloting\",\n      \"rationale\": \"The student engaged in the concept of piloting (testing) their work with a specific section.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"course lead approval\",\n      \"rationale\": \"The work received formal approval from a course lead for broader implementation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 28.29,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "c00db0ba8540427d24dbc9284f7de2aacc17800332cd9ae400a264527523c3de",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T17:33:45.5650653Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the student's actions within a faculty team, piloting instructions, and receiving approval. The attribution to 'student' is accurate as the text uses 'I wrote'. No invented context or broadened category is present.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'shared' is appropriate because the student explicitly states they worked 'On the faculty team' and 'wrote' instructions, indicating an individual contribution within collaborative work. The rationale correctly distinguishes this from 'led' (which requires explicit direction or sole ownership) and 'assisted'. The approval by the course lead does not negate the student's active role.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is correct. The actions 'wrote' and 'piloted' describe applying established methods to complete a task (creating materials and testing them). There is no evidence in the text of designing new frameworks or adapting methods to specific constraints beyond standard piloting, so 'designed' or 'investigated' are not supported.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'externally_reviewed' is supported by the phrase 'the course lead approved their use'. This constitutes an explicit external assessment of the work's quality and readiness. The rationale correctly identifies this as an external review rather than just a description or comparison.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'adopted' is supported by the phrase 'approved their use in all sections'. This indicates actual use or adoption of the work by an organization (the faculty/course) across multiple sections. The rationale correctly links the approval to adoption.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'teaching_instruction' is supported. Writing lab instructions and piloting them constitutes planning and developing instructional materials, and testing with a section of students involves evaluating instruction for identified learners. The observed skill description matches the actions described in the source.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"The competency 'programming' is unsupported. The source text mentions 'database lab instructions' but does not explicitly describe writing code, implementing a software system, or using programming languages like SQL for implementation. Writing documentation implies technical knowledge but does not demonstrate the explicit programming action required to support this competency. The rationale correctly notes the absence of explicit coding evidence.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context 'database lab instructions' is a correct recognition of the tool/domain mentioned in the source text. It describes the specific instructional materials created. This does not claim mastery or depth, merely identifying the subject matter of the work.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context 'faculty team' is a correct recognition of the domain/concept where the work was conducted. It identifies the collaborative environment without inventing institutional prestige or assuming specific roles beyond what is stated.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The context 'piloting' is a correct recognition of the concept/activity described in the source text. It identifies the testing phase mentioned by the student without inferring additional methodological depth.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The context 'course lead approval' is a correct recognition of the concept/event described in the source text. It identifies the external review mechanism mentioned without assuming its specific nature beyond what is stated.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states they wrote instructions as part of a 'faculty team' and piloted them, indicating an individual contribution within collaborative work. The approval by the course lead does not negate the student's active role in creation and piloting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student 'wrote' instructions and 'piloted' them. This describes the application of established methods to complete a described task (creating instructional materials and testing them). There is no evidence of designing new pedagogical frameworks or adapting methods to specific constraints beyond standard piloting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "externally_reviewed",
+          "rationale": "The 'course lead approved their use in all sections' constitutes an explicit external assessment of the work's quality and readiness for deployment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "adopted",
+          "rationale": "The course lead approved the instructions for 'use in all sections', indicating actual adoption by an organization (the faculty/course) across multiple sections.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "teaching_instruction",
+          "observed_skill": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners.",
+          "rationale": "Writing lab instructions and piloting them constitutes planning and developing instructional materials. The piloting phase involves testing the learning activity with a section of students (identified learners).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+          "rationale": "The student wrote 'database lab instructions'. While this involves technical knowledge, the action described is writing documentation/instructions, not necessarily writing code or implementing a software system. However, given the context of 'database' labs, it implies familiarity with database concepts. Without explicit mention of coding, SQL, or implementation, we cannot definitively claim programming competency based solely on 'wrote instructions'. Therefore, this competency is omitted as per instructions to not invent skills.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "database lab instructions",
+          "rationale": "The student created instructional materials specifically for a database lab context.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "faculty team",
+          "rationale": "The work was conducted within a faculty team environment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "piloting",
+          "rationale": "The student engaged in the concept of piloting (testing) their work with a specific section.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "course lead approval",
+          "rationale": "The work received formal approval from a course lead for broader implementation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the student's actions within a faculty team, piloting instructions, and receiving approval. The attribution to 'student' is accurate as the text uses 'I wrote'. No invented context or broadened category is present."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'shared' is appropriate because the student explicitly states they worked 'On the faculty team' and 'wrote' instructions, indicating an individual contribution within collaborative work. The rationale correctly distinguishes this from 'led' (which requires explicit direction or sole ownership) and 'assisted'. The approval by the course lead does not negate the student's active role."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is correct. The actions 'wrote' and 'piloted' describe applying established methods to complete a task (creating materials and testing them). There is no evidence in the text of designing new frameworks or adapting methods to specific constraints beyond standard piloting, so 'designed' or 'investigated' are not supported."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'externally_reviewed' is supported by the phrase 'the course lead approved their use'. This constitutes an explicit external assessment of the work's quality and readiness. The rationale correctly identifies this as an external review rather than just a description or comparison."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'adopted' is supported by the phrase 'approved their use in all sections'. This indicates actual use or adoption of the work by an organization (the faculty/course) across multiple sections. The rationale correctly links the approval to adoption."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'teaching_instruction' is supported. Writing lab instructions and piloting them constitutes planning and developing instructional materials, and testing with a section of students involves evaluating instruction for identified learners. The observed skill description matches the actions described in the source."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "The competency 'programming' is unsupported. The source text mentions 'database lab instructions' but does not explicitly describe writing code, implementing a software system, or using programming languages like SQL for implementation. Writing documentation implies technical knowledge but does not demonstrate the explicit programming action required to support this competency. The rationale correctly notes the absence of explicit coding evidence."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context 'database lab instructions' is a correct recognition of the tool/domain mentioned in the source text. It describes the specific instructional materials created. This does not claim mastery or depth, merely identifying the subject matter of the work."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context 'faculty team' is a correct recognition of the domain/concept where the work was conducted. It identifies the collaborative environment without inventing institutional prestige or assuming specific roles beyond what is stated."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The context 'piloting' is a correct recognition of the concept/activity described in the source text. It identifies the testing phase mentioned by the student without inferring additional methodological depth."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The context 'course lead approval' is a correct recognition of the concept/event described in the source text. It identifies the external review mechanism mentioned without assuming its specific nature beyond what is stated."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The competency 'programming' is unsupported. The source text mentions 'database lab instructions' but does not explicitly describe writing code, implementing a software system, or using programming languages like SQL for implementation. Writing documentation implies technical knowledge but does not demonstrate the explicit programming action required to support this competency. The rationale correctly notes the absence of explicit coding evidence."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T17:33:17.2689475Z",
+        "2026-09-30T17:33:45.5650653Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "fd242ff321d95d9b2978fa0a10c410c2917f1933eb4bb165d8b7e3fe950556b2"
+      },
+      "draft_response_sha256": "50ff5f0c5c51ec01679ed59c2ab193b1d4b6692fa7699bb1c933f1fa351507ab",
+      "review_response_sha256": "8d288dc75e1f9d571509f8cf5dab76eda08c385983c5da8dc0f94c1290d7a95d"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "On the faculty team, I wrote the database lab instructions and piloted them with one section; the course lead approved their use in all sections.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Database education"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "course lead approval"
+        },
+        {
+          "kind": "concept",
+          "label": "piloting"
+        },
+        {
+          "kind": "domain",
+          "label": "faculty team"
+        },
+        {
+          "kind": "tool",
+          "label": "database lab instructions"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Authored executable database lab exercises",
+        "Designed, piloted, and operationalized database lab instruction"
+      ],
+      "model_prediction": [
+        "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Authored executable database lab exercises"
+        },
+        {
+          "competency_id": "teaching_instruction",
+          "observed_skill": "Designed, piloted, and operationalized database lab instruction"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "teaching_instruction",
+          "observed_skill": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "impact": [
+          "adopted"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "externally_reviewed"
+        ],
+        "impact": [
+          "adopted"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

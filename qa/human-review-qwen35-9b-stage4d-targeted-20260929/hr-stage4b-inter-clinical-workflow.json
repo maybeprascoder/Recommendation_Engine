@@ -1,0 +1,450 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-inter-clinical-workflow",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "unmapped_and_ambiguous_work",
+  "source_sha256": "1d99dcce5e8e899377d6eb5f1e0591bc25526035b540b4d47a72d3381cca99cb",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 68.09,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 46.45,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "060601f692c413c7570205c971308b864950eeae60b0b8f9d797bb06e70acc9c",
+      "schema_sha256": "562271e4b662bcaf01ddf1f454ab5e162bcb24b39176187f62a0102c58fba998",
+      "response_id": "2026-09-29T22:33:43.1246383Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly describes individual actions ('I mapped', 'interviewed', 'proposed') within a workflow context involving multiple stakeholders ('five coordinators'). This indicates an explicit individual contribution within a collaborative or organizational setting, rather than sole ownership of the entire clinic system or leadership of a team in the sense of directing others' work. The phrasing suggests the student performed specific tasks as part of a broader process.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (mapping a workflow, conducting interviews) to complete described tasks. There is no evidence of designing new methodologies, adapting methods to novel constraints, or investigating a question through explicit analysis beyond the application of standard process improvement techniques.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states the proposal was made, but does not describe how the revised checklist or the mapping process itself was evaluated (e.g., tested against current errors, reviewed by a committee, compared to a baseline).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text mentions proposing a checklist but does not state whether it was adopted, used, or resulted in any specific outcome (e.g., reduced errors, faster handoffs).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Healthcare Operations / Process Improvement\",\n      \"rationale\": \"The activity involves mapping a clinic's referral workflow and interviewing coordinators, which falls under healthcare operations and process improvement.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Interviews\",\n      \"rationale\": \"The student explicitly states they 'interviewed five coordinators' as part of their methodology.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Workflow Mapping\",\n      \"rationale\": \"The student explicitly states they 'mapped the clinic's referral workflow'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Checklist Design\",\n      \"rationale\": \"The student explicitly states they 'proposed a revised handoff checklist'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 21.61,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "3c4853934189bd91078849da82215062f7c7ce1e030d30160438d3d637afdfb0",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T22:34:04.7451945Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing specific actions (mapping, interviewing, proposing). The category 'activity' is appropriate for this description of work performed.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'shared' is appropriate because the text describes individual actions ('I mapped', 'interviewed') within a context involving multiple stakeholders ('five coordinators'), indicating contribution to a broader process rather than sole ownership or leading a team. The rationale correctly distinguishes between performing tasks and directing others.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is supported as the student used established methods (workflow mapping, interviews) to complete tasks. There is no evidence in the text of designing new methodologies or investigating a question through novel analysis; the work fits the definition of applying standard techniques.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct because the source text mentions proposing a checklist but does not state how that proposal was evaluated (e.g., tested, reviewed, compared). No evaluation method is described.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct because the source text states a proposal was made but provides no information on whether it was adopted, used, or resulted in specific outcomes. Impact is not stated.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context 'Healthcare Operations / Process Improvement' is correctly identified as the domain based on keywords like 'clinic', 'referral workflow', and 'coordinators'. The tool names alone do not establish this competency, but the domain recognition is valid.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The tool 'Interviews' is explicitly supported by the phrase 'interviewed five coordinators'. Recognition of this method is allowed even if it does not prove mastery or advanced depth.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The tool 'Workflow Mapping' is explicitly supported by the phrase 'mapped the clinic's referral workflow'. Tool usage without a described method belongs only in the claim/context, which is correctly handled here.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The tool 'Checklist Design' is explicitly supported by the phrase 'proposed a revised handoff checklist'. Recognition of domain terminology and tool names is allowed; this does not imply mastery or advanced depth but accurately reflects the cited activity.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly describes individual actions ('I mapped', 'interviewed', 'proposed') within a workflow context involving multiple stakeholders ('five coordinators'). This indicates an explicit individual contribution within a collaborative or organizational setting, rather than sole ownership of the entire clinic system or leadership of a team in the sense of directing others' work. The phrasing suggests the student performed specific tasks as part of a broader process.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (mapping a workflow, conducting interviews) to complete described tasks. There is no evidence of designing new methodologies, adapting methods to novel constraints, or investigating a question through explicit analysis beyond the application of standard process improvement techniques.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text states the proposal was made, but does not describe how the revised checklist or the mapping process itself was evaluated (e.g., tested against current errors, reviewed by a committee, compared to a baseline).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text mentions proposing a checklist but does not state whether it was adopted, used, or resulted in any specific outcome (e.g., reduced errors, faster handoffs).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Healthcare Operations / Process Improvement",
+          "rationale": "The activity involves mapping a clinic's referral workflow and interviewing coordinators, which falls under healthcare operations and process improvement.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Interviews",
+          "rationale": "The student explicitly states they 'interviewed five coordinators' as part of their methodology.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Workflow Mapping",
+          "rationale": "The student explicitly states they 'mapped the clinic's referral workflow'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Checklist Design",
+          "rationale": "The student explicitly states they 'proposed a revised handoff checklist'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing specific actions (mapping, interviewing, proposing). The category 'activity' is appropriate for this description of work performed."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'shared' is appropriate because the text describes individual actions ('I mapped', 'interviewed') within a context involving multiple stakeholders ('five coordinators'), indicating contribution to a broader process rather than sole ownership or leading a team. The rationale correctly distinguishes between performing tasks and directing others."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is supported as the student used established methods (workflow mapping, interviews) to complete tasks. There is no evidence in the text of designing new methodologies or investigating a question through novel analysis; the work fits the definition of applying standard techniques."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct because the source text mentions proposing a checklist but does not state how that proposal was evaluated (e.g., tested, reviewed, compared). No evaluation method is described."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct because the source text states a proposal was made but provides no information on whether it was adopted, used, or resulted in specific outcomes. Impact is not stated."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context 'Healthcare Operations / Process Improvement' is correctly identified as the domain based on keywords like 'clinic', 'referral workflow', and 'coordinators'. The tool names alone do not establish this competency, but the domain recognition is valid."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The tool 'Interviews' is explicitly supported by the phrase 'interviewed five coordinators'. Recognition of this method is allowed even if it does not prove mastery or advanced depth."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The tool 'Workflow Mapping' is explicitly supported by the phrase 'mapped the clinic's referral workflow'. Tool usage without a described method belongs only in the claim/context, which is correctly handled here."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The tool 'Checklist Design' is explicitly supported by the phrase 'proposed a revised handoff checklist'. Recognition of domain terminology and tool names is allowed; this does not imply mastery or advanced depth but accurately reflects the cited activity."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4"
+    ],
+    "questions": [],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T22:33:43.1246383Z",
+        "2026-09-29T22:34:04.7451945Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "1d99dcce5e8e899377d6eb5f1e0591bc25526035b540b4d47a72d3381cca99cb"
+      },
+      "draft_response_sha256": "aee97cb6c18a2ed23ea0c2cd124642ec7d6ca1b9ce6dd00b4c07a7cbb1301840",
+      "review_response_sha256": "67509f206759f050d3398579fda5a4ab92c2dfaed705a34c4fd16ecada19967d"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I mapped the clinic's referral workflow, interviewed five coordinators, and proposed a revised handoff checklist.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Workflow design"
+        },
+        {
+          "kind": "domain",
+          "label": "Healthcare operations"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "domain",
+          "label": "Healthcare Operations / Process Improvement"
+        },
+        {
+          "kind": "tool",
+          "label": "Checklist Design"
+        },
+        {
+          "kind": "tool",
+          "label": "Interviews"
+        },
+        {
+          "kind": "tool",
+          "label": "Workflow Mapping"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Mapped an operational workflow using stakeholder interviews"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": null,
+          "observed_skill": "Mapped an operational workflow using stakeholder interviews"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

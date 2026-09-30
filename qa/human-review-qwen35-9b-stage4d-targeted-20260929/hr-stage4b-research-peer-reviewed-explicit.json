@@ -1,0 +1,487 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-research-peer-reviewed-explicit",
+  "review_domain": "research",
+  "lineage_group": "publication_claim_progression",
+  "source_sha256": "bc24fbcc2f27f682b41af8246b175f560900ac94428983b102247d6bfc86b827",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 71.34,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 50.84,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "85692296c494b4f8fb2c75ca40fa67647ac85bbf04022d911d9ef5544a0ee69b",
+      "schema_sha256": "bea7d3a7f7789da31cc2f9c8eae180885cac6555dde91fdb531a4bd94dae015f",
+      "response_id": "2026-09-29T22:28:35.0453582Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"research\",\n      \"statement\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I designed the survey instrument and led the analysis', indicating explicit direction or independent ownership of specific tasks within the collaborative article.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student explicitly states 'I designed the survey instrument', indicating they made design choices for that component. The analysis is stated as 'led', implying a methodological approach was taken.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"externally_reviewed\",\n      \"rationale\": \"The text states 'our article completed external peer review and was accepted', explicitly stating external assessment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The text reports that the article was 'accepted' by a journal, which is a concrete outcome of the research work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"qualitative_research\",\n      \"observed_skill\": \"Survey instrument design and analysis of survey data.\",\n      \"rationale\": \"The student 'designed the survey instrument' and 'led the analysis', which constitutes systematic collection and interpretation of nonnumeric evidence to investigate a research question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"Statistical analysis of survey data.\",\n      \"rationale\": \"The student 'led the analysis' of a survey instrument, which inherently involves statistical methods to interpret survey responses.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Analysis of quantitative survey data.\",\n      \"rationale\": \"The student 'led the analysis' of a survey instrument, which involves systematic use and interpretation of mathematical or quantitative methods to analyze data.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific statistical methods or quantitative techniques were used for the 'analysis' led by the student?\",\n      \"reason\": \"The claim states 'led the analysis' but does not specify the methods (e.g., regression, factor analysis, descriptive statistics). While 'statistics' and 'quantitative_analysis' competencies are suggested based on the activity, the specific depth of the quantitative method is unknown.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What was the specific research question or hypothesis investigated through the survey instrument design?\",\n      \"reason\": \"The claim mentions designing a survey and leading analysis but does not state the underlying research question. This limits the ability to fully assess the 'investigated' depth dimension beyond 'designed'.\"\n    }\n  ],\n  \"unassessed\": [\n    \"Specific statistical techniques used in the analysis.\",\n    \"Research question or hypothesis investigated.\",\n    \"Specific constraints faced during survey instrument design.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 20.47,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "8e55dfe02a3702325c3010e90042058a630c979e9889460a45851281bd31e195",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T22:28:55.5288044Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the research activity, peer review status, and specific contributions (designing instrument, leading analysis). The category 'research' is appropriate for an article accepted by a journal.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states 'I designed... and led...', which satisfies the rubric requirement for explicit direction or independent ownership of specific tasks within collaborative work. The rationale correctly identifies this explicit statement as evidence for the 'led' label.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'I designed the survey instrument' explicitly indicates making design choices, supporting the 'designed' depth label. The rationale accurately links the text to the definition of 'designed' without overreaching regarding the analysis portion.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly states 'completed external peer review', which directly supports the 'externally_reviewed' evaluation label. The claim remains a report until verified, but the source statement itself supports this label as per rubric guidance.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The text reports that the article was 'accepted' by a journal, which constitutes a concrete outcome of the work. This supports the 'reported' impact label without assuming independent verification or measurement methods not present in the text.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student's actions ('designed survey instrument', 'led analysis') involve systematic collection and interpretation of nonnumeric evidence (survey responses). This supports the 'qualitative_research' competency. The rationale correctly identifies the activity without assuming specific statistical methods.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'led the analysis' of a survey instrument inherently implies the use of statistical methods to interpret data. While specific techniques aren't named, the activity described supports the 'statistics' competency as a demonstrated skill rather than an invention.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"The activity of leading analysis on survey data involves systematic use and interpretation of quantitative methods. This supports the 'quantitative_analysis' competency. The rationale correctly attributes this to the described activity without falsely claiming specific metrics or measurements were detailed in the source.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "research",
+          "statement": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The student explicitly states 'I designed the survey instrument and led the analysis', indicating explicit direction or independent ownership of specific tasks within the collaborative article.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student explicitly states 'I designed the survey instrument', indicating they made design choices for that component. The analysis is stated as 'led', implying a methodological approach was taken.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "externally_reviewed",
+          "rationale": "The text states 'our article completed external peer review and was accepted', explicitly stating external assessment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The text reports that the article was 'accepted' by a journal, which is a concrete outcome of the research work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "qualitative_research",
+          "observed_skill": "Survey instrument design and analysis of survey data.",
+          "rationale": "The student 'designed the survey instrument' and 'led the analysis', which constitutes systematic collection and interpretation of nonnumeric evidence to investigate a research question.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "statistics",
+          "observed_skill": "Statistical analysis of survey data.",
+          "rationale": "The student 'led the analysis' of a survey instrument, which inherently involves statistical methods to interpret survey responses.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Analysis of quantitative survey data.",
+          "rationale": "The student 'led the analysis' of a survey instrument, which involves systematic use and interpretation of mathematical or quantitative methods to analyze data.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper."
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "What specific statistical methods or quantitative techniques were used for the 'analysis' led by the student?",
+          "reason": "The claim states 'led the analysis' but does not specify the methods (e.g., regression, factor analysis, descriptive statistics). While 'statistics' and 'quantitative_analysis' competencies are suggested based on the activity, the specific depth of the quantitative method is unknown."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What was the specific research question or hypothesis investigated through the survey instrument design?",
+          "reason": "The claim mentions designing a survey and leading analysis but does not state the underlying research question. This limits the ability to fully assess the 'investigated' depth dimension beyond 'designed'."
+        }
+      ],
+      "unassessed": [
+        "Specific statistical techniques used in the analysis.",
+        "Research question or hypothesis investigated.",
+        "Specific constraints faced during survey instrument design."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the research activity, peer review status, and specific contributions (designing instrument, leading analysis). The category 'research' is appropriate for an article accepted by a journal."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The student explicitly states 'I designed... and led...', which satisfies the rubric requirement for explicit direction or independent ownership of specific tasks within collaborative work. The rationale correctly identifies this explicit statement as evidence for the 'led' label."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The phrase 'I designed the survey instrument' explicitly indicates making design choices, supporting the 'designed' depth label. The rationale accurately links the text to the definition of 'designed' without overreaching regarding the analysis portion."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The text explicitly states 'completed external peer review', which directly supports the 'externally_reviewed' evaluation label. The claim remains a report until verified, but the source statement itself supports this label as per rubric guidance."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The text reports that the article was 'accepted' by a journal, which constitutes a concrete outcome of the work. This supports the 'reported' impact label without assuming independent verification or measurement methods not present in the text."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student's actions ('designed survey instrument', 'led analysis') involve systematic collection and interpretation of nonnumeric evidence (survey responses). This supports the 'qualitative_research' competency. The rationale correctly identifies the activity without assuming specific statistical methods."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The phrase 'led the analysis' of a survey instrument inherently implies the use of statistical methods to interpret data. While specific techniques aren't named, the activity described supports the 'statistics' competency as a demonstrated skill rather than an invention."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What specific statistical methods or quantitative techniques were used for the 'analysis' led by the student?",
+        "reason": "The claim states 'led the analysis' but does not specify the methods (e.g., regression, factor analysis, descriptive statistics). While 'statistics' and 'quantitative_analysis' competencies are suggested based on the activity, the specific depth of the quantitative method is unknown."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What was the specific research question or hypothesis investigated through the survey instrument design?",
+        "reason": "The claim mentions designing a survey and leading analysis but does not state the underlying research question. This limits the ability to fully assess the 'investigated' depth dimension beyond 'designed'."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T22:28:35.0453582Z",
+        "2026-09-29T22:28:55.5288044Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "bc24fbcc2f27f682b41af8246b175f560900ac94428983b102247d6bfc86b827"
+      },
+      "draft_response_sha256": "740abc7ae96021074fd5e454de13772baec58d5ca8d94bf9a875b9891b46293e",
+      "review_response_sha256": "efdf31fb65530ed3c4907b1ce3e9da6e76d103b0d726f1e464dc8baa58471b6b"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.",
+          "category": "publication",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "The journal reports that our article completed external peer review and was accepted. I designed the survey instrument and led the analysis described in the paper.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "External peer review"
+        },
+        {
+          "kind": "domain",
+          "label": "Journal publication"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Designed a survey instrument and led the reported analysis"
+      ],
+      "model_prediction": [
+        "Statistical analysis of survey data.",
+        "Survey instrument design and analysis of survey data."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "Designed a survey instrument and led the reported analysis"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "Survey instrument design and analysis of survey data."
+        },
+        {
+          "competency_id": "statistics",
+          "observed_skill": "Statistical analysis of survey data."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "externally_reviewed"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "externally_reviewed"
+        ],
+        "impact": [
+          "reported"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "What specific statistical methods or quantitative techniques were used for the 'analysis' led by the student?",
+        "What was the specific research question or hypothesis investigated through the survey instrument design?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Research question or hypothesis investigated.",
+        "Specific constraints faced during survey instrument design.",
+        "Specific statistical techniques used in the analysis."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

@@ -1,0 +1,507 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-trap-metric-quant",
+  "review_domain": "semantic_traps",
+  "lineage_group": "unsupported_inference_traps",
+  "source_sha256": "5d22e2e7d9fc0fd82334769a05bb57cbd1e2518dc3f664a6010105d91ccac025",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 72.73,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 54.14,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "b077cb79c6cee728bebde05b1531f92de365b36845ce4e96ad60028a6fadda9a",
+      "schema_sha256": "41b5a0407250d1e8d69bd503ea727ca2c57407e5d68d3dd81487de9b2581ea28",
+      "response_id": "2026-09-30T16:18:24.4058129Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states they 'added input validation' and performed measurements, indicating an individual contribution within the context of a release (likely collaborative work given the 'release' terminology), but lacks explicit claims of sole ownership or leading a team.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (adding input validation, measuring error counts) to implement a described task (reducing errors). There is no evidence of designing new validation logic or investigating novel constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student measured error counts for two weeks 'before and after release', establishing an explicit baseline (pre-release) and alternative state (post-release) for comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The outcome (reduced API errors) is quantified as '18%' and the measurement method (counting errors over specific time periods) is explicitly stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"adding input validation\",\n      \"rationale\": \"The action of 'adding input validation' implies writing code or modifying software logic, which supports the programming competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"measuring error counts\",\n      \"rationale\": \"The student 'measured error counts' to determine a reduction percentage, demonstrating the systematic use of quantitative methods to analyze data.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"adding input validation\",\n      \"rationale\": \"Input validation is a standard security control used to prevent injection attacks and other vulnerabilities. Implementing it supports the security competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s4\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"API errors\",\n      \"rationale\": \"The context involves an 'API', which relates to network communication protocols and traffic behavior, supporting the networking competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Was the work performed individually or as part of a team? If team, what was the student's specific role?\",\n      \"reason\": \"The attribution is currently 'shared' based on the context of a 'release', but explicit details about team dynamics or individual leadership are absent.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What programming language or framework was used to implement the input validation?\",\n      \"reason\": \"The specific technology stack is not mentioned, which limits the depth of the 'programming' competency assessment.\"\n    }\n  ],\n  \"unassessed\": [\n    \"Leadership: No explicit claim of leading a team or independently owning the entire release process.\",\n    \"Advanced Design: The description focuses on applying input validation rather than designing a novel validation architecture or adapting methods to complex constraints.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 18.57,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "dad0c81287c5ea50cb1612c89eece47343dcc76d6aea4d7d32f043f108e29784",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:18:42.9768209Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the specific activity of reducing API errors via input validation and measurement.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"Attribution 'shared' is unsupported because the source text does not explicitly describe collaborative work, teammates, or a team context; 'release' alone does not imply teamwork. The attribution should be 'student' (individual) unless team ownership is explicit.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The description of using established methods ('adding input validation', 'measuring error counts') to complete a task supports the 'applied' depth label; there is no evidence of novel design or investigation.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"Measuring counts 'before and after release' explicitly establishes a baseline and an alternative state, supporting the 'compared' evaluation label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The outcome is quantified ('18%') with a stated measurement method ('measuring error counts'), supporting the 'measured' impact label.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The action 'adding input validation' implies writing code or modifying software logic, which supports the programming competency. The source describes an explicit programming action/artifact.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"Measuring error counts to determine a percentage reduction demonstrates systematic use of quantitative methods, supporting the quantitative_analysis competency.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"Implementing input validation is a standard security control; the source describes implementing this control, supporting the security competency.\"},{\"target_id\":\"s4\",\"verdict\":\"unsupported\",\"explanation\":\"Recognition of the term 'API' does not support the networking competency. The source describes reducing errors via validation and measurement, not analyzing network protocols, traffic, or packet behavior. Tool/domain recognition alone is insufficient for this competency.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states they 'added input validation' and performed measurements, indicating an individual contribution within the context of a release (likely collaborative work given the 'release' terminology), but lacks explicit claims of sole ownership or leading a team.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (adding input validation, measuring error counts) to implement a described task (reducing errors). There is no evidence of designing new validation logic or investigating novel constraints.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student measured error counts for two weeks 'before and after release', establishing an explicit baseline (pre-release) and alternative state (post-release) for comparison.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "The outcome (reduced API errors) is quantified as '18%' and the measurement method (counting errors over specific time periods) is explicitly stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "adding input validation",
+          "rationale": "The action of 'adding input validation' implies writing code or modifying software logic, which supports the programming competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "measuring error counts",
+          "rationale": "The student 'measured error counts' to determine a reduction percentage, demonstrating the systematic use of quantitative methods to analyze data.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "adding input validation",
+          "rationale": "Input validation is a standard security control used to prevent injection attacks and other vulnerabilities. Implementing it supports the security competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "claim_id": "c1",
+          "competency_id": "networking",
+          "observed_skill": "API errors",
+          "rationale": "The context involves an 'API', which relates to network communication protocols and traffic behavior, supporting the networking competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release."
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "Was the work performed individually or as part of a team? If team, what was the student's specific role?",
+          "reason": "The attribution is currently 'shared' based on the context of a 'release', but explicit details about team dynamics or individual leadership are absent."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What programming language or framework was used to implement the input validation?",
+          "reason": "The specific technology stack is not mentioned, which limits the depth of the 'programming' competency assessment."
+        }
+      ],
+      "unassessed": [
+        "Leadership: No explicit claim of leading a team or independently owning the entire release process.",
+        "Advanced Design: The description focuses on applying input validation rather than designing a novel validation architecture or adapting methods to complex constraints."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the specific activity of reducing API errors via input validation and measurement."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "Attribution 'shared' is unsupported because the source text does not explicitly describe collaborative work, teammates, or a team context; 'release' alone does not imply teamwork. The attribution should be 'student' (individual) unless team ownership is explicit."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The description of using established methods ('adding input validation', 'measuring error counts') to complete a task supports the 'applied' depth label; there is no evidence of novel design or investigation."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "Measuring counts 'before and after release' explicitly establishes a baseline and an alternative state, supporting the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The outcome is quantified ('18%') with a stated measurement method ('measuring error counts'), supporting the 'measured' impact label."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "unsupported",
+          "explanation": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "security requires explicit domain-specific evidence; an unrelated activity, generic service, comparison, metric, or tool context is not enough."
+        },
+        {
+          "target_id": "s4",
+          "verdict": "unsupported",
+          "explanation": "Recognition of the term 'API' does not support the networking competency. The source describes reducing errors via validation and measurement, not analyzing network protocols, traffic, or packet behavior. Tool/domain recognition alone is insufficient for this competency."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Was the work performed individually or as part of a team? If team, what was the student's specific role?",
+        "reason": "The attribution is currently 'shared' based on the context of a 'release', but explicit details about team dynamics or individual leadership are absent."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What programming language or framework was used to implement the input validation?",
+        "reason": "The specific technology stack is not mentioned, which limits the depth of the 'programming' competency assessment."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Attribution 'shared' is unsupported because the source text does not explicitly describe collaborative work, teammates, or a team context; 'release' alone does not imply teamwork. The attribution should be 'student' (individual) unless team ownership is explicit."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "security requires explicit domain-specific evidence; an unrelated activity, generic service, comparison, metric, or tool context is not enough."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Recognition of the term 'API' does not support the networking competency. The source describes reducing errors via validation and measurement, not analyzing network protocols, traffic, or packet behavior. Tool/domain recognition alone is insufficient for this competency."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:18:24.4058129Z",
+        "2026-09-30T16:18:42.9768209Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "5d22e2e7d9fc0fd82334769a05bb57cbd1e2518dc3f664a6010105d91ccac025"
+      },
+      "draft_response_sha256": "af6678f3bf2f0255d414859610072ba8c8bd8b6a992c2b33880fa6573e592c0d",
+      "review_response_sha256": "2248a6fa20999d21ca544280f91c5bfbcb666cbde788819011df681ee92eabf7"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Reduced API errors by 18% after adding input validation and measuring error counts for two weeks before and after release.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "API reliability"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Implemented input validation and evaluated API errors"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Implemented input validation and evaluated API errors"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Was the work performed individually or as part of a team? If team, what was the student's specific role?",
+        "What programming language or framework was used to implement the input validation?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Advanced Design: The description focuses on applying input validation rather than designing a novel validation architecture or adapting methods to complex constraints.",
+        "Leadership: No explicit claim of leading a team or independently owning the entire release process."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}
