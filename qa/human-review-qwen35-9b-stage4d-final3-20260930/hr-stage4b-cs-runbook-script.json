@@ -1,0 +1,384 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-runbook-script",
+  "review_domain": "computer_science",
+  "lineage_group": "programming_progression",
+  "source_sha256": "d901ce1e769e7f5f0a7d85f15830a7ae567e445ffc968625d99d279604c7fb1a",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 45.96,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 33.63,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "bb4178fa1c2924376ce7abb83bddc2bda1be477a062a99acde597703160beb14",
+      "schema_sha256": "d02c8513b828515226132194fde25306c76ed10101a7690b296598518d9a3f5a",
+      "response_id": "2026-09-30T16:35:56.5155763Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states they followed the team's runbook to change values, indicating guided work rather than independent ownership or leadership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (following a runbook) to complete a described task (changing values in a script). No design choices or investigation are described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method, test, review, or assessment is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result, outcome, or adoption is stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Bash deployment script\",\n      \"rationale\": \"The student explicitly mentions modifying a Bash deployment script.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"runbook\",\n      \"rationale\": \"The student explicitly mentions following a team's runbook.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Following the team's runbook, I changed two values in an existing Bash deployment script.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 12.31,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "dbd0966ceae10839293cb60aa2e6340297d205d07e52db71cfa24562fea3e084",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:36:08.8308533Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text, correctly attributing the action to the student ('I changed') within a team context.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'assisted' is appropriate because the student explicitly states they followed a 'team's runbook,' indicating guided work rather than independent ownership or leadership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is correct; the student used an established method (the runbook) to complete the task without describing design choices or investigation.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct as no evaluation method, test, review, or assessment is stated in the evidence.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct as no result, outcome, or adoption is stated in the evidence.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies 'Bash deployment script' as a tool mentioned by the student.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies 'runbook' as a concept mentioned by the student.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states they followed the team's runbook to change values, indicating guided work rather than independent ownership or leadership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (following a runbook) to complete a described task (changing values in a script). No design choices or investigation are described.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method, test, review, or assessment is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result, outcome, or adoption is stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Bash deployment script",
+          "rationale": "The student explicitly mentions modifying a Bash deployment script.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "runbook",
+          "rationale": "The student explicitly mentions following a team's runbook.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Following the team's runbook, I changed two values in an existing Bash deployment script."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text, correctly attributing the action to the student ('I changed') within a team context."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'assisted' is appropriate because the student explicitly states they followed a 'team's runbook,' indicating guided work rather than independent ownership or leadership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is correct; the student used an established method (the runbook) to complete the task without describing design choices or investigation."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct as no evaluation method, test, review, or assessment is stated in the evidence."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct as no result, outcome, or adoption is stated in the evidence."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies 'Bash deployment script' as a tool mentioned by the student."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies 'runbook' as a concept mentioned by the student."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:35:56.5155763Z",
+        "2026-09-30T16:36:08.8308533Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "d901ce1e769e7f5f0a7d85f15830a7ae567e445ffc968625d99d279604c7fb1a"
+      },
+      "draft_response_sha256": "7b7db8b0883c32e1a45fcf1c10ed4e7a4bab30250711c205c478d02825cd644f",
+      "review_response_sha256": "739e9ed06f6afc37be221a46c8fe56713cb3603d5c00d55c59e220af95a00694"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Following the team's runbook, I changed two values in an existing Bash deployment script.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Deployment"
+        },
+        {
+          "kind": "tool",
+          "label": "Bash"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "runbook"
+        },
+        {
+          "kind": "tool",
+          "label": "Bash deployment script"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Modified an existing Bash script under documented guidance"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Modified an existing Bash script under documented guidance"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

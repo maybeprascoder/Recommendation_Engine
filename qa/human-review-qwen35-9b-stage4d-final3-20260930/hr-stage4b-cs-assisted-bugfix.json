@@ -1,0 +1,495 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-assisted-bugfix",
+  "review_domain": "computer_science",
+  "lineage_group": "software_delivery_progression",
+  "source_sha256": "0aab6a6faa3f8c487e9af462434b70605a319b2a3c6ff14ecb81cd02a084eafc",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 78.41,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 52.92,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "64690024ce0b0aa566e150795664d01d8fd7ab04893ec2e73996b32e940afb83",
+      "schema_sha256": "2212900f40e7414261943dd4a0c0d6c3a7d2d1f2f20e7a9ab96c3eec3c4afeed",
+      "response_id": "2026-09-30T16:33:17.4764744Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"assisted\",\n      \"rationale\": \"The student explicitly states they 'helped a teammate', indicating support for another contributor rather than independent ownership or leading the work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (adding a guard, adding a regression test) to complete the described task of fixing a failure. There is no evidence of designing new methods or investigating a novel question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The work involved adding a 'regression test', which is a concrete assessment method stated in the evidence.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The concrete outcome reported is the fixing of a 'null-pointer failure'. No measurement method or specific metric for this fix is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Writing code to add guards and regression tests.\",\n      \"rationale\": \"The actions of adding a guard and a regression test in the context of fixing a null-pointer failure constitute explicit programming activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"Implementing input validation or safety checks (guards) to prevent crashes.\",\n      \"rationale\": \"Adding a guard against a null-pointer failure is an implementation of a control to protect system stability, which falls under security analysis or implementation of controls.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"N/A\",\n      \"rationale\": \"The evidence does not describe a systematic use of mathematical methods or quantitative analysis; it describes software maintenance tasks.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"programming language/runtime (implied)\",\n      \"rationale\": \"The terms 'null-pointer', 'guard', and 'regression test' imply the use of a programming environment, though the specific tool name is not explicitly stated in the text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"null-pointer exception handling\",\n      \"rationale\": \"The text explicitly mentions fixing a 'null-pointer failure', identifying the specific domain concept involved.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"regression testing\",\n      \"rationale\": \"The text explicitly mentions adding a 'regression test', identifying the specific testing concept used.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I helped a teammate fix a null-pointer failure by adding a guard and a regression test.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 25.46,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "df6b70a2c15cb3513920691fa3172fa005ec3abd9141cfab734660e50251b1eb",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:33:42.9402062Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the specific activity of helping fix a null-pointer failure. The presence label 'reported_present' is appropriate as the text explicitly describes this event.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that the phrase 'helped a teammate' explicitly indicates the student supported another contributor, aligning with the 'assisted' ownership label. The rationale accurately reflects the source text without inventing leadership or independent ownership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The depth label 'applied' is appropriate because the student used established methods (adding a guard and regression test) to complete a described task. There is no evidence in the text of designing new methods or investigating a novel question, so 'designed' or 'investigated' are unsupported.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The evaluation label 'described' is correct because the source explicitly states the addition of a 'regression test', which constitutes a concrete assessment method. The rationale correctly identifies this specific element in the text.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The impact label 'reported' is appropriate because the outcome (fixing a null-pointer failure) is stated as a concrete result, but no measurement method or metric for the improvement is provided in the text. The rationale correctly distinguishes between reporting an outcome and measuring it.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency suggestion for 'programming' is supported because adding guards and regression tests to fix a null-pointer failure constitutes explicit programming activity (writing code). The rationale correctly identifies these actions as programming without overstating the depth or ownership.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"The competency suggestion for 'security' is unsupported. While adding a guard prevents a crash, the source text describes fixing a bug in a teammate's work ('helped a teammate'), not implementing security controls to protect systems and information as defined by the rubric. The action is a code fix/bug repair, not a security implementation or analysis of vulnerabilities/threats. Additionally, the ownership is 'assisted', not independent security work.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context label for 'programming language/runtime (implied)' is supported as a recognition of the domain implied by terms like 'null-pointer' and 'regression test'. The rationale correctly notes that the specific tool name is not stated but the environment is implied.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context label for 'null-pointer exception handling' is supported as it directly reflects the domain concept explicitly mentioned in the source text ('null-pointer failure'). This is a valid recognition of terminology/concepts.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The context label for 'regression testing' is supported as it directly reflects the specific testing concept explicitly mentioned in the source text. This is a valid recognition of terminology/concepts.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "assisted",
+          "rationale": "The student explicitly states they 'helped a teammate', indicating support for another contributor rather than independent ownership or leading the work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (adding a guard, adding a regression test) to complete the described task of fixing a failure. There is no evidence of designing new methods or investigating a novel question.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "described",
+          "rationale": "The work involved adding a 'regression test', which is a concrete assessment method stated in the evidence.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The concrete outcome reported is the fixing of a 'null-pointer failure'. No measurement method or specific metric for this fix is stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Writing code to add guards and regression tests.",
+          "rationale": "The actions of adding a guard and a regression test in the context of fixing a null-pointer failure constitute explicit programming activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "Implementing input validation or safety checks (guards) to prevent crashes.",
+          "rationale": "Adding a guard against a null-pointer failure is an implementation of a control to protect system stability, which falls under security analysis or implementation of controls.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "programming language/runtime (implied)",
+          "rationale": "The terms 'null-pointer', 'guard', and 'regression test' imply the use of a programming environment, though the specific tool name is not explicitly stated in the text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "null-pointer exception handling",
+          "rationale": "The text explicitly mentions fixing a 'null-pointer failure', identifying the specific domain concept involved.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "regression testing",
+          "rationale": "The text explicitly mentions adding a 'regression test', identifying the specific testing concept used.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the specific activity of helping fix a null-pointer failure. The presence label 'reported_present' is appropriate as the text explicitly describes this event."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that the phrase 'helped a teammate' explicitly indicates the student supported another contributor, aligning with the 'assisted' ownership label. The rationale accurately reflects the source text without inventing leadership or independent ownership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The depth label 'applied' is appropriate because the student used established methods (adding a guard and regression test) to complete a described task. There is no evidence in the text of designing new methods or investigating a novel question, so 'designed' or 'investigated' are unsupported."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The evaluation label 'described' is correct because the source explicitly states the addition of a 'regression test', which constitutes a concrete assessment method. The rationale correctly identifies this specific element in the text."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The impact label 'reported' is appropriate because the outcome (fixing a null-pointer failure) is stated as a concrete result, but no measurement method or metric for the improvement is provided in the text. The rationale correctly distinguishes between reporting an outcome and measuring it."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "unsupported",
+          "explanation": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "The competency suggestion for 'security' is unsupported. While adding a guard prevents a crash, the source text describes fixing a bug in a teammate's work ('helped a teammate'), not implementing security controls to protect systems and information as defined by the rubric. The action is a code fix/bug repair, not a security implementation or analysis of vulnerabilities/threats. Additionally, the ownership is 'assisted', not independent security work."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context label for 'programming language/runtime (implied)' is supported as a recognition of the domain implied by terms like 'null-pointer' and 'regression test'. The rationale correctly notes that the specific tool name is not stated but the environment is implied."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context label for 'null-pointer exception handling' is supported as it directly reflects the domain concept explicitly mentioned in the source text ('null-pointer failure'). This is a valid recognition of terminology/concepts."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The context label for 'regression testing' is supported as it directly reflects the specific testing concept explicitly mentioned in the source text. This is a valid recognition of terminology/concepts."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Programming requires an explicit programming action and artifact; comparison, deployment, measurement, or tool context alone is not enough."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The competency suggestion for 'security' is unsupported. While adding a guard prevents a crash, the source text describes fixing a bug in a teammate's work ('helped a teammate'), not implementing security controls to protect systems and information as defined by the rubric. The action is a code fix/bug repair, not a security implementation or analysis of vulnerabilities/threats. Additionally, the ownership is 'assisted', not independent security work."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:33:17.4764744Z",
+        "2026-09-30T16:33:42.9402062Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "0aab6a6faa3f8c487e9af462434b70605a319b2a3c6ff14ecb81cd02a084eafc"
+      },
+      "draft_response_sha256": "f5feaadc8af6083d72aaf0bb46a201e33dcbc665d79f2e020d1aae52e3bb3246",
+      "review_response_sha256": "fa1456a77f92865283ed4f7f3b16ec7b17e48ab04ae2b3d9060437243ceae4c6"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I helped a teammate fix a null-pointer failure by adding a guard and a regression test.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Regression testing"
+        },
+        {
+          "kind": "domain",
+          "label": "Software debugging"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "null-pointer exception handling"
+        },
+        {
+          "kind": "concept",
+          "label": "regression testing"
+        },
+        {
+          "kind": "tool",
+          "label": "programming language/runtime (implied)"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Added a defensive code guard and regression test"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Added a defensive code guard and regression test"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "ownership": [
+          "assisted"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "impact": [
+          "reported"
+        ],
+        "ownership": [
+          "assisted"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

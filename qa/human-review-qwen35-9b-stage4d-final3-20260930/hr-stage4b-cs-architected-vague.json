@@ -1,0 +1,371 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-architected-vague",
+  "review_domain": "computer_science",
+  "lineage_group": "service_ownership_and_systems",
+  "source_sha256": "8d98657e3eb59bc10b81fd415e281df4cb63c7c34d5da8d968f1292667bcfbd2",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 42.65,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 28.41,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "281baa5e82fbc7d8c7562fb1b3567c507b1d96e816a4f2e15e5664c5157e10d8",
+      "schema_sha256": "6a215d53315dabfedb5e72cf43438bfb76d190b4e9741129033556fea9c89a46",
+      "response_id": "2026-09-30T16:40:19.9760308Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Architected a scalable enterprise platform.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The verb 'Architected' implies independent ownership of the design and implementation of the platform, distinguishing it from merely assisting or following guided work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The term 'Architected' indicates that the student made high-level design choices to create a system, rather than just applying established methods or investigating a question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states the action of architecting but does not describe any specific test, review, baseline comparison, or external assessment method used to evaluate the platform.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"While the platform is described as 'scalable', no concrete outcome, measured result (e.g., specific performance metrics), or statement of adoption by an organization is provided.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"scalable enterprise platform\",\n      \"rationale\": \"The phrase 'scalable enterprise platform' is a domain concept describing the type of system designed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Architected a scalable enterprise platform.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 14.23,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "ace56154a9a41449d53bfc4a3950afd0c73687393694abe65eeedb86b71e495d",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:40:34.2093801Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a direct verbatim quote from the source document describing an activity. The category 'activity' is appropriate for this description.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The verb 'Architected' implies high-level design and ownership of the system's structure, but it does not explicitly state that the student directed a team, managed others, or independently owned the entire deliverable to the exclusion of collaboration. Per rubric instructions, titles or action verbs alone are insufficient to establish 'led'; explicit description of individual responsibility or directing work is required.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The term 'Architected' explicitly denotes making high-level design choices and defining system structure, which aligns with the definition of the 'designed' depth label (made and explained design choices).\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The source text describes an action ('Architected') but contains no mention of tests, reviews, baselines, comparisons, or external assessments. Therefore, 'unknown' is the correct evaluation label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source mentions the platform is 'scalable', which is a design attribute, not a concrete outcome, measured result, or statement of adoption by an organization. Thus, 'unknown' is the correct impact label.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'scalable enterprise platform' correctly identifies a domain concept/concept used in the description. Recognizing this terminology is allowed and supported by the text.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Architected a scalable enterprise platform."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Architected a scalable enterprise platform.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The verb 'Architected' implies independent ownership of the design and implementation of the platform, distinguishing it from merely assisting or following guided work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The term 'Architected' indicates that the student made high-level design choices to create a system, rather than just applying established methods or investigating a question.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text states the action of architecting but does not describe any specific test, review, baseline comparison, or external assessment method used to evaluate the platform.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "While the platform is described as 'scalable', no concrete outcome, measured result (e.g., specific performance metrics), or statement of adoption by an organization is provided.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "scalable enterprise platform",
+          "rationale": "The phrase 'scalable enterprise platform' is a domain concept describing the type of system designed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Architected a scalable enterprise platform."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a direct verbatim quote from the source document describing an activity. The category 'activity' is appropriate for this description."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The verb 'Architected' implies high-level design and ownership of the system's structure, but it does not explicitly state that the student directed a team, managed others, or independently owned the entire deliverable to the exclusion of collaboration. Per rubric instructions, titles or action verbs alone are insufficient to establish 'led'; explicit description of individual responsibility or directing work is required."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The term 'Architected' explicitly denotes making high-level design choices and defining system structure, which aligns with the definition of the 'designed' depth label (made and explained design choices)."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The source text describes an action ('Architected') but contains no mention of tests, reviews, baselines, comparisons, or external assessments. Therefore, 'unknown' is the correct evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source mentions the platform is 'scalable', which is a design attribute, not a concrete outcome, measured result, or statement of adoption by an organization. Thus, 'unknown' is the correct impact label."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The phrase 'scalable enterprise platform' correctly identifies a domain concept/concept used in the description. Recognizing this terminology is allowed and supported by the text."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The verb 'Architected' implies high-level design and ownership of the system's structure, but it does not explicitly state that the student directed a team, managed others, or independently owned the entire deliverable to the exclusion of collaboration. Per rubric instructions, titles or action verbs alone are insufficient to establish 'led'; explicit description of individual responsibility or directing work is required."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:40:19.9760308Z",
+        "2026-09-30T16:40:34.2093801Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "8d98657e3eb59bc10b81fd415e281df4cb63c7c34d5da8d968f1292667bcfbd2"
+      },
+      "draft_response_sha256": "3172399283fd8c3a4fd2b5ced521812f144e069956e0ca7fd2f70f3a81f33e9e",
+      "review_response_sha256": "4d2bd89cd579c560dbd204b1b87de5ee842ac5aa9d0aa474e263e3731af5107d"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Architected a scalable enterprise platform.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Architected a scalable enterprise platform.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Software architecture"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "scalable enterprise platform"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {},
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What architecture decisions did you personally make, and how were they evaluated?"
+      ],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [
+        "Contribution, decisions, constraints, evaluation, and outcome are unstated."
+      ],
+      "model_prediction": [],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

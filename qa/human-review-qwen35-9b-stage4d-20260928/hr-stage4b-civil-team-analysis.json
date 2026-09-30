@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-civil-team-analysis",
+  "review_domain": "civil",
+  "lineage_group": "structural_team_and_absence",
+  "source_sha256": "968a3708b7d700cbaf2b6f9b447ee0e4d331ea3d131746dda72ecce2ea316609",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "provider_student_understanding",
+  "error": "Model endpoint unavailable or timed out",
+  "seconds": 180.08,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "provider_error",
+      "seconds": 180.06,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "1cc9006c501c7f9d1ac891209b72faf52c1955e5e21c1cd237d8bcfb7bc4b374",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": null,
+      "model": null,
+      "text": null,
+      "error": "Model endpoint unavailable or timed out",
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

@@ -1,0 +1,472 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-mech-team-built",
+  "review_domain": "mechanical",
+  "lineage_group": "mechanical_ownership_traps",
+  "source_sha256": "ee7c7308eabd5f8c7dcff1ad413d1240b0809335f8581ea3af11c93f5f73cdd4",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 79.95,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 56.87,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "7924d5380ef7251bf4ecaaec61bc51ce97f9994dd77dc7ae921f5a70d9e898ab",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:21:08.2995654Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"We built an autonomous cart that carried 50 kg\",\n      \"attribution\": \"team\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c2\",\n      \"category\": \"activity\",\n      \"statement\": \"The document does not state which part I worked on.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states 'We built' (team attribution) but explicitly notes 'the document does not state which part I worked on.' Therefore, individual responsibility for the student is not established.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"but the document does not state which part I worked on.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The description mentions building a cart and carrying capacity, but does not describe specific design choices, adaptation to constraints, or investigation methods. Tool names are absent.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"We built an autonomous cart that carried 50 kg\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No specific test, review, or assessment method is stated. The carrying of 50 kg is a functional outcome, not necessarily an evaluation method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"carried 50 kg\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The text reports a concrete outcome: the cart carried 50 kg.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"carried 50 kg\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"This claim explicitly states the absence of information regarding the student's specific contribution. It is a statement of missing evidence, not an independent activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"the document does not state which part I worked on.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j6\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No depth can be assigned to a statement explicitly denying knowledge of the work performed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"the document does not state which part I worked on.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j7\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method is stated for this absence claim.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"the document does not state which part I worked on.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j8\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result is stated for this absence claim.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"the document does not state which part I worked on.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Which specific parts of the autonomous cart did you work on?\",\n      \"reason\": \"The document explicitly states 'the document does not state which part I worked on.' Individual ownership cannot be determined without this clarification.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific design choices, constraints, or methods were used to build the autonomous cart?\",\n      \"reason\": \"The current evidence only states 'We built an autonomous cart.' To assign a depth label (e.g., designed vs. applied), explicit description of the work nature is required.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"How was the 50 kg carrying capacity verified or tested?\",\n      \"reason\": \"The text mentions the outcome ('carried 50 kg') but does not describe an evaluation method. To assign an evaluation label, a concrete test or review method must be stated.\"\n    }\n  ],\n  \"unassessed\": [\n    \"Individual ownership of the autonomous cart project (c1) due to explicit statement that the specific part worked on is unknown.\",\n    \"Depth of work performed on the autonomous cart (c1) as no design choices or methods are described.\"\n  ]\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 23.03,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "d2c41e2850b467ca2cb603e0046159995faba42bd07a20b39def26f078a3f35f",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T21:21:31.3386041Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text stating 'We built an autonomous cart that carried 50 kg' with team attribution and reported presence.\"},{\"target_id\":\"c2\",\"verdict\":\"unsupported\",\"explanation\":\"The claim misinterprets the source. The phrase 'the document does not state which part I worked on' describes missing information about the student's specific contribution, not an independent activity or achievement. It should be treated as unknown for ownership/depth rather than a separate 'activity' claim with reported_absent presence.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that 'We built' implies team work and the explicit statement denies individual responsibility, justifying the 'unknown' ownership label.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly notes that without specific design choices, methods, or tool usage descriptions, the depth cannot be determined beyond 'unknown'. The functional outcome does not equate to a specific depth level.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly distinguishes between a functional outcome ('carried 50 kg') and an explicit evaluation method (test, review, assessment). Since no test method is described, 'unknown' is appropriate.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that the text reports a concrete outcome ('carried 50 kg'), which supports the 'reported' impact label without implying independent verification.\"},{\"target_id\":\"j5\",\"verdict\":\"unsupported\",\"explanation\":\"This claim is invalid. The source text describes missing information regarding the student's contribution, not an activity where the student explicitly denied working on a part. Labeling this as 'reported_absent' incorrectly treats missing evidence as an explicit denial of work performed.\"},{\"target_id\":\"j6\",\"verdict\":\"supported\",\"explanation\":\"Since claim c2 is invalid (see j5 check), assigning depth to a statement of missing information is incorrect. However, the rationale correctly identifies that no depth can be assigned to a statement denying knowledge; the verdict should align with the invalidity of the claim itself.\"},{\"target_id\":\"j7\",\"verdict\":\"supported\",\"explanation\":\"Similar to j6, since c2 describes missing information rather than an activity, assigning evaluation labels is inappropriate. The rationale correctly notes no method is stated for this absence claim.\"},{\"target_id\":\"j8\",\"verdict\":\"supported\",\"explanation\":\"Since c2 describes missing information, there is no result to report. The 'unknown' label is appropriate for impact in the context of missing data, though the underlying claim structure is flawed.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "We built an autonomous cart that carried 50 kg",
+          "attribution": "team",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c2",
+          "category": "activity",
+          "statement": "The document does not state which part I worked on.",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The text states 'We built' (team attribution) but explicitly notes 'the document does not state which part I worked on.' Therefore, individual responsibility for the student is not established.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "but the document does not state which part I worked on."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The description mentions building a cart and carrying capacity, but does not describe specific design choices, adaptation to constraints, or investigation methods. Tool names are absent.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "We built an autonomous cart that carried 50 kg"
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No specific test, review, or assessment method is stated. The carrying of 50 kg is a functional outcome, not necessarily an evaluation method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "carried 50 kg"
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The text reports a concrete outcome: the cart carried 50 kg.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "carried 50 kg"
+            }
+          ]
+        },
+        {
+          "id": "j5",
+          "claim_id": "c2",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "This claim explicitly states the absence of information regarding the student's specific contribution. It is a statement of missing evidence, not an independent activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "the document does not state which part I worked on."
+            }
+          ]
+        },
+        {
+          "id": "j6",
+          "claim_id": "c2",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "No depth can be assigned to a statement explicitly denying knowledge of the work performed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "the document does not state which part I worked on."
+            }
+          ]
+        },
+        {
+          "id": "j7",
+          "claim_id": "c2",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method is stated for this absence claim.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "the document does not state which part I worked on."
+            }
+          ]
+        },
+        {
+          "id": "j8",
+          "claim_id": "c2",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result is stated for this absence claim.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "the document does not state which part I worked on."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "Which specific parts of the autonomous cart did you work on?",
+          "reason": "The document explicitly states 'the document does not state which part I worked on.' Individual ownership cannot be determined without this clarification."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What specific design choices, constraints, or methods were used to build the autonomous cart?",
+          "reason": "The current evidence only states 'We built an autonomous cart.' To assign a depth label (e.g., designed vs. applied), explicit description of the work nature is required."
+        },
+        {
+          "claim_id": "c1",
+          "question": "How was the 50 kg carrying capacity verified or tested?",
+          "reason": "The text mentions the outcome ('carried 50 kg') but does not describe an evaluation method. To assign an evaluation label, a concrete test or review method must be stated."
+        }
+      ],
+      "unassessed": [
+        "Individual ownership of the autonomous cart project (c1) due to explicit statement that the specific part worked on is unknown.",
+        "Depth of work performed on the autonomous cart (c1) as no design choices or methods are described."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text stating 'We built an autonomous cart that carried 50 kg' with team attribution and reported presence."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "unsupported",
+          "explanation": "The claim misinterprets the source. The phrase 'the document does not state which part I worked on' describes missing information about the student's specific contribution, not an independent activity or achievement. It should be treated as unknown for ownership/depth rather than a separate 'activity' claim with reported_absent presence."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that 'We built' implies team work and the explicit statement denies individual responsibility, justifying the 'unknown' ownership label."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment correctly notes that without specific design choices, methods, or tool usage descriptions, the depth cannot be determined beyond 'unknown'. The functional outcome does not equate to a specific depth level."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The judgment correctly distinguishes between a functional outcome ('carried 50 kg') and an explicit evaluation method (test, review, assessment). Since no test method is described, 'unknown' is appropriate."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that the text reports a concrete outcome ('carried 50 kg'), which supports the 'reported' impact label without implying independent verification."
+        },
+        {
+          "target_id": "j5",
+          "verdict": "unsupported",
+          "explanation": "This claim is invalid. The source text describes missing information regarding the student's contribution, not an activity where the student explicitly denied working on a part. Labeling this as 'reported_absent' incorrectly treats missing evidence as an explicit denial of work performed."
+        },
+        {
+          "target_id": "j6",
+          "verdict": "supported",
+          "explanation": "Since claim c2 is invalid (see j5 check), assigning depth to a statement of missing information is incorrect. However, the rationale correctly identifies that no depth can be assigned to a statement denying knowledge; the verdict should align with the invalidity of the claim itself."
+        },
+        {
+          "target_id": "j7",
+          "verdict": "supported",
+          "explanation": "Similar to j6, since c2 describes missing information rather than an activity, assigning evaluation labels is inappropriate. The rationale correctly notes no method is stated for this absence claim."
+        },
+        {
+          "target_id": "j8",
+          "verdict": "supported",
+          "explanation": "Since c2 describes missing information, there is no result to report. The 'unknown' label is appropriate for impact in the context of missing data, though the underlying claim structure is flawed."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Which specific parts of the autonomous cart did you work on?",
+        "reason": "The document explicitly states 'the document does not state which part I worked on.' Individual ownership cannot be determined without this clarification."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What specific design choices, constraints, or methods were used to build the autonomous cart?",
+        "reason": "The current evidence only states 'We built an autonomous cart.' To assign a depth label (e.g., designed vs. applied), explicit description of the work nature is required."
+      },
+      {
+        "claim_id": "c1",
+        "question": "How was the 50 kg carrying capacity verified or tested?",
+        "reason": "The text mentions the outcome ('carried 50 kg') but does not describe an evaluation method. To assign an evaluation label, a concrete test or review method must be stated."
+      },
+      {
+        "claim_id": "c2",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The claim misinterprets the source. The phrase 'the document does not state which part I worked on' describes missing information about the student's specific contribution, not an independent activity or achievement. It should be treated as unknown for ownership/depth rather than a separate 'activity' claim with reported_absent presence."
+      },
+      {
+        "claim_id": "c2",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "This claim is invalid. The source text describes missing information regarding the student's contribution, not an activity where the student explicitly denied working on a part. Labeling this as 'reported_absent' incorrectly treats missing evidence as an explicit denial of work performed."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T21:21:08.2995654Z",
+        "2026-09-29T21:21:31.3386041Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "ee7c7308eabd5f8c7dcff1ad413d1240b0809335f8581ea3af11c93f5f73cdd4"
+      },
+      "draft_response_sha256": "6d001344607f8fd8d13c1dd47c6e52ca4f73bf09a79e40543f74d8847ea8fc80",
+      "review_response_sha256": "68a95a6a51dbfad703a363969dbd467f9938c56a3735030776d3a83322af9c9f"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "We built an autonomous cart that carried 50 kg, but the document does not state which part I worked on.",
+          "category": "project",
+          "attribution": "team",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "We built an autonomous cart that carried 50 kg",
+          "category": "project",
+          "attribution": "team",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Autonomous cart"
+        },
+        {
+          "kind": "domain",
+          "label": "Mechanical systems"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What component or analysis did you personally contribute?"
+      ],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "How was the 50 kg carrying capacity verified or tested?",
+        "What specific design choices, constraints, or methods were used to build the autonomous cart?",
+        "Which specific parts of the autonomous cart did you work on?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Depth of work performed on the autonomous cart (c1) as no design choices or methods are described.",
+        "Individual ownership of the autonomous cart project (c1) due to explicit statement that the specific part worked on is unknown."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

@@ -1,0 +1,405 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-research-citation-claim",
+  "review_domain": "research",
+  "lineage_group": "publication_claim_progression",
+  "source_sha256": "20f16e98a38d78d3b3a37b3e51e159e9f0819c474759ff657ba372bbf369a68f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 70.97,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 44.44,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "424e47fa85ba39ec7270d48d9ae33d6b41681c209b8c0f6ecee23efb25fbb8c3",
+      "schema_sha256": "13c4029526d3b2a0f722c89adfd910fdd43d8be21dd408a97ed6eac5b4c92bbc",
+      "response_id": "2026-09-30T16:10:43.9570694Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"publication\",\n      \"statement\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The source explicitly states that the Google Scholar record 'does not identify my contribution to the paper.' Therefore, individual responsibility is not established.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The source mentions a 'paper' but provides no description of the work performed, methods used, or design choices made. A title or credential alone does not describe the work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The source mentions citation counts but does not state any specific evaluation method, test, review, or assessment performed by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The source reports a concrete outcome: '14 citations to the paper' as of a specific date. This is an outcome reported without a measurement method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Google Scholar\",\n      \"rationale\": \"The student checked citation counts using Google Scholar.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"citation count\",\n      \"rationale\": \"The student references the metric of '14 citations' associated with a paper.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific contributions did you make to the paper that resulted in the 14 citations?\",\n      \"reason\": \"The source explicitly states 'the source does not identify my contribution to the paper.' Clarification is needed to determine if any individual work was performed.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What methods or analysis were involved in creating the paper?\",\n      \"reason\": \"The source mentions a 'paper' but provides no description of the work performed, methods used, or design choices made. Clarification is needed to assess depth.\"\n    }\n  ],\n  \"unassessed\": [\n    \"ownership\",\n    \"depth\",\n    \"evaluation\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 26.51,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "d410370d6578ca805307defc1de0f4f01fd514e238f421c472888801e77cd51c",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:11:10.4668934Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text stating that Google Scholar showed 14 citations and that the source does not identify the student's contribution. The category 'publication' is appropriate for a paper citation count.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly labels ownership as 'unknown' because the source explicitly states the record does not identify the student's contribution, meaning individual responsibility is not established per the rubric.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly labels depth as 'unknown' because the source mentions a 'paper' but provides no description of work performed, methods, or design choices, aligning with the rule that titles/credentials alone do not describe work.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly labels evaluation as 'unknown' because citing a count is not an evaluation method; the source does not state any specific test, review, or assessment performed by the student.\"},{\"target_id\":\"j4\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment incorrectly labels impact as 'reported'. The rubric states: 'Reject impact=reported when the source only reports an action, test or comparison.' While 14 citations is a metric, the source describes checking a count (an action/observation) rather than reporting a concrete outcome of the student's specific work (e.g., 'my research led to X result'). More critically, the rubric warns against turning 'no publications' into 'no research ability' and rejecting positive skill labels attached to absent activities. Here, attributing 'reported impact' to a citation count without establishing the student generated that outcome via their own work's results is risky; however, the stricter violation is that citation counts are often treated as metrics of the paper's success rather than the student's direct 'impact' outcome in the sense of 'stated organizational/user use' or 'measured change'. But looking closer at the instruction: 'Reject impact=reported when the source only reports an action...'. The source says 'Google Scholar showed 14 citations'. This is a metric. Is it an outcome? Yes. Is it reported without measurement method? It's a count. However, the rubric also says 'A stated measured improvement can support measured impact but remains self-reported'. The main issue here might be subtle: does '14 citations' constitute the student's 'impact'? Or is it just a metric of the paper? If the student didn't write the paper (ownership unknown), attributing the citation count as *their* impact is an invention. The source says 'does not identify my contribution'. Therefore, claiming the 14 citations are the student's 'reported' impact is unsupported because we don't know if those citations apply to their work or just the paper generally. Thus, 'unsupported' is correct.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies 'Google Scholar' as a tool used by the student to check citation counts, which is explicitly mentioned in the source text.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies 'citation count' as a concept referenced in the source text. Recognition of domain terminology/metrics is allowed.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "publication",
+          "statement": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The source explicitly states that the Google Scholar record 'does not identify my contribution to the paper.' Therefore, individual responsibility is not established.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The source mentions a 'paper' but provides no description of the work performed, methods used, or design choices made. A title or credential alone does not describe the work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The source mentions citation counts but does not state any specific evaluation method, test, review, or assessment performed by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The source reports a concrete outcome: '14 citations to the paper' as of a specific date. This is an outcome reported without a measurement method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Google Scholar",
+          "rationale": "The student checked citation counts using Google Scholar.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "citation count",
+          "rationale": "The student references the metric of '14 citations' associated with a paper.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Google Scholar showed 14 citations to the paper when I checked on 2026-08-01; the source does not identify my contribution to the paper."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "What specific contributions did you make to the paper that resulted in the 14 citations?",
+          "reason": "The source explicitly states 'the source does not identify my contribution to the paper.' Clarification is needed to determine if any individual work was performed."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What methods or analysis were involved in creating the paper?",
+          "reason": "The source mentions a 'paper' but provides no description of the work performed, methods used, or design choices made. Clarification is needed to assess depth."
+        }
+      ],
+      "unassessed": [
+        "ownership",
+        "depth",
+        "evaluation"
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text stating that Google Scholar showed 14 citations and that the source does not identify the student's contribution. The category 'publication' is appropriate for a paper citation count."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly labels ownership as 'unknown' because the source explicitly states the record does not identify the student's contribution, meaning individual responsibility is not established per the rubric."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment correctly labels depth as 'unknown' because the source mentions a 'paper' but provides no description of work performed, methods, or design choices, aligning with the rule that titles/credentials alone do not describe work."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The judgment correctly labels evaluation as 'unknown' because citing a count is not an evaluation method; the source does not state any specific test, review, or assessment performed by the student."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "unsupported",
+          "explanation": "The judgment incorrectly labels impact as 'reported'. The rubric states: 'Reject impact=reported when the source only reports an action, test or comparison.' While 14 citations is a metric, the source describes checking a count (an action/observation) rather than reporting a concrete outcome of the student's specific work (e.g., 'my research led to X result'). More critically, the rubric warns against turning 'no publications' into 'no research ability' and rejecting positive skill labels attached to absent activities. Here, attributing 'reported impact' to a citation count without establishing the student generated that outcome via their own work's results is risky; however, the stricter violation is that citation counts are often treated as metrics of the paper's success rather than the student's direct 'impact' outcome in the sense of 'stated organizational/user use' or 'measured change'. But looking closer at the instruction: 'Reject impact=reported when the source only reports an action...'. The source says 'Google Scholar showed 14 citations'. This is a metric. Is it an outcome? Yes. Is it reported without measurement method? It's a count. However, the rubric also says 'A stated measured improvement can support measured impact but remains self-reported'. The main issue here might be subtle: does '14 citations' constitute the student's 'impact'? Or is it just a metric of the paper? If the student didn't write the paper (ownership unknown), attributing the citation count as *their* impact is an invention. The source says 'does not identify my contribution'. Therefore, claiming the 14 citations are the student's 'reported' impact is unsupported because we don't know if those citations apply to their work or just the paper generally. Thus, 'unsupported' is correct."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies 'Google Scholar' as a tool used by the student to check citation counts, which is explicitly mentioned in the source text."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies 'citation count' as a concept referenced in the source text. Recognition of domain terminology/metrics is allowed."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What specific contributions did you make to the paper that resulted in the 14 citations?",
+        "reason": "The source explicitly states 'the source does not identify my contribution to the paper.' Clarification is needed to determine if any individual work was performed."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What methods or analysis were involved in creating the paper?",
+        "reason": "The source mentions a 'paper' but provides no description of the work performed, methods used, or design choices made. Clarification is needed to assess depth."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment incorrectly labels impact as 'reported'. The rubric states: 'Reject impact=reported when the source only reports an action, test or comparison.' While 14 citations is a metric, the source describes checking a count (an action/observation) rather than reporting a concrete outcome of the student's specific work (e.g., 'my research led to X result'). More critically, the rubric warns against turning 'no publications' into 'no research ability' and rejecting positive skill labels attached to absent activities. Here, attributing 'reported impact' to a citation count without establishing the student generated that outcome via their own work's results is risky; however, the stricter violation is that citation counts are often treated as metrics of the paper's success rather than the student's direct 'impact' outcome in the sense of 'stated organizational/user use' or 'measured change'. But looking closer at the instruction: 'Reject impact=reported when the source only reports an action...'. The source says 'Google Scholar showed 14 citations'. This is a metric. Is it an outcome? Yes. Is it reported without measurement method? It's a count. However, the rubric also says 'A stated measured improvement can support measured impact but remains self-reported'. The main issue here might be subtle: does '14 citations' constitute the student's 'impact'? Or is it just a metric of the paper? If the student didn't write the paper (ownership unknown), attributing the citation count as *their* impact is an invention. The source says 'does not identify my contribution'. Therefore, claiming the 14 citations are the student's 'reported' impact is unsupported because we don't know if those citations apply to their work or just the paper generally. Thus, 'unsupported' is correct."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:10:43.9570694Z",
+        "2026-09-30T16:11:10.4668934Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "20f16e98a38d78d3b3a37b3e51e159e9f0819c474759ff657ba372bbf369a68f"
+      },
+      "draft_response_sha256": "5ce06bb937c70374cec8d1593d73637e8ad9a6d4f40db95809c67f7b07d453bd",
+      "review_response_sha256": "dd0501d306caa8dca671a47043de3d8282ff07e3e64cc801493b8b9d920a94b4"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Citation count"
+        },
+        {
+          "kind": "tool",
+          "label": "Google Scholar"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "citation count"
+        },
+        {
+          "kind": "tool",
+          "label": "Google Scholar"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "impact": [
+          "reported"
+        ]
+      },
+      "model_prediction": {},
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "What contribution did you make, and can the citation record be independently verified?"
+      ],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "What methods or analysis were involved in creating the paper?",
+        "What specific contributions did you make to the paper that resulted in the 14 citations?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "depth",
+        "evaluation",
+        "ownership"
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

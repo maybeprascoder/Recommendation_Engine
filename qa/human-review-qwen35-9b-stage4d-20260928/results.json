@@ -1,0 +1,1486 @@
+[
+  {
+    "review_id": "hr-stage4b-cs-parser-owned",
+    "review_domain": "computer_science",
+    "lineage_group": "programming_progression",
+    "source_sha256": "c0a376a5699e0d52ce80666ed81c8a875976697274defd2cdc3c6d6a1418f61e",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 175.45,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-cs-parser-owned.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-cache-design",
+    "review_domain": "computer_science",
+    "lineage_group": "software_delivery_progression",
+    "source_sha256": "69b09c7d4bb72edcf26398ae0a4be3573074fa5789d63da60114599c1a1262d6",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 83.73,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-cs-cache-design.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-pytorch-bare",
+    "review_domain": "machine_learning",
+    "lineage_group": "ml_pipeline_progression",
+    "source_sha256": "2da21157615ae286c6f60c638cd381c69b7295e4b6ca77de4478a3c3c96c8de9",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 74.59,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ml-pytorch-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-feature-design",
+    "review_domain": "machine_learning",
+    "lineage_group": "ml_pipeline_progression",
+    "source_sha256": "5225b9c3e6ad5b43345d8e982f399f9d8d5a7b367e2ecd1bf0c600e30200f196",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 63.26,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ml-feature-design.json"
+  },
+  {
+    "review_id": "hr-machine-learning-evaluation",
+    "review_domain": "machine_learning",
+    "lineage_group": "machine_learning_evidence",
+    "source_sha256": "101ed730ce3ce517fde17087daf68c3eebe0f0214b1e851335255fb5c58f7867",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 104.74,
+    "difference_fields": [
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-machine-learning-evaluation.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-nessus-bare",
+    "review_domain": "cybersecurity",
+    "lineage_group": "nessus_progression",
+    "source_sha256": "8636daccb3fb9997f82553ca6e948dcbaa4c67bed109d0a159b5c0fdbc0df6cf",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 59.04,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-nessus-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-remediation-validation",
+    "review_domain": "cybersecurity",
+    "lineage_group": "nessus_progression",
+    "source_sha256": "636eae45a7ae8e6f2f559f7b529a830913b005d0899a86ca20f429fd3d12a8f5",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 127.29,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-remediation-validation.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-vuln-workflow",
+    "review_domain": "cybersecurity",
+    "lineage_group": "nessus_progression",
+    "source_sha256": "704296cd360c484f398e993a19e6d8fe508849aae8b2ba55d4932fdd374f446d",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 79.17,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-cyber-vuln-workflow.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-wireshark-bare",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "cbd7368c7475a3e9665306caf17e385478f941b5df55ceb8c8d358984ac57e43",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 65.38,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-net-wireshark-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-etabs-bare",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "9e865e01ff508b9acb3e91c37a553909356c74187d8851e83a4e0ddea3e8894c",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 65.01,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-etabs-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-member-design",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "80b464df9645ca07ccd3d6af34138c6b23310635228121a610acfac4bb8d1dc6",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 92.54,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-member-design.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-design-absent",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "91a90135ac760e85c4f48309618d7a7179be2caa3f0eb8e3e145f56aaec2e80f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 141.95,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "judgments",
+      "explicit_absence",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-design-absent.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-solidworks-bare",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "5fd7e71a3a9b9cf64f0870a075dd3c8c6c47acb07d91f1de7bdbfab4bac6ae5d",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 69.34,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-mech-solidworks-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-mesh-validation",
+    "review_domain": "mechanical",
+    "lineage_group": "ansys_simulation_progression",
+    "source_sha256": "784edac7cb5f875f6dd68d83f8f1b697be114f3d324b46550502f16b4eec9ba0",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 77.13,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-mech-mesh-validation.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-counter-implemented",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "verilog_progression",
+    "source_sha256": "1bbb2fccfdd7fd7686ecc6d4e451482c545b1f422e1f38ed09bc6868c25b0596",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 85.29,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ee-counter-implemented.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-bus-controller",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "verilog_progression",
+    "source_sha256": "8010b1409f0be25a166fa807b04176ec9dae866e628b26b4188b920afd124995",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 101.89,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ee-bus-controller.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-paper-bare",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "be6153a1946a5ba86970ff76d7b33c95aabcd99710ff877aff81e96c725cd798",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 74.44,
+    "difference_fields": [
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-research-paper-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-preprint-method",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "d4a1a69afdb69c821f494ec70a639e18230bf6d3c14edec05f24baada83c781c",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 91.58,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-research-preprint-method.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-peer-reviewed-explicit",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "bc24fbcc2f27f682b41af8246b175f560900ac94428983b102247d6bfc86b827",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Only one judgment per claim and dimension is allowed",
+    "seconds": 121.55,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-research-peer-reviewed-explicit.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-citation-claim",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "20f16e98a38d78d3b3a37b3e51e159e9f0819c474759ff657ba372bbf369a68f",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 80.48,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-research-citation-claim.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-thematic-coding",
+    "review_domain": "research",
+    "lineage_group": "qualitative_research_progression",
+    "source_sha256": "2ba7919e0aaad3e2ea450e6c508fd2ae52cc1eb4b67049da941c827e5c49699c",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 81.88,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-research-thematic-coding.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-grading-only",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "6aada0d3c1dd34a74a6609f87fd35f7e32026c6334e4654bd000e4fc917af49b",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 85.79,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-grading-only.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-adaptive-course",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "437763db8f268504cdd6a65d68993ffabc26e8c69421dfb9f5d089d1d719b8dc",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 91.05,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-teach-adaptive-course.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-bio-script",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "a0a7e2fc5b62b4bf4c6548e346aeb0a7719530d6ce8df7ca6a7560f79bbe3417",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 89.9,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-bio-script.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-clinical-workflow",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "1d99dcce5e8e899377d6eb5f1e0591bc25526035b540b4d47a72d3381cca99cb",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 95.01,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-clinical-workflow.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-action-verb",
+    "review_domain": "semantic_traps",
+    "lineage_group": "unsupported_inference_traps",
+    "source_sha256": "46d94e91a25ef92e5af88761f5f2f2acac4a2f3bdf3fdcdfa6d6358229e4c52e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 72.96,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-action-verb.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-metric-quant",
+    "review_domain": "semantic_traps",
+    "lineage_group": "unsupported_inference_traps",
+    "source_sha256": "5d22e2e7d9fc0fd82334769a05bb57cbd1e2518dc3f664a6010105d91ccac025",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 92.2,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-metric-quant.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-networking-absent",
+    "review_domain": "semantic_traps",
+    "lineage_group": "presence_and_attribution_traps",
+    "source_sha256": "cfb7b25e59ffae1698b5887ca1843dfe2d6aa222cd5655dc16bb8c01752a719e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 71.91,
+    "difference_fields": [
+      "claims",
+      "contexts"
+    ],
+    "case_artifact": "hr-stage4b-trap-networking-absent.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-publication-prestige",
+    "review_domain": "research",
+    "lineage_group": "unsupported_inference_traps",
+    "source_sha256": "d98ccb6bbcc39665b49892ab28bd3d3b5427194bb07996beabd06881a485b7a3",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 85.98,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-publication-prestige.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-third-party",
+    "review_domain": "semantic_traps",
+    "lineage_group": "presence_and_attribution_traps",
+    "source_sha256": "8110c2222460abf906a7ee92e38856e45ce2ee00e9a92d952583591ca9e94b4e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 76.01,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-third-party.json"
+  },
+  {
+    "review_id": "hr-computer-science-programming",
+    "review_domain": "computer_science",
+    "lineage_group": "programming_evidence",
+    "source_sha256": "ffea55bf9a01f101e50c562ae5e186daba115a4f0bbd46ad6141e316ab435170",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 96.93,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-computer-science-programming.json"
+  },
+  {
+    "review_id": "hr-cybersecurity-packet-analysis",
+    "review_domain": "cybersecurity",
+    "lineage_group": "network_security_evidence",
+    "source_sha256": "dbda32fbb134fcfe35c271f1e5a962d6e429019ce71c55f93b68c31535dac0ec",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 126.59,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-cybersecurity-packet-analysis.json"
+  },
+  {
+    "review_id": "hr-civil-structural-design",
+    "review_domain": "civil",
+    "lineage_group": "structural_engineering_evidence",
+    "source_sha256": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 71.16,
+    "difference_fields": [],
+    "case_artifact": "hr-civil-structural-design.json"
+  },
+  {
+    "review_id": "hr-mechanical-simulation",
+    "review_domain": "mechanical",
+    "lineage_group": "mechanical_simulation_evidence",
+    "source_sha256": "55be07d99fb22e3f7787fbf630879b72094967779bfa630e4ea964ded72f27cf",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 125.13,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-mechanical-simulation.json"
+  },
+  {
+    "review_id": "hr-electrical-embedded-design",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "embedded_digital_systems_evidence",
+    "source_sha256": "7088a41956349fcee4fad97b095e8386e383251d4099c52ab1f7117afc8ac3d1",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 180.0,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-electrical-embedded-design.json"
+  },
+  {
+    "review_id": "hr-qualitative-research",
+    "review_domain": "research",
+    "lineage_group": "qualitative_research_evidence",
+    "source_sha256": "8d1f37e9fe76490f529f844619fc422aa8efac65567385c623f341083411aa7f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 225.98,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "explicit_absence",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-qualitative-research.json"
+  },
+  {
+    "review_id": "hr-teaching-instruction",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_instruction_evidence",
+    "source_sha256": "bd7bcb667d3222a76e7c655193e079920cee8a1402eac84ff783d124557a9424",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 54.49,
+    "difference_fields": [],
+    "case_artifact": "hr-teaching-instruction.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-tools-context",
+    "review_domain": "computer_science",
+    "lineage_group": "software_delivery_progression",
+    "source_sha256": "42df096b044aa86f8e220a8a89bb992272cf44a2d87598285c3ed5596ff46e2f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 71.28,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cs-tools-context.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-assisted-bugfix",
+    "review_domain": "computer_science",
+    "lineage_group": "software_delivery_progression",
+    "source_sha256": "0aab6a6faa3f8c487e9af462434b70605a319b2a3c6ff14ecb81cd02a084eafc",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 73.4,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cs-assisted-bugfix.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-shared-api",
+    "review_domain": "computer_science",
+    "lineage_group": "software_delivery_progression",
+    "source_sha256": "54d576f83711209dbbc1b9a691b563d8aef10fbcbd144c7b6d2a0c280417dfbe",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 69.23,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-cs-shared-api.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-sql-bare",
+    "review_domain": "computer_science",
+    "lineage_group": "programming_progression",
+    "source_sha256": "265c6aefad4efced3dfca00f7e9233bb2a79f914494945b02d3c7f9ab16117b7",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 48.34,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cs-sql-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-runbook-script",
+    "review_domain": "computer_science",
+    "lineage_group": "programming_progression",
+    "source_sha256": "d901ce1e769e7f5f0a7d85f15830a7ae567e445ffc968625d99d279604c7fb1a",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 63.29,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cs-runbook-script.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-team-retry",
+    "review_domain": "computer_science",
+    "lineage_group": "service_ownership_and_systems",
+    "source_sha256": "0e9a06a0f0d59784f1e55fe5d93561beaa903b657650ef8664d0aae948914ee6",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 57.66,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-cs-team-retry.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-memory-investigation",
+    "review_domain": "computer_science",
+    "lineage_group": "service_ownership_and_systems",
+    "source_sha256": "62cfd2e412b13665df0c910ef76eba6c388136bbbb9b8cc2f3079c5b69d025de",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 59.82,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-cs-memory-investigation.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-cloud-template",
+    "review_domain": "computer_science",
+    "lineage_group": "service_ownership_and_systems",
+    "source_sha256": "992e306f1eced012588df3be8b3affd316fe08a376dcf96625f30a7d62d7b52f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 53.3,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-cs-cloud-template.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-architected-vague",
+    "review_domain": "computer_science",
+    "lineage_group": "service_ownership_and_systems",
+    "source_sha256": "8d98657e3eb59bc10b81fd415e281df4cb63c7c34d5da8d968f1292667bcfbd2",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 48.15,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-cs-architected-vague.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-tutorial-classifier",
+    "review_domain": "machine_learning",
+    "lineage_group": "ml_pipeline_progression",
+    "source_sha256": "0a95662144d733be6abc7d103f8cb24bb10dd433e8783afc95dfd3f2a2fdf18d",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 69.11,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-ml-tutorial-classifier.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-team-component",
+    "review_domain": "machine_learning",
+    "lineage_group": "ml_pipeline_progression",
+    "source_sha256": "3631bd7fcffd551b49824126b7303ed09fd9e224c09b417a36dcedc6687eebbf",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 122.02,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ml-team-component.json"
+  },
+  {
+    "review_id": "hr-stage4b-data-cleaning-code",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "39d4a9a79044c8a2511d16bd4a165eced9d4622d2e861f562fffc54fb6c0eccd",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 49.18,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-data-cleaning-code.json"
+  },
+  {
+    "review_id": "hr-stage4b-stats-ab-test",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "4fcd76544b27f97af01aa5acb46df756efc963a561d8c3a8cdbd424678be6c77",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 42.56,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-stats-ab-test.json"
+  },
+  {
+    "review_id": "hr-stage4b-dashboard-reporting",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "cddbda07aae5536fb08f8fd23ef68224ed04173f82ef53f339074ec150fd2931",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Each canonical education claim needs its own academic record",
+    "seconds": 42.43,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-dashboard-reporting.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-improved-vague",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "f938d25bad968754c43b53dbe318929f8c9414ccd8d1cc64c62052ad64b4364b",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+    "seconds": 44.78,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ml-improved-vague.json"
+  },
+  {
+    "review_id": "hr-stage4b-nlp-bert-bare",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "612111e4d8c13cc034dbbb0faba6eb905b52a88b1abf2578140d759d1135318f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 50.13,
+    "difference_fields": [
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-nlp-bert-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-nlp-error-analysis",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2afba7c6a1af0b61463eef9efc4d0053c04d48019b935c13c540e7a72972d64b",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 62.78,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-nlp-error-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-bio-ml-pipeline",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 48.87,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-bio-ml-pipeline.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-nessus-guided",
+    "review_domain": "cybersecurity",
+    "lineage_group": "nessus_progression",
+    "source_sha256": "3d484c0dd15e73862d973426ef63b2cb1ae9fb3a72672aa1831bed416f0d6d0a",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 65.6,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-nessus-guided.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-guided-capture",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "6f899a0b77c3d32d1c2d8dc77ef8837daceaab54e8112308d594c9e68f53c442",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 66.05,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-net-guided-capture.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-retransmission-debug",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "7a148e42967675c29e558593223458aa3e53ae619c04689ad9c93e241b13f148",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 56.78,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-net-retransmission-debug.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-migration-led",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "f24dde659cc85dd3b875a5baf09e4b412bc593742ba66652ce1857a2cbc0b77e",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 35.58,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-net-migration-led.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-kali-bare",
+    "review_domain": "cybersecurity",
+    "lineage_group": "security_inference_traps",
+    "source_sha256": "6f90da97c5923a80dc354c7a9b72480907c38403a2238c9b34d47f1328083c0b",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 41.94,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-kali-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-crypto-test-vectors",
+    "review_domain": "cybersecurity",
+    "lineage_group": "security_inference_traps",
+    "source_sha256": "9a3781e75721dc241a5e5c3e127a6da4241bdf7162dbfae0361727b34ac87f4b",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 52.2,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-crypto-test-vectors.json"
+  },
+  {
+    "review_id": "hr-stage4b-soc-team-attribution",
+    "review_domain": "cybersecurity",
+    "lineage_group": "security_inference_traps",
+    "source_sha256": "288238e61a2894910118e1f425182504ab26760e5a284076af6e729b3fcea069",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 89.92,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "explicit_absence",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-soc-team-attribution.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-title-vague",
+    "review_domain": "semantic_traps",
+    "lineage_group": "security_inference_traps",
+    "source_sha256": "6bf0c04e6b9a9c88164b455b13fffec626cb216db8dc82795f0cdf7b78d82f3a",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 47.14,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-title-vague.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-etabs-model",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "da702c2aad2298894b746fe391e8dcc9e7e648ca0ab5dd32ecb49ea2c952890f",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+    "seconds": 87.66,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-etabs-model.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-load-analysis",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "b6118101d09858cc955df743d1976100c2efb18e3cb60d1776bc54236ca69442",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 62.83,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-load-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-autocad-bare",
+    "review_domain": "civil",
+    "lineage_group": "drafting_to_design",
+    "source_sha256": "5bc6931e7ffe29fb6987ef9647407036c5a42e6fccb5db55af62debca42dc4d7",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 41.19,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-autocad-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-drafting-guided",
+    "review_domain": "civil",
+    "lineage_group": "drafting_to_design",
+    "source_sha256": "4cb078d6bee7e0974c26f1c6465df0c0158f8d267264788bef4ed6414b0f5d9a",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 40.63,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-drafting-guided.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-retaining-wall",
+    "review_domain": "civil",
+    "lineage_group": "drafting_to_design",
+    "source_sha256": "d33caee1cdda6fbebfa5b3f2a7487f82a6ea62ca8c45cac3cba1ea105fa3ba6a",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 45.44,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-retaining-wall.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-team-analysis",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "968a3708b7d700cbaf2b6f9b447ee0e4d331ea3d131746dda72ecce2ea316609",
+    "status": "structural_failure",
+    "failure_stage": "provider_student_understanding",
+    "error": "Model endpoint unavailable or timed out",
+    "seconds": 180.08,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-team-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-simulation-compare",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "75aa3c8dbff5fa61a57cd698b80cea4303cb3a5c9d3e15be59b66cf6238c4a7e",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 46.75,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-simulation-compare.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-load-number-trap",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "0f99c2178987c54ddf03a514dffb8ca3802d3b7b542333beffaf4f36ef39ef82",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 53.81,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-load-number-trap.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-cad-guided",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "f7e2bc286d37a86a08481b2cb668385c5538213136b478e25bae7c33b0da9bb7",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 58.29,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-mech-cad-guided.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-assembly-fit",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "981572fa4afd15fc570ddcf92330ad2230dbe71947aa75d47a616eff9952d646",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 66.01,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-mech-assembly-fit.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-alternatives",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "3ebbf38e0dabc86637618427a2b1ef45ab8c436e24b2e22b93c2bebb416e6399",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 101.16,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-mech-alternatives.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-ansys-bare",
+    "review_domain": "mechanical",
+    "lineage_group": "ansys_simulation_progression",
+    "source_sha256": "4f2529f2a04e0c896c46a60f47c6484ebd8559939724255f1e72b716dc8b7aad",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 43.58,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-mech-ansys-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-thermal-sim",
+    "review_domain": "mechanical",
+    "lineage_group": "ansys_simulation_progression",
+    "source_sha256": "14bdafc58911b2405114f3e957ab27996ab281698b802caaa8b34d6138efbea1",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 72.13,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-mech-thermal-sim.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-team-built",
+    "review_domain": "mechanical",
+    "lineage_group": "mechanical_ownership_traps",
+    "source_sha256": "ee7c7308eabd5f8c7dcff1ad413d1240b0809335f8581ea3af11c93f5f73cdd4",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 79.95,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-mech-team-built.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-fabricated-not-designed",
+    "review_domain": "mechanical",
+    "lineage_group": "mechanical_ownership_traps",
+    "source_sha256": "e4abc7944db54b5feaef9be6cb9db10ca1227148dc79917520b96435b8d4e6dc",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 72.68,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-mech-fabricated-not-designed.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-arduino-bare",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "arduino_progression",
+    "source_sha256": "73ac305e5b675ed79b4f747a96223df11114c7f63306aa6fec0cc7e287bd9e67",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 43.72,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ee-arduino-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-arduino-tutorial",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "arduino_progression",
+    "source_sha256": "efad5cc49446e6e71b893fdbbe58d9da69dbd1d0a53b698bed0a7a6f12ef06c1",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 63.64,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-ee-arduino-tutorial.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-sensor-calibration",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "arduino_progression",
+    "source_sha256": "59de071b7c3850724b684b83a631d8ef818fb8a914086ff3dc2535b4591cec7c",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 78.34,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ee-sensor-calibration.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-control-adopted",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "arduino_progression",
+    "source_sha256": "59634763471014f00152faa97e860b4afaf72bc2fa8ef3606fce7c68aa05fdc3",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 49.21,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ee-control-adopted.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-verilog-bare",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "verilog_progression",
+    "source_sha256": "370edc5ff4c9a8af52a9719fc1c8ebf075b6377b5eccf76eafbabb392a6dfb3d",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 37.72,
+    "difference_fields": [
+      "claims",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ee-verilog-bare.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-matlab-circuit",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "electrical_boundary_cases",
+    "source_sha256": "91727fc42379418a84f7513b41a5b15d9dddc2090787767a0c1e94707163fabe",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 49.42,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-ee-matlab-circuit.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-team-pcb",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "electrical_boundary_cases",
+    "source_sha256": "6612c4f9d23180a8f500464673d1d0082d9051afbe17197b054d95bd426c6e73",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+    "seconds": 102.56,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ee-team-pcb.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-interviews-only",
+    "review_domain": "research",
+    "lineage_group": "qualitative_research_progression",
+    "source_sha256": "bc2c89bdff6ce28fdb3e5dc72f6f6d7f6d3b32df22fb17d7666b310372c77475",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+    "seconds": 33.99,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-research-interviews-only.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-team-mixed-method",
+    "review_domain": "research",
+    "lineage_group": "qualitative_research_progression",
+    "source_sha256": "f5e1939057372d27a502d5d43c35b0db08d376f7d87dbfdf1add738961e0b177",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 68.27,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-research-team-mixed-method.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-ta-title",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "7064a5c2d8b5d85f52f8147a3ae1db96f7b0648efec1e1285d3a72ed31b22fd4",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+    "seconds": 44.08,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-teach-ta-title.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-tutoring",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "d737aa3991922114744a7ad6561f0ba77827a2a8379832de3b4485ec19b3699f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 60.78,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-tutoring.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-mentor-vague",
+    "review_domain": "teaching",
+    "lineage_group": "academic_contribution_boundaries",
+    "source_sha256": "1caef6e4aeb993c1ac92dde4ec359f973f129589e3a9c54d1eb2936ea0b0e992",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 39.3,
+    "difference_fields": [
+      "contexts",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-mentor-vague.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-curriculum-team",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "academic_contribution_boundaries",
+    "source_sha256": "fd242ff321d95d9b2978fa0a10c410c2917f1933eb4bb165d8b7e3fe950556b2",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 47.99,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-teach-curriculum-team.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-env-sensor",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "38081d614e634c1f9937c61daa63c91d317c502c2e516910a82648129f962fb3",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 60.54,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-env-sensor.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-finance-workflow",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "80f4b4e6f8fc34adf13b4129b1a01ee897f5e1c006e0abe3deaacc55cab69a07",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 55.17,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-finance-workflow.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-digital-installation",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "88bdee4d33c7dff90c74c0ec623e858e88bfdb1d1d3608bfbb1ed6aa5eb286f2",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 57.25,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-digital-installation.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-drone-mixed",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "30e031be23184dfcc26b163b0789e5a231167625185025ff125dfbb1d9dc4418",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 103.39,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-drone-mixed.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-policy-analysis",
+    "review_domain": "research",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "21e867bf8fbf1b9f10cd60670b07d10cbe347e0823975441d849ade66086e355",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+    "seconds": 64.0,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-policy-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-missing-domain",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "fcbfada580bb10e3086c45ab8c50ba9074540f610729c273c86a6e12c58c5d64",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 56.47,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-inter-missing-domain.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-comparison-impact",
+    "review_domain": "semantic_traps",
+    "lineage_group": "unsupported_inference_traps",
+    "source_sha256": "049a123c4f5e759498e2a98e66107a9dd42244b2d63db755dc2dced064f5db3e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 152.05,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-comparison-impact.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-resume-silent",
+    "review_domain": "semantic_traps",
+    "lineage_group": "presence_and_attribution_traps",
+    "source_sha256": "5c415e51c9dae8f88f036ec6ab9f5339261497d92dfcdaeb7976c38af43f288f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 44.56,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "unknowns",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-resume-silent.json"
+  },
+  {
+    "review_id": "hr-stage4b-trap-unmapped-drafting",
+    "review_domain": "semantic_traps",
+    "lineage_group": "presence_and_attribution_traps",
+    "source_sha256": "17cb679202f1a8a266acd63d7bc546957efb182db891b213a964a46f5fc01a42",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 54.81,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-unmapped-drafting.json"
+  }
+]

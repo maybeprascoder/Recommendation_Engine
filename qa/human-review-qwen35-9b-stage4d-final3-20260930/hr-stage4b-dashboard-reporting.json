@@ -1,0 +1,503 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-dashboard-reporting",
+  "review_domain": "machine_learning",
+  "lineage_group": "data_analysis_boundaries",
+  "source_sha256": "cddbda07aae5536fb08f8fd23ef68224ed04173f82ef53f339074ec150fd2931",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 75.5,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 52.19,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "d2c679fb6562c87feb25ecf4c092dbcc8d3a1aa8d063c38008305f209cf894d5",
+      "schema_sha256": "d66261def58ba0ee96a444696cd40d6c5595a48bb5e83d0f6404c82d075adbfb",
+      "response_id": "2026-09-30T16:46:17.2925072Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I rewrote', indicating individual ownership of the specific task (rewriting the query).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used an established method (SQL) to implement a described task (rewriting a query). There is no evidence of designing new methods or adapting to constraints beyond standard application.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly compares the new performance (12 minutes) against a baseline alternative (20 minutes).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The outcome (reduction in execution time) is stated with specific measurement methods ('repeated timed runs') and quantitative results (12 minutes vs 20 minutes).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"SQL query rewriting and optimization\",\n      \"rationale\": \"The student explicitly wrote code (rewrote the dashboard query) in SQL, demonstrating programming skills.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Performance measurement and comparison\",\n      \"rationale\": \"The student conducted repeated timed runs to measure execution time and compared results, demonstrating the systematic use of quantitative methods.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"SQL\",\n      \"rationale\": \"The student explicitly named SQL as the tool used for rewriting the query.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"dashboard query\",\n      \"rationale\": \"The student refers to a specific type of data retrieval task (dashboard query).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"scheduled report\",\n      \"rationale\": \"The student refers to a specific type of automated data delivery task (scheduled report).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 23.29,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "ae3783dae5f2ceb32b05d280a32e6a97584762831cd60d75cda9435dffa978be",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:46:40.5890535Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the student rewriting a SQL query and reporting performance metrics. The statement accurately reflects the content of the provided text.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'led' requires explicit direction of work or independent ownership of the entire deliverable. Rewriting a specific query ('I rewrote') establishes individual execution but does not prove leadership over the project, team, or overall deliverable. The rationale incorrectly equates personal action with leading.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student used an established method (SQL) to complete a described task (rewriting a query). There is no evidence of designing new methods or adapting to constraints beyond standard application, fitting the 'applied' label.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The statement explicitly compares the new execution time (12 minutes) against a baseline alternative (20 minutes), satisfying the definition of 'compared' which requires explicit baselines or alternatives.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The outcome (reduction in execution time) is stated with specific measurement methods ('repeated timed runs') and quantitative results (12 vs 20 minutes). This supports the 'measured' label as it includes both an outcome and a measurement method.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly wrote code ('rewrote the dashboard query') in SQL. Explicit code writing supports identifying the programming node. The observed skill is directly evidenced by the action of rewriting the query.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"While the student measured execution times, 'quantitative_analysis' requires systematic use and interpretation of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. Comparing two specific run times (12 vs 20) is a simple performance comparison/evaluation, not a systematic quantitative analysis method. The rationale conflates measurement with analysis.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly named 'SQL' as the tool used for rewriting the query. This correctly identifies the tool context without overstating mastery or method.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The student refers to a specific type of data retrieval task ('dashboard query'). This is a correct recognition of domain terminology/concept present in the text.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The student refers to a specific type of automated data delivery task ('scheduled report'). This is a correct recognition of domain terminology/concept present in the text.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The student explicitly states 'I rewrote', indicating individual ownership of the specific task (rewriting the query).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used an established method (SQL) to implement a described task (rewriting a query). There is no evidence of designing new methods or adapting to constraints beyond standard application.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student explicitly compares the new performance (12 minutes) against a baseline alternative (20 minutes).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "measured",
+          "rationale": "The outcome (reduction in execution time) is stated with specific measurement methods ('repeated timed runs') and quantitative results (12 minutes vs 20 minutes).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "SQL query rewriting and optimization",
+          "rationale": "The student explicitly wrote code (rewrote the dashboard query) in SQL, demonstrating programming skills.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Performance measurement and comparison",
+          "rationale": "The student conducted repeated timed runs to measure execution time and compared results, demonstrating the systematic use of quantitative methods.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "SQL",
+          "rationale": "The student explicitly named SQL as the tool used for rewriting the query.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "dashboard query",
+          "rationale": "The student refers to a specific type of data retrieval task (dashboard query).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "scheduled report",
+          "rationale": "The student refers to a specific type of automated data delivery task (scheduled report).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the student rewriting a SQL query and reporting performance metrics. The statement accurately reflects the content of the provided text."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'led' requires explicit direction of work or independent ownership of the entire deliverable. Rewriting a specific query ('I rewrote') establishes individual execution but does not prove leadership over the project, team, or overall deliverable. The rationale incorrectly equates personal action with leading."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student used an established method (SQL) to complete a described task (rewriting a query). There is no evidence of designing new methods or adapting to constraints beyond standard application, fitting the 'applied' label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The statement explicitly compares the new execution time (12 minutes) against a baseline alternative (20 minutes), satisfying the definition of 'compared' which requires explicit baselines or alternatives."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The outcome (reduction in execution time) is stated with specific measurement methods ('repeated timed runs') and quantitative results (12 vs 20 minutes). This supports the 'measured' label as it includes both an outcome and a measurement method."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly wrote code ('rewrote the dashboard query') in SQL. Explicit code writing supports identifying the programming node. The observed skill is directly evidenced by the action of rewriting the query."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "While the student measured execution times, 'quantitative_analysis' requires systematic use and interpretation of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. Comparing two specific run times (12 vs 20) is a simple performance comparison/evaluation, not a systematic quantitative analysis method. The rationale conflates measurement with analysis."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly named 'SQL' as the tool used for rewriting the query. This correctly identifies the tool context without overstating mastery or method."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The student refers to a specific type of data retrieval task ('dashboard query'). This is a correct recognition of domain terminology/concept present in the text."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The student refers to a specific type of automated data delivery task ('scheduled report'). This is a correct recognition of domain terminology/concept present in the text."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'led' requires explicit direction of work or independent ownership of the entire deliverable. Rewriting a specific query ('I rewrote') establishes individual execution but does not prove leadership over the project, team, or overall deliverable. The rationale incorrectly equates personal action with leading."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "While the student measured execution times, 'quantitative_analysis' requires systematic use and interpretation of mathematical methods to analyze data, uncertainty, relationships, or modeled behavior. Comparing two specific run times (12 vs 20) is a simple performance comparison/evaluation, not a systematic quantitative analysis method. The rationale conflates measurement with analysis."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:46:17.2925072Z",
+        "2026-09-30T16:46:40.5890535Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "cddbda07aae5536fb08f8fd23ef68224ed04173f82ef53f339074ec150fd2931"
+      },
+      "draft_response_sha256": "0d8746fefd9ffec9b82a34ac0beea2cdb19587b5f5550d6b7f7aac48a309de80",
+      "review_response_sha256": "9c4e5dacb54aa39f1b27baf33546f3dcc739fc3108a811cb9270e614e959a170"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Analytics reporting"
+        },
+        {
+          "kind": "tool",
+          "label": "SQL"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "dashboard query"
+        },
+        {
+          "kind": "concept",
+          "label": "scheduled report"
+        },
+        {
+          "kind": "tool",
+          "label": "SQL"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Reworked and benchmarked a SQL query"
+      ],
+      "model_prediction": [
+        "SQL query rewriting and optimization"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Reworked and benchmarked a SQL query"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "SQL query rewriting and optimization"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "measured"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

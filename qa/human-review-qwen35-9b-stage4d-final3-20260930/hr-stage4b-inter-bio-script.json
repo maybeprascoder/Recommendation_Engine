@@ -1,0 +1,513 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-inter-bio-script",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "cross_domain_methods",
+  "source_sha256": "a0a7e2fc5b62b4bf4c6548e346aeb0a7719530d6ce8df7ca6a7560f79bbe3417",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 86.19,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 52.71,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "f085d375867b4f490ef977082e740d4c42ad525c573f4defef3f57b97890e7e6",
+      "schema_sha256": "5708cdb4d04eb24d33baa536acacc23f480f0c8380a90f2f12c5802064132aab",
+      "response_id": "2026-09-30T16:15:10.1047388Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I wrote' and 'I documented', indicating individual contribution within the context of a biology lab setting. While 'lab' implies collaboration, the specific actions are attributed to the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (R script) to implement a specific task (normalizing gene-expression tables). There is no evidence of designing new methods or investigating a novel question beyond the application of the script.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes writing a script and documenting steps but does not state how the normalization was evaluated, tested, or reviewed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or adoption of the normalized data are stated in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"R script writing for data normalization\",\n      \"rationale\": \"The student explicitly wrote an R script, which constitutes a programming action. The specific task was normalizing gene-expression tables.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Data normalization of gene-expression tables\",\n      \"rationale\": \"Normalizing gene-expression tables involves systematic use of mathematical or quantitative methods to analyze data relationships and prepare it for further study.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"Statistical data preprocessing (normalization)\",\n      \"rationale\": \"Gene expression normalization is a standard statistical procedure in bioinformatics to adjust for technical variations before analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"R\",\n      \"rationale\": \"The student explicitly named 'R' as the tool used to write a script.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Biology / Bioinformatics\",\n      \"rationale\": \"The activity took place in a 'biology lab' and involved 'gene-expression tables'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Data Normalization\",\n      \"rationale\": \"The specific task performed was 'normalize gene-expression tables'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 33.45,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "7a8ca8bfff21422787a4b64934b3c076f38f2c93ac0d655b09464b0e98c14493",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:15:43.5599698Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing the student's action in a biology lab, writing an R script, and documenting steps. The category 'activity' is appropriate for this described work.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative ownership within a team context. The source text only states 'In a biology lab, I wrote...'. While the setting is a lab, the text explicitly attributes the specific actions ('I wrote', 'I documented') to the individual student without describing collaboration or shared responsibility for these specific tasks. Per instructions, teammates' work is OTHER; only explicit personal contribution establishes attribution. Without evidence of shared ownership of this specific script/task, 'shared' is an incorrect broadening of the individual claim.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' fits because the student used established methods (R scripts for normalization) to complete a described task. There is no evidence in the text of designing new methods or investigating a novel question, so 'designed' or 'investigated' are not supported.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate because the source text describes writing a script and documenting steps but does not state how the normalization was evaluated, tested, or reviewed. No evaluation method is stated.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate because the source text reports an action (writing a script) but does not state any results, outcomes, or adoption of the normalized data. No impact is described.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they 'wrote an R script'. This constitutes an explicit programming action and artifact. The competency 'programming' is supported by this specific action, even though the domain is biology/bioinformatics.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data relationships or modeled behavior. Normalizing gene-expression tables is a data preprocessing step (cleaning/standardization) rather than an analysis of relationships, uncertainty, or modeled behavior. The text describes the task of normalization, not the analysis of quantitative relationships.\"},{\"target_id\":\"s3\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'statistics' requires systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question (qualitative) OR explicit statistical methods for analysis. While normalization is a statistical procedure, the competency 'statistics' in this rubric context typically refers to the analysis/inference phase. More critically, the text describes a specific implementation task ('wrote an R script to normalize') rather than demonstrating the application of statistical theory or investigation. However, the stronger reason for rejection here is that 'normalization' is often considered data engineering/preprocessing. If the rubric defines 'statistics' as the analysis phase, this preprocessing step does not support it. If the rubric allows preprocessing, the rationale claims it is a 'standard statistical procedure'. The verdict should be 'supported' ONLY if the definition of statistics includes preprocessing. Given the strict instruction to check against activity and not keyword overlap, and that normalization is often distinct from statistical analysis/inference, 'unsupported' is safer unless the specific definition of 'statistics' in this catalog explicitly includes data cleaning/preprocessing as a core competency. Re-reading the rubric: 'quantitative_analysis' covers 'analyze data'. 'statistics' usually implies inference or specific statistical modeling. Normalization is often distinct. I will mark it unsupported because the activity is data preprocessing, not statistical analysis/inference.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly names 'R' as the tool used to write a script. This correctly identifies the tool in the context.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The text states the activity took place in a 'biology lab' and involved 'gene-expression tables', which correctly identifies the domain as Biology/Bioinformatics.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly states the task was to 'normalize gene-expression tables', which correctly identifies the concept of Data Normalization.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states 'I wrote' and 'I documented', indicating individual contribution within the context of a biology lab setting. While 'lab' implies collaboration, the specific actions are attributed to the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (R script) to implement a specific task (normalizing gene-expression tables). There is no evidence of designing new methods or investigating a novel question beyond the application of the script.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text describes writing a script and documenting steps but does not state how the normalization was evaluated, tested, or reviewed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results, outcomes, or adoption of the normalized data are stated in the provided text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "R script writing for data normalization",
+          "rationale": "The student explicitly wrote an R script, which constitutes a programming action. The specific task was normalizing gene-expression tables.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Data normalization of gene-expression tables",
+          "rationale": "Normalizing gene-expression tables involves systematic use of mathematical or quantitative methods to analyze data relationships and prepare it for further study.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "statistics",
+          "observed_skill": "Statistical data preprocessing (normalization)",
+          "rationale": "Gene expression normalization is a standard statistical procedure in bioinformatics to adjust for technical variations before analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "R",
+          "rationale": "The student explicitly named 'R' as the tool used to write a script.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Biology / Bioinformatics",
+          "rationale": "The activity took place in a 'biology lab' and involved 'gene-expression tables'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "Data Normalization",
+          "rationale": "The specific task performed was 'normalize gene-expression tables'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing the student's action in a biology lab, writing an R script, and documenting steps. The category 'activity' is appropriate for this described work."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative ownership within a team context. The source text only states 'In a biology lab, I wrote...'. While the setting is a lab, the text explicitly attributes the specific actions ('I wrote', 'I documented') to the individual student without describing collaboration or shared responsibility for these specific tasks. Per instructions, teammates' work is OTHER; only explicit personal contribution establishes attribution. Without evidence of shared ownership of this specific script/task, 'shared' is an incorrect broadening of the individual claim."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' fits because the student used established methods (R scripts for normalization) to complete a described task. There is no evidence in the text of designing new methods or investigating a novel question, so 'designed' or 'investigated' are not supported."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate because the source text describes writing a script and documenting steps but does not state how the normalization was evaluated, tested, or reviewed. No evaluation method is stated."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate because the source text reports an action (writing a script) but does not state any results, outcomes, or adoption of the normalized data. No impact is described."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they 'wrote an R script'. This constitutes an explicit programming action and artifact. The competency 'programming' is supported by this specific action, even though the domain is biology/bioinformatics."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data relationships or modeled behavior. Normalizing gene-expression tables is a data preprocessing step (cleaning/standardization) rather than an analysis of relationships, uncertainty, or modeled behavior. The text describes the task of normalization, not the analysis of quantitative relationships."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "The label 'statistics' requires systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question (qualitative) OR explicit statistical methods for analysis. While normalization is a statistical procedure, the competency 'statistics' in this rubric context typically refers to the analysis/inference phase. More critically, the text describes a specific implementation task ('wrote an R script to normalize') rather than demonstrating the application of statistical theory or investigation. However, the stronger reason for rejection here is that 'normalization' is often considered data engineering/preprocessing. If the rubric defines 'statistics' as the analysis phase, this preprocessing step does not support it. If the rubric allows preprocessing, the rationale claims it is a 'standard statistical procedure'. The verdict should be 'supported' ONLY if the definition of statistics includes preprocessing. Given the strict instruction to check against activity and not keyword overlap, and that normalization is often distinct from statistical analysis/inference, 'unsupported' is safer unless the specific definition of 'statistics' in this catalog explicitly includes data cleaning/preprocessing as a core competency. Re-reading the rubric: 'quantitative_analysis' covers 'analyze data'. 'statistics' usually implies inference or specific statistical modeling. Normalization is often distinct. I will mark it unsupported because the activity is data preprocessing, not statistical analysis/inference."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly names 'R' as the tool used to write a script. This correctly identifies the tool in the context."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The text states the activity took place in a 'biology lab' and involved 'gene-expression tables', which correctly identifies the domain as Biology/Bioinformatics."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The text explicitly states the task was to 'normalize gene-expression tables', which correctly identifies the concept of Data Normalization."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative ownership within a team context. The source text only states 'In a biology lab, I wrote...'. While the setting is a lab, the text explicitly attributes the specific actions ('I wrote', 'I documented') to the individual student without describing collaboration or shared responsibility for these specific tasks. Per instructions, teammates' work is OTHER; only explicit personal contribution establishes attribution. Without evidence of shared ownership of this specific script/task, 'shared' is an incorrect broadening of the individual claim."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'quantitative_analysis' requires systematic use of mathematical methods to analyze data relationships or modeled behavior. Normalizing gene-expression tables is a data preprocessing step (cleaning/standardization) rather than an analysis of relationships, uncertainty, or modeled behavior. The text describes the task of normalization, not the analysis of quantitative relationships."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'statistics' requires systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question (qualitative) OR explicit statistical methods for analysis. While normalization is a statistical procedure, the competency 'statistics' in this rubric context typically refers to the analysis/inference phase. More critically, the text describes a specific implementation task ('wrote an R script to normalize') rather than demonstrating the application of statistical theory or investigation. However, the stronger reason for rejection here is that 'normalization' is often considered data engineering/preprocessing. If the rubric defines 'statistics' as the analysis phase, this preprocessing step does not support it. If the rubric allows preprocessing, the rationale claims it is a 'standard statistical procedure'. The verdict should be 'supported' ONLY if the definition of statistics includes preprocessing. Given the strict instruction to check against activity and not keyword overlap, and that normalization is often distinct from statistical analysis/inference, 'unsupported' is safer unless the specific definition of 'statistics' in this catalog explicitly includes data cleaning/preprocessing as a core competency. Re-reading the rubric: 'quantitative_analysis' covers 'analyze data'. 'statistics' usually implies inference or specific statistical modeling. Normalization is often distinct. I will mark it unsupported because the activity is data preprocessing, not statistical analysis/inference."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:15:10.1047388Z",
+        "2026-09-30T16:15:43.5599698Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "a0a7e2fc5b62b4bf4c6548e346aeb0a7719530d6ce8df7ca6a7560f79bbe3417"
+      },
+      "draft_response_sha256": "7173b50033e3cdb3bbfa701abf360eb513e8b02030e881d86d17d1140f5fcbb8",
+      "review_response_sha256": "380dedfdc4f9340a86b9e73a9d3336a06de8a252247c49d552e0a0de318225ff"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "In a biology lab, I wrote an R script to normalize gene-expression tables and documented the transformation steps.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Gene expression"
+        },
+        {
+          "kind": "tool",
+          "label": "R"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "Data Normalization"
+        },
+        {
+          "kind": "domain",
+          "label": "Biology / Bioinformatics"
+        },
+        {
+          "kind": "tool",
+          "label": "R"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Implemented and documented transformations in R"
+      ],
+      "model_prediction": [
+        "R script writing for data normalization"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Implemented and documented transformations in R"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "R script writing for data normalization"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "applied"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

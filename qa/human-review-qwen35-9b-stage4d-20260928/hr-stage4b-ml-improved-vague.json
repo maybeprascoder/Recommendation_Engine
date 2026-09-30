@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-ml-improved-vague",
+  "review_domain": "machine_learning",
+  "lineage_group": "data_analysis_boundaries",
+  "source_sha256": "f938d25bad968754c43b53dbe318929f8c9414ccd8d1cc64c62052ad64b4364b",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Judgment uses an unknown rubric dimension or label",
+  "seconds": 44.78,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 44.77,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "f16d2446e5518a38d653e85d0da15a91db6a8afb51e13a48801c56f087252126",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T20:54:39.7954227Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"Built a machine-learning model that significantly improved performance.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement uses the verb 'Built' which describes an action, but does not explicitly state that the student independently owned the design, directed the work, or solely developed the model. Possessive phrasing like 'my model' is absent. Without explicit description of individual responsibilities versus team context, ownership remains unknown.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student explicitly stated they 'Built' a model, indicating the implementation of established methods to complete a task. However, there is no evidence of making specific design choices, adapting methods to constraints, or investigating a question through explicit analysis beyond the act of building.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"reported\",\n      \"rationale\": \"The statement claims the model 'significantly improved performance'. This is a concrete outcome reported without specifying the measurement method, baseline comparison, or specific metrics used to quantify the improvement.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The phrase 'significantly improved performance' describes a concrete outcome reported by the student. No specific measurement method (e.g., accuracy increase, latency reduction) or adoption by users is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"Built a machine-learning model\",\n      \"rationale\": \"The student explicitly stated they built a machine-learning model. This supports the machine_learning competency node based on the actual activity described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Built a machine-learning model\",\n      \"rationale\": \"Building a machine learning model typically involves writing code. While the specific language is not named, the action of 'building' implies programming activity. This supports the programming competency node based on the actual activity described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Built a machine-learning model that significantly improved performance.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Was the machine learning model built individually or as part of a team? If team, what was the student's specific contribution?\",\n      \"reason\": \"The ownership dimension is labeled 'unknown'. The statement does not clarify if the work was solo or collaborative.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific design choices were made for the machine learning model, and how were they adapted to constraints?\",\n      \"reason\": \"The depth dimension is labeled 'applied' rather than 'designed'. The statement lacks details on design choices or adaptation.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"How was the 'significant improvement in performance' measured? What metrics were used and what was the baseline?\",\n      \"reason\": \"The evaluation dimension is labeled 'reported'. The statement claims an outcome but does not specify the measurement method or comparison.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Who adopted or used the machine learning model, and what was the impact on their operations?\",\n      \"reason\": \"The impact dimension is labeled 'reported'. The statement claims an outcome but does not specify adoption by users or organizations.\"\n    }\n  ],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

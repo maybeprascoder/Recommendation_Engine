@@ -1,0 +1,492 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-civil-design-absent",
+  "review_domain": "civil",
+  "lineage_group": "structural_team_and_absence",
+  "source_sha256": "91a90135ac760e85c4f48309618d7a7179be2caa3f0eb8e3e145f56aaec2e80f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 76.66,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 52.74,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "1aff9a301a9a73d9e2a01c69a7dc28fe7942f78103aaceb8f8151eaa4a602ea1",
+      "schema_sha256": "af2a344debc1acf9e9a4e4eca0b824723974e92d8ed9f2fd2df6baa708780e78",
+      "response_id": "2026-09-30T16:01:25.3967014Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"coursework\",\n      \"statement\": \"I have analyzed steel beams in coursework\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ],\n      \"duplicate_of\": null\n    },\n    {\n      \"id\": \"c2\",\n      \"category\": \"activity\",\n      \"statement\": \"I have never selected or designed steel members\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student describes 'analyzed steel beams in coursework'. Coursework implies a collaborative or guided academic setting where individual contribution is shared within the course structure, rather than solely owned by the student outside of instruction.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student states they 'analyzed' steel beams. This indicates the application of established methods to complete a described task (analysis), but does not explicitly state that they made design choices or adapted methods to constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text mentions 'coursework' but does not explicitly state a concrete test, review, or assessment method used to evaluate the analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result, outcome, or adoption is stated regarding the analysis of steel beams.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement is a denial of activity ('never selected or designed'). Ownership cannot be established for an explicitly denied activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j6\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The student explicitly denies having performed the activity of selecting or designing. Depth cannot be assessed for an absent activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j7\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method is stated for the denied activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j8\",\n      \"claim_id\": \"c2\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No result is stated for the denied activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"structural_analysis\",\n      \"rationale\": \"The student describes analyzing steel beams, which falls under the domain of structural analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c2\",\n      \"kind\": \"domain\",\n      \"label\": \"structural_design\",\n      \"rationale\": \"The student explicitly denies having selected or designed steel members, which falls under the domain of structural design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I have analyzed steel beams in coursework, but I have never selected or designed steel members.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 23.89,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "c0db4ab1bd6f2cdc0ddcbd092a82711f1497fb2fac66f6d3ae0020d216ea41cc",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:01:49.2960103Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text stating 'I have analyzed steel beams in coursework' with presence 'reported_present'. The category 'coursework' is appropriate as the text explicitly mentions it.\"},{\"target_id\":\"c2\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text denial 'I have never selected or designed steel members' with presence 'reported_absent'. The category 'activity' is appropriate for a general statement of absence.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' is incorrect. The source states 'coursework', which implies a guided setting, but does not explicitly describe collaboration or shared ownership. Per rubric, 'My thesis' or titles alone are insufficient; without explicit description of following guided work or supporting others, ownership defaults to 'unknown'. The rationale incorrectly assumes coursework implies shared ownership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is correct. The student states they 'analyzed', which indicates using established methods to complete a task. It does not support 'designed' as no design choices are mentioned.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. The text mentions 'coursework' but provides no concrete test, review, or assessment method used to evaluate the analysis.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. No result, outcome, or adoption regarding the analysis is stated in the source text.\"},{\"target_id\":\"j5\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. Ownership cannot be established for an explicitly denied activity ('never selected or designed'). The rationale correctly identifies that absence precludes establishing ownership.\"},{\"target_id\":\"j6\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. Depth cannot be assessed for an absent activity. The student explicitly denies performing the action, so depth labels like 'applied' or 'designed' are invalid here.\"},{\"target_id\":\"j7\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. No evaluation method is stated for the denied activity.\"},{\"target_id\":\"j8\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct. No result is stated for the denied activity.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context 'structural_analysis' is correctly identified as the domain of analyzing steel beams. The rationale accurately links the activity to the domain.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context 'structural_design' is correctly identified as the domain of selecting or designing steel members, even though the student denies performing it. Recognizing the domain terminology is allowed regardless of the denial.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "coursework",
+          "statement": "I have analyzed steel beams in coursework",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ],
+          "duplicate_of": null
+        },
+        {
+          "id": "c2",
+          "category": "activity",
+          "statement": "I have never selected or designed steel members",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student describes 'analyzed steel beams in coursework'. Coursework implies a collaborative or guided academic setting where individual contribution is shared within the course structure, rather than solely owned by the student outside of instruction.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student states they 'analyzed' steel beams. This indicates the application of established methods to complete a described task (analysis), but does not explicitly state that they made design choices or adapted methods to constraints.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text mentions 'coursework' but does not explicitly state a concrete test, review, or assessment method used to evaluate the analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result, outcome, or adoption is stated regarding the analysis of steel beams.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j5",
+          "claim_id": "c2",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement is a denial of activity ('never selected or designed'). Ownership cannot be established for an explicitly denied activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j6",
+          "claim_id": "c2",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The student explicitly denies having performed the activity of selecting or designing. Depth cannot be assessed for an absent activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j7",
+          "claim_id": "c2",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method is stated for the denied activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "j8",
+          "claim_id": "c2",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No result is stated for the denied activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "structural_analysis",
+          "rationale": "The student describes analyzing steel beams, which falls under the domain of structural analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c2",
+          "kind": "domain",
+          "label": "structural_design",
+          "rationale": "The student explicitly denies having selected or designed steel members, which falls under the domain of structural design.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text stating 'I have analyzed steel beams in coursework' with presence 'reported_present'. The category 'coursework' is appropriate as the text explicitly mentions it."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text denial 'I have never selected or designed steel members' with presence 'reported_absent'. The category 'activity' is appropriate for a general statement of absence."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' is incorrect. The source states 'coursework', which implies a guided setting, but does not explicitly describe collaboration or shared ownership. Per rubric, 'My thesis' or titles alone are insufficient; without explicit description of following guided work or supporting others, ownership defaults to 'unknown'. The rationale incorrectly assumes coursework implies shared ownership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is correct. The student states they 'analyzed', which indicates using established methods to complete a task. It does not support 'designed' as no design choices are mentioned."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. The text mentions 'coursework' but provides no concrete test, review, or assessment method used to evaluate the analysis."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. No result, outcome, or adoption regarding the analysis is stated in the source text."
+        },
+        {
+          "target_id": "j5",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. Ownership cannot be established for an explicitly denied activity ('never selected or designed'). The rationale correctly identifies that absence precludes establishing ownership."
+        },
+        {
+          "target_id": "j6",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. Depth cannot be assessed for an absent activity. The student explicitly denies performing the action, so depth labels like 'applied' or 'designed' are invalid here."
+        },
+        {
+          "target_id": "j7",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. No evaluation method is stated for the denied activity."
+        },
+        {
+          "target_id": "j8",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct. No result is stated for the denied activity."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context 'structural_analysis' is correctly identified as the domain of analyzing steel beams. The rationale accurately links the activity to the domain."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context 'structural_design' is correctly identified as the domain of selecting or designing steel members, even though the student denies performing it. Recognizing the domain terminology is allowed regardless of the denial."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' is incorrect. The source states 'coursework', which implies a guided setting, but does not explicitly describe collaboration or shared ownership. Per rubric, 'My thesis' or titles alone are insufficient; without explicit description of following guided work or supporting others, ownership defaults to 'unknown'. The rationale incorrectly assumes coursework implies shared ownership."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:01:25.3967014Z",
+        "2026-09-30T16:01:49.2960103Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "91a90135ac760e85c4f48309618d7a7179be2caa3f0eb8e3e145f56aaec2e80f"
+      },
+      "draft_response_sha256": "a8c22e0668145c741db278b72ec27ca9819dcb08618754f43d72f8d6de3d6976",
+      "review_response_sha256": "2086377a27236fbf514845c00fde7ff8716a46af36a963335d52bda5fde85522"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I have analyzed steel beams in coursework, but I have never selected or designed steel members.",
+          "category": "other",
+          "attribution": "student",
+          "presence": "reported_absent"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I have never selected or designed steel members",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_absent"
+        },
+        {
+          "statement": "I have analyzed steel beams in coursework",
+          "category": "coursework",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Steel-member design"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "domain",
+          "label": "structural_analysis"
+        },
+        {
+          "kind": "domain",
+          "label": "structural_design"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {},
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "explicit_absence",
+      "provisional_reference": [
+        "I have analyzed steel beams in coursework, but I have never selected or designed steel members."
+      ],
+      "model_prediction": [
+        "I have never selected or designed steel members"
+      ],
+      "question": "Is each absence explicit and narrowly scoped?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

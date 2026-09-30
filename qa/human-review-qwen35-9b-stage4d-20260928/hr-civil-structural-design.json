@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-civil-structural-design",
+  "review_domain": "civil",
+  "lineage_group": "structural_engineering_evidence",
+  "source_sha256": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 71.16,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 71.1,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "847c4dec6409f947e4fcbda83631a568389cdb194e8e4afbc273c9c42802ccc1",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:43:53.9593558Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members, evaluated multiple load combinations, compared two alternatives, and reduced estimated material usage by 11% while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The text explicitly states the student 'Designed' members and 'reduced estimated material usage', indicating independent ownership of the design task rather than just assistance or shared contribution.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student made specific design choices ('Designed reinforced-concrete members') and adapted methods to satisfy constraints ('satisfying the stated project constraints on deflection and geometry').\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...while satisfying the stated project constraints on deflection and geometry.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The text explicitly mentions the action 'compared two alternatives', which constitutes an evaluation method involving baselines or alternatives.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...evaluated multiple load combinations, compared two alternatives...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"A concrete quantitative outcome is stated: 'reduced estimated material usage by 11%'. This includes both the result and a measurement method (percentage reduction).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...reduced estimated material usage by 11%...\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_design\",\n      \"observed_skill\": \"Design of reinforced-concrete members to satisfy constraints.\",\n      \"rationale\": \"The explicit action 'Designed reinforced-concrete members' directly supports the competency of structural design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Designed reinforced-concrete members...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"Evaluation of load combinations and comparison of alternatives.\",\n      \"rationale\": \"The actions 'evaluated multiple load combinations' and 'compared two alternatives' demonstrate the application of analytical methods to model or evaluate structural response.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...evaluated multiple load combinations, compared two alternatives...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Quantification of material usage reduction.\",\n      \"rationale\": \"The statement 'reduced estimated material usage by 11%' demonstrates the systematic use of quantitative methods to analyze data or modeled behavior (material usage).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...reduced estimated material usage by 11%...\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

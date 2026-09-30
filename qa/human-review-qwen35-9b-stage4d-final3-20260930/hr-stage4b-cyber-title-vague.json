@@ -1,0 +1,438 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cyber-title-vague",
+  "review_domain": "semantic_traps",
+  "lineage_group": "security_inference_traps",
+  "source_sha256": "6bf0c04e6b9a9c88164b455b13fffec626cb216db8dc82795f0cdf7b78d82f3a",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 66.31,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 49.74,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "0207d802e5086997062021405420d7f56a5faa4c488f93fd0e2b175b1fcbf37f",
+      "schema_sha256": "462b5972daf4bde763d36ec7e2f8f35dbd91a758d3bf8333f5507936f3117b0a",
+      "response_id": "2026-09-30T17:01:29.2100954Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Responsible for cybersecurity and network safety.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The statement 'Responsible for cybersecurity and network safety' implies an individual contribution within a collaborative or organizational context (network safety is rarely a solo endeavor), but lacks explicit language like 'led', 'owned', or 'solely developed'. It does not claim independent ownership of the entire domain, nor does it explicitly state assistance. 'Shared' fits the implication of responsibility in a team/organizational setting without evidence of leadership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The phrase 'Responsible for cybersecurity and network safety' is a high-level role description. It does not describe specific methods, design choices, or implementation details (e.g., configuring firewalls, analyzing packet logs, implementing encryption protocols). Therefore, the depth of work is unknown based on this text alone.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states a responsibility but does not mention any specific tests, reviews, assessments, or comparisons performed to evaluate the cybersecurity measures.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states a responsibility but does not report any concrete outcomes, measured results, or adoption of the work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Cybersecurity and Network Safety\",\n      \"rationale\": \"The text explicitly mentions 'cybersecurity' and 'network safety', establishing the domain of the activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Cybersecurity Tools/Network Safety Protocols (Generic)\",\n      \"rationale\": \"The phrase implies the use of generic tools or protocols related to cybersecurity and network safety, though specific tool names are not provided.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Responsible for cybersecurity and network safety.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What specific tasks or methods were performed to fulfill the responsibility for 'cybersecurity and network safety'?\",\n      \"reason\": \"The current evidence only states a general responsibility. Specific actions (e.g., vulnerability scanning, incident response, policy creation) are needed to determine depth and potentially suggest competencies like 'security', 'networking', or 'risk'. Without this, the activity remains at an unknown depth.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Was there any specific evaluation method used (e.g., penetration testing, audit review) to assess the cybersecurity measures?\",\n      \"reason\": \"The evidence does not state how the work was evaluated. Determining if 'evaluation' is 'described', 'compared', or 'externally_reviewed' requires this information.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What were the results or outcomes of these cybersecurity efforts (e.g., threats mitigated, incidents prevented, systems secured)?\",\n      \"reason\": \"The evidence does not state any impact. Determining if 'impact' is 'reported', 'measured', or 'adopted' requires knowledge of the outcomes.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Did the student lead, direct, or independently own this responsibility, or was it a shared duty within a team?\",\n      \"reason\": \"The phrase 'Responsible for' is ambiguous regarding ownership. Clarification is needed to distinguish between 'led', 'shared', or 'assisted'.\"\n    }\n  ],\n  \"unassessed\": [\n    \"Specific programming languages, frameworks, or tools used in the cybersecurity work are not mentioned.\",\n    \"Whether the student designed specific security controls or merely implemented existing ones is unknown.\",\n    \"The scale of the network or organization involved is unknown.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 16.55,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "40095cb641da3e51c5ca451a53175df45d656a5dd6b0cccbfd2e2c8ee903fea5",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T17:01:45.7635566Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text 'Responsible for cybersecurity and network safety' with correct attribution to the student as stated in the document.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale infers 'shared' ownership based on the implication that network safety is rarely solo. The rubric explicitly forbids assuming team context from general roles; 'Responsible for' without explicit description of collaboration or shared duties constitutes 'unknown' ownership, not 'shared'. The verdict incorrectly upgrades uncertainty to a specific collaborative label.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The source text is a high-level role description lacking specific methods, design choices, or implementation details. Therefore, the depth is correctly judged as 'unknown'.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The source text mentions responsibility but contains no mention of tests, reviews, assessments, or comparisons. The evaluation label 'unknown' is correctly supported by the absence of such evidence.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text states a responsibility but reports no concrete outcomes, measured results, or adoption. The impact label 'unknown' is correctly supported by the absence of stated results.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly contains the terms 'cybersecurity' and 'network safety', which correctly establishes the domain context.\"},{\"target_id\":\"t2\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale claims the phrase implies the use of generic tools or protocols. The rubric states that tool names alone do not establish method, mastery, or ownership, and a correct identification of a tool (or implied generic tool) does not support a competency suggestion. Labeling this as a 'tool' context is an invention not supported by the text, which only describes a responsibility.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Responsible for cybersecurity and network safety."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Responsible for cybersecurity and network safety.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The statement 'Responsible for cybersecurity and network safety' implies an individual contribution within a collaborative or organizational context (network safety is rarely a solo endeavor), but lacks explicit language like 'led', 'owned', or 'solely developed'. It does not claim independent ownership of the entire domain, nor does it explicitly state assistance. 'Shared' fits the implication of responsibility in a team/organizational setting without evidence of leadership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The phrase 'Responsible for cybersecurity and network safety' is a high-level role description. It does not describe specific methods, design choices, or implementation details (e.g., configuring firewalls, analyzing packet logs, implementing encryption protocols). Therefore, the depth of work is unknown based on this text alone.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text states a responsibility but does not mention any specific tests, reviews, assessments, or comparisons performed to evaluate the cybersecurity measures.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text states a responsibility but does not report any concrete outcomes, measured results, or adoption of the work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Cybersecurity and Network Safety",
+          "rationale": "The text explicitly mentions 'cybersecurity' and 'network safety', establishing the domain of the activity.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Cybersecurity Tools/Network Safety Protocols (Generic)",
+          "rationale": "The phrase implies the use of generic tools or protocols related to cybersecurity and network safety, though specific tool names are not provided.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Responsible for cybersecurity and network safety."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "What specific tasks or methods were performed to fulfill the responsibility for 'cybersecurity and network safety'?",
+          "reason": "The current evidence only states a general responsibility. Specific actions (e.g., vulnerability scanning, incident response, policy creation) are needed to determine depth and potentially suggest competencies like 'security', 'networking', or 'risk'. Without this, the activity remains at an unknown depth."
+        },
+        {
+          "claim_id": "c1",
+          "question": "Was there any specific evaluation method used (e.g., penetration testing, audit review) to assess the cybersecurity measures?",
+          "reason": "The evidence does not state how the work was evaluated. Determining if 'evaluation' is 'described', 'compared', or 'externally_reviewed' requires this information."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What were the results or outcomes of these cybersecurity efforts (e.g., threats mitigated, incidents prevented, systems secured)?",
+          "reason": "The evidence does not state any impact. Determining if 'impact' is 'reported', 'measured', or 'adopted' requires knowledge of the outcomes."
+        },
+        {
+          "claim_id": "c1",
+          "question": "Did the student lead, direct, or independently own this responsibility, or was it a shared duty within a team?",
+          "reason": "The phrase 'Responsible for' is ambiguous regarding ownership. Clarification is needed to distinguish between 'led', 'shared', or 'assisted'."
+        }
+      ],
+      "unassessed": [
+        "Specific programming languages, frameworks, or tools used in the cybersecurity work are not mentioned.",
+        "Whether the student designed specific security controls or merely implemented existing ones is unknown.",
+        "The scale of the network or organization involved is unknown."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text 'Responsible for cybersecurity and network safety' with correct attribution to the student as stated in the document."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The rationale infers 'shared' ownership based on the implication that network safety is rarely solo. The rubric explicitly forbids assuming team context from general roles; 'Responsible for' without explicit description of collaboration or shared duties constitutes 'unknown' ownership, not 'shared'. The verdict incorrectly upgrades uncertainty to a specific collaborative label."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The source text is a high-level role description lacking specific methods, design choices, or implementation details. Therefore, the depth is correctly judged as 'unknown'."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The source text mentions responsibility but contains no mention of tests, reviews, assessments, or comparisons. The evaluation label 'unknown' is correctly supported by the absence of such evidence."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text states a responsibility but reports no concrete outcomes, measured results, or adoption. The impact label 'unknown' is correctly supported by the absence of stated results."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The text explicitly contains the terms 'cybersecurity' and 'network safety', which correctly establishes the domain context."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "unsupported",
+          "explanation": "The rationale claims the phrase implies the use of generic tools or protocols. The rubric states that tool names alone do not establish method, mastery, or ownership, and a correct identification of a tool (or implied generic tool) does not support a competency suggestion. Labeling this as a 'tool' context is an invention not supported by the text, which only describes a responsibility."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What specific tasks or methods were performed to fulfill the responsibility for 'cybersecurity and network safety'?",
+        "reason": "The current evidence only states a general responsibility. Specific actions (e.g., vulnerability scanning, incident response, policy creation) are needed to determine depth and potentially suggest competencies like 'security', 'networking', or 'risk'. Without this, the activity remains at an unknown depth."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Was there any specific evaluation method used (e.g., penetration testing, audit review) to assess the cybersecurity measures?",
+        "reason": "The evidence does not state how the work was evaluated. Determining if 'evaluation' is 'described', 'compared', or 'externally_reviewed' requires this information."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What were the results or outcomes of these cybersecurity efforts (e.g., threats mitigated, incidents prevented, systems secured)?",
+        "reason": "The evidence does not state any impact. Determining if 'impact' is 'reported', 'measured', or 'adopted' requires knowledge of the outcomes."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Did the student lead, direct, or independently own this responsibility, or was it a shared duty within a team?",
+        "reason": "The phrase 'Responsible for' is ambiguous regarding ownership. Clarification is needed to distinguish between 'led', 'shared', or 'assisted'."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale infers 'shared' ownership based on the implication that network safety is rarely solo. The rubric explicitly forbids assuming team context from general roles; 'Responsible for' without explicit description of collaboration or shared duties constitutes 'unknown' ownership, not 'shared'. The verdict incorrectly upgrades uncertainty to a specific collaborative label."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale claims the phrase implies the use of generic tools or protocols. The rubric states that tool names alone do not establish method, mastery, or ownership, and a correct identification of a tool (or implied generic tool) does not support a competency suggestion. Labeling this as a 'tool' context is an invention not supported by the text, which only describes a responsibility."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T17:01:29.2100954Z",
+        "2026-09-30T17:01:45.7635566Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "6bf0c04e6b9a9c88164b455b13fffec626cb216db8dc82795f0cdf7b78d82f3a"
+      },
+      "draft_response_sha256": "a03874bc38d7285fc005830cedcb44eb15b6ebc8404c1c8d80a7daafd80a2e23",
+      "review_response_sha256": "fd7bb391af7ebf0c959808de3ba1e445f615a5dc868a15092b84db4d68c4a3e0"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Responsible for cybersecurity and network safety.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Responsible for cybersecurity and network safety.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Cybersecurity"
+        },
+        {
+          "kind": "domain",
+          "label": "Network safety"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "domain",
+          "label": "Cybersecurity and Network Safety"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [
+        "Which controls, investigations, configurations, or analyses did you personally perform?"
+      ],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Did the student lead, direct, or independently own this responsibility, or was it a shared duty within a team?",
+        "Was there any specific evaluation method used (e.g., penetration testing, audit review) to assess the cybersecurity measures?",
+        "What specific tasks or methods were performed to fulfill the responsibility for 'cybersecurity and network safety'?",
+        "What were the results or outcomes of these cybersecurity efforts (e.g., threats mitigated, incidents prevented, systems secured)?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Specific programming languages, frameworks, or tools used in the cybersecurity work are not mentioned.",
+        "The scale of the network or organization involved is unknown.",
+        "Whether the student designed specific security controls or merely implemented existing ones is unknown."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

@@ -1,0 +1,517 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-civil-retaining-wall",
+  "review_domain": "civil",
+  "lineage_group": "drafting_to_design",
+  "source_sha256": "d33caee1cdda6fbebfa5b3f2a7487f82a6ea62ca8c45cac3cba1ea105fa3ba6a",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 94.3,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 65.73,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "1b7b898b32c529f6affb6134fdb79431f375efe5eade55389bc05eaf7d23686d",
+      "schema_sha256": "646921bf614cfd1569a48780943c89def42400c2ff9ae4f3c9ea03ccf735fc34",
+      "response_id": "2026-09-29T22:56:04.4354932Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I designed', indicating individual ownership of the geometry and reinforcement selection.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student describes making specific design choices ('designed the retaining-wall geometry', 'selected reinforcement') and checking specific capacities against loads, which constitutes designing.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student checked capacities 'against the stated design loads', implying a comparison between calculated capacity and required load.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the actions taken (designing, checking) but does not state the result of those checks (e.g., whether the wall was safe, optimized, or failed).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_design\",\n      \"observed_skill\": \"Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.\",\n      \"rationale\": \"The student 'selected reinforcement' and 'designed the retaining-wall geometry', which directly maps to structural design competencies.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.\",\n      \"rationale\": \"The student 'checked sliding, overturning, bearing, and flexural capacity', which are specific structural analysis checks against loads.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Competency explicitly named in Build Spec section 4; definition pending human validation.\",\n      \"rationale\": \"The text describes engineering design and analysis tasks. While these often involve programming, the text does not explicitly state that code was written or used as a tool for this specific task. Therefore, no programming competency is suggested based solely on this text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Structural Engineering\",\n      \"rationale\": \"The terms 'retaining-wall', 'reinforcement', 'sliding', 'overturning', 'bearing', and 'flexural capacity' are specific to structural engineering.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Design Loads\",\n      \"rationale\": \"The phrase 'against the stated design loads' refers to a fundamental concept in structural design.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"Did the student use any specific software or tools (e.g., ETABS, SAP2000, Excel) to perform the design checks and analysis?\",\n      \"reason\": \"The text describes the analytical actions but does not specify the tools used. Knowing if this was manual calculation or software-assisted affects the depth of 'engineering_simulation' or 'programming' competencies.\"\n    },\n    {\n      \"claim_id\": \"c1\",\n      \"question\": \"What were the outcomes of checking the capacities? Did the design pass all checks, require iteration, or fail?\",\n      \"reason\": \"The text states that checks were performed but does not report the result (pass/fail/iterate). This impacts the 'impact' dimension.\"\n    }\n  ],\n  \"unassessed\": [\n    \"No explicit mention of using numerical simulation software (e.g., finite element analysis) to model the wall behavior, though 'checked... capacity' implies some form of calculation or simulation. Without a tool name or method description, 'engineering_simulation' remains unassessed.\",\n    \"The specific materials used for the reinforcement and concrete are not mentioned, which might be relevant for 'structural_design' depth if material selection is considered part of the design process beyond just geometry.\"\n  ]\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 28.55,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "8fc8170305f3c3c6d2b483443546442e3df5290331ce165f245ead56604ef76a",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T22:56:32.989433Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a direct verbatim quote from the source document describing the specific actions taken by the student.\"},{\"target_id\":\"j1\",\"verdict\":\"uncertain\",\"explanation\":\"While 'I designed' indicates personal execution, the rubric explicitly states that titles or possessives alone are insufficient for 'led'. The text describes individual tasks (designing geometry, selecting reinforcement) but does not explicitly state that the student directed a team, owned the entire deliverable independently of collaboration, or led others. Without explicit mention of directing work or sole ownership of the full deliverable, upgrading to 'led' is unsupported; 'shared' or 'assisted' might be more appropriate if context implies a larger project, but strictly based on the text, 'unknown' or 'shared' (if implied team) is safer than 'led'. Given the instruction to reject 'led' unless explicitly stated as directing/solely owning, and the text only lists tasks, 'uncertain' regarding the extent of leadership vs. individual contribution is appropriate.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly describes making specific design choices ('designed the retaining-wall geometry', 'selected reinforcement') and checking capacities against constraints, which aligns with the definition of 'designed' (made and explained design choices or adapted methods to constraints).\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'checked... capacity against the stated design loads' explicitly describes a comparison between calculated capacity and required load values, fitting the definition of 'compared' (evaluation includes explicit baselines, alternatives, or controls).\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text describes actions taken ('designed', 'checked') but does not state the outcome (e.g., safe, failed, optimized). Therefore, marking impact as 'unknown' is accurate.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student's action of 'selected reinforcement' and 'designed the retaining-wall geometry' directly maps to the definition of structural_design ('Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints'). The text supports this skill.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The student's action of 'checked sliding, overturning, bearing, and flexural capacity' involves applying mechanics and analytical methods to evaluate structural response under loads, which fits the definition of structural_analysis ('Application of mechanics and analytical methods to model or evaluate structural response under stated loads...').\"},{\"target_id\":\"s3\",\"verdict\":\"unsupported\",\"explanation\":\"The rationale correctly notes that the text does not explicitly state code was written. The verdict 'unsupported' is correct because programming requires an explicit programming action and artifact; mere mention of engineering tasks without code writing does not support a programming competency suggestion.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The terms 'retaining-wall', 'reinforcement', 'sliding', etc., are specific domain terminology for Structural Engineering. The context is correctly identified as the domain of the work described.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'against the stated design loads' refers to a fundamental concept in structural design. The context is correctly identified based on the source text.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The student explicitly states 'I designed', indicating individual ownership of the geometry and reinforcement selection.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student describes making specific design choices ('designed the retaining-wall geometry', 'selected reinforcement') and checking specific capacities against loads, which constitutes designing.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student checked capacities 'against the stated design loads', implying a comparison between calculated capacity and required load.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the actions taken (designing, checking) but does not state the result of those checks (e.g., whether the wall was safe, optimized, or failed).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "structural_design",
+          "observed_skill": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+          "rationale": "The student 'selected reinforcement' and 'designed the retaining-wall geometry', which directly maps to structural design competencies.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "structural_analysis",
+          "observed_skill": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+          "rationale": "The student 'checked sliding, overturning, bearing, and flexural capacity', which are specific structural analysis checks against loads.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+          "rationale": "The text describes engineering design and analysis tasks. While these often involve programming, the text does not explicitly state that code was written or used as a tool for this specific task. Therefore, no programming competency is suggested based solely on this text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "Structural Engineering",
+          "rationale": "The terms 'retaining-wall', 'reinforcement', 'sliding', 'overturning', 'bearing', and 'flexural capacity' are specific to structural engineering.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "Design Loads",
+          "rationale": "The phrase 'against the stated design loads' refers to a fundamental concept in structural design.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed the retaining-wall geometry, selected reinforcement, and checked sliding, overturning, bearing, and flexural capacity against the stated design loads."
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "claim_id": "c1",
+          "question": "Did the student use any specific software or tools (e.g., ETABS, SAP2000, Excel) to perform the design checks and analysis?",
+          "reason": "The text describes the analytical actions but does not specify the tools used. Knowing if this was manual calculation or software-assisted affects the depth of 'engineering_simulation' or 'programming' competencies."
+        },
+        {
+          "claim_id": "c1",
+          "question": "What were the outcomes of checking the capacities? Did the design pass all checks, require iteration, or fail?",
+          "reason": "The text states that checks were performed but does not report the result (pass/fail/iterate). This impacts the 'impact' dimension."
+        }
+      ],
+      "unassessed": [
+        "No explicit mention of using numerical simulation software (e.g., finite element analysis) to model the wall behavior, though 'checked... capacity' implies some form of calculation or simulation. Without a tool name or method description, 'engineering_simulation' remains unassessed.",
+        "The specific materials used for the reinforcement and concrete are not mentioned, which might be relevant for 'structural_design' depth if material selection is considered part of the design process beyond just geometry."
+      ]
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a direct verbatim quote from the source document describing the specific actions taken by the student."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "uncertain",
+          "explanation": "While 'I designed' indicates personal execution, the rubric explicitly states that titles or possessives alone are insufficient for 'led'. The text describes individual tasks (designing geometry, selecting reinforcement) but does not explicitly state that the student directed a team, owned the entire deliverable independently of collaboration, or led others. Without explicit mention of directing work or sole ownership of the full deliverable, upgrading to 'led' is unsupported; 'shared' or 'assisted' might be more appropriate if context implies a larger project, but strictly based on the text, 'unknown' or 'shared' (if implied team) is safer than 'led'. Given the instruction to reject 'led' unless explicitly stated as directing/solely owning, and the text only lists tasks, 'uncertain' regarding the extent of leadership vs. individual contribution is appropriate."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student explicitly describes making specific design choices ('designed the retaining-wall geometry', 'selected reinforcement') and checking capacities against constraints, which aligns with the definition of 'designed' (made and explained design choices or adapted methods to constraints)."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The phrase 'checked... capacity against the stated design loads' explicitly describes a comparison between calculated capacity and required load values, fitting the definition of 'compared' (evaluation includes explicit baselines, alternatives, or controls)."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text describes actions taken ('designed', 'checked') but does not state the outcome (e.g., safe, failed, optimized). Therefore, marking impact as 'unknown' is accurate."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student's action of 'selected reinforcement' and 'designed the retaining-wall geometry' directly maps to the definition of structural_design ('Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints'). The text supports this skill."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The student's action of 'checked sliding, overturning, bearing, and flexural capacity' involves applying mechanics and analytical methods to evaluate structural response under loads, which fits the definition of structural_analysis ('Application of mechanics and analytical methods to model or evaluate structural response under stated loads...')."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "The rationale correctly notes that the text does not explicitly state code was written. The verdict 'unsupported' is correct because programming requires an explicit programming action and artifact; mere mention of engineering tasks without code writing does not support a programming competency suggestion."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The terms 'retaining-wall', 'reinforcement', 'sliding', etc., are specific domain terminology for Structural Engineering. The context is correctly identified as the domain of the work described."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The phrase 'against the stated design loads' refers to a fundamental concept in structural design. The context is correctly identified based on the source text."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Did the student use any specific software or tools (e.g., ETABS, SAP2000, Excel) to perform the design checks and analysis?",
+        "reason": "The text describes the analytical actions but does not specify the tools used. Knowing if this was manual calculation or software-assisted affects the depth of 'engineering_simulation' or 'programming' competencies."
+      },
+      {
+        "claim_id": "c1",
+        "question": "What were the outcomes of checking the capacities? Did the design pass all checks, require iteration, or fail?",
+        "reason": "The text states that checks were performed but does not report the result (pass/fail/iterate). This impacts the 'impact' dimension."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "While 'I designed' indicates personal execution, the rubric explicitly states that titles or possessives alone are insufficient for 'led'. The text describes individual tasks (designing geometry, selecting reinforcement) but does not explicitly state that the student directed a team, owned the entire deliverable independently of collaboration, or led others. Without explicit mention of directing work or sole ownership of the full deliverable, upgrading to 'led' is unsupported; 'shared' or 'assisted' might be more appropriate if context implies a larger project, but strictly based on the text, 'unknown' or 'shared' (if implied team) is safer than 'led'. Given the instruction to reject 'led' unless explicitly stated as directing/solely owning, and the text only lists tasks, 'uncertain' regarding the extent of leadership vs. individual contribution is appropriate."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The rationale correctly notes that the text does not explicitly state code was written. The verdict 'unsupported' is correct because programming requires an explicit programming action and artifact; mere mention of engineering tasks without code writing does not support a programming competency suggestion."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T22:56:04.4354932Z",
+        "2026-09-29T22:56:32.989433Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "d33caee1cdda6fbebfa5b3f2a7487f82a6ea62ca8c45cac3cba1ea105fa3ba6a"
+      },
+      "draft_response_sha256": "56cbe29bb8c35776b9f28c9b502770a4aebff89a0698f535345e79a72e7981ee",
+      "review_response_sha256": "d12bdab353493a1d715ffd921cb1022a55a3688f869e209b3f41edacfd76f844"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Retaining wall"
+        },
+        {
+          "kind": "domain",
+          "label": "Geotechnical structures"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "Design Loads"
+        },
+        {
+          "kind": "domain",
+          "label": "Structural Engineering"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Checked stability and member capacity under stated loads",
+        "Designed retaining-wall geometry and reinforcement"
+      ],
+      "model_prediction": [
+        "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints."
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "Checked stability and member capacity under stated loads"
+        },
+        {
+          "competency_id": "structural_design",
+          "observed_skill": "Designed retaining-wall geometry and reinforcement"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints."
+        },
+        {
+          "competency_id": "structural_design",
+          "observed_skill": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints."
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "compared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Did the student use any specific software or tools (e.g., ETABS, SAP2000, Excel) to perform the design checks and analysis?",
+        "What were the outcomes of checking the capacities? Did the design pass all checks, require iteration, or fail?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    },
+    {
+      "field": "unassessed",
+      "provisional_reference": [],
+      "model_prediction": [
+        "No explicit mention of using numerical simulation software (e.g., finite element analysis) to model the wall behavior, though 'checked... capacity' implies some form of calculation or simulation. Without a tool name or method description, 'engineering_simulation' remains unassessed.",
+        "The specific materials used for the reinforcement and concrete are not mentioned, which might be relevant for 'structural_design' depth if material selection is considered part of the design process beyond just geometry."
+      ],
+      "question": "Which source limitations must remain unassessed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

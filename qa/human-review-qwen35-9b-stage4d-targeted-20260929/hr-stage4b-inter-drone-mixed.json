@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-inter-drone-mixed",
+  "review_domain": "interdisciplinary",
+  "lineage_group": "unmapped_and_ambiguous_work",
+  "source_sha256": "30e031be23184dfcc26b163b0789e5a231167625185025ff125dfbb1d9dc4418",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10",
+  "status": "structural_failure",
+  "failure_stage": "provider_student_understanding",
+  "error": "Model endpoint unavailable or timed out",
+  "seconds": 28920.93,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "provider_error",
+      "seconds": 28920.92,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "71b9cdc06c7a1ee0cf30b56982cf3087c0567a42bbdca34836c600d600adbab6",
+      "schema_sha256": "b868dacee8135498d63f1d05fd2eb7e79eafaf838ba25bfb2287ba97c610d5c3",
+      "response_id": null,
+      "model": null,
+      "text": null,
+      "error": "Model endpoint unavailable or timed out"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

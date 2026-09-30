@@ -1,0 +1,403 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-tools-context",
+  "review_domain": "computer_science",
+  "lineage_group": "software_delivery_progression",
+  "source_sha256": "42df096b044aa86f8e220a8a89bb992272cf44a2d87598285c3ed5596ff46e2f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 55.37,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 34.96,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "f61f344446683c03b1d515c037c3329c6f41f824defceb3cac1d3399a28f693c",
+      "schema_sha256": "5ea092e0c0fb3f5db6456b6aedf941fcab043937f369dbec7281cfa4c99f42ee",
+      "response_id": "2026-09-30T16:32:04.1375356Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Skills: Git, Docker, and REST APIs.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The document lists skills possessed but does not describe a specific project, task, or deliverable where the student's individual contribution is explicitly detailed. Possessing skills does not establish ownership of a specific work product.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text lists tool names (Git, Docker, REST APIs) without describing the nature of the work performed. Tool recognition alone does not establish depth; it is unknown whether the student applied these tools to implement tasks, designed systems using them, or investigated questions with them.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method, test, review, or assessment is stated in the document.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or effects of the work are stated in the document.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Git\",\n      \"rationale\": \"The student lists Git as a skill.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Docker\",\n      \"rationale\": \"The student lists Docker as a skill.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"REST APIs\",\n      \"rationale\": \"The student lists REST APIs as a skill.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Skills: Git, Docker, and REST APIs.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 20.38,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "458137770cb5cb8d12ff327a1ef949b811da4a296b9ac0d616022183068f0cad",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:32:24.5236834Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text which lists 'Skills: Git, Docker, and REST APIs.' The category 'activity' is appropriate for a list of skills presented as student attributes. The attribution 'student' is correct as these are listed under the student's profile.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that listing skills alone does not establish ownership of a specific work product or project. The label 'unknown' for ownership is appropriate because there is no evidence of individual responsibility for a deliverable, only possession of tools.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly notes that tool names (Git, Docker, REST APIs) without context on how they were used do not establish depth. The label 'unknown' is appropriate because the source does not describe whether the student applied, designed with, or investigated using these tools.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly observes that no evaluation method (test, review, assessment) is stated in the source text. The label 'unknown' for evaluation is accurate given the absence of any described testing or review process.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that no results, outcomes, or effects are stated in the source text. The label 'unknown' for impact is appropriate because the document lists skills but provides no data on performance improvements, adoption, or measured changes.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context entry correctly identifies 'Git' as a tool mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context entry correctly identifies 'Docker' as a tool mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The context entry correctly identifies 'REST APIs' as a tool/concept mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Skills: Git, Docker, and REST APIs."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Skills: Git, Docker, and REST APIs.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The document lists skills possessed but does not describe a specific project, task, or deliverable where the student's individual contribution is explicitly detailed. Possessing skills does not establish ownership of a specific work product.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The text lists tool names (Git, Docker, REST APIs) without describing the nature of the work performed. Tool recognition alone does not establish depth; it is unknown whether the student applied these tools to implement tasks, designed systems using them, or investigated questions with them.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method, test, review, or assessment is stated in the document.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results, outcomes, or effects of the work are stated in the document.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Git",
+          "rationale": "The student lists Git as a skill.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Docker",
+          "rationale": "The student lists Docker as a skill.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "REST APIs",
+          "rationale": "The student lists REST APIs as a skill.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Skills: Git, Docker, and REST APIs."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text which lists 'Skills: Git, Docker, and REST APIs.' The category 'activity' is appropriate for a list of skills presented as student attributes. The attribution 'student' is correct as these are listed under the student's profile."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that listing skills alone does not establish ownership of a specific work product or project. The label 'unknown' for ownership is appropriate because there is no evidence of individual responsibility for a deliverable, only possession of tools."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment correctly notes that tool names (Git, Docker, REST APIs) without context on how they were used do not establish depth. The label 'unknown' is appropriate because the source does not describe whether the student applied, designed with, or investigated using these tools."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The judgment correctly observes that no evaluation method (test, review, assessment) is stated in the source text. The label 'unknown' for evaluation is accurate given the absence of any described testing or review process."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that no results, outcomes, or effects are stated in the source text. The label 'unknown' for impact is appropriate because the document lists skills but provides no data on performance improvements, adoption, or measured changes."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context entry correctly identifies 'Git' as a tool mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context entry correctly identifies 'Docker' as a tool mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The context entry correctly identifies 'REST APIs' as a tool/concept mentioned in the source text. The rationale accurately reflects that the student lists it as a skill. This is a valid recognition of domain terminology/tool usage without inferring method or mastery."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+        "reason": "The source does not establish supported depth of work."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:32:04.1375356Z",
+        "2026-09-30T16:32:24.5236834Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "42df096b044aa86f8e220a8a89bb992272cf44a2d87598285c3ed5596ff46e2f"
+      },
+      "draft_response_sha256": "b4512d7018ce8352bdc563f7d2638f2516decb6bb2f569e8d5c5bc9acdce5bbe",
+      "review_response_sha256": "4a1d0dcda193946e1f22adedc45270a68b2a9f086c6ea867a021f93ade3bade5"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Skills: Git, Docker, and REST APIs.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Skills: Git, Docker, and REST APIs.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "REST APIs"
+        },
+        {
+          "kind": "tool",
+          "label": "Docker"
+        },
+        {
+          "kind": "tool",
+          "label": "Git"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "tool",
+          "label": "Docker"
+        },
+        {
+          "kind": "tool",
+          "label": "Git"
+        },
+        {
+          "kind": "tool",
+          "label": "REST APIs"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "What did you personally do, what methods did you use, and how did you evaluate the result?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

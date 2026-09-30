@@ -1,0 +1,769 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-trap-comparison-impact",
+  "review_domain": "semantic_traps",
+  "lineage_group": "unsupported_inference_traps",
+  "source_sha256": "049a123c4f5e759498e2a98e66107a9dd42244b2d63db755dc2dced064f5db3e",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 152.05,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 108.42,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "a735ab679ec6ce2119363f54ef0eb7a94ce6cadaa41b1c7adb0b3128a4696350",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:43:18.4286529Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Compared two database engines using query latency and memory consumption.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly performed the comparison action ('Compared'), indicating an individual contribution within the activity. No explicit leadership or sole ownership is claimed, but the action is distinct from merely assisting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student investigated a question (performance characteristics) through an explicit method (comparing two engines using specific metrics: query latency and memory consumption). This goes beyond simple application or description.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The activity explicitly involves comparing two alternatives (two database engines) using specific baselines/metrics (query latency and memory consumption).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The document states the action of comparison but does not report any specific results, outcomes, or measured improvements resulting from this comparison.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Comparing system performance metrics (latency, memory consumption) to analyze behavior.\",\n      \"rationale\": \"The student used quantitative methods (query latency and memory consumption) to analyze and compare database engines. This supports the competency of systematic use and interpretation of mathematical or quantitative methods to analyze data.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The document mentions comparing database engines but does not explicitly state that the student wrote code, scripts, or programs to perform this task. Database engine comparison can be done via GUI tools, benchmarks, or SQL queries without writing custom programming code. Therefore, no programming competency is evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity focuses on database engines, query latency, and memory consumption. There is no mention of network protocols, traffic analysis, packet behavior, or network configuration. Therefore, networking competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s4\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves performance benchmarking (latency, memory). There is no mention of vulnerabilities, threats, controls, incident response, or security analysis. Therefore, security competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s5\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity is a direct comparison of database engines using standard metrics. There is no mention of training models, designing algorithms, or applying ML techniques. Therefore, machine learning competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s6\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"distributed_systems\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity compares two database engines. There is no mention of distributed architectures, consensus protocols, or distributed system design. Therefore, distributed systems competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s7\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"While metrics like latency and memory are quantitative, the description does not explicitly state the use of statistical methods (hypothesis testing, confidence intervals, regression) to analyze the data. It describes a comparison action. Without explicit mention of statistical methodology, this competency is not claimed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s8\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"operating_systems\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity focuses on database engines. There is no mention of OS internals, kernel tuning, or system-level configuration beyond the database context. Therefore, operating systems competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s9\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"cryptography\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves performance metrics. There is no mention of encryption, hashing, or cryptographic protocols. Therefore, cryptography competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s10\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"policy_governance\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity is technical benchmarking. There is no mention of policy creation, governance frameworks, or regulatory compliance. Therefore, policy governance competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s11\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"risk\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity measures performance. There is no mention of risk assessment, threat modeling, or risk mitigation strategies. Therefore, risk competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s12\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_analysis\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves database engines, not structural mechanics or load analysis. Therefore, structural analysis competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s13\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"structural_design\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves database engines, not structural design. Therefore, structural design competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s14\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"mechanical_design\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves database engines, not mechanical parts or assemblies. Therefore, mechanical design competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s15\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"engineering_simulation\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity is a direct comparison of engines, not the construction or interpretation of numerical/physics-based simulation models. Therefore, engineering simulation competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s16\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"embedded_digital_systems\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity involves database engines, not embedded hardware, sensors, or firmware integration. Therefore, embedded digital systems competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s17\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"qualitative_research\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity uses quantitative metrics (latency, memory). There is no mention of collecting or interpreting nonnumeric evidence. Therefore, qualitative research competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s18\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"teaching_instruction\",\n      \"observed_skill\": \"null\",\n      \"rationale\": \"The activity is a technical comparison. There is no mention of planning, delivering, or evaluating instruction for learners. Therefore, teaching instruction competency is not evidenced.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Compared two database engines using query latency and memory consumption.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 43.61,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "7e5c262344af589ee25745992d68fd307953672fe742497e82940ffcb3053e6b",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T21:44:02.0412104Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text which states 'Compared two database engines using query latency and memory consumption.' The category 'activity' is appropriate for a described task.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work. The source text uses the singular verb 'Compared' without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent that, individual action is not automatically 'shared'. The verdict should be 'unknown' as responsibility is not established.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The source describes investigating performance characteristics (query latency and memory consumption) through an explicit method (comparing two engines). This supports the 'investigated' depth label as it goes beyond simple description to analysis via specific metrics.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The activity explicitly involves comparing two alternatives (database engines) using specific baselines/metrics. This directly supports the 'compared' evaluation label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text reports the action of comparison but contains no results, outcomes, or measured improvements. Therefore, 'unknown' is the correct label for impact as no result is stated.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student used quantitative methods (query latency and memory consumption) to analyze behavior. This supports the competency of systematic use and interpretation of mathematical or quantitative methods to analyze data, even if statistical rigor isn't explicitly named.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The source does not state that code was written; comparison can be done via GUI tools or SQL queries. The rationale correctly identifies that no programming competency is evidenced by the text alone. This is a valid 'null' observation for this specific claim, not an unsupported rejection of evidence.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"The activity focuses on database engines and memory/latency, with no mention of network protocols or traffic analysis. The rationale correctly identifies that networking competency is not evidenced.\"},{\"target_id\":\"s4\",\"verdict\":\"supported\",\"explanation\":\"The activity involves performance benchmarking with no mention of vulnerabilities, threats, or incident response. The rationale correctly identifies that security competency is not evidenced.\"},{\"target_id\":\"s5\",\"verdict\":\"supported\",\"explanation\":\"The activity is a direct comparison of engines using standard metrics with no mention of training models or ML techniques. The rationale correctly identifies that machine learning competency is not evidenced.\"},{\"target_id\":\"s6\",\"verdict\":\"supported\",\"explanation\":\"The activity compares two database engines without mentioning distributed architectures or consensus protocols. The rationale correctly identifies that distributed systems competency is not evidenced.\"},{\"target_id\":\"s7\",\"verdict\":\"supported\",\"explanation\":\"While metrics are quantitative, the description lacks explicit mention of statistical methods (hypothesis testing, confidence intervals). The rationale correctly notes that without explicit methodology, this competency is not claimed. This is a valid 'null' observation for missing taxonomy coverage in the specific claim.\"},{\"target_id\":\"s8\",\"verdict\":\"supported\",\"explanation\":\"The activity focuses on database engines with no mention of OS internals or kernel tuning. The rationale correctly identifies that operating systems competency is not evidenced.\"},{\"target_id\":\"s9\",\"verdict\":\"supported\",\"explanation\":\"The activity involves performance metrics with no mention of encryption or cryptographic protocols. The rationale correctly identifies that cryptography competency is not evidenced.\"},{\"target_id\":\"s10\",\"verdict\":\"supported\",\"explanation\":\"The activity is technical benchmarking with no mention of policy creation or governance frameworks. The rationale correctly identifies that policy_governance competency is not evidenced.\"},{\"target_id\":\"s11\",\"verdict\":\"supported\",\"explanation\":\"The activity measures performance with no mention of risk assessment or threat modeling. The rationale correctly identifies that risk competency is not evidenced.\"},{\"target_id\":\"s12\",\"verdict\":\"supported\",\"explanation\":\"The activity involves database engines, not structural mechanics. The rationale correctly identifies that structural_analysis competency is not evidenced.\"},{\"target_id\":\"s13\",\"verdict\":\"supported\",\"explanation\":\"The activity involves database engines, not structural design. The rationale correctly identifies that structural_design competency is not evidenced.\"},{\"target_id\":\"s14\",\"verdict\":\"supported\",\"explanation\":\"The activity involves database engines, not mechanical parts. The rationale correctly identifies that mechanical_design competency is not evidenced.\"},{\"target_id\":\"s15\",\"verdict\":\"supported\",\"explanation\":\"The activity is a direct comparison of engines, not the construction or interpretation of numerical/physics-based simulation models. The rationale correctly identifies that engineering_simulation competency is not evidenced.\"},{\"target_id\":\"s16\",\"verdict\":\"supported\",\"explanation\":\"The activity involves database engines, not embedded hardware or firmware integration. The rationale correctly identifies that embedded_digital_systems competency is not evidenced.\"},{\"target_id\":\"s17\",\"verdict\":\"supported\",\"explanation\":\"The activity uses quantitative metrics with no mention of collecting or interpreting nonnumeric evidence. The rationale correctly identifies that qualitative_research competency is not evidenced.\"},{\"target_id\":\"s18\",\"verdict\":\"supported\",\"explanation\":\"The activity is a technical comparison with no mention of planning or delivering instruction. The rationale correctly identifies that teaching_instruction competency is not evidenced.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Compared two database engines using query latency and memory consumption."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Compared two database engines using query latency and memory consumption.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly performed the comparison action ('Compared'), indicating an individual contribution within the activity. No explicit leadership or sole ownership is claimed, but the action is distinct from merely assisting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student investigated a question (performance characteristics) through an explicit method (comparing two engines using specific metrics: query latency and memory consumption). This goes beyond simple application or description.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The activity explicitly involves comparing two alternatives (two database engines) using specific baselines/metrics (query latency and memory consumption).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The document states the action of comparison but does not report any specific results, outcomes, or measured improvements resulting from this comparison.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Comparing system performance metrics (latency, memory consumption) to analyze behavior.",
+          "rationale": "The student used quantitative methods (query latency and memory consumption) to analyze and compare database engines. This supports the competency of systematic use and interpretation of mathematical or quantitative methods to analyze data.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "null",
+          "rationale": "The document mentions comparing database engines but does not explicitly state that the student wrote code, scripts, or programs to perform this task. Database engine comparison can be done via GUI tools, benchmarks, or SQL queries without writing custom programming code. Therefore, no programming competency is evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "networking",
+          "observed_skill": "null",
+          "rationale": "The activity focuses on database engines, query latency, and memory consumption. There is no mention of network protocols, traffic analysis, packet behavior, or network configuration. Therefore, networking competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "null",
+          "rationale": "The activity involves performance benchmarking (latency, memory). There is no mention of vulnerabilities, threats, controls, incident response, or security analysis. Therefore, security competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s5",
+          "claim_id": "c1",
+          "competency_id": "machine_learning",
+          "observed_skill": "null",
+          "rationale": "The activity is a direct comparison of database engines using standard metrics. There is no mention of training models, designing algorithms, or applying ML techniques. Therefore, machine learning competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s6",
+          "claim_id": "c1",
+          "competency_id": "distributed_systems",
+          "observed_skill": "null",
+          "rationale": "The activity compares two database engines. There is no mention of distributed architectures, consensus protocols, or distributed system design. Therefore, distributed systems competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s7",
+          "claim_id": "c1",
+          "competency_id": "statistics",
+          "observed_skill": "null",
+          "rationale": "While metrics like latency and memory are quantitative, the description does not explicitly state the use of statistical methods (hypothesis testing, confidence intervals, regression) to analyze the data. It describes a comparison action. Without explicit mention of statistical methodology, this competency is not claimed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s8",
+          "claim_id": "c1",
+          "competency_id": "operating_systems",
+          "observed_skill": "null",
+          "rationale": "The activity focuses on database engines. There is no mention of OS internals, kernel tuning, or system-level configuration beyond the database context. Therefore, operating systems competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s9",
+          "claim_id": "c1",
+          "competency_id": "cryptography",
+          "observed_skill": "null",
+          "rationale": "The activity involves performance metrics. There is no mention of encryption, hashing, or cryptographic protocols. Therefore, cryptography competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s10",
+          "claim_id": "c1",
+          "competency_id": "policy_governance",
+          "observed_skill": "null",
+          "rationale": "The activity is technical benchmarking. There is no mention of policy creation, governance frameworks, or regulatory compliance. Therefore, policy governance competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s11",
+          "claim_id": "c1",
+          "competency_id": "risk",
+          "observed_skill": "null",
+          "rationale": "The activity measures performance. There is no mention of risk assessment, threat modeling, or risk mitigation strategies. Therefore, risk competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s12",
+          "claim_id": "c1",
+          "competency_id": "structural_analysis",
+          "observed_skill": "null",
+          "rationale": "The activity involves database engines, not structural mechanics or load analysis. Therefore, structural analysis competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s13",
+          "claim_id": "c1",
+          "competency_id": "structural_design",
+          "observed_skill": "null",
+          "rationale": "The activity involves database engines, not structural design. Therefore, structural design competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s14",
+          "claim_id": "c1",
+          "competency_id": "mechanical_design",
+          "observed_skill": "null",
+          "rationale": "The activity involves database engines, not mechanical parts or assemblies. Therefore, mechanical design competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s15",
+          "claim_id": "c1",
+          "competency_id": "engineering_simulation",
+          "observed_skill": "null",
+          "rationale": "The activity is a direct comparison of engines, not the construction or interpretation of numerical/physics-based simulation models. Therefore, engineering simulation competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s16",
+          "claim_id": "c1",
+          "competency_id": "embedded_digital_systems",
+          "observed_skill": "null",
+          "rationale": "The activity involves database engines, not embedded hardware, sensors, or firmware integration. Therefore, embedded digital systems competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s17",
+          "claim_id": "c1",
+          "competency_id": "qualitative_research",
+          "observed_skill": "null",
+          "rationale": "The activity uses quantitative metrics (latency, memory). There is no mention of collecting or interpreting nonnumeric evidence. Therefore, qualitative research competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        },
+        {
+          "id": "s18",
+          "claim_id": "c1",
+          "competency_id": "teaching_instruction",
+          "observed_skill": "null",
+          "rationale": "The activity is a technical comparison. There is no mention of planning, delivering, or evaluating instruction for learners. Therefore, teaching instruction competency is not evidenced.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Compared two database engines using query latency and memory consumption."
+            }
+          ]
+        }
+      ],
+      "contexts": [],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text which states 'Compared two database engines using query latency and memory consumption.' The category 'activity' is appropriate for a described task."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work. The source text uses the singular verb 'Compared' without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent that, individual action is not automatically 'shared'. The verdict should be 'unknown' as responsibility is not established."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The source describes investigating performance characteristics (query latency and memory consumption) through an explicit method (comparing two engines). This supports the 'investigated' depth label as it goes beyond simple description to analysis via specific metrics."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The activity explicitly involves comparing two alternatives (database engines) using specific baselines/metrics. This directly supports the 'compared' evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text reports the action of comparison but contains no results, outcomes, or measured improvements. Therefore, 'unknown' is the correct label for impact as no result is stated."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student used quantitative methods (query latency and memory consumption) to analyze behavior. This supports the competency of systematic use and interpretation of mathematical or quantitative methods to analyze data, even if statistical rigor isn't explicitly named."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The source does not state that code was written; comparison can be done via GUI tools or SQL queries. The rationale correctly identifies that no programming competency is evidenced by the text alone. This is a valid 'null' observation for this specific claim, not an unsupported rejection of evidence."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "supported",
+          "explanation": "The activity focuses on database engines and memory/latency, with no mention of network protocols or traffic analysis. The rationale correctly identifies that networking competency is not evidenced."
+        },
+        {
+          "target_id": "s4",
+          "verdict": "supported",
+          "explanation": "The activity involves performance benchmarking with no mention of vulnerabilities, threats, or incident response. The rationale correctly identifies that security competency is not evidenced."
+        },
+        {
+          "target_id": "s5",
+          "verdict": "supported",
+          "explanation": "The activity is a direct comparison of engines using standard metrics with no mention of training models or ML techniques. The rationale correctly identifies that machine learning competency is not evidenced."
+        },
+        {
+          "target_id": "s6",
+          "verdict": "supported",
+          "explanation": "The activity compares two database engines without mentioning distributed architectures or consensus protocols. The rationale correctly identifies that distributed systems competency is not evidenced."
+        },
+        {
+          "target_id": "s7",
+          "verdict": "supported",
+          "explanation": "While metrics are quantitative, the description lacks explicit mention of statistical methods (hypothesis testing, confidence intervals). The rationale correctly notes that without explicit methodology, this competency is not claimed. This is a valid 'null' observation for missing taxonomy coverage in the specific claim."
+        },
+        {
+          "target_id": "s8",
+          "verdict": "supported",
+          "explanation": "The activity focuses on database engines with no mention of OS internals or kernel tuning. The rationale correctly identifies that operating systems competency is not evidenced."
+        },
+        {
+          "target_id": "s9",
+          "verdict": "supported",
+          "explanation": "The activity involves performance metrics with no mention of encryption or cryptographic protocols. The rationale correctly identifies that cryptography competency is not evidenced."
+        },
+        {
+          "target_id": "s10",
+          "verdict": "supported",
+          "explanation": "The activity is technical benchmarking with no mention of policy creation or governance frameworks. The rationale correctly identifies that policy_governance competency is not evidenced."
+        },
+        {
+          "target_id": "s11",
+          "verdict": "supported",
+          "explanation": "The activity measures performance with no mention of risk assessment or threat modeling. The rationale correctly identifies that risk competency is not evidenced."
+        },
+        {
+          "target_id": "s12",
+          "verdict": "supported",
+          "explanation": "The activity involves database engines, not structural mechanics. The rationale correctly identifies that structural_analysis competency is not evidenced."
+        },
+        {
+          "target_id": "s13",
+          "verdict": "supported",
+          "explanation": "The activity involves database engines, not structural design. The rationale correctly identifies that structural_design competency is not evidenced."
+        },
+        {
+          "target_id": "s14",
+          "verdict": "supported",
+          "explanation": "The activity involves database engines, not mechanical parts. The rationale correctly identifies that mechanical_design competency is not evidenced."
+        },
+        {
+          "target_id": "s15",
+          "verdict": "supported",
+          "explanation": "The activity is a direct comparison of engines, not the construction or interpretation of numerical/physics-based simulation models. The rationale correctly identifies that engineering_simulation competency is not evidenced."
+        },
+        {
+          "target_id": "s16",
+          "verdict": "supported",
+          "explanation": "The activity involves database engines, not embedded hardware or firmware integration. The rationale correctly identifies that embedded_digital_systems competency is not evidenced."
+        },
+        {
+          "target_id": "s17",
+          "verdict": "supported",
+          "explanation": "The activity uses quantitative metrics with no mention of collecting or interpreting nonnumeric evidence. The rationale correctly identifies that qualitative_research competency is not evidenced."
+        },
+        {
+          "target_id": "s18",
+          "verdict": "supported",
+          "explanation": "The activity is a technical comparison with no mention of planning or delivering instruction. The rationale correctly identifies that teaching_instruction competency is not evidenced."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15",
+      "s16",
+      "s17",
+      "s18",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9"
+    ],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work. The source text uses the singular verb 'Compared' without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent that, individual action is not automatically 'shared'. The verdict should be 'unknown' as responsibility is not established."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T21:43:18.4286529Z",
+        "2026-09-29T21:44:02.0412104Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "049a123c4f5e759498e2a98e66107a9dd42244b2d63db755dc2dced064f5db3e"
+      },
+      "draft_response_sha256": "2f81e7695ef6cc60b58d6a265d2851f431218ae6695792a661fbbdf9bb5419a6",
+      "review_response_sha256": "ab561c280ac2768e5d6daddb1fe3de5757e825cdc27da784d009ea524df610ff"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Compared two database engines using query latency and memory consumption.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Compared two database engines using query latency and memory consumption.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Benchmarking"
+        },
+        {
+          "kind": "domain",
+          "label": "Database systems"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Designed and ran a database-engine benchmark"
+      ],
+      "model_prediction": [
+        "Comparing system performance metrics (latency, memory consumption) to analyze behavior.",
+        "null"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Designed and ran a database-engine benchmark"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "cryptography",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "distributed_systems",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "embedded_digital_systems",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "engineering_simulation",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "mechanical_design",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "networking",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "operating_systems",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "policy_governance",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "Comparing system performance metrics (latency, memory consumption) to analyze behavior."
+        },
+        {
+          "competency_id": "risk",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "security",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "statistics",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "structural_analysis",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "structural_design",
+          "observed_skill": "null"
+        },
+        {
+          "competency_id": "teaching_instruction",
+          "observed_skill": "null"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

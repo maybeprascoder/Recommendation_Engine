@@ -1,0 +1,448 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-computer-science-programming",
+  "review_domain": "computer_science",
+  "lineage_group": "programming_evidence",
+  "source_sha256": "ffea55bf9a01f101e50c562ae5e186daba115a4f0bbd46ad6141e316ab435170",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 96.93,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 69.35,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "b148e714442869441081fb9538c924dfe4c962d24ace465a6c96fb9be1bac29e",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:40:08.6104263Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"For my personal project, I wrote Python code to clean survey records.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For my personal project, I wrote Python code to clean survey records.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I wrote Python code', indicating individual contribution to the task of cleaning records within a personal project context. No evidence suggests they led a team or were merely assisted; it is an individual action within a project setting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For my personal project, I wrote Python code to clean survey records.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (Python code) to implement a described task (cleaning survey records). There is no evidence of designing new algorithms, adapting methods to specific constraints, or investigating a novel question beyond the application of the tool.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I wrote Python code to clean survey records.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the action of writing code but does not state how the cleaning was evaluated (e.g., accuracy checks, peer review, comparison against a baseline).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For my personal project, I wrote Python code to clean survey records.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or adoption of the cleaned data are stated in the provided text.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For my personal project, I wrote Python code to clean survey records.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"wrote Python code\",\n      \"rationale\": \"The student explicitly wrote Python code, which supports the programming competency. The activity is preserving the specific action of coding.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I wrote Python code to clean survey records.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"clean survey records\",\n      \"rationale\": \"Cleaning survey records involves processing data, which relates to quantitative analysis methods. However, without explicit mention of statistical methods or mathematical modeling, this is recorded as an observed skill related to the domain.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I wrote Python code to clean survey records.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Python\",\n      \"rationale\": \"The student explicitly named Python as the tool used to write code.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I wrote Python code\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"survey records\",\n      \"rationale\": \"The data domain is explicitly identified as survey records.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"clean survey records\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"data cleaning\",\n      \"rationale\": \"The specific task performed is data cleaning.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"clean survey records\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 27.55,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "5a3cf3b8aae81813649e3aa29594cb7a95b147e166ba8fec36dd9c60959a8923",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:40:36.1664391Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text's statement about writing Python code for a personal project.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' is incorrect. The source explicitly states 'my personal project' and 'I wrote', indicating individual ownership, not shared responsibility within collaborative work.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is appropriate. The student used an established tool (Python) to complete a task without evidence of designing new methods or investigating novel questions.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct because the text describes the action but provides no information on how the cleaning was evaluated.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is correct as no results, outcomes, or adoption of the cleaned data are mentioned in the source.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"Writing Python code explicitly supports the programming competency. The observed skill matches the action described.\"},{\"target_id\":\"s2\",\"verdict\":\"unsupported\",\"explanation\":\"Cleaning survey records does not inherently support 'quantitative_analysis' as a demonstrated skill without explicit mention of statistical methods, mathematical modeling, or analysis of relationships. Data cleaning is distinct from quantitative analysis; this represents an inflated tool-to-competency proposal.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly names Python as the tool used, supporting the context identification.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly identifies 'survey records' as the data domain, supporting the context identification.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'clean survey records' explicitly identifies 'data cleaning' as the concept/task performed, supporting the context identification.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "For my personal project, I wrote Python code to clean survey records."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "For my personal project, I wrote Python code to clean survey records.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For my personal project, I wrote Python code to clean survey records."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states 'I wrote Python code', indicating individual contribution to the task of cleaning records within a personal project context. No evidence suggests they led a team or were merely assisted; it is an individual action within a project setting.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For my personal project, I wrote Python code to clean survey records."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (Python code) to implement a described task (cleaning survey records). There is no evidence of designing new algorithms, adapting methods to specific constraints, or investigating a novel question beyond the application of the tool.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I wrote Python code to clean survey records."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text describes the action of writing code but does not state how the cleaning was evaluated (e.g., accuracy checks, peer review, comparison against a baseline).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For my personal project, I wrote Python code to clean survey records."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results, outcomes, or adoption of the cleaned data are stated in the provided text.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For my personal project, I wrote Python code to clean survey records."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "wrote Python code",
+          "rationale": "The student explicitly wrote Python code, which supports the programming competency. The activity is preserving the specific action of coding.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I wrote Python code to clean survey records."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "clean survey records",
+          "rationale": "Cleaning survey records involves processing data, which relates to quantitative analysis methods. However, without explicit mention of statistical methods or mathematical modeling, this is recorded as an observed skill related to the domain.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I wrote Python code to clean survey records."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Python",
+          "rationale": "The student explicitly named Python as the tool used to write code.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I wrote Python code"
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "survey records",
+          "rationale": "The data domain is explicitly identified as survey records.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "clean survey records"
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "data cleaning",
+          "rationale": "The specific task performed is data cleaning.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "clean survey records"
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text's statement about writing Python code for a personal project."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' is incorrect. The source explicitly states 'my personal project' and 'I wrote', indicating individual ownership, not shared responsibility within collaborative work."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is appropriate. The student used an established tool (Python) to complete a task without evidence of designing new methods or investigating novel questions."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct because the text describes the action but provides no information on how the cleaning was evaluated."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is correct as no results, outcomes, or adoption of the cleaned data are mentioned in the source."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "Writing Python code explicitly supports the programming competency. The observed skill matches the action described."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "Cleaning survey records does not inherently support 'quantitative_analysis' as a demonstrated skill without explicit mention of statistical methods, mathematical modeling, or analysis of relationships. Data cleaning is distinct from quantitative analysis; this represents an inflated tool-to-competency proposal."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source explicitly names Python as the tool used, supporting the context identification."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source explicitly identifies 'survey records' as the data domain, supporting the context identification."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The phrase 'clean survey records' explicitly identifies 'data cleaning' as the concept/task performed, supporting the context identification."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' is incorrect. The source explicitly states 'my personal project' and 'I wrote', indicating individual ownership, not shared responsibility within collaborative work."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Cleaning survey records does not inherently support 'quantitative_analysis' as a demonstrated skill without explicit mention of statistical methods, mathematical modeling, or analysis of relationships. Data cleaning is distinct from quantitative analysis; this represents an inflated tool-to-competency proposal."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:40:08.6104263Z",
+        "2026-09-28T19:40:36.1664391Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "ffea55bf9a01f101e50c562ae5e186daba115a4f0bbd46ad6141e316ab435170"
+      },
+      "draft_response_sha256": "affc94aae103dbe57d9ba8e774e1d35ccee87fa1a587eda466894d2f7d06601e",
+      "review_response_sha256": "b36e3f9af884a3739205774813d8170f31ce01a42e2393311904918db70e689e"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "tool",
+          "label": "Python"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "data cleaning"
+        },
+        {
+          "kind": "domain",
+          "label": "survey records"
+        },
+        {
+          "kind": "tool",
+          "label": "Python"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Python data-cleaning code"
+      ],
+      "model_prediction": [
+        "wrote Python code"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Python data-cleaning code"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "wrote Python code"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

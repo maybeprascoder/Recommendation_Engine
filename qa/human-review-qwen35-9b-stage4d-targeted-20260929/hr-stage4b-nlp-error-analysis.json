@@ -1,0 +1,575 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-nlp-error-analysis",
+  "review_domain": "machine_learning",
+  "lineage_group": "nlp_cross_domain",
+  "source_sha256": "2afba7c6a1af0b61463eef9efc4d0053c04d48019b935c13c540e7a72972d64b",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 129.22,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 87.4,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "13d40b6ef678cb58247d639cdb6929b5f2f5d35f6356cafd021867568212b297",
+      "schema_sha256": "3a466f5654f077c161625e2d8cda2577110055b37c3c680c91d2c4f0d80c341a",
+      "response_id": "2026-09-29T22:45:52.7047428Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"research\",\n      \"statement\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The text states 'our BERT classifier' and 'I designed', indicating an individual contribution within a collaborative context ('our'). It does not explicitly state the student led the project or owned it entirely, nor does it say they merely assisted. Thus, 'shared' is the appropriate label for an explicit individual contribution in collaborative work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student explicitly states they 'designed an error-analysis protocol' and 'grouped false positives by linguistic pattern'. This indicates making design choices or adapting methods to constraints (the specific patterns of errors), rather than just applying a standard method ('applied') or merely investigating without explicit method description. The act of designing a protocol for analysis supports the 'designed' depth label.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The text explicitly mentions 'compared two tokenization strategies on the frozen test set'. This constitutes an evaluation method that includes explicit baselines (the two strategies) and alternatives. The use of a 'frozen test set' implies a controlled assessment environment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the actions taken (designing, grouping, comparing) but does not state any concrete outcome, result, or measurement resulting from these actions. There is no mention of improved accuracy, reduced error rates, easier deployment, or adoption by users. Therefore, impact remains 'unknown'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"error-analysis protocol design for BERT classifier\",\n      \"rationale\": \"The student designed an error-analysis protocol specifically for a 'BERT classifier' and analyzed false positives. This demonstrates engagement with machine learning models (specifically transformer-based classifiers) and the analysis of their performance characteristics.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"grouping false positives by linguistic pattern and comparing tokenization strategies\",\n      \"rationale\": \"The student 'grouped false positives by linguistic pattern' and 'compared two tokenization strategies'. This involves systematic collection, comparison, and interpretation of data (error instances) to investigate a question (error sources/strategies). While the text doesn't specify statistical tests, the act of grouping and comparing strategies on a test set constitutes a form of quantitative or systematic analysis of model behavior.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"implementation of error-analysis protocol and comparison logic\",\n      \"rationale\": \"Designing an 'error-analysis protocol' for a classifier and comparing strategies on a test set implies the implementation of code to perform these tasks (e.g., extracting predictions, grouping errors, running comparisons). While the specific language isn't named, the actions described ('designed', 'compared') in the context of ML model analysis strongly imply programming activities were performed to execute the protocol and comparison logic.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s4\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"analysis of model performance metrics via error grouping and strategy comparison\",\n      \"rationale\": \"The activity involves analyzing 'false positives' (a metric) and comparing strategies on a 'test set'. This inherently involves statistical concepts like error rates, precision/recall implications, or distribution analysis of errors. The systematic grouping and comparison support the use of statistical methods to analyze data and relationships.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"BERT classifier\",\n      \"rationale\": \"The student explicitly mentions working with a 'BERT classifier', indicating familiarity with this specific pre-trained language model architecture.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"tokenization strategies\",\n      \"rationale\": \"The student compares 'two tokenization strategies', indicating knowledge of different methods for converting text into tokens (e.g., WordPiece, BPE, SentencePiece) and their impact on model performance.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"false positives\",\n      \"rationale\": \"The analysis focuses on 'false positives', a specific type of classification error, indicating an understanding of model evaluation metrics and error types.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t4\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"linguistic pattern\",\n      \"rationale\": \"The student groups errors by 'linguistic pattern', indicating an understanding of how language features (syntax, morphology, semantics) relate to model errors.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t5\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"frozen test set\",\n      \"rationale\": \"The use of a 'frozen test set' indicates an understanding of proper machine learning evaluation practices where the test data is held out and not modified during training or analysis to ensure unbiased assessment.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 41.8,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "97c3f05c1bff72150f4d8192be5808609c4c5897043305a3c1c9d2bb4423e239",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T22:46:34.5149743Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim statement is a verbatim quote from the source document describing the specific research activity (designing a protocol, grouping errors, comparing strategies). The category 'research' is appropriate for this described work.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative ownership. While the text uses 'our BERT classifier', it does not explicitly state that the student's contribution was shared or that they worked alongside others on this specific task; 'our' could simply refer to a team project where the student had individual responsibility for this part. Without explicit mention of collaboration on this specific deliverable, 'shared' is an assumption. The safer label given 'I designed' is 'led' (individual ownership of the described design) or 'unknown' if 'our' implies a team context not detailed enough to confirm shared ownership of *this* specific output. However, strictly following the rule that 'My thesis' alone isn't enough for 'led', but 'I designed' establishes personal execution. The presence of 'our' suggests a team context, but without explicit description of the student's role relative to teammates on *this* task, 'shared' is not fully supported by the text which focuses on individual actions ('I designed'). A better fit might be 'led' (owned the design) or 'unknown' regarding the extent of collaboration. Given the instruction to reject positive labels attached to absent info, and the lack of explicit team dynamic description for *this* task, 'shared' is unsupported.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly states 'I designed an error-analysis protocol'. This indicates making design choices or adapting methods (grouping by linguistic pattern), which supports the 'designed' depth label over 'applied' or 'investigated'.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The text explicitly mentions 'compared two tokenization strategies on the frozen test set'. This constitutes an evaluation method with explicit baselines (the two strategies), supporting the 'compared' label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The text describes actions taken ('designed', 'grouped', 'compared') but contains no statement of concrete outcomes, results, measurements, or adoption. Therefore, the impact is correctly labeled as 'unknown'.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly designed a protocol for a 'BERT classifier' and analyzed false positives. This demonstrates engagement with machine learning models and their performance characteristics, supporting the 'machine_learning' competency.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The activities 'grouped false positives by linguistic pattern' and 'compared two tokenization strategies' involve systematic collection, comparison, and interpretation of data (error instances) to investigate a question. This supports 'quantitative_analysis' as it involves analyzing model behavior and relationships, even if specific statistical tests aren't named.\"},{\"target_id\":\"s3\",\"verdict\":\"unsupported\",\"explanation\":\"The text describes designing a protocol and comparing strategies. While this implies programming was likely used to execute these tasks, the source does not explicitly state that the student wrote code or implemented the logic. The rule states: 'Explicit code writing supports identifying the programming node... Judge identity separately from rubric strength'. Mere implication ('implies the implementation of code') is insufficient support for a positive 'programming' competency claim without explicit evidence of coding actions or artifacts in the text.\"},{\"target_id\":\"s4\",\"verdict\":\"supported\",\"explanation\":\"The activity involves analyzing 'false positives' (a metric) and comparing strategies on a 'test set'. This inherently involves statistical concepts like error rates or distribution analysis. The systematic grouping and comparison support the use of statistical methods to analyze data, supporting the 'statistics' competency.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions working with a 'BERT classifier', which is a specific tool/concept. Recognition of this domain terminology is allowed and supported by the text.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The student compares 'two tokenization strategies', indicating knowledge of these concepts. Recognition of domain terminology is allowed.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The analysis focuses on 'false positives', a specific concept/metric. Recognition of this term is supported by the text.\"},{\"target_id\":\"t4\",\"verdict\":\"supported\",\"explanation\":\"The student groups errors by 'linguistic pattern', indicating knowledge of this concept. Recognition of domain terminology is allowed.\"},{\"target_id\":\"t5\",\"verdict\":\"supported\",\"explanation\":\"The use of a 'frozen test set' indicates knowledge of this specific ML evaluation concept. Recognition of domain terminology is allowed.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "research",
+          "statement": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The text states 'our BERT classifier' and 'I designed', indicating an individual contribution within a collaborative context ('our'). It does not explicitly state the student led the project or owned it entirely, nor does it say they merely assisted. Thus, 'shared' is the appropriate label for an explicit individual contribution in collaborative work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student explicitly states they 'designed an error-analysis protocol' and 'grouped false positives by linguistic pattern'. This indicates making design choices or adapting methods to constraints (the specific patterns of errors), rather than just applying a standard method ('applied') or merely investigating without explicit method description. The act of designing a protocol for analysis supports the 'designed' depth label.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The text explicitly mentions 'compared two tokenization strategies on the frozen test set'. This constitutes an evaluation method that includes explicit baselines (the two strategies) and alternatives. The use of a 'frozen test set' implies a controlled assessment environment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the actions taken (designing, grouping, comparing) but does not state any concrete outcome, result, or measurement resulting from these actions. There is no mention of improved accuracy, reduced error rates, easier deployment, or adoption by users. Therefore, impact remains 'unknown'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "machine_learning",
+          "observed_skill": "error-analysis protocol design for BERT classifier",
+          "rationale": "The student designed an error-analysis protocol specifically for a 'BERT classifier' and analyzed false positives. This demonstrates engagement with machine learning models (specifically transformer-based classifiers) and the analysis of their performance characteristics.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "grouping false positives by linguistic pattern and comparing tokenization strategies",
+          "rationale": "The student 'grouped false positives by linguistic pattern' and 'compared two tokenization strategies'. This involves systematic collection, comparison, and interpretation of data (error instances) to investigate a question (error sources/strategies). While the text doesn't specify statistical tests, the act of grouping and comparing strategies on a test set constitutes a form of quantitative or systematic analysis of model behavior.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "implementation of error-analysis protocol and comparison logic",
+          "rationale": "Designing an 'error-analysis protocol' for a classifier and comparing strategies on a test set implies the implementation of code to perform these tasks (e.g., extracting predictions, grouping errors, running comparisons). While the specific language isn't named, the actions described ('designed', 'compared') in the context of ML model analysis strongly imply programming activities were performed to execute the protocol and comparison logic.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "claim_id": "c1",
+          "competency_id": "statistics",
+          "observed_skill": "analysis of model performance metrics via error grouping and strategy comparison",
+          "rationale": "The activity involves analyzing 'false positives' (a metric) and comparing strategies on a 'test set'. This inherently involves statistical concepts like error rates, precision/recall implications, or distribution analysis of errors. The systematic grouping and comparison support the use of statistical methods to analyze data and relationships.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "BERT classifier",
+          "rationale": "The student explicitly mentions working with a 'BERT classifier', indicating familiarity with this specific pre-trained language model architecture.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "tokenization strategies",
+          "rationale": "The student compares 'two tokenization strategies', indicating knowledge of different methods for converting text into tokens (e.g., WordPiece, BPE, SentencePiece) and their impact on model performance.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "false positives",
+          "rationale": "The analysis focuses on 'false positives', a specific type of classification error, indicating an understanding of model evaluation metrics and error types.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "t4",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "linguistic pattern",
+          "rationale": "The student groups errors by 'linguistic pattern', indicating an understanding of how language features (syntax, morphology, semantics) relate to model errors.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        },
+        {
+          "id": "t5",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "frozen test set",
+          "rationale": "The use of a 'frozen test set' indicates an understanding of proper machine learning evaluation practices where the test data is held out and not modified during training or analysis to ensure unbiased assessment.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I designed an error-analysis protocol for our BERT classifier, grouped false positives by linguistic pattern, and compared two tokenization strategies on the frozen test set."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim statement is a verbatim quote from the source document describing the specific research activity (designing a protocol, grouping errors, comparing strategies). The category 'research' is appropriate for this described work."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative ownership. While the text uses 'our BERT classifier', it does not explicitly state that the student's contribution was shared or that they worked alongside others on this specific task; 'our' could simply refer to a team project where the student had individual responsibility for this part. Without explicit mention of collaboration on this specific deliverable, 'shared' is an assumption. The safer label given 'I designed' is 'led' (individual ownership of the described design) or 'unknown' if 'our' implies a team context not detailed enough to confirm shared ownership of *this* specific output. However, strictly following the rule that 'My thesis' alone isn't enough for 'led', but 'I designed' establishes personal execution. The presence of 'our' suggests a team context, but without explicit description of the student's role relative to teammates on *this* task, 'shared' is not fully supported by the text which focuses on individual actions ('I designed'). A better fit might be 'led' (owned the design) or 'unknown' regarding the extent of collaboration. Given the instruction to reject positive labels attached to absent info, and the lack of explicit team dynamic description for *this* task, 'shared' is unsupported."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The text explicitly states 'I designed an error-analysis protocol'. This indicates making design choices or adapting methods (grouping by linguistic pattern), which supports the 'designed' depth label over 'applied' or 'investigated'."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The text explicitly mentions 'compared two tokenization strategies on the frozen test set'. This constitutes an evaluation method with explicit baselines (the two strategies), supporting the 'compared' label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The text describes actions taken ('designed', 'grouped', 'compared') but contains no statement of concrete outcomes, results, measurements, or adoption. Therefore, the impact is correctly labeled as 'unknown'."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly designed a protocol for a 'BERT classifier' and analyzed false positives. This demonstrates engagement with machine learning models and their performance characteristics, supporting the 'machine_learning' competency."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "unsupported",
+          "explanation": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "The text describes designing a protocol and comparing strategies. While this implies programming was likely used to execute these tasks, the source does not explicitly state that the student wrote code or implemented the logic. The rule states: 'Explicit code writing supports identifying the programming node... Judge identity separately from rubric strength'. Mere implication ('implies the implementation of code') is insufficient support for a positive 'programming' competency claim without explicit evidence of coding actions or artifacts in the text."
+        },
+        {
+          "target_id": "s4",
+          "verdict": "supported",
+          "explanation": "The activity involves analyzing 'false positives' (a metric) and comparing strategies on a 'test set'. This inherently involves statistical concepts like error rates or distribution analysis. The systematic grouping and comparison support the use of statistical methods to analyze data, supporting the 'statistics' competency."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions working with a 'BERT classifier', which is a specific tool/concept. Recognition of this domain terminology is allowed and supported by the text."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The student compares 'two tokenization strategies', indicating knowledge of these concepts. Recognition of domain terminology is allowed."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The analysis focuses on 'false positives', a specific concept/metric. Recognition of this term is supported by the text."
+        },
+        {
+          "target_id": "t4",
+          "verdict": "supported",
+          "explanation": "The student groups errors by 'linguistic pattern', indicating knowledge of this concept. Recognition of domain terminology is allowed."
+        },
+        {
+          "target_id": "t5",
+          "verdict": "supported",
+          "explanation": "The use of a 'frozen test set' indicates knowledge of this specific ML evaluation concept. Recognition of domain terminology is allowed."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s4"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative ownership. While the text uses 'our BERT classifier', it does not explicitly state that the student's contribution was shared or that they worked alongside others on this specific task; 'our' could simply refer to a team project where the student had individual responsibility for this part. Without explicit mention of collaboration on this specific deliverable, 'shared' is an assumption. The safer label given 'I designed' is 'led' (individual ownership of the described design) or 'unknown' if 'our' implies a team context not detailed enough to confirm shared ownership of *this* specific output. However, strictly following the rule that 'My thesis' alone isn't enough for 'led', but 'I designed' establishes personal execution. The presence of 'our' suggests a team context, but without explicit description of the student's role relative to teammates on *this* task, 'shared' is not fully supported by the text which focuses on individual actions ('I designed'). A better fit might be 'led' (owned the design) or 'unknown' regarding the extent of collaboration. Given the instruction to reject positive labels attached to absent info, and the lack of explicit team dynamic description for *this* task, 'shared' is unsupported."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Quantitative analysis requires an explicit quantitative method; a comparison, metric, or numeric measurement alone is not enough."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The text describes designing a protocol and comparing strategies. While this implies programming was likely used to execute these tasks, the source does not explicitly state that the student wrote code or implemented the logic. The rule states: 'Explicit code writing supports identifying the programming node... Judge identity separately from rubric strength'. Mere implication ('implies the implementation of code') is insufficient support for a positive 'programming' competency claim without explicit evidence of coding actions or artifacts in the text."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T22:45:52.7047428Z",
+        "2026-09-29T22:46:34.5149743Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "2afba7c6a1af0b61463eef9efc4d0053c04d48019b935c13c540e7a72972d64b"
+      },
+      "draft_response_sha256": "101256a122e9347007b630077e1f45d1c3ae6803224a9a31111568913f7ed01b",
+      "review_response_sha256": "3641fea62354f767e88925c85b2679e4f21e991d172171cc4039bcb9395a31ab"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Natural language processing"
+        },
+        {
+          "kind": "tool",
+          "label": "BERT"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "false positives"
+        },
+        {
+          "kind": "concept",
+          "label": "frozen test set"
+        },
+        {
+          "kind": "concept",
+          "label": "linguistic pattern"
+        },
+        {
+          "kind": "concept",
+          "label": "tokenization strategies"
+        },
+        {
+          "kind": "tool",
+          "label": "BERT classifier"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Designed and conducted classifier error analysis",
+        "Systematically coded errors by linguistic pattern"
+      ],
+      "model_prediction": [
+        "analysis of model performance metrics via error grouping and strategy comparison",
+        "error-analysis protocol design for BERT classifier"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "Designed and conducted classifier error analysis"
+        },
+        {
+          "competency_id": "qualitative_research",
+          "observed_skill": "Systematically coded errors by linguistic pattern"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "error-analysis protocol design for BERT classifier"
+        },
+        {
+          "competency_id": "statistics",
+          "observed_skill": "analysis of model performance metrics via error grouping and strategy comparison"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "compared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

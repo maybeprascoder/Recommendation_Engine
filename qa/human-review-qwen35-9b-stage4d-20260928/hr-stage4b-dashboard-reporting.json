@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-dashboard-reporting",
+  "review_domain": "machine_learning",
+  "lineage_group": "data_analysis_boundaries",
+  "source_sha256": "cddbda07aae5536fb08f8fd23ef68224ed04173f82ef53f339074ec150fd2931",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Each canonical education claim needs its own academic record",
+  "seconds": 42.43,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 42.41,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "7a486cbbb881f24f60d0890e3b72f1b2c61f32c3a2276620d6860972520a213b",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T20:53:55.0044775Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"coursework\",\n      \"statement\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL; the scheduled report finished in 12 minutes instead of 20 in repeated timed runs.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [\n    {\n      \"claim_id\": \"c1\",\n      \"institution\": null,\n      \"qualification\": null,\n      \"grade\": null,\n      \"grade_scale\": null\n    }\n  ],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I rewrote', indicating individual contribution within the context of a dashboard query (likely part of a larger project or coursework). Possessive 'my' is absent, but the action verb 'rewrote' establishes direct involvement. Without explicit mention of leading a team or sole ownership of the entire system, 'shared' is appropriate for an individual task within a broader context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used an established method (rewriting a SQL query) to complete a specific task (optimizing a report). There is no evidence of designing new algorithms, adapting methods to novel constraints, or investigating a fundamental question beyond the application of known SQL optimization techniques.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly compares the performance of the new query against a baseline ('instead of 20'). This constitutes an evaluation including explicit baselines.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"finished in 12 minutes instead of 20\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"measured\",\n      \"rationale\": \"The outcome (time reduction) is quantified with specific numbers ('12 minutes' vs '20 minutes') derived from 'repeated timed runs', which constitutes a measurement method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"finished in 12 minutes instead of 20 in repeated timed runs\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"SQL query optimization\",\n      \"rationale\": \"The student explicitly wrote code (rewrote a query) in SQL. This supports the programming competency node.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I rewrote the dashboard query in SQL\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"Performance benchmarking\",\n      \"rationale\": \"The student conducted 'repeated timed runs' to measure execution time, demonstrating the systematic use of quantitative methods to analyze system behavior.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"in repeated timed runs\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"SQL\",\n      \"rationale\": \"The student explicitly named SQL as the tool used for rewriting the query.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"rewrote the dashboard query in SQL\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Dashboard\",\n      \"rationale\": \"The context of a 'dashboard' is mentioned, implying the domain of data visualization or reporting.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"dashboard query\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

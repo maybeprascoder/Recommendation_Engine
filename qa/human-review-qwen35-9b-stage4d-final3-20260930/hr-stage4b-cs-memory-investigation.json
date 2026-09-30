@@ -1,0 +1,456 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-memory-investigation",
+  "review_domain": "computer_science",
+  "lineage_group": "service_ownership_and_systems",
+  "source_sha256": "62cfd2e412b13665df0c910ef76eba6c388136bbbb9b8cc2f3079c5b69d025de",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 88.48,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 62.89,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "f842f8b1cca65ee730557b595003936b28369aca6fa6bcc8c0914e68126f5bbe",
+      "schema_sha256": "4abe5a35ee0b67565f94a00ad6d8e95bb51520e7e0654a0dd4b05fe930d6b517",
+      "response_id": "2026-09-30T16:38:25.3557138Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I investigated' and describes specific actions taken ('identified', 'verified'), indicating individual ownership of the investigation and fix.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"investigated\",\n      \"rationale\": \"The student describes investigating a specific problem (memory leak) through an explicit method (comparing heap profiles) and analysis to identify the root cause (unbounded cache).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student explicitly states the evaluation method involved 'comparing heap profiles before and after each request path' to identify the issue.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student describes a concrete verification method: 'verified the fix with a six-hour soak test'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j5\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The student reports the concrete outcome that a fix was identified and verified, resolving the memory leak. No specific quantitative metric of improvement (e.g., 'reduced memory by X%') is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"incident_response\",\n      \"rationale\": \"The activity involves investigating a production memory leak, which is a form of incident response or system stability maintenance. While 'operating_systems' might be relevant for heap profiling, the specific competency definitions provided in the allowed list are limited. 'Security' often encompasses system integrity and stability issues like leaks in broader contexts, but strictly speaking, this is OS/Systems administration. However, looking at the allowed list, 'operating_systems' is defined as 'Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.' Since I cannot validate the definition, I must check if any other fits better. The prompt says 'Do not invent taxonomy IDs'. If 'operating_systems' is the only relevant one but its definition is pending, I should perhaps use 'observed_skill' with null competency_id or find a fit. Let's re-read: 'operating_systems' is in allowed_competencies. Does investigating a memory leak demonstrate 'operating_systems'? Yes, heap profiling is an OS-level task. But the rubric says 'Do not invent...'. The definition is pending. I will use 'observed_skill' with null competency_id because the specific competency definition for 'operating_systems' is pending validation per the allowed list description, and I cannot assume it covers this without the full spec. Wait, the instruction says 'Use an allowed competency ID when supported; otherwise retain observed_skill with competency_id null.' The allowed list includes 'operating_systems'. Is the activity supported? Yes, heap profiling is OS work. But the definition is pending. This is a tricky constraint. Usually, if the definition is pending, we shouldn't claim it. I will stick to 'observed_skill' with null to be safe regarding the 'pending validation' note in the allowed list description, or perhaps 'programming' if code was written? No code mentioned. Let's look at 'security'. Memory leaks can be security issues (DoS). But the text says 'production memory leak', not a vulnerability exploit. I will use 'observed_skill' with null competency_id because the specific domain competency definitions are pending validation in the provided allowed list context, preventing a definitive claim on 'operating_systems' or 'security' without further spec details.\",\"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"heap_profiling\",\n      \"rationale\": \"The student mentions 'comparing heap profiles', indicating the use of heap profiling tools.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"soak_test\",\n      \"rationale\": \"The student mentions a 'six-hour soak test', indicating the use of load testing or stability testing methods.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 25.58,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "21e7b236977144ac52ea356788fcde8c94efae11fc55d7528fc9bea84236d91a",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:38:50.9408374Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing an investigation into a production memory leak, including specific actions (comparing heap profiles, identifying cache, verifying fix). The presence is explicitly reported in the text.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'led' requires explicit direction of work or independent ownership of the deliverable. The source uses first-person ('I investigated') which establishes individual contribution (ownership=shared or assisted depending on context not fully clear, but certainly not 'led' without evidence of directing others or owning the full design/implementation independently). The rationale incorrectly equates personal action ('I investigated') with leading. Personal execution does not prove leadership.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly describes investigating a specific problem (memory leak) through an explicit method (comparing heap profiles) and analysis to identify the root cause (unbounded cache). This matches the definition of 'investigated'.\"},{\"target_id\":\"j5\",\"verdict\":\"supported\",\"explanation\":\"The source reports a concrete outcome: a fix was identified and verified with a six-hour soak test. No quantitative metric is given, so 'reported' is appropriate. The rationale correctly notes the absence of specific metrics like 'reduced memory by X%'.\"},{\"target_id\":\"unassessed_c1_evaluation\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' for evaluation is appropriate because the source describes actions and outcomes but does not explicitly state an evaluation method (e.g., code review, peer review, automated test suite results beyond the soak test which is a verification step). The soak test verifies the fix but isn't necessarily an external evaluation method. The model did not assess this dimension, so 'unknown' is correct.\"},{\"target_id\":\"s1\",\"verdict\":\"unsupported\",\"explanation\":\"The competency suggestion for 'security' with observed_skill 'incident_response' is unsupported. A memory leak investigation is primarily a systems administration or debugging task (operating_systems/programming), not necessarily security incident response unless the leak was exploited or caused a security breach, which is not stated. Furthermore, the rationale admits uncertainty about 'operating_systems' due to pending validation and chooses null. The instruction states: 'A correct explanation that a competency is missing does not belong in the competencies array'. Since the rationale concludes the specific domain competency definitions are pending or uncertain, claiming 'security' is an invention or misattribution. The activity supports debugging/OS work, but without explicit security context, mapping to 'security' is incorrect.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly mentions 'comparing heap profiles', which indicates the use of heap profiling tools. This correctly identifies the tool in the context.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly mentions a 'six-hour soak test', indicating the use of stability/load testing methods. This correctly identifies the tool/method in the context.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "led",
+          "rationale": "The student explicitly states 'I investigated' and describes specific actions taken ('identified', 'verified'), indicating individual ownership of the investigation and fix.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "investigated",
+          "rationale": "The student describes investigating a specific problem (memory leak) through an explicit method (comparing heap profiles) and analysis to identify the root cause (unbounded cache).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        },
+        {
+          "id": "j5",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The student reports the concrete outcome that a fix was identified and verified, resolving the memory leak. No specific quantitative metric of improvement (e.g., 'reduced memory by X%') is stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        },
+        {
+          "id": "unassessed_c1_evaluation",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The model did not assess this dimension.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "incident_response",
+          "rationale": "The activity involves investigating a production memory leak, which is a form of incident response or system stability maintenance. While 'operating_systems' might be relevant for heap profiling, the specific competency definitions provided in the allowed list are limited. 'Security' often encompasses system integrity and stability issues like leaks in broader contexts, but strictly speaking, this is OS/Systems administration. However, looking at the allowed list, 'operating_systems' is defined as 'Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.' Since I cannot validate the definition, I must check if any other fits better. The prompt says 'Do not invent taxonomy IDs'. If 'operating_systems' is the only relevant one but its definition is pending, I should perhaps use 'observed_skill' with null competency_id or find a fit. Let's re-read: 'operating_systems' is in allowed_competencies. Does investigating a memory leak demonstrate 'operating_systems'? Yes, heap profiling is an OS-level task. But the rubric says 'Do not invent...'. The definition is pending. I will use 'observed_skill' with null competency_id because the specific competency definition for 'operating_systems' is pending validation per the allowed list description, and I cannot assume it covers this without the full spec. Wait, the instruction says 'Use an allowed competency ID when supported; otherwise retain observed_skill with competency_id null.' The allowed list includes 'operating_systems'. Is the activity supported? Yes, heap profiling is OS work. But the definition is pending. This is a tricky constraint. Usually, if the definition is pending, we shouldn't claim it. I will stick to 'observed_skill' with null to be safe regarding the 'pending validation' note in the allowed list description, or perhaps 'programming' if code was written? No code mentioned. Let's look at 'security'. Memory leaks can be security issues (DoS). But the text says 'production memory leak', not a vulnerability exploit. I will use 'observed_skill' with null competency_id because the specific domain competency definitions are pending validation in the provided allowed list context, preventing a definitive claim on 'operating_systems' or 'security' without further spec details.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "heap_profiling",
+          "rationale": "The student mentions 'comparing heap profiles', indicating the use of heap profiling tools.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "soak_test",
+          "rationale": "The student mentions a 'six-hour soak test', indicating the use of load testing or stability testing methods.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing an investigation into a production memory leak, including specific actions (comparing heap profiles, identifying cache, verifying fix). The presence is explicitly reported in the text."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'led' requires explicit direction of work or independent ownership of the deliverable. The source uses first-person ('I investigated') which establishes individual contribution (ownership=shared or assisted depending on context not fully clear, but certainly not 'led' without evidence of directing others or owning the full design/implementation independently). The rationale incorrectly equates personal action ('I investigated') with leading. Personal execution does not prove leadership."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The source explicitly describes investigating a specific problem (memory leak) through an explicit method (comparing heap profiles) and analysis to identify the root cause (unbounded cache). This matches the definition of 'investigated'."
+        },
+        {
+          "target_id": "j5",
+          "verdict": "unsupported",
+          "explanation": "Impact requires a stated outcome; a comparison or numeric measurement alone is only evaluation context."
+        },
+        {
+          "target_id": "unassessed_c1_evaluation",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' for evaluation is appropriate because the source describes actions and outcomes but does not explicitly state an evaluation method (e.g., code review, peer review, automated test suite results beyond the soak test which is a verification step). The soak test verifies the fix but isn't necessarily an external evaluation method. The model did not assess this dimension, so 'unknown' is correct."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "unsupported",
+          "explanation": "The competency suggestion for 'security' with observed_skill 'incident_response' is unsupported. A memory leak investigation is primarily a systems administration or debugging task (operating_systems/programming), not necessarily security incident response unless the leak was exploited or caused a security breach, which is not stated. Furthermore, the rationale admits uncertainty about 'operating_systems' due to pending validation and chooses null. The instruction states: 'A correct explanation that a competency is missing does not belong in the competencies array'. Since the rationale concludes the specific domain competency definitions are pending or uncertain, claiming 'security' is an invention or misattribution. The activity supports debugging/OS work, but without explicit security context, mapping to 'security' is incorrect."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source explicitly mentions 'comparing heap profiles', which indicates the use of heap profiling tools. This correctly identifies the tool in the context."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source explicitly mentions a 'six-hour soak test', indicating the use of stability/load testing methods. This correctly identifies the tool/method in the context."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'led' requires explicit direction of work or independent ownership of the deliverable. The source uses first-person ('I investigated') which establishes individual contribution (ownership=shared or assisted depending on context not fully clear, but certainly not 'led' without evidence of directing others or owning the full design/implementation independently). The rationale incorrectly equates personal action ('I investigated') with leading. Personal execution does not prove leadership."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Impact requires a stated outcome; a comparison or numeric measurement alone is only evaluation context."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The competency suggestion for 'security' with observed_skill 'incident_response' is unsupported. A memory leak investigation is primarily a systems administration or debugging task (operating_systems/programming), not necessarily security incident response unless the leak was exploited or caused a security breach, which is not stated. Furthermore, the rationale admits uncertainty about 'operating_systems' due to pending validation and chooses null. The instruction states: 'A correct explanation that a competency is missing does not belong in the competencies array'. Since the rationale concludes the specific domain competency definitions are pending or uncertain, claiming 'security' is an invention or misattribution. The activity supports debugging/OS work, but without explicit security context, mapping to 'security' is incorrect."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:38:25.3557138Z",
+        "2026-09-30T16:38:50.9408374Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "62cfd2e412b13665df0c910ef76eba6c388136bbbb9b8cc2f3079c5b69d025de"
+      },
+      "draft_response_sha256": "917c3eb81428b65a1eb985906e990e72a44b8d8c5861dbb1bd907b78254d43d5",
+      "review_response_sha256": "46ea306b7a7a2b21d853f5cbf7eac2c89a2c9045ce1aaebb18badf96b32d826f"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I investigated a production memory leak by comparing heap profiles before and after each request path, identified an unbounded cache, and verified the fix with a six-hour soak test.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "Heap profiling"
+        },
+        {
+          "kind": "domain",
+          "label": "Production debugging"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "tool",
+          "label": "heap_profiling"
+        },
+        {
+          "kind": "tool",
+          "label": "soak_test"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Analyzed process memory behavior with heap profiles",
+        "Diagnosed and fixed an unbounded cache"
+      ],
+      "model_prediction": [],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "operating_systems",
+          "observed_skill": "Analyzed process memory behavior with heap profiles"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "Diagnosed and fixed an unbounded cache"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "impact": [
+          "reported"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "investigated"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

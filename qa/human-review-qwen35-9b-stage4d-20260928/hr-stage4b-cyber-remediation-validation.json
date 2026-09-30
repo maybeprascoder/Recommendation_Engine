@@ -1,0 +1,501 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-cyber-remediation-validation",
+  "review_domain": "cybersecurity",
+  "lineage_group": "nessus_progression",
+  "source_sha256": "636eae45a7ae8e6f2f559f7b529a830913b005d0899a86ca20f429fd3d12a8f5",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 127.29,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 82.01,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "c0f504792713775c4c64aa62f22017412c8f1ff45b5a2d3937b9f81a27748f10",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:04:20.2218773Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly triaged findings and reproduced issues, but the remediation was performed by an 'administrator' whom the student validated. The student did not claim to perform the remediation themselves, nor did they claim to lead the administrator's work; they supported the process by validation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"validated the administrator's remediation\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used established methods (triaging, reproducing issues, rescanning) to complete the described tasks. There is no evidence of designing new methods or adapting them to specific constraints beyond standard procedure.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"reproduced the two highest-risk issues\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student described a concrete assessment method: 'rescanning the affected hosts' to validate remediation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"validated the administrator's remediation by rescanning\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The outcome reported is the validation of remediation. No specific quantitative metric (e.g., 'reduced risk by X%') or adoption statement is provided.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"validated the administrator's remediation\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"incident_response\",\n      \"rationale\": \"The student triaged vulnerability scanner findings (Nessus), reproduced issues, and validated remediation. This constitutes analysis of vulnerabilities and incident response activities.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"triaged Nessus findings, reproduced the two highest-risk issues\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"vulnerability_assessment\",\n      \"rationale\": \"The student used Nessus findings to identify and reproduce high-risk issues, demonstrating vulnerability assessment skills.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"triaged Nessus findings\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"diagnosis\",\n      \"rationale\": \"Reproducing issues on affected hosts and rescanning implies diagnosing network or host-level behaviors related to the vulnerabilities found.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"reproduced the two highest-risk issues\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Nessus\",\n      \"rationale\": \"The student explicitly named 'Nessus' as the tool used to generate findings.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"triaged Nessus findings\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"remediation_validation\",\n      \"rationale\": \"The student described the concept of validating remediation through rescanning.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"validated the administrator's remediation by rescanning\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 45.25,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "5d905bfa6a3f584cfb7e556d28ad2e276fac37ea94dff9b14acc564d82501510",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:05:05.4775972Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim statement is a verbatim quote from the source document and accurately reflects the described activity without inventing context or scope.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work where the student contributed individually within a team. The source describes the student validating an administrator's work, which is an individual contribution to a process involving another person, not necessarily 'shared' ownership of the deliverable itself. The rationale conflates supporting a process with shared ownership; without explicit description of joint ownership or directing the work, 'unknown' or 'assisted' (if following guidance) is more appropriate than 'shared'. However, strictly checking if 'shared' is supported: the text says the student validated the administrator's remediation. This is an individual action on another's work. It does not establish 'shared' ownership of the remediation deliverable. The label should likely be 'unknown' or potentially 'assisted' depending on interpretation of 'supported another', but 'shared' specifically denotes contribution within collaborative work to a shared output, which isn't clearly established here beyond validation.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student used standard methods (triaging, reproducing, rescanning) to complete tasks. The source does not describe designing new methods or adapting them to specific constraints, so 'applied' is the correct label for using established procedures.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly states 'validated... by rescanning', which describes a concrete assessment method (rescanning). This supports the 'described' evaluation label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The outcome reported is the validation of remediation. No quantitative metric or adoption statement is provided in the source, so 'reported' is the correct label for a concrete outcome stated without measurement method.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"Triaging Nessus findings and validating remediation constitutes analysis of vulnerabilities and incident response activities within the security domain. The observed skill 'incident_response' is supported by the actions described.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"Using Nessus findings to identify and reproduce high-risk issues demonstrates vulnerability assessment skills. The source explicitly mentions triaging Nessus findings, which supports this competency.\"},{\"target_id\":\"s3\",\"verdict\":\"unsupported\",\"explanation\":\"The claim 'reproduced the two highest-risk issues' describes reproducing security vulnerabilities on hosts, not diagnosing network communication, protocols, traffic, or packet behavior as defined by the networking competency. While reproduction might involve network tools, the activity described is security-focused (vulnerability reproduction), not general network diagnosis. The rationale incorrectly infers network diagnosis from security vulnerability reproduction without explicit evidence of network protocol/traffic analysis.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source explicitly names 'Nessus' as the tool used to generate findings. This supports the context recognition of the tool 'Nessus'.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source describes validating remediation through rescanning, which recognizes the concept of remediation_validation. This supports the context recognition of this concept.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly triaged findings and reproduced issues, but the remediation was performed by an 'administrator' whom the student validated. The student did not claim to perform the remediation themselves, nor did they claim to lead the administrator's work; they supported the process by validation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "validated the administrator's remediation"
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used established methods (triaging, reproducing issues, rescanning) to complete the described tasks. There is no evidence of designing new methods or adapting them to specific constraints beyond standard procedure.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "reproduced the two highest-risk issues"
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "described",
+          "rationale": "The student described a concrete assessment method: 'rescanning the affected hosts' to validate remediation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "validated the administrator's remediation by rescanning"
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "reported",
+          "rationale": "The outcome reported is the validation of remediation. No specific quantitative metric (e.g., 'reduced risk by X%') or adoption statement is provided.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "validated the administrator's remediation"
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "incident_response",
+          "rationale": "The student triaged vulnerability scanner findings (Nessus), reproduced issues, and validated remediation. This constitutes analysis of vulnerabilities and incident response activities.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "triaged Nessus findings, reproduced the two highest-risk issues"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "vulnerability_assessment",
+          "rationale": "The student used Nessus findings to identify and reproduce high-risk issues, demonstrating vulnerability assessment skills.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "triaged Nessus findings"
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "networking",
+          "observed_skill": "diagnosis",
+          "rationale": "Reproducing issues on affected hosts and rescanning implies diagnosing network or host-level behaviors related to the vulnerabilities found.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "reproduced the two highest-risk issues"
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Nessus",
+          "rationale": "The student explicitly named 'Nessus' as the tool used to generate findings.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "triaged Nessus findings"
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "remediation_validation",
+          "rationale": "The student described the concept of validating remediation through rescanning.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "validated the administrator's remediation by rescanning"
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim statement is a verbatim quote from the source document and accurately reflects the described activity without inventing context or scope."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work where the student contributed individually within a team. The source describes the student validating an administrator's work, which is an individual contribution to a process involving another person, not necessarily 'shared' ownership of the deliverable itself. The rationale conflates supporting a process with shared ownership; without explicit description of joint ownership or directing the work, 'unknown' or 'assisted' (if following guidance) is more appropriate than 'shared'. However, strictly checking if 'shared' is supported: the text says the student validated the administrator's remediation. This is an individual action on another's work. It does not establish 'shared' ownership of the remediation deliverable. The label should likely be 'unknown' or potentially 'assisted' depending on interpretation of 'supported another', but 'shared' specifically denotes contribution within collaborative work to a shared output, which isn't clearly established here beyond validation."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student used standard methods (triaging, reproducing, rescanning) to complete tasks. The source does not describe designing new methods or adapting them to specific constraints, so 'applied' is the correct label for using established procedures."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The source explicitly states 'validated... by rescanning', which describes a concrete assessment method (rescanning). This supports the 'described' evaluation label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The outcome reported is the validation of remediation. No quantitative metric or adoption statement is provided in the source, so 'reported' is the correct label for a concrete outcome stated without measurement method."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "Triaging Nessus findings and validating remediation constitutes analysis of vulnerabilities and incident response activities within the security domain. The observed skill 'incident_response' is supported by the actions described."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "Using Nessus findings to identify and reproduce high-risk issues demonstrates vulnerability assessment skills. The source explicitly mentions triaging Nessus findings, which supports this competency."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "unsupported",
+          "explanation": "The claim 'reproduced the two highest-risk issues' describes reproducing security vulnerabilities on hosts, not diagnosing network communication, protocols, traffic, or packet behavior as defined by the networking competency. While reproduction might involve network tools, the activity described is security-focused (vulnerability reproduction), not general network diagnosis. The rationale incorrectly infers network diagnosis from security vulnerability reproduction without explicit evidence of network protocol/traffic analysis."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source explicitly names 'Nessus' as the tool used to generate findings. This supports the context recognition of the tool 'Nessus'."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source describes validating remediation through rescanning, which recognizes the concept of remediation_validation. This supports the context recognition of this concept."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3",
+      "j4"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work where the student contributed individually within a team. The source describes the student validating an administrator's work, which is an individual contribution to a process involving another person, not necessarily 'shared' ownership of the deliverable itself. The rationale conflates supporting a process with shared ownership; without explicit description of joint ownership or directing the work, 'unknown' or 'assisted' (if following guidance) is more appropriate than 'shared'. However, strictly checking if 'shared' is supported: the text says the student validated the administrator's remediation. This is an individual action on another's work. It does not establish 'shared' ownership of the remediation deliverable. The label should likely be 'unknown' or potentially 'assisted' depending on interpretation of 'supported another', but 'shared' specifically denotes contribution within collaborative work to a shared output, which isn't clearly established here beyond validation."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The claim 'reproduced the two highest-risk issues' describes reproducing security vulnerabilities on hosts, not diagnosing network communication, protocols, traffic, or packet behavior as defined by the networking competency. While reproduction might involve network tools, the activity described is security-focused (vulnerability reproduction), not general network diagnosis. The rationale incorrectly infers network diagnosis from security vulnerability reproduction without explicit evidence of network protocol/traffic analysis."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:04:20.2218773Z",
+        "2026-09-28T19:05:05.4775972Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "636eae45a7ae8e6f2f559f7b529a830913b005d0899a86ca20f429fd3d12a8f5"
+      },
+      "draft_response_sha256": "8c110c968caa5d89263749b72bf7184cfad1a7c5d9a779fff7d7aee53e5a08f1",
+      "review_response_sha256": "8c9aa88e041b9858e3e39d1233ee3b41418181644f105c15ca3b22e947a8a34c"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts.",
+          "category": "work",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "I triaged Nessus findings, reproduced the two highest-risk issues, and validated the administrator's remediation by rescanning the affected hosts.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Vulnerability management"
+        },
+        {
+          "kind": "tool",
+          "label": "Nessus"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "remediation_validation"
+        },
+        {
+          "kind": "tool",
+          "label": "Nessus"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Triaged vulnerabilities and validated remediation"
+      ],
+      "model_prediction": [
+        "incident_response",
+        "vulnerability_assessment"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "security",
+          "observed_skill": "Triaged vulnerabilities and validated remediation"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "security",
+          "observed_skill": "incident_response"
+        },
+        {
+          "competency_id": "security",
+          "observed_skill": "vulnerability_assessment"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "investigated"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "ownership": [
+          "shared"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "applied"
+        ],
+        "evaluation": [
+          "described"
+        ],
+        "impact": [
+          "reported"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

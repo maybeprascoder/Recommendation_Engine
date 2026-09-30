@@ -1,0 +1,623 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-bio-ml-pipeline",
+  "review_domain": "machine_learning",
+  "lineage_group": "nlp_cross_domain",
+  "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 105.89,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 78.11,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "1bb3214632a6d9269e2d849f5f67a2dca7675159f06249f7cd8bd607cdd5e430",
+      "schema_sha256": "5b84651bc29c2ea0cf329905443793c27b658d3e538fd6366fa9b93684c605fd",
+      "response_id": "2026-09-30T16:52:10.0222541Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I wrote... I designed...', indicating individual contribution within the context of a 'project'. Possessives like 'my' are not present, but the use of first-person action verbs on specific tasks ('wrote', 'designed') supports shared ownership rather than unknown or led without explicit team direction statements.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student explicitly states they 'designed a random-forest pipeline' and 'wrote Python preprocessing code'. This goes beyond merely using established methods (applied) as it implies making design choices for the pipeline architecture and preprocessing logic.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student states they 'compared it with a linear baseline using nested cross-validation'. This explicitly describes an evaluation method involving baselines and a specific statistical technique (nested cross-validation).\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the actions taken (writing code, designing pipeline, comparing models) but does not state any concrete outcome, result, or measurement of performance. Therefore, impact is unknown.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"wrote Python preprocessing code\",\n      \"rationale\": \"The student explicitly states 'I wrote Python preprocessing code', which demonstrates the action of writing code in a programming language.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"machine_learning\",\n      \"observed_skill\": \"designed a random-forest pipeline\",\n      \"rationale\": \"The student explicitly states 'I... designed a random-forest pipeline', which involves constructing a machine learning model architecture.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s3\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"statistics\",\n      \"observed_skill\": \"compared it with a linear baseline using nested cross-validation\",\n      \"rationale\": \"The student explicitly states they used 'nested cross-validation' to compare models, which is a systematic statistical method for model evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s4\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"quantitative_analysis\",\n      \"observed_skill\": \"compared it with a linear baseline using nested cross-validation\",\n      \"rationale\": \"The act of comparing models using nested cross-validation constitutes the systematic use and interpretation of quantitative methods to analyze model behavior/performance.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Python\",\n      \"rationale\": \"The student explicitly mentions writing code in 'Python'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"random-forest pipeline\",\n      \"rationale\": \"The student explicitly mentions designing a 'random-forest pipeline', referring to a specific machine learning tool/method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"nested cross-validation\",\n      \"rationale\": \"The student explicitly mentions using 'nested cross-validation' as an evaluation method.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"d1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"genomics\",\n      \"rationale\": \"The student explicitly states the project context is a 'genomics project'.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"preprocessing code\",\n      \"rationale\": \"The student explicitly mentions writing 'preprocessing code', referring to a data processing concept.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"linear baseline\",\n      \"rationale\": \"The student explicitly mentions comparing against a 'linear baseline', referring to a specific model concept.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 27.76,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "a6c0aa86886fbb09de98d96b70887bfc5c34034e74b3049b3b2fbf14f3b59fc6",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:52:37.7905865Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text's statement about a genomics project involving Python code, pipeline design, and model comparison.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"Attribution 'shared' is incorrect. The source uses first-person singular ('I wrote', 'I designed') without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent such description, individual actions are not 'shared'. It should be 'unknown' or 'led' if ownership is claimed, but 'shared' implies others contributed which is not evidenced.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states they 'designed a random-forest pipeline', which supports the 'designed' depth label as it implies making design choices rather than just applying established methods.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The statement 'compared it with a linear baseline using nested cross-validation' explicitly describes an evaluation method involving baselines and controls, supporting the 'compared' label.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"No concrete outcome, result, or measurement of performance is stated in the source text; only actions are described. Thus, impact is correctly marked as 'unknown'.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'I wrote Python preprocessing code' explicitly demonstrates the action of writing code, supporting the programming competency.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"The phrase 'designed a random-forest pipeline' involves constructing a machine learning model architecture, supporting the machine_learning competency.\"},{\"target_id\":\"s3\",\"verdict\":\"supported\",\"explanation\":\"Using 'nested cross-validation' to compare models constitutes a systematic statistical method, supporting the statistics competency.\"},{\"target_id\":\"s4\",\"verdict\":\"unsupported\",\"explanation\":\"The act of comparing models using nested cross-validation is an evaluation activity (model comparison), not quantitative analysis of data/uncertainty/relationships. Quantitative_analysis requires explicit use of mathematical methods to analyze data behavior beyond model comparison. This should be removed or re-evaluated as unsupported.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions writing code in 'Python', which correctly identifies the tool used.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions designing a 'random-forest pipeline', correctly identifying this as a specific machine learning tool/method.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions using 'nested cross-validation' as an evaluation method, correctly identifying it as a concept/tool.\"},{\"target_id\":\"d1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly states the project context is a 'genomics project', correctly identifying the domain.\"},{\"target_id\":\"t_c1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions writing 'preprocessing code', correctly identifying this as a data processing concept.\"},{\"target_id\":\"c2\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly mentions comparing against a 'linear baseline', correctly identifying this as a specific model concept.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "project",
+          "statement": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly states 'I wrote... I designed...', indicating individual contribution within the context of a 'project'. Possessives like 'my' are not present, but the use of first-person action verbs on specific tasks ('wrote', 'designed') supports shared ownership rather than unknown or led without explicit team direction statements.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "designed",
+          "rationale": "The student explicitly states they 'designed a random-forest pipeline' and 'wrote Python preprocessing code'. This goes beyond merely using established methods (applied) as it implies making design choices for the pipeline architecture and preprocessing logic.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "compared",
+          "rationale": "The student states they 'compared it with a linear baseline using nested cross-validation'. This explicitly describes an evaluation method involving baselines and a specific statistical technique (nested cross-validation).",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the actions taken (writing code, designing pipeline, comparing models) but does not state any concrete outcome, result, or measurement of performance. Therefore, impact is unknown.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "wrote Python preprocessing code",
+          "rationale": "The student explicitly states 'I wrote Python preprocessing code', which demonstrates the action of writing code in a programming language.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "machine_learning",
+          "observed_skill": "designed a random-forest pipeline",
+          "rationale": "The student explicitly states 'I... designed a random-forest pipeline', which involves constructing a machine learning model architecture.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "s3",
+          "claim_id": "c1",
+          "competency_id": "statistics",
+          "observed_skill": "compared it with a linear baseline using nested cross-validation",
+          "rationale": "The student explicitly states they used 'nested cross-validation' to compare models, which is a systematic statistical method for model evaluation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "s4",
+          "claim_id": "c1",
+          "competency_id": "quantitative_analysis",
+          "observed_skill": "compared it with a linear baseline using nested cross-validation",
+          "rationale": "The act of comparing models using nested cross-validation constitutes the systematic use and interpretation of quantitative methods to analyze model behavior/performance.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Python",
+          "rationale": "The student explicitly mentions writing code in 'Python'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "random-forest pipeline",
+          "rationale": "The student explicitly mentions designing a 'random-forest pipeline', referring to a specific machine learning tool/method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "nested cross-validation",
+          "rationale": "The student explicitly mentions using 'nested cross-validation' as an evaluation method.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "d1",
+          "claim_id": "c1",
+          "kind": "domain",
+          "label": "genomics",
+          "rationale": "The student explicitly states the project context is a 'genomics project'.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "t_c1",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "preprocessing code",
+          "rationale": "The student explicitly mentions writing 'preprocessing code', referring to a data processing concept.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "linear baseline",
+          "rationale": "The student explicitly mentions comparing against a 'linear baseline', referring to a specific model concept.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text's statement about a genomics project involving Python code, pipeline design, and model comparison."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "Attribution 'shared' is incorrect. The source uses first-person singular ('I wrote', 'I designed') without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent such description, individual actions are not 'shared'. It should be 'unknown' or 'led' if ownership is claimed, but 'shared' implies others contributed which is not evidenced."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student explicitly states they 'designed a random-forest pipeline', which supports the 'designed' depth label as it implies making design choices rather than just applying established methods."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The statement 'compared it with a linear baseline using nested cross-validation' explicitly describes an evaluation method involving baselines and controls, supporting the 'compared' label."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "No concrete outcome, result, or measurement of performance is stated in the source text; only actions are described. Thus, impact is correctly marked as 'unknown'."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The phrase 'I wrote Python preprocessing code' explicitly demonstrates the action of writing code, supporting the programming competency."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "The phrase 'designed a random-forest pipeline' involves constructing a machine learning model architecture, supporting the machine_learning competency."
+        },
+        {
+          "target_id": "s3",
+          "verdict": "supported",
+          "explanation": "Using 'nested cross-validation' to compare models constitutes a systematic statistical method, supporting the statistics competency."
+        },
+        {
+          "target_id": "s4",
+          "verdict": "unsupported",
+          "explanation": "The act of comparing models using nested cross-validation is an evaluation activity (model comparison), not quantitative analysis of data/uncertainty/relationships. Quantitative_analysis requires explicit use of mathematical methods to analyze data behavior beyond model comparison. This should be removed or re-evaluated as unsupported."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions writing code in 'Python', which correctly identifies the tool used."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions designing a 'random-forest pipeline', correctly identifying this as a specific machine learning tool/method."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions using 'nested cross-validation' as an evaluation method, correctly identifying it as a concept/tool."
+        },
+        {
+          "target_id": "d1",
+          "verdict": "supported",
+          "explanation": "The student explicitly states the project context is a 'genomics project', correctly identifying the domain."
+        },
+        {
+          "target_id": "t_c1",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions writing 'preprocessing code', correctly identifying this as a data processing concept."
+        },
+        {
+          "target_id": "c2",
+          "verdict": "supported",
+          "explanation": "The student explicitly mentions comparing against a 'linear baseline', correctly identifying this as a specific model concept."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "supported_context_ids": [
+      "c2",
+      "d1",
+      "t1",
+      "t2",
+      "t3",
+      "t_c1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "Attribution 'shared' is incorrect. The source uses first-person singular ('I wrote', 'I designed') without mentioning teammates or collaboration. Per instructions, team achievements require explicit description of personal contribution within a team; absent such description, individual actions are not 'shared'. It should be 'unknown' or 'led' if ownership is claimed, but 'shared' implies others contributed which is not evidenced."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The act of comparing models using nested cross-validation is an evaluation activity (model comparison), not quantitative analysis of data/uncertainty/relationships. Quantitative_analysis requires explicit use of mathematical methods to analyze data behavior beyond model comparison. This should be removed or re-evaluated as unsupported."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:52:10.0222541Z",
+        "2026-09-30T16:52:37.7905865Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940"
+      },
+      "draft_response_sha256": "bfd6ae6445ea15624318335ce82349c3cbf084e00c7767b34b1861a2f556d40e",
+      "review_response_sha256": "b02514e97603f17f1c01ee6cd40eb19e94bac68ce5f2dbe1831545912bc9bb9a"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.",
+          "category": "research",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "For a genomics project, I wrote Python preprocessing code, designed a random-forest pipeline, and compared it with a linear baseline using nested cross-validation.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Genomics"
+        },
+        {
+          "kind": "tool",
+          "label": "Python"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "linear baseline"
+        },
+        {
+          "kind": "concept",
+          "label": "preprocessing code"
+        },
+        {
+          "kind": "domain",
+          "label": "genomics"
+        },
+        {
+          "kind": "tool",
+          "label": "nested cross-validation"
+        },
+        {
+          "kind": "tool",
+          "label": "Python"
+        },
+        {
+          "kind": "tool",
+          "label": "random-forest pipeline"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Designed and compared predictive-model pipelines",
+        "Implemented genomics preprocessing in Python",
+        "Used nested cross-validation for assessment"
+      ],
+      "model_prediction": [
+        "compared it with a linear baseline using nested cross-validation",
+        "designed a random-forest pipeline",
+        "wrote Python preprocessing code"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "Designed and compared predictive-model pipelines"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "Implemented genomics preprocessing in Python"
+        },
+        {
+          "competency_id": "statistics",
+          "observed_skill": "Used nested cross-validation for assessment"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "machine_learning",
+          "observed_skill": "designed a random-forest pipeline"
+        },
+        {
+          "competency_id": "programming",
+          "observed_skill": "wrote Python preprocessing code"
+        },
+        {
+          "competency_id": "statistics",
+          "observed_skill": "compared it with a linear baseline using nested cross-validation"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "judgments",
+      "provisional_reference": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "compared"
+        ],
+        "ownership": [
+          "led"
+        ]
+      },
+      "model_prediction": {
+        "depth": [
+          "designed"
+        ],
+        "evaluation": [
+          "compared"
+        ]
+      },
+      "question": "Which ownership, depth, evaluation, or impact labels does the source support?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

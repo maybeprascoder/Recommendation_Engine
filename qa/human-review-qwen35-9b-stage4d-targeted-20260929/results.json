@@ -1,0 +1,783 @@
+[
+  {
+    "review_id": "hr-stage4b-trap-comparison-impact",
+    "review_domain": "semantic_traps",
+    "lineage_group": "unsupported_inference_traps",
+    "source_sha256": "049a123c4f5e759498e2a98e66107a9dd42244b2d63db755dc2dced064f5db3e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 61.63,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-trap-comparison-impact.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-parser-owned",
+    "review_domain": "computer_science",
+    "lineage_group": "programming_progression",
+    "source_sha256": "c0a376a5699e0d52ce80666ed81c8a875976697274defd2cdc3c6d6a1418f61e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 135.06,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-cs-parser-owned.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-feature-design",
+    "review_domain": "machine_learning",
+    "lineage_group": "ml_pipeline_progression",
+    "source_sha256": "5225b9c3e6ad5b43345d8e982f399f9d8d5a7b367e2ecd1bf0c600e30200f196",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 97.3,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ml-feature-design.json"
+  },
+  {
+    "review_id": "hr-stage4b-cyber-vuln-workflow",
+    "review_domain": "cybersecurity",
+    "lineage_group": "nessus_progression",
+    "source_sha256": "704296cd360c484f398e993a19e6d8fe508849aae8b2ba55d4932fdd374f446d",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 101.52,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cyber-vuln-workflow.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-member-design",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "80b464df9645ca07ccd3d6af34138c6b23310635228121a610acfac4bb8d1dc6",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 82.26,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-civil-member-design.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-mesh-validation",
+    "review_domain": "mechanical",
+    "lineage_group": "ansys_simulation_progression",
+    "source_sha256": "784edac7cb5f875f6dd68d83f8f1b697be114f3d324b46550502f16b4eec9ba0",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 109.0,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-mech-mesh-validation.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-counter-implemented",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "verilog_progression",
+    "source_sha256": "1bbb2fccfdd7fd7686ecc6d4e451482c545b1f422e1f38ed09bc6868c25b0596",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 58.62,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-ee-counter-implemented.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-bus-controller",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "verilog_progression",
+    "source_sha256": "8010b1409f0be25a166fa807b04176ec9dae866e628b26b4188b920afd124995",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 111.05,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-ee-bus-controller.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-peer-reviewed-explicit",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "bc24fbcc2f27f682b41af8246b175f560900ac94428983b102247d6bfc86b827",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 71.34,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-research-peer-reviewed-explicit.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-citation-claim",
+    "review_domain": "research",
+    "lineage_group": "publication_claim_progression",
+    "source_sha256": "20f16e98a38d78d3b3a37b3e51e159e9f0819c474759ff657ba372bbf369a68f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 72.44,
+    "difference_fields": [
+      "contexts",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-research-citation-claim.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-adaptive-course",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "437763db8f268504cdd6a65d68993ffabc26e8c69421dfb9f5d089d1d719b8dc",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 80.39,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-adaptive-course.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-bio-script",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "a0a7e2fc5b62b4bf4c6548e346aeb0a7719530d6ce8df7ca6a7560f79bbe3417",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 88.26,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-bio-script.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-clinical-workflow",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "1d99dcce5e8e899377d6eb5f1e0591bc25526035b540b4d47a72d3381cca99cb",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 68.09,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments"
+    ],
+    "case_artifact": "hr-stage4b-inter-clinical-workflow.json"
+  },
+  {
+    "review_id": "hr-civil-structural-design",
+    "review_domain": "civil",
+    "lineage_group": "structural_engineering_evidence",
+    "source_sha256": "eabff7a8b8a4f7635192f211c499addec5473f9a9000fce792435a4d9aa31290",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 93.97,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-civil-structural-design.json"
+  },
+  {
+    "review_id": "hr-teaching-instruction",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_instruction_evidence",
+    "source_sha256": "bd7bcb667d3222a76e7c655193e079920cee8a1402eac84ff783d124557a9424",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 71.88,
+    "difference_fields": [
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-teaching-instruction.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-shared-api",
+    "review_domain": "computer_science",
+    "lineage_group": "software_delivery_progression",
+    "source_sha256": "54d576f83711209dbbc1b9a691b563d8aef10fbcbd144c7b6d2a0c280417dfbe",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 58.73,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-cs-shared-api.json"
+  },
+  {
+    "review_id": "hr-stage4b-cs-memory-investigation",
+    "review_domain": "computer_science",
+    "lineage_group": "service_ownership_and_systems",
+    "source_sha256": "62cfd2e412b13665df0c910ef76eba6c388136bbbb9b8cc2f3079c5b69d025de",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 91.61,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-cs-memory-investigation.json"
+  },
+  {
+    "review_id": "hr-stage4b-data-cleaning-code",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "39d4a9a79044c8a2511d16bd4a165eced9d4622d2e861f562fffc54fb6c0eccd",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 61.45,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-data-cleaning-code.json"
+  },
+  {
+    "review_id": "hr-stage4b-stats-ab-test",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "4fcd76544b27f97af01aa5acb46df756efc963a561d8c3a8cdbd424678be6c77",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 87.63,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-stats-ab-test.json"
+  },
+  {
+    "review_id": "hr-stage4b-dashboard-reporting",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "cddbda07aae5536fb08f8fd23ef68224ed04173f82ef53f339074ec150fd2931",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 74.31,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-dashboard-reporting.json"
+  },
+  {
+    "review_id": "hr-stage4b-ml-improved-vague",
+    "review_domain": "machine_learning",
+    "lineage_group": "data_analysis_boundaries",
+    "source_sha256": "f938d25bad968754c43b53dbe318929f8c9414ccd8d1cc64c62052ad64b4364b",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 80.95,
+    "difference_fields": [
+      "contexts",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ml-improved-vague.json"
+  },
+  {
+    "review_id": "hr-stage4b-nlp-error-analysis",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2afba7c6a1af0b61463eef9efc4d0053c04d48019b935c13c540e7a72972d64b",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 129.22,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-nlp-error-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-bio-ml-pipeline",
+    "review_domain": "machine_learning",
+    "lineage_group": "nlp_cross_domain",
+    "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: All claim, judgment, competency and context IDs must be unique",
+    "seconds": 81.87,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-bio-ml-pipeline.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-retransmission-debug",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "7a148e42967675c29e558593223458aa3e53ae619c04689ad9c93e241b13f148",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 97.78,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-net-retransmission-debug.json"
+  },
+  {
+    "review_id": "hr-stage4b-net-migration-led",
+    "review_domain": "cybersecurity",
+    "lineage_group": "wireshark_progression",
+    "source_sha256": "f24dde659cc85dd3b875a5baf09e4b412bc593742ba66652ce1857a2cbc0b77e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 95.81,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-net-migration-led.json"
+  },
+  {
+    "review_id": "hr-stage4b-crypto-test-vectors",
+    "review_domain": "cybersecurity",
+    "lineage_group": "security_inference_traps",
+    "source_sha256": "9a3781e75721dc241a5e5c3e127a6da4241bdf7162dbfae0361727b34ac87f4b",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 66.02,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-crypto-test-vectors.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-etabs-model",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "da702c2aad2298894b746fe391e8dcc9e7e648ca0ab5dd32ecb49ea2c952890f",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 50.79,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-civil-etabs-model.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-load-analysis",
+    "review_domain": "civil",
+    "lineage_group": "etabs_progression",
+    "source_sha256": "b6118101d09858cc955df743d1976100c2efb18e3cb60d1776bc54236ca69442",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: All claim, judgment, competency and context IDs must be unique",
+    "seconds": 58.96,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-civil-load-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-drafting-guided",
+    "review_domain": "civil",
+    "lineage_group": "drafting_to_design",
+    "source_sha256": "4cb078d6bee7e0974c26f1c6465df0c0158f8d267264788bef4ed6414b0f5d9a",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 52.92,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-civil-drafting-guided.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-retaining-wall",
+    "review_domain": "civil",
+    "lineage_group": "drafting_to_design",
+    "source_sha256": "d33caee1cdda6fbebfa5b3f2a7487f82a6ea62ca8c45cac3cba1ea105fa3ba6a",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 94.3,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-civil-retaining-wall.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-team-analysis",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "968a3708b7d700cbaf2b6f9b447ee0e4d331ea3d131746dda72ecce2ea316609",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 90.3,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-team-analysis.json"
+  },
+  {
+    "review_id": "hr-stage4b-civil-simulation-compare",
+    "review_domain": "civil",
+    "lineage_group": "structural_team_and_absence",
+    "source_sha256": "75aa3c8dbff5fa61a57cd698b80cea4303cb3a5c9d3e15be59b66cf6238c4a7e",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 73.49,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-civil-simulation-compare.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-assembly-fit",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "981572fa4afd15fc570ddcf92330ad2230dbe71947aa75d47a616eff9952d646",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 98.2,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-mech-assembly-fit.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-alternatives",
+    "review_domain": "mechanical",
+    "lineage_group": "solidworks_progression",
+    "source_sha256": "3ebbf38e0dabc86637618427a2b1ef45ab8c436e24b2e22b93c2bebb416e6399",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 268.05,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions",
+      "unassessed"
+    ],
+    "case_artifact": "hr-stage4b-mech-alternatives.json"
+  },
+  {
+    "review_id": "hr-stage4b-mech-thermal-sim",
+    "review_domain": "mechanical",
+    "lineage_group": "ansys_simulation_progression",
+    "source_sha256": "14bdafc58911b2405114f3e957ab27996ab281698b802caaa8b34d6138efbea1",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 73.24,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions"
+    ],
+    "case_artifact": "hr-stage4b-mech-thermal-sim.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-control-adopted",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "arduino_progression",
+    "source_sha256": "59634763471014f00152faa97e860b4afaf72bc2fa8ef3606fce7c68aa05fdc3",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 109.98,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-ee-control-adopted.json"
+  },
+  {
+    "review_id": "hr-stage4b-ee-team-pcb",
+    "review_domain": "electrical_embedded",
+    "lineage_group": "electrical_boundary_cases",
+    "source_sha256": "6612c4f9d23180a8f500464673d1d0082d9051afbe17197b054d95bd426c6e73",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: All claim, judgment, competency and context IDs must be unique",
+    "seconds": 46.0,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-ee-team-pcb.json"
+  },
+  {
+    "review_id": "hr-stage4b-research-interviews-only",
+    "review_domain": "research",
+    "lineage_group": "qualitative_research_progression",
+    "source_sha256": "bc2c89bdff6ce28fdb3e5dc72f6f6d7f6d3b32df22fb17d7666b310372c77475",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 46.99,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-research-interviews-only.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-ta-title",
+    "review_domain": "teaching",
+    "lineage_group": "teaching_progression",
+    "source_sha256": "7064a5c2d8b5d85f52f8147a3ae1db96f7b0648efec1e1285d3a72ed31b22fd4",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 65.31,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-ta-title.json"
+  },
+  {
+    "review_id": "hr-stage4b-teach-curriculum-team",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "academic_contribution_boundaries",
+    "source_sha256": "fd242ff321d95d9b2978fa0a10c410c2917f1933eb4bb165d8b7e3fe950556b2",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 87.09,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-teach-curriculum-team.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-env-sensor",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "38081d614e634c1f9937c61daa63c91d317c502c2e516910a82648129f962fb3",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 110.42,
+    "difference_fields": [
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-env-sensor.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-finance-workflow",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "80f4b4e6f8fc34adf13b4129b1a01ee897f5e1c006e0abe3deaacc55cab69a07",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 71.32,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-finance-workflow.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-digital-installation",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "cross_domain_methods",
+    "source_sha256": "88bdee4d33c7dff90c74c0ec623e858e88bfdb1d1d3608bfbb1ed6aa5eb286f2",
+    "status": "structural_failure",
+    "failure_stage": "understanding_parse_or_validation",
+    "error": "Interpretation rejected: All claim, judgment, competency and context IDs must be unique",
+    "seconds": 64.22,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-digital-installation.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-drone-mixed",
+    "review_domain": "interdisciplinary",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "30e031be23184dfcc26b163b0789e5a231167625185025ff125dfbb1d9dc4418",
+    "status": "structural_failure",
+    "failure_stage": "provider_student_understanding",
+    "error": "Model endpoint unavailable or timed out",
+    "seconds": 28920.93,
+    "difference_fields": [],
+    "case_artifact": "hr-stage4b-inter-drone-mixed.json"
+  },
+  {
+    "review_id": "hr-stage4b-inter-policy-analysis",
+    "review_domain": "research",
+    "lineage_group": "unmapped_and_ambiguous_work",
+    "source_sha256": "21e867bf8fbf1b9f10cd60670b07d10cbe347e0823975441d849ade66086e355",
+    "status": "completed",
+    "failure_stage": null,
+    "error": null,
+    "seconds": 405.88,
+    "difference_fields": [
+      "claims",
+      "contexts",
+      "demonstrated_methods",
+      "competency_suggestions",
+      "judgments",
+      "questions"
+    ],
+    "case_artifact": "hr-stage4b-inter-policy-analysis.json"
+  }
+]

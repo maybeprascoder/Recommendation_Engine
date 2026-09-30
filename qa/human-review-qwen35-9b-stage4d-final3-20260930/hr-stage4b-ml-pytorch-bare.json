@@ -1,0 +1,352 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-ml-pytorch-bare",
+  "review_domain": "machine_learning",
+  "lineage_group": "ml_pipeline_progression",
+  "source_sha256": "2da21157615ae286c6f60c638cd381c69b7295e4b6ca77de4478a3c3c96c8de9",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 46.25,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 29.64,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "cc97fef8362c928e7024cafc8e3b04fb0933caaef44317c93c5482aeed40d61f",
+      "schema_sha256": "6640809daf9e02dbe09018773de0890ece8eecf35d5de71db3e78fbacd80b4bb",
+      "response_id": "2026-09-30T15:50:25.7011357Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Tools: PyTorch and scikit-learn.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The document lists tools used but does not describe individual responsibilities, leadership roles, or specific contributions within a team or project context.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"Mentioning tool names (PyTorch, scikit-learn) alone does not describe the nature of the work performed (e.g., applied, designed, investigated). No specific tasks or methods are described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method, test, review, or assessment is stated in the document.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results, outcomes, or impacts are stated in the document.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"PyTorch\",\n      \"rationale\": \"Named as a tool used by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"scikit-learn\",\n      \"rationale\": \"Named as a tool used by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Tools: PyTorch and scikit-learn.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 16.6,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "bf0199add4a4c660f40bc3400b8dfaf2b673f600f56ce39f2922d8d18ee43ece",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T15:50:42.2984627Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text which lists 'PyTorch and scikit-learn' as tools. The attribution to 'student' is appropriate for a draft interpretation of a resume/CV entry, even if the specific project context isn't detailed in this snippet.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that the source text only lists tools without describing individual responsibilities or leadership roles. Therefore, labeling ownership as 'unknown' is appropriate and supported by the lack of evidence regarding contribution scope.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly notes that merely naming tools (PyTorch, scikit-learn) does not describe the nature of the work (e.g., applied vs. designed). The source lacks details on tasks or methods, so 'unknown' for depth is supported.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly observes that no evaluation method, test, review, or assessment is stated in the provided text. Labeling evaluation as 'unknown' is fully supported by the absence of such information.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that no results, outcomes, or impacts are stated in the source text. Labeling impact as 'unknown' is supported by the lack of evidence regarding results.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context entry correctly identifies 'PyTorch' as a tool mentioned in the source text. The rationale accurately reflects that it is named as a tool used, which aligns with the instruction to review contexts as recognition of cited tools only.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The context entry correctly identifies 'scikit-learn' as a tool mentioned in the source text. The rationale accurately reflects that it is named as a tool used, which aligns with the instruction to review contexts as recognition of cited tools only.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Tools: PyTorch and scikit-learn."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Tools: PyTorch and scikit-learn.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The document lists tools used but does not describe individual responsibilities, leadership roles, or specific contributions within a team or project context.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "Mentioning tool names (PyTorch, scikit-learn) alone does not describe the nature of the work performed (e.g., applied, designed, investigated). No specific tasks or methods are described.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method, test, review, or assessment is stated in the document.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results, outcomes, or impacts are stated in the document.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "PyTorch",
+          "rationale": "Named as a tool used by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "scikit-learn",
+          "rationale": "Named as a tool used by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Tools: PyTorch and scikit-learn."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text which lists 'PyTorch and scikit-learn' as tools. The attribution to 'student' is appropriate for a draft interpretation of a resume/CV entry, even if the specific project context isn't detailed in this snippet."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that the source text only lists tools without describing individual responsibilities or leadership roles. Therefore, labeling ownership as 'unknown' is appropriate and supported by the lack of evidence regarding contribution scope."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment correctly notes that merely naming tools (PyTorch, scikit-learn) does not describe the nature of the work (e.g., applied vs. designed). The source lacks details on tasks or methods, so 'unknown' for depth is supported."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The judgment correctly observes that no evaluation method, test, review, or assessment is stated in the provided text. Labeling evaluation as 'unknown' is fully supported by the absence of such information."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that no results, outcomes, or impacts are stated in the source text. Labeling impact as 'unknown' is supported by the lack of evidence regarding results."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context entry correctly identifies 'PyTorch' as a tool mentioned in the source text. The rationale accurately reflects that it is named as a tool used, which aligns with the instruction to review contexts as recognition of cited tools only."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The context entry correctly identifies 'scikit-learn' as a tool mentioned in the source text. The rationale accurately reflects that it is named as a tool used, which aligns with the instruction to review contexts as recognition of cited tools only."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+        "reason": "The source does not establish supported depth of work."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T15:50:25.7011357Z",
+        "2026-09-30T15:50:42.2984627Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "2da21157615ae286c6f60c638cd381c69b7295e4b6ca77de4478a3c3c96c8de9"
+      },
+      "draft_response_sha256": "631922422b382eb11c435f2806b3a7a2f5caec6c73a6e75ae46f31e4de87433b",
+      "review_response_sha256": "7d6447d1503950c8a47898f63d400e6baeb976c3ab2c52d40ee309e8df8102e5"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Tools: PyTorch and scikit-learn.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Tools: PyTorch and scikit-learn.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "What did you personally do, what methods did you use, and how did you evaluate the result?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

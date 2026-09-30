@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-retry-20260930",
+  "review_id": "hr-stage4b-bio-ml-pipeline",
+  "review_domain": "machine_learning",
+  "lineage_group": "nlp_cross_domain",
+  "source_sha256": "2deb4351dd99b00d1e4d199f536ae34c6342f59c4e7f644fcf4f179045e88940",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10",
+  "status": "structural_failure",
+  "failure_stage": "provider_student_understanding",
+  "error": "Model endpoint unavailable or timed out",
+  "seconds": 300.33,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "provider_error",
+      "seconds": 300.26,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "1bb3214632a6d9269e2d849f5f67a2dca7675159f06249f7cd8bd607cdd5e430",
+      "schema_sha256": "5b84651bc29c2ea0cf329905443793c27b658d3e538fd6366fa9b93684c605fd",
+      "response_id": null,
+      "model": null,
+      "text": null,
+      "error": "Model endpoint unavailable or timed out"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

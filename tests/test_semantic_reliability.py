@@ -86,7 +86,7 @@ def test_all_references_pass_existing_pipeline(case, taxonomy):
     validate_case(case, taxonomy)
     result = interpret(case, taxonomy)
     assert not compare(case, result)
-    assert result.audit.prompt_version == "understanding-v9+support-review-v9"
+    assert result.audit.prompt_version == "understanding-v10+support-review-v10"
 
 
 @pytest.mark.parametrize("case", SUITE.cases, ids=CASES)

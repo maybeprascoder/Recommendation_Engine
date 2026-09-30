@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-targeted-20260929",
+  "review_id": "hr-stage4b-ee-team-pcb",
+  "review_domain": "electrical_embedded",
+  "lineage_group": "electrical_boundary_cases",
+  "source_sha256": "6612c4f9d23180a8f500464673d1d0082d9051afbe17197b054d95bd426c6e73",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: All claim, judgment, competency and context IDs must be unique",
+  "seconds": 46.0,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 45.99,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "898355043f8b2978a2090dd95b0e589653d59e89c4f50be7352fd0a893f602e4",
+      "schema_sha256": "690d712e92b0547f27e8157f81a28af938383f6de94751d7028036a561f15ae4",
+      "response_id": "2026-09-29T23:09:12.283666Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"project\",\n      \"statement\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly states 'I assembled the boards' within a team context where another teammate handled design. This establishes an explicit individual contribution to collaborative work without claiming leadership or sole ownership of the entire PCB project.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student describes performing a specific task ('assembled the boards') to complete a described goal ('passed bring-up'). There is no evidence of making design choices, adapting methods to constraints, or investigating a question through analysis; the work appears to be the application of established assembly procedures.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The phrase 'passed bring-up' describes a concrete test or assessment method (power-on and functional verification) used to evaluate the success of the assembled boards.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"reported\",\n      \"rationale\": \"The outcome 'passed bring-up' is a concrete result reported that the boards functioned as intended. No specific measurement method (e.g., error rates, latency numbers) or adoption by an organization is stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"PCB assembly\",\n      \"rationale\": \"The student explicitly mentions assembling boards for a sensor PCB.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"PCB design (schematic/layout)\",\n      \"rationale\": \"The student notes that a teammate designed the schematic and layout, providing context for the domain activity.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"d1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"domain\",\n      \"label\": \"Embedded hardware systems\",\n      \"rationale\": \"The activity involves producing a sensor PCB, which falls under embedded digital systems or general electronics engineering.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"c1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"Bring-up\",\n      \"rationale\": \"The term 'bring-up' is used to describe the initial functional verification of the hardware.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Our team produced a sensor PCB and passed bring-up; I assembled the boards, while another teammate designed the schematic and layout.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

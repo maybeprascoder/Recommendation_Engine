@@ -1,0 +1,35 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-net-migration-led",
+  "review_domain": "cybersecurity",
+  "lineage_group": "wireshark_progression",
+  "source_sha256": "f24dde659cc85dd3b875a5baf09e4b412bc593742ba66652ce1857a2cbc0b77e",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9",
+  "status": "structural_failure",
+  "failure_stage": "understanding_parse_or_validation",
+  "error": "Interpretation rejected: Citation must be an exact nonblank source passage",
+  "seconds": 35.58,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 35.55,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "a70333dd8280ab2c6a354ab6d921c5a29d34772fde99f51fd25b55f93a0c8c9a",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:01:05.6377959Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"work\",\n      \"statement\": \"I led the branch-network migration, designed the VLAN and routing changes, tested failover against the old configuration, and the operations team adopted the new setup across six sites.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I led the branch-network migration, designed the VLAN and routing changes, tested failover against the old configuration, and the operations team adopted the new setup across six sites.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"led\",\n      \"rationale\": \"The student explicitly states 'I led the branch-network migration' and 'designed the VLAN and routing changes', indicating explicit direction and independent ownership of the deliverable.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"I led the branch-network migration, designed the VLAN and routing changes...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"designed\",\n      \"rationale\": \"The student explicitly mentions 'designed the VLAN and routing changes' and 'tested failover', indicating they made design choices and adapted methods to constraints.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...designed the VLAN and routing changes, tested failover...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"compared\",\n      \"rationale\": \"The student states they 'tested failover against the old configuration', which constitutes an explicit baseline (old configuration) for evaluation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...tested failover against the old configuration...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"adopted\",\n      \"rationale\": \"The student states 'the operations team adopted the new setup across six sites', indicating actual use or adoption by an identified organization/team.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...and the operations team adopted the new setup across six sites.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.\",\n      \"rationale\": \"The student explicitly mentions 'VLAN and routing changes' and 'branch-network migration', which are core networking activities involving configuration and protocol management.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...designed the VLAN and routing changes...\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"distributed_systems\",\n      \"observed_skill\": \"Design or integration of distributed systems, including failover mechanisms and multi-site setups.\",\n      \"rationale\": \"The student mentions 'branch-network migration' across 'six sites' and 'tested failover', which implies work on distributed system reliability and architecture.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"...branch-network migration... tested failover against the old configuration...\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

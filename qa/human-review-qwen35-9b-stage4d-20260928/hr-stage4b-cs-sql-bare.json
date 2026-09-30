@@ -1,0 +1,333 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-cs-sql-bare",
+  "review_domain": "computer_science",
+  "lineage_group": "programming_progression",
+  "source_sha256": "265c6aefad4efced3dfca00f7e9233bb2a79f914494945b02d3c7f9ab16117b7",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 48.34,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 36.45,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "0611ed2b5690e4e880d1975729eef2132b72d0a18d4c1e2555b05637bbb54fad",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T20:43:05.0413296Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Technical skills include SQL.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The statement lists SQL as a skill but does not describe individual responsibilities, leadership, or specific contributions to a project. Possessive phrasing like 'include' in a list does not establish independent ownership.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text only names the tool (SQL) without describing how it was used, what methods were applied, or if design choices were made. A skill list alone does not describe the nature of the work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No test, review, baseline, or assessment method is stated regarding the SQL skills.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete outcome, result, or adoption is stated for the SQL skills.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"SQL\",\n      \"rationale\": \"The document explicitly lists SQL as a technical skill possessed by the student.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Technical skills include SQL.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 11.84,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "ebbdccbf4faa0a4f6a426399c4ddb06815a765e1fbb13046ea910061e915339d",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T20:43:16.8874487Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim accurately reflects the source text which explicitly lists SQL as a technical skill. The category 'activity' is appropriate for a list of skills/abilities.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly identifies that listing a tool (SQL) without describing specific tasks, responsibilities, or leadership roles means individual ownership cannot be established; 'unknown' is the correct label per rubric guidance against assuming ownership from titles or lists.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The judgment correctly notes that naming a tool alone does not describe the nature of the work (methods, design choices), so 'unknown' for depth is appropriate. No method was demonstrated.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The source text contains no mention of tests, reviews, baselines, or assessment methods regarding the SQL skills; therefore, 'unknown' for evaluation is correct.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text reports possession of a skill but states no concrete outcomes, results, or adoption; thus, 'unknown' for impact is correct.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The context correctly identifies SQL as a tool mentioned in the source. The rationale accurately reflects that the document lists it as a possessed skill without implying method mastery.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Technical skills include SQL."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Technical skills include SQL.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The statement lists SQL as a skill but does not describe individual responsibilities, leadership, or specific contributions to a project. Possessive phrasing like 'include' in a list does not establish independent ownership.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "The text only names the tool (SQL) without describing how it was used, what methods were applied, or if design choices were made. A skill list alone does not describe the nature of the work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No test, review, baseline, or assessment method is stated regarding the SQL skills.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No concrete outcome, result, or adoption is stated for the SQL skills.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "SQL",
+          "rationale": "The document explicitly lists SQL as a technical skill possessed by the student.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Technical skills include SQL."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim accurately reflects the source text which explicitly lists SQL as a technical skill. The category 'activity' is appropriate for a list of skills/abilities."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The judgment correctly identifies that listing a tool (SQL) without describing specific tasks, responsibilities, or leadership roles means individual ownership cannot be established; 'unknown' is the correct label per rubric guidance against assuming ownership from titles or lists."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The judgment correctly notes that naming a tool alone does not describe the nature of the work (methods, design choices), so 'unknown' for depth is appropriate. No method was demonstrated."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The source text contains no mention of tests, reviews, baselines, or assessment methods regarding the SQL skills; therefore, 'unknown' for evaluation is correct."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text reports possession of a skill but states no concrete outcomes, results, or adoption; thus, 'unknown' for impact is correct."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The context correctly identifies SQL as a tool mentioned in the source. The rationale accurately reflects that the document lists it as a possessed skill without implying method mastery."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [
+      "t1"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "What did you personally do, what methods did you use, and how did you evaluate the result?",
+        "reason": "The source does not establish supported depth of work."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T20:43:05.0413296Z",
+        "2026-09-29T20:43:16.8874487Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "265c6aefad4efced3dfca00f7e9233bb2a79f914494945b02d3c7f9ab16117b7"
+      },
+      "draft_response_sha256": "4b47e8e8847d44a9165184b53c0204352061d8dc9caaab2197b3e5666846beae",
+      "review_response_sha256": "990b0910a3e502b44714f3f1ad625c04d8f1a7a17e932cf5b8b695db03b7ac05"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Technical skills include SQL.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Technical skills include SQL.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "What did you personally do, what methods did you use, and how did you evaluate the result?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

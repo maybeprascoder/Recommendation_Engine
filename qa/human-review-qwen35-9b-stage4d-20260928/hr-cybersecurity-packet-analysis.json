@@ -1,0 +1,463 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-cybersecurity-packet-analysis",
+  "review_domain": "cybersecurity",
+  "lineage_group": "network_security_evidence",
+  "source_sha256": "dbda32fbb134fcfe35c271f1e5a962d6e429019ce71c55f93b68c31535dac0ec",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 126.59,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 87.04,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "8573ca281fb27c99100c396228123ecfa4d33e18a85e7c44567644ba10e12ab2",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-28T19:42:03.3487618Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The student explicitly performed the analysis ('Analyzed...'), indicating individual contribution within the activity context. Possessives or titles are absent, but the action verb confirms shared or individual execution without evidence of leading a team.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student used an established tool (Wireshark) to perform a specific task (listing protocol exchanges). This demonstrates the application of known methods rather than designing new ones or investigating a novel question through complex analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text states the action of listing exchanges but does not describe a specific test, review method, baseline comparison, or external assessment performed on the results.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No concrete outcome, measurement result, or adoption by users is stated. The action of listing exchanges is reported, but the resulting impact (e.g., identifying a vulnerability, optimizing traffic) is not described.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"networking\",\n      \"observed_skill\": \"packet_capture_analysis\",\n      \"rationale\": \"The student explicitly used Wireshark to analyze packet captures and list protocol exchanges. This directly supports the 'networking' competency regarding analysis of network communication, protocols, and traffic.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"s2\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"security\",\n      \"observed_skill\": \"traffic_inspection\",\n      \"rationale\": \"Analyzing packet captures is a fundamental activity in security contexts (detection, incident response). However, the text only mentions 'listing protocol exchanges' without stating that vulnerabilities were found or controls implemented. Thus, it supports the observed skill of traffic inspection within security but does not prove advanced security remediation or vulnerability analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Wireshark\",\n      \"rationale\": \"The student explicitly named Wireshark as the tool used for analyzing packet captures.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"packet captures\",\n      \"rationale\": \"The student explicitly referenced 'packet captures' as the object of analysis.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t3\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"concept\",\n      \"label\": \"protocol exchanges\",\n      \"rationale\": \"The student explicitly referenced 'protocol exchanges' as the specific data points listed.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"Analyzed packet captures using Wireshark to list protocol exchanges.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 39.38,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "07676805372bd43ee97645635b1ae44eeee3fb0a957492b612634fa0a362555a",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-28T19:42:42.7769625Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim statement is a verbatim quote from the source document describing the activity of analyzing packet captures. The category 'activity' is appropriate for this description.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The label 'shared' implies collaborative work, but the source text contains no mention of teammates or collaboration. The action verb 'Analyzed' describes an individual task; without explicit evidence of shared ownership, 'unknown' is the correct label for unestablished responsibility.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The student used Wireshark (an established tool) to list protocol exchanges (a specific task). This fits the definition of 'applied' (using established methods) rather than 'designed' or 'investigated'. The rationale correctly distinguishes between tool usage and novel design.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The source text describes an action ('listing protocol exchanges') but does not describe a specific test, review method, baseline comparison, or external assessment. Therefore, 'unknown' is the correct label for the evaluation dimension.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The source text reports the action of listing exchanges but provides no concrete outcome, measurement result, or statement of adoption by users. Therefore, 'unknown' is the correct label for the impact dimension.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The student explicitly used Wireshark to analyze packet captures and list protocol exchanges. This directly supports the 'networking' competency regarding analysis of network communication and protocols as defined in the allowed_competencies.\"},{\"target_id\":\"s2\",\"verdict\":\"supported\",\"explanation\":\"Analyzing packet captures is a fundamental activity in security contexts (detection, incident response). The text supports the observed skill of traffic inspection. The rationale correctly notes that while it fits the domain, it does not prove advanced remediation or vulnerability analysis, which aligns with the evidence provided.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly names 'Wireshark' as the tool used. Recognizing this tool name is allowed and supported by the quote, even though no method or skill depth is demonstrated beyond tool usage.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly references 'packet captures' as the object of analysis. This is a valid recognition of a domain concept present in the evidence.\"},{\"target_id\":\"t3\",\"verdict\":\"supported\",\"explanation\":\"The source text explicitly references 'protocol exchanges' as the specific data points listed. This is a valid recognition of a domain concept present in the evidence.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "Analyzed packet captures using Wireshark to list protocol exchanges."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "Analyzed packet captures using Wireshark to list protocol exchanges.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The student explicitly performed the analysis ('Analyzed...'), indicating individual contribution within the activity context. Possessives or titles are absent, but the action verb confirms shared or individual execution without evidence of leading a team.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student used an established tool (Wireshark) to perform a specific task (listing protocol exchanges). This demonstrates the application of known methods rather than designing new ones or investigating a novel question through complex analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "The text states the action of listing exchanges but does not describe a specific test, review method, baseline comparison, or external assessment performed on the results.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No concrete outcome, measurement result, or adoption by users is stated. The action of listing exchanges is reported, but the resulting impact (e.g., identifying a vulnerability, optimizing traffic) is not described.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "networking",
+          "observed_skill": "packet_capture_analysis",
+          "rationale": "The student explicitly used Wireshark to analyze packet captures and list protocol exchanges. This directly supports the 'networking' competency regarding analysis of network communication, protocols, and traffic.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "claim_id": "c1",
+          "competency_id": "security",
+          "observed_skill": "traffic_inspection",
+          "rationale": "Analyzing packet captures is a fundamental activity in security contexts (detection, incident response). However, the text only mentions 'listing protocol exchanges' without stating that vulnerabilities were found or controls implemented. Thus, it supports the observed skill of traffic inspection within security but does not prove advanced security remediation or vulnerability analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Wireshark",
+          "rationale": "The student explicitly named Wireshark as the tool used for analyzing packet captures.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "packet captures",
+          "rationale": "The student explicitly referenced 'packet captures' as the object of analysis.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        },
+        {
+          "id": "t3",
+          "claim_id": "c1",
+          "kind": "concept",
+          "label": "protocol exchanges",
+          "rationale": "The student explicitly referenced 'protocol exchanges' as the specific data points listed.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "Analyzed packet captures using Wireshark to list protocol exchanges."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim statement is a verbatim quote from the source document describing the activity of analyzing packet captures. The category 'activity' is appropriate for this description."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The label 'shared' implies collaborative work, but the source text contains no mention of teammates or collaboration. The action verb 'Analyzed' describes an individual task; without explicit evidence of shared ownership, 'unknown' is the correct label for unestablished responsibility."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The student used Wireshark (an established tool) to list protocol exchanges (a specific task). This fits the definition of 'applied' (using established methods) rather than 'designed' or 'investigated'. The rationale correctly distinguishes between tool usage and novel design."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The source text describes an action ('listing protocol exchanges') but does not describe a specific test, review method, baseline comparison, or external assessment. Therefore, 'unknown' is the correct label for the evaluation dimension."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The source text reports the action of listing exchanges but provides no concrete outcome, measurement result, or statement of adoption by users. Therefore, 'unknown' is the correct label for the impact dimension."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The student explicitly used Wireshark to analyze packet captures and list protocol exchanges. This directly supports the 'networking' competency regarding analysis of network communication and protocols as defined in the allowed_competencies."
+        },
+        {
+          "target_id": "s2",
+          "verdict": "supported",
+          "explanation": "Analyzing packet captures is a fundamental activity in security contexts (detection, incident response). The text supports the observed skill of traffic inspection. The rationale correctly notes that while it fits the domain, it does not prove advanced remediation or vulnerability analysis, which aligns with the evidence provided."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The source text explicitly names 'Wireshark' as the tool used. Recognizing this tool name is allowed and supported by the quote, even though no method or skill depth is demonstrated beyond tool usage."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The source text explicitly references 'packet captures' as the object of analysis. This is a valid recognition of a domain concept present in the evidence."
+        },
+        {
+          "target_id": "t3",
+          "verdict": "supported",
+          "explanation": "The source text explicitly references 'protocol exchanges' as the specific data points listed. This is a valid recognition of a domain concept present in the evidence."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j2"
+    ],
+    "supported_competency_ids": [
+      "s1",
+      "s2"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2",
+      "t3"
+    ],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The label 'shared' implies collaborative work, but the source text contains no mention of teammates or collaboration. The action verb 'Analyzed' describes an individual task; without explicit evidence of shared ownership, 'unknown' is the correct label for unestablished responsibility."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-28T19:42:03.3487618Z",
+        "2026-09-28T19:42:42.7769625Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "dbda32fbb134fcfe35c271f1e5a962d6e429019ce71c55f93b68c31535dac0ec"
+      },
+      "draft_response_sha256": "dfa1960e892fd266ebf5b775c306e84f7699604e7b3f86251cf7a94b3d5abed0",
+      "review_response_sha256": "acf94084e65e4a706e0c9f888f5be2f1977df1e8f0a558e9d53d8f735ee48c1f"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "Analyzed packet captures using Wireshark to list protocol exchanges.",
+          "category": "project",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "model_prediction": [
+        {
+          "statement": "Analyzed packet captures using Wireshark to list protocol exchanges.",
+          "category": "activity",
+          "attribution": "student",
+          "presence": "reported_present"
+        }
+      ],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [],
+      "model_prediction": [
+        {
+          "kind": "concept",
+          "label": "packet captures"
+        },
+        {
+          "kind": "concept",
+          "label": "protocol exchanges"
+        },
+        {
+          "kind": "tool",
+          "label": "Wireshark"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "packet analysis"
+      ],
+      "model_prediction": [
+        "packet_capture_analysis",
+        "traffic_inspection"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "networking",
+          "observed_skill": "packet capture analysis"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "networking",
+          "observed_skill": "packet_capture_analysis"
+        },
+        {
+          "competency_id": "security",
+          "observed_skill": "traffic_inspection"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

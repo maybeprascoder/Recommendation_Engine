@@ -12,13 +12,14 @@ import pytest
 
 from unihive.llm.analysis_cli import RecordedClient, RecordedResponses
 from unihive.llm.provider import ProviderError
-from unihive.llm.understanding import analyze_documents
+from unihive.llm.understanding import _draft_schema, analyze_documents
 from unihive.understanding import (
     SourceDocument,
     SupportReview,
     UnderstandingDraft,
     complete_unknown_dimensions,
     load_evaluation_rubric,
+    normalize_model_draft,
     supported_ids,
     validate_draft,
 )
@@ -233,6 +234,288 @@ def test_invalid_draft_does_not_make_review_call() -> None:
             competency_catalog={},
         )
     assert next(client._responses).checks == []
+
+
+def test_generation_schema_only_allows_exact_source_citation_passages() -> None:
+    documents = [
+        SourceDocument(
+            id="source",
+            text="First exact source line.\nSecond exact source line.",
+        )
+    ]
+    schema = _draft_schema(documents, load_evaluation_rubric())
+    citation = schema["$defs"]["Citation"]["properties"]
+    assert citation["document_id"]["enum"] == ["source"]
+    assert citation["quote"]["enum"] == [
+        "First exact source line.",
+        "Second exact source line.",
+    ]
+    assert "First source line..." not in citation["quote"]["enum"]
+
+
+def test_model_normalization_fails_closed_on_invalid_and_duplicate_judgments() -> None:
+    data = example()
+    data["judgments"] = [
+        {
+            **data["judgments"][0],
+            "id": "invalid",
+            "dimension": "evaluation",
+            "label": "reported",
+        },
+        {
+            **data["judgments"][1],
+            "id": "depth-a",
+            "dimension": "depth",
+            "label": "applied",
+        },
+        {
+            **data["judgments"][1],
+            "id": "depth-b",
+            "dimension": "depth",
+            "label": "designed",
+        },
+    ]
+    draft = normalize_model_draft(parse(data), load_evaluation_rubric())
+    by_dimension = {item.dimension: item for item in draft.judgments}
+    assert set(by_dimension) == {"ownership", "depth", "evaluation", "impact"}
+    assert by_dimension["depth"].label == "unknown"
+    assert by_dimension["evaluation"].label == "unknown"
+    assert by_dimension["depth"].id.startswith("unassessed_")
+    validate_draft(
+        draft,
+        [SourceDocument(id="document-1", text=TEXT)],
+        load_evaluation_rubric(),
+        {},
+    )
+
+
+def test_model_normalization_repairs_missing_and_stray_academic_records() -> None:
+    data = example()
+    education = "Example College, BSc."
+    data["claims"].append(
+        {
+            "id": "education",
+            "category": "education",
+            "statement": education,
+            "attribution": "student",
+            "citations": [{"document_id": "document-1", "quote": education}],
+            "duplicate_of": None,
+        }
+    )
+    data["academics"] = [
+        {
+            "claim_id": "c1",
+            "institution": None,
+            "qualification": None,
+            "grade": None,
+            "grade_scale": None,
+        }
+    ]
+    draft = normalize_model_draft(parse(data), load_evaluation_rubric())
+    assert [record.claim_id for record in draft.academics] == ["education"]
+    assert all(
+        getattr(draft.academics[0], field) is None
+        for field in ("institution", "qualification", "grade", "grade_scale")
+    )
+    validate_draft(
+        draft,
+        [SourceDocument(id="document-1", text=TEXT + "\n" + education)],
+        load_evaluation_rubric(),
+        {},
+    )
+
+
+def test_database_comparison_cannot_create_catalog_checklist_or_credit() -> None:
+    text = "Compared two database engines using query latency and memory consumption."
+    citation = {"document_id": "source", "quote": text}
+    raw = {
+        "claims": [
+            {
+                "id": "c1",
+                "category": "activity",
+                "statement": text,
+                "attribution": "student",
+                "presence": "reported_present",
+                "citations": [citation],
+                "duplicate_of": None,
+            }
+        ],
+        "academics": [],
+        "judgments": [
+            {
+                "id": "impact",
+                "claim_id": "c1",
+                "dimension": "impact",
+                "label": "measured",
+                "rationale": "Metrics were named.",
+                "citations": [citation],
+            }
+        ],
+        "competencies": [
+            {
+                "id": "quant",
+                "claim_id": "c1",
+                "competency_id": "quantitative_analysis",
+                "observed_skill": "Compared performance metrics",
+                "rationale": "Latency and memory were compared.",
+                "citations": [citation],
+            },
+            {
+                "id": "programming",
+                "claim_id": "c1",
+                "competency_id": "programming",
+                "observed_skill": "null",
+                "rationale": "Programming is not evidenced.",
+                "citations": [citation],
+            },
+            {
+                "id": "security",
+                "claim_id": "c1",
+                "competency_id": "security",
+                "observed_skill": "Security not demonstrated",
+                "rationale": "The activity is unrelated to security.",
+                "citations": [citation],
+            },
+        ],
+        "contexts": [],
+        "questions": [],
+        "unassessed": [],
+    }
+    raw_draft = UnderstandingDraft.model_validate(raw)
+    normalized = normalize_model_draft(raw_draft, load_evaluation_rubric())
+    assert [item.id for item in normalized.competencies] == ["quant"]
+    review = SupportReview.model_validate(
+        {
+            "checks": [
+                {
+                    "target_id": item.id,
+                    "verdict": "supported",
+                    "explanation": "The model accepted the proposal.",
+                }
+                for item in [
+                    *normalized.claims,
+                    *normalized.judgments,
+                    *normalized.competencies,
+                ]
+            ]
+        }
+    )
+    result = analyze_documents(
+        [SourceDocument(id="source", text=text)],
+        RecordedClient(RecordedResponses(draft=raw_draft, review=review)),
+        taxonomy_version="test",
+        competency_catalog={
+            "programming": "Writing software",
+            "quantitative_analysis": "Using quantitative methods",
+            "security": "Security methods",
+        },
+    )
+    assert not result.supported_competency_ids
+    assert not result.supported_judgment_ids
+    assert {item.id for item in result.draft.competencies} == {"quant"}
+    assert next(
+        check for check in result.support_review.checks if check.target_id == "quant"
+    ).verdict == "unsupported"
+
+
+def test_single_service_cache_comparison_is_not_distributed_systems() -> None:
+    text = (
+        "I independently designed the cache-key and invalidation strategy for our "
+        "catalog service, then compared load tests with caching disabled; p95 "
+        "latency fell from 420 ms to 270 ms."
+    )
+    data = example()
+    citation = {"document_id": "document-1", "quote": text}
+    data["claims"][0].update(
+        statement=text,
+        category="project",
+        citations=[citation],
+    )
+    data["judgments"] = []
+    data["competencies"] = [
+        {
+            "id": "distributed",
+            "claim_id": "c1",
+            "competency_id": "distributed_systems",
+            "observed_skill": "Designed caching for a service",
+            "rationale": "A service cache was designed and tested.",
+            "citations": [citation],
+        }
+    ]
+    raw_draft = UnderstandingDraft.model_validate(data)
+    normalized = normalize_model_draft(raw_draft, load_evaluation_rubric())
+    review = SupportReview.model_validate(
+        {
+            "checks": [
+                {
+                    "target_id": item.id,
+                    "verdict": "supported",
+                    "explanation": "The model accepted the proposal.",
+                }
+                for item in [
+                    *normalized.claims,
+                    *normalized.judgments,
+                    *normalized.competencies,
+                ]
+            ]
+        }
+    )
+    result = analyze_documents(
+        [SourceDocument(id="document-1", text=text)],
+        RecordedClient(RecordedResponses(draft=raw_draft, review=review)),
+        taxonomy_version="test",
+        competency_catalog={"distributed_systems": "Distributed systems"},
+    )
+    assert not result.supported_competency_ids
+    check = next(
+        item
+        for item in result.support_review.checks
+        if item.target_id == "distributed"
+    )
+    assert check.verdict == "unsupported"
+    assert "domain-specific evidence" in check.explanation
+
+
+def test_model_normalization_does_not_cap_positive_cross_domain_skills() -> None:
+    data = example()
+    data["competencies"] = [
+        {
+            **data["competencies"][0],
+            "id": f"skill-{index}",
+            "observed_skill": f"demonstrated method {index}",
+        }
+        for index in range(24)
+    ]
+    draft = normalize_model_draft(parse(data), load_evaluation_rubric())
+    assert len(draft.competencies) == 24
+
+
+def test_model_normalization_repairs_nonclaim_id_collisions() -> None:
+    data = example()
+    data["competencies"][0]["id"] = "c1"
+    data["contexts"] = [
+        {
+            "id": "c1",
+            "claim_id": "c1",
+            "kind": "concept",
+            "label": "sensor comparison",
+            "rationale": "The source describes the concept.",
+            "citations": data["claims"][0]["citations"],
+        }
+    ]
+    draft = normalize_model_draft(parse(data), load_evaluation_rubric())
+    all_ids = [
+        item.id
+        for item in [
+            *draft.claims,
+            *draft.judgments,
+            *draft.competencies,
+            *draft.contexts,
+        ]
+    ]
+    assert len(all_ids) == len(set(all_ids))
+    assert draft.competencies[0].id.startswith("s_c1")
+    assert draft.contexts[0].id.startswith("t_c1")
 
 
 def test_real_cli_offline_and_no_overwrite(tmp_path: Path) -> None:

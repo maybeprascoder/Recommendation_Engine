@@ -1,0 +1,346 @@
+{
+  "run_id": "stage4d-qwen35-9b-20260928",
+  "review_id": "hr-stage4b-trap-resume-silent",
+  "review_domain": "semantic_traps",
+  "lineage_group": "presence_and_attribution_traps",
+  "source_sha256": "5c415e51c9dae8f88f036ec6ab9f5339261497d92dfcdaeb7976c38af43f288f",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v9+support-review-v9",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 44.56,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "status": "completed",
+      "seconds": 24.01,
+      "instructions_sha256": "5c3094202078e3473c88482748e82a4aebc39f855f2ef834faa964bc91701f67",
+      "payload_sha256": "3bffaee4033b59185d85c4e35297c37882b53f3316ad6d5fb19e2cbc71d9cc85",
+      "schema_sha256": "19cc1aaa55908b405702a14deeb555256b40117688bd0f70e4e9515900ca1cd0",
+      "response_id": "2026-09-29T21:44:26.0585713Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"activity\",\n      \"statement\": \"The submitted resume contains no information about cryptography.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_absent\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The submitted resume contains no information about cryptography.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The document explicitly states the absence of information regarding cryptography. No individual contribution, leadership, or assistance is described for this domain.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The submitted resume contains no information about cryptography.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"unknown\",\n      \"rationale\": \"Since the resume contains no information about cryptography, no depth of work (applied, designed, investigated) can be established for this specific competency.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The submitted resume contains no information about cryptography.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No evaluation method is stated for the cryptography topic as no information is provided.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The submitted resume contains no information about cryptography.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"No results or outcomes are stated for the cryptography topic as no information is provided.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"The submitted resume contains no information about cryptography.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [],\n  \"contexts\": [],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null,
+      "prompt_version": "understanding-v9"
+    },
+    {
+      "name": "support_review",
+      "status": "completed",
+      "seconds": 20.54,
+      "instructions_sha256": "9a88f1082aeda3e3bce07f7b71095507bb937e357933ce8d9f51478e81539394",
+      "payload_sha256": "30b41ae4da436386d79fc2b4ae0a0434b2fa746fd1a1c4ca194d0abdd239d441",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-29T21:44:46.604405Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"unsupported\",\"explanation\":\"The claim asserts 'reported_absent' for cryptography. While the source text states the resume contains no information about cryptography, this constitutes missing information regarding that specific activity, not an explicit denial or absence of the work itself. Per instructions, 'missing information is unknown, never absence.' Therefore, the presence label should be 'unknown', making the current claim unsupported.\"},{\"target_id\":\"j1\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment assigns 'unknown' to ownership based on the rationale that no contribution is described because the resume lacks info. However, since the source text only indicates missing information (not an explicit denial of work), the correct label for ownership in this context is 'unknown' due to missing data, not because the absence proves a lack of responsibility. The verdict 'unknown' is technically correct for the label, but the claim it supports (c1) is invalid due to the wrong presence label. If c1 were corrected to 'unknown', j1 would be supported; as currently paired with an invalid 'reported_absent' claim, the judgment's logic relies on a false premise of absence.\"},{\"target_id\":\"j2\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment assigns 'unknown' to depth because no information is provided. This aligns with the rule that missing information results in 'unknown'. However, this judgment supports claim c1, which incorrectly labels the situation as 'reported_absent'. A claim of absence cannot be supported by a statement of missing information. Thus, the judgment is unsupported because it validates an incorrect presence label.\"},{\"target_id\":\"j3\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment assigns 'unknown' to evaluation due to lack of stated methods. This is consistent with the source text indicating missing information. However, like j2, it supports claim c1 which falsely claims 'reported_absent'. Since the source does not explicitly deny cryptography work (it just doesn't mention it), the presence should be 'unknown', rendering the current claim invalid and thus unsupported by this judgment.\"},{\"target_id\":\"j4\",\"verdict\":\"unsupported\",\"explanation\":\"The judgment assigns 'unknown' to impact because no results are stated. This is correct for missing information. However, it supports claim c1 which incorrectly uses 'reported_absent'. The source text does not explicitly deny the existence of cryptography work; it merely omits it. Therefore, the presence label should be 'unknown', making the current claim unsupported.\"}],\"duplicate_groups\":[]}",
+      "error": null,
+      "prompt_version": "support-review-v9"
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "The submitted resume contains no information about cryptography."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "activity",
+          "statement": "The submitted resume contains no information about cryptography.",
+          "attribution": "student",
+          "presence": "reported_absent",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The submitted resume contains no information about cryptography."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "unknown",
+          "rationale": "The document explicitly states the absence of information regarding cryptography. No individual contribution, leadership, or assistance is described for this domain.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The submitted resume contains no information about cryptography."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "unknown",
+          "rationale": "Since the resume contains no information about cryptography, no depth of work (applied, designed, investigated) can be established for this specific competency.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The submitted resume contains no information about cryptography."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "unknown",
+          "rationale": "No evaluation method is stated for the cryptography topic as no information is provided.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The submitted resume contains no information about cryptography."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "No results or outcomes are stated for the cryptography topic as no information is provided.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "The submitted resume contains no information about cryptography."
+            }
+          ]
+        }
+      ],
+      "competencies": [],
+      "contexts": [],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "unsupported",
+          "explanation": "The claim asserts 'reported_absent' for cryptography. While the source text states the resume contains no information about cryptography, this constitutes missing information regarding that specific activity, not an explicit denial or absence of the work itself. Per instructions, 'missing information is unknown, never absence.' Therefore, the presence label should be 'unknown', making the current claim unsupported."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "unsupported",
+          "explanation": "The judgment assigns 'unknown' to ownership based on the rationale that no contribution is described because the resume lacks info. However, since the source text only indicates missing information (not an explicit denial of work), the correct label for ownership in this context is 'unknown' due to missing data, not because the absence proves a lack of responsibility. The verdict 'unknown' is technically correct for the label, but the claim it supports (c1) is invalid due to the wrong presence label. If c1 were corrected to 'unknown', j1 would be supported; as currently paired with an invalid 'reported_absent' claim, the judgment's logic relies on a false premise of absence."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "unsupported",
+          "explanation": "The judgment assigns 'unknown' to depth because no information is provided. This aligns with the rule that missing information results in 'unknown'. However, this judgment supports claim c1, which incorrectly labels the situation as 'reported_absent'. A claim of absence cannot be supported by a statement of missing information. Thus, the judgment is unsupported because it validates an incorrect presence label."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "unsupported",
+          "explanation": "The judgment assigns 'unknown' to evaluation due to lack of stated methods. This is consistent with the source text indicating missing information. However, like j2, it supports claim c1 which falsely claims 'reported_absent'. Since the source does not explicitly deny cryptography work (it just doesn't mention it), the presence should be 'unknown', rendering the current claim invalid and thus unsupported by this judgment."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "unsupported",
+          "explanation": "The judgment assigns 'unknown' to impact because no results are stated. This is correct for missing information. However, it supports claim c1 which incorrectly uses 'reported_absent'. The source text does not explicitly deny the existence of cryptography work; it merely omits it. Therefore, the presence label should be 'unknown', making the current claim unsupported."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [],
+    "supported_judgment_ids": [],
+    "supported_competency_ids": [],
+    "supported_context_ids": [],
+    "questions": [
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The claim asserts 'reported_absent' for cryptography. While the source text states the resume contains no information about cryptography, this constitutes missing information regarding that specific activity, not an explicit denial or absence of the work itself. Per instructions, 'missing information is unknown, never absence.' Therefore, the presence label should be 'unknown', making the current claim unsupported."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment assigns 'unknown' to ownership based on the rationale that no contribution is described because the resume lacks info. However, since the source text only indicates missing information (not an explicit denial of work), the correct label for ownership in this context is 'unknown' due to missing data, not because the absence proves a lack of responsibility. The verdict 'unknown' is technically correct for the label, but the claim it supports (c1) is invalid due to the wrong presence label. If c1 were corrected to 'unknown', j1 would be supported; as currently paired with an invalid 'reported_absent' claim, the judgment's logic relies on a false premise of absence."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment assigns 'unknown' to depth because no information is provided. This aligns with the rule that missing information results in 'unknown'. However, this judgment supports claim c1, which incorrectly labels the situation as 'reported_absent'. A claim of absence cannot be supported by a statement of missing information. Thus, the judgment is unsupported because it validates an incorrect presence label."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment assigns 'unknown' to evaluation due to lack of stated methods. This is consistent with the source text indicating missing information. However, like j2, it supports claim c1 which falsely claims 'reported_absent'. Since the source does not explicitly deny cryptography work (it just doesn't mention it), the presence should be 'unknown', rendering the current claim invalid and thus unsupported by this judgment."
+      },
+      {
+        "claim_id": "c1",
+        "question": "Can you clarify the source and your contribution?",
+        "reason": "The judgment assigns 'unknown' to impact because no results are stated. This is correct for missing information. However, it supports claim c1 which incorrectly uses 'reported_absent'. The source text does not explicitly deny the existence of cryptography work; it merely omits it. Therefore, the presence label should be 'unknown', making the current claim unsupported."
+      }
+    ],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-29T21:44:26.0585713Z",
+        "2026-09-29T21:44:46.604405Z"
+      ],
+      "prompt_version": "understanding-v9+support-review-v9",
+      "prompt_sha256": "cae439c94336a18c926844f9ce65afc30bcfbb4b9b0df0722d6d833ca939a848",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "5c415e51c9dae8f88f036ec6ab9f5339261497d92dfcdaeb7976c38af43f288f"
+      },
+      "draft_response_sha256": "dd36e4359b8f438486557391bc99f7680f8ced82711e4ec0f6d3237d99e7f0bf",
+      "review_response_sha256": "7d44d4879af2a379f373797ea9b0087f737e215af9377a89ccf01a062337b3b0"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "claims",
+      "provisional_reference": [
+        {
+          "statement": "The submitted resume contains no information about cryptography.",
+          "category": "other",
+          "attribution": "unknown",
+          "presence": "unknown"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Does either claim segmentation or wording exceed the source?"
+    },
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "domain",
+          "label": "Cryptography"
+        }
+      ],
+      "model_prediction": [],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "unknowns",
+      "provisional_reference": [
+        "claim_presence"
+      ],
+      "model_prediction": [],
+      "question": "Should uncertainty remain, or does the source support a stronger label?"
+    },
+    {
+      "field": "questions",
+      "provisional_reference": [],
+      "model_prediction": [
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?",
+        "Can you clarify the source and your contribution?"
+      ],
+      "question": "Which clarification questions are still needed?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

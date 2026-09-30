@@ -1,0 +1,393 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-cs-shared-api",
+  "review_domain": "computer_science",
+  "lineage_group": "software_delivery_progression",
+  "source_sha256": "54d576f83711209dbbc1b9a691b563d8aef10fbcbd144c7b6d2a0c280417dfbe",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10+support-review-v10",
+  "status": "completed",
+  "failure_stage": null,
+  "error": null,
+  "seconds": 58.51,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "completed",
+      "seconds": 40.41,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "9e5f2fb3fc9f974b2eac3a9da0626cf2c0f945959a91f0e7f0519a6d25215a99",
+      "schema_sha256": "169a516f6d75d9d564054f8c8a6bc2c953fd4fb6be57240e5b9ae7c493d11d21",
+      "response_id": "2026-09-30T16:34:23.383416Z",
+      "model": "qwen3.5:9b",
+      "text": "{\n  \"claims\": [\n    {\n      \"id\": \"c1\",\n      \"category\": \"work\",\n      \"statement\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\",\n      \"attribution\": \"student\",\n      \"presence\": \"reported_present\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ],\n      \"duplicate_of\": null\n    }\n  ],\n  \"academics\": [],\n  \"judgments\": [\n    {\n      \"id\": \"j1\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"ownership\",\n      \"label\": \"shared\",\n      \"rationale\": \"The text explicitly states 'On a four-person team' and uses the first person 'I implemented', indicating an explicit individual contribution within collaborative work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j2\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"depth\",\n      \"label\": \"applied\",\n      \"rationale\": \"The student 'implemented' an endpoint and 'added' unit tests. This describes using established methods to complete a described task, rather than making design choices or investigating a new question.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j3\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"evaluation\",\n      \"label\": \"described\",\n      \"rationale\": \"The student 'added unit tests for invalid requests'. A concrete test method is explicitly stated.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"j4\",\n      \"claim_id\": \"c1\",\n      \"dimension\": \"impact\",\n      \"label\": \"unknown\",\n      \"rationale\": \"The text describes the implementation and testing actions but does not state any resulting outcomes, such as reduced errors, improved performance, or adoption by users.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    }\n  ],\n  \"competencies\": [\n    {\n      \"id\": \"s1\",\n      \"claim_id\": \"c1\",\n      \"competency_id\": \"programming\",\n      \"observed_skill\": \"Java endpoint implementation and unit test creation\",\n      \"rationale\": \"The student explicitly 'implemented the Java endpoint' and 'added unit tests', which constitutes explicit programming actions.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    }\n  ],\n  \"contexts\": [\n    {\n      \"id\": \"t1\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"Java\",\n      \"rationale\": \"The student explicitly named 'Java' as the language used for implementation.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    },\n    {\n      \"id\": \"t2\",\n      \"claim_id\": \"c1\",\n      \"kind\": \"tool\",\n      \"label\": \"unit tests\",\n      \"rationale\": \"The student explicitly mentioned adding 'unit tests' as part of the work.\",\n      \"citations\": [\n        {\n          \"document_id\": \"source\",\n          \"quote\": \"On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.\"\n        }\n      ]\n    }\n  ],\n  \"questions\": [],\n  \"unassessed\": []\n}",
+      "error": null
+    },
+    {
+      "name": "support_review",
+      "prompt_version": "support-review-v10",
+      "status": "completed",
+      "seconds": 18.07,
+      "instructions_sha256": "b23e1ea984e3e0c628cbd924258af5c6c36241db41024bdfe0b8249fe4813a83",
+      "payload_sha256": "04f2756cea16c497529c03a26690aa326dee45619e3fa4428a7ae4a65d22fbf2",
+      "schema_sha256": "347a5fbc27fa5dac8363169edc0d34b215c7128b918cc870925046f81dd2e72d",
+      "response_id": "2026-09-30T16:34:41.4587176Z",
+      "model": "qwen3.5:9b",
+      "text": "{\"checks\":[{\"target_id\":\"c1\",\"verdict\":\"supported\",\"explanation\":\"The claim is a verbatim quote from the source document describing an individual action within a team context. The presence is explicitly reported in the text.\"},{\"target_id\":\"j1\",\"verdict\":\"supported\",\"explanation\":\"The label 'shared' is appropriate because the text explicitly states 'On a four-person team' while using first-person 'I implemented', establishing an explicit individual contribution within collaborative work as defined by the rubric.\"},{\"target_id\":\"j2\",\"verdict\":\"supported\",\"explanation\":\"The label 'applied' is correct. The actions 'implemented' and 'added unit tests' describe using established methods to complete a task, without evidence of making new design choices or investigating a novel question.\"},{\"target_id\":\"j3\",\"verdict\":\"supported\",\"explanation\":\"The label 'described' is supported because the text explicitly states the student 'added unit tests', which constitutes a concrete test method being stated.\"},{\"target_id\":\"j4\",\"verdict\":\"supported\",\"explanation\":\"The label 'unknown' is appropriate. The source describes actions (implementation, testing) but does not state any resulting outcomes, metrics, or adoption, so no impact can be inferred.\"},{\"target_id\":\"s1\",\"verdict\":\"supported\",\"explanation\":\"The competency 'programming' is supported by the explicit action of 'implemented the Java endpoint' and 'added unit tests'. The rationale correctly identifies these as explicit programming actions. The null competency_id (implied by the draft structure or missing from catalog) does not invalidate the skill; it indicates missing taxonomy coverage, which is a valid state per instructions.\"},{\"target_id\":\"t1\",\"verdict\":\"supported\",\"explanation\":\"The tool 'Java' is correctly identified as a context because the student explicitly named it in the statement. Recognition of domain terminology is allowed even if no advanced method is demonstrated.\"},{\"target_id\":\"t2\",\"verdict\":\"supported\",\"explanation\":\"The tool/concept 'unit tests' is correctly identified as a context because the student explicitly mentioned adding them. Tool names alone do not establish depth, but they are valid contexts for recognition.\"}],\"duplicate_groups\":[]}",
+      "error": null
+    }
+  ],
+  "model_output": {
+    "response_version": "understanding-v3",
+    "requires_confirmation": true,
+    "scoring_enabled": false,
+    "documents": [
+      {
+        "id": "source",
+        "text": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+      }
+    ],
+    "draft": {
+      "claims": [
+        {
+          "id": "c1",
+          "category": "work",
+          "statement": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests.",
+          "attribution": "student",
+          "presence": "reported_present",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ],
+          "duplicate_of": null
+        }
+      ],
+      "academics": [],
+      "judgments": [
+        {
+          "id": "j1",
+          "claim_id": "c1",
+          "dimension": "ownership",
+          "label": "shared",
+          "rationale": "The text explicitly states 'On a four-person team' and uses the first person 'I implemented', indicating an explicit individual contribution within collaborative work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        },
+        {
+          "id": "j2",
+          "claim_id": "c1",
+          "dimension": "depth",
+          "label": "applied",
+          "rationale": "The student 'implemented' an endpoint and 'added' unit tests. This describes using established methods to complete a described task, rather than making design choices or investigating a new question.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        },
+        {
+          "id": "j3",
+          "claim_id": "c1",
+          "dimension": "evaluation",
+          "label": "described",
+          "rationale": "The student 'added unit tests for invalid requests'. A concrete test method is explicitly stated.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        },
+        {
+          "id": "j4",
+          "claim_id": "c1",
+          "dimension": "impact",
+          "label": "unknown",
+          "rationale": "The text describes the implementation and testing actions but does not state any resulting outcomes, such as reduced errors, improved performance, or adoption by users.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        }
+      ],
+      "competencies": [
+        {
+          "id": "s1",
+          "claim_id": "c1",
+          "competency_id": "programming",
+          "observed_skill": "Java endpoint implementation and unit test creation",
+          "rationale": "The student explicitly 'implemented the Java endpoint' and 'added unit tests', which constitutes explicit programming actions.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        }
+      ],
+      "contexts": [
+        {
+          "id": "t1",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "Java",
+          "rationale": "The student explicitly named 'Java' as the language used for implementation.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        },
+        {
+          "id": "t2",
+          "claim_id": "c1",
+          "kind": "tool",
+          "label": "unit tests",
+          "rationale": "The student explicitly mentioned adding 'unit tests' as part of the work.",
+          "citations": [
+            {
+              "document_id": "source",
+              "quote": "On a four-person team, I implemented the Java endpoint for creating customer orders and added unit tests for invalid requests."
+            }
+          ]
+        }
+      ],
+      "questions": [],
+      "unassessed": []
+    },
+    "support_review": {
+      "checks": [
+        {
+          "target_id": "c1",
+          "verdict": "supported",
+          "explanation": "The claim is a verbatim quote from the source document describing an individual action within a team context. The presence is explicitly reported in the text."
+        },
+        {
+          "target_id": "j1",
+          "verdict": "supported",
+          "explanation": "The label 'shared' is appropriate because the text explicitly states 'On a four-person team' while using first-person 'I implemented', establishing an explicit individual contribution within collaborative work as defined by the rubric."
+        },
+        {
+          "target_id": "j2",
+          "verdict": "supported",
+          "explanation": "The label 'applied' is correct. The actions 'implemented' and 'added unit tests' describe using established methods to complete a task, without evidence of making new design choices or investigating a novel question."
+        },
+        {
+          "target_id": "j3",
+          "verdict": "supported",
+          "explanation": "The label 'described' is supported because the text explicitly states the student 'added unit tests', which constitutes a concrete test method being stated."
+        },
+        {
+          "target_id": "j4",
+          "verdict": "supported",
+          "explanation": "The label 'unknown' is appropriate. The source describes actions (implementation, testing) but does not state any resulting outcomes, metrics, or adoption, so no impact can be inferred."
+        },
+        {
+          "target_id": "s1",
+          "verdict": "supported",
+          "explanation": "The competency 'programming' is supported by the explicit action of 'implemented the Java endpoint' and 'added unit tests'. The rationale correctly identifies these as explicit programming actions. The null competency_id (implied by the draft structure or missing from catalog) does not invalidate the skill; it indicates missing taxonomy coverage, which is a valid state per instructions."
+        },
+        {
+          "target_id": "t1",
+          "verdict": "supported",
+          "explanation": "The tool 'Java' is correctly identified as a context because the student explicitly named it in the statement. Recognition of domain terminology is allowed even if no advanced method is demonstrated."
+        },
+        {
+          "target_id": "t2",
+          "verdict": "supported",
+          "explanation": "The tool/concept 'unit tests' is correctly identified as a context because the student explicitly mentioned adding them. Tool names alone do not establish depth, but they are valid contexts for recognition."
+        }
+      ],
+      "duplicate_groups": []
+    },
+    "supported_claim_ids": [
+      "c1"
+    ],
+    "supported_judgment_ids": [
+      "j1",
+      "j2",
+      "j3"
+    ],
+    "supported_competency_ids": [
+      "s1"
+    ],
+    "supported_context_ids": [
+      "t1",
+      "t2"
+    ],
+    "questions": [],
+    "limitations": [
+      "Provisional qualitative rubric; the LLM supplies no numeric scores.",
+      "Model support review is not independent verification of achievements.",
+      "Institutions and venues have not been researched in this stage.",
+      "Student confirmation is required before configured mappings apply."
+    ],
+    "audit": {
+      "provider": "ollama-local",
+      "model": "qwen3.5:9b",
+      "completion_models": [
+        "qwen3.5:9b",
+        "qwen3.5:9b"
+      ],
+      "response_ids": [
+        "2026-09-30T16:34:23.383416Z",
+        "2026-09-30T16:34:41.4587176Z"
+      ],
+      "prompt_version": "understanding-v10+support-review-v10",
+      "prompt_sha256": "0cc3b68f645b0b9f21fd543461fb888b88bd9526d41435d76fb961865b7d91cc",
+      "rubric_sha256": "57a32b95524c73e1b50257232cc40000132f839e66662608ddf72e4ece1a0c40",
+      "rubric_snapshot": {
+        "version": "qualitative-v1",
+        "provisional": true,
+        "validated_by": null,
+        "source": null,
+        "dimensions": [
+          {
+            "id": "ownership",
+            "description": "Individual contribution explicitly described in the evidence.",
+            "labels": {
+              "unknown": "Individual responsibility is not established.",
+              "assisted": "Explicitly supported another contributor or followed guided work.",
+              "shared": "Explicit individual contribution within collaborative work.",
+              "led": "Explicitly directed the work or independently owned the deliverable; a title or possessive like my thesis alone is insufficient."
+            }
+          },
+          {
+            "id": "depth",
+            "description": "Nature of the work demonstrated by the description, not prestige.",
+            "labels": {
+              "unknown": "A title, skill list, or credential alone does not describe the work.",
+              "applied": "Used established methods to implement or complete a described task.",
+              "designed": "Made and explained design choices or adapted methods to constraints.",
+              "investigated": "Investigated a question through an explicit method and analysis."
+            }
+          },
+          {
+            "id": "evaluation",
+            "description": "How the work was evaluated; no implied ordering across disciplines.",
+            "labels": {
+              "unknown": "No evaluation method is stated.",
+              "described": "A concrete test, review, or assessment method is stated.",
+              "compared": "Evaluation includes explicit baselines, alternatives, or controls.",
+              "externally_reviewed": "External assessment is explicitly stated; this remains a claim until verified."
+            }
+          },
+          {
+            "id": "impact",
+            "description": "Evidence describing results, separate from their independent verification.",
+            "labels": {
+              "unknown": "No result is stated.",
+              "reported": "A concrete outcome is reported without a measurement method.",
+              "measured": "An outcome and measurement method or comparison are stated.",
+              "adopted": "Actual use or adoption by identified users or an organization is stated."
+            }
+          }
+        ],
+        "category_guidance": {
+          "project": "Distinguish guided replication from individual design. Tool names do not establish depth. Preserve team contribution and ask about missing evaluation.",
+          "work": "Assess described responsibilities and contributions. Employer reputation and job title do not establish ownership. Do not sum overlapping durations.",
+          "research": "Unpublished research can demonstrate investigation. Evaluate methods and contribution independently of publication status; do not invent publications.",
+          "publication": "Separate paper content, authorship, and review status. Do not rank unfamiliar venues or assume arXiv entails peer review. Request metadata verification later.",
+          "coursework": "Preserve course and grade context. Enrollment alone does not establish mastery or independent implementation.",
+          "education": "Preserve every degree and original grade scale separately. No prestige adjustment or invented grade conversion. Do not infer completion from attendance dates.",
+          "activity": "Assess individual contribution in community, creative, leadership, and school activities without requiring technical work or publications.",
+          "other": "Preserve unfamiliar evidence and uncertainty. Do not force it into a known technical competency or discard it because of taxonomy coverage."
+        }
+      },
+      "taxonomy_version": "341011afa9de5f1a23aecfec3a51a27f179a6609ef59075a5a0ab99a2c19fa17",
+      "competency_catalog": {
+        "networking": "Analysis, configuration, or diagnosis of network communication, protocols, traffic, and packet behavior.",
+        "operating_systems": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "cryptography": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "statistics": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "machine_learning": "Competency explicitly named in Build Spec sections 3 and 4; definition pending human validation.",
+        "distributed_systems": "Competency explicitly named in Build Spec section 3; definition pending human validation.",
+        "programming": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "security": "Analysis or implementation of controls, vulnerabilities, threats, detection, or incident response for protecting systems and information.",
+        "policy_governance": "Competency explicitly named as policy and governance in Build Spec section 4; definition pending human validation.",
+        "risk": "Competency explicitly named in Build Spec section 4; definition pending human validation.",
+        "quantitative_analysis": "Systematic use and interpretation of mathematical or quantitative methods to analyze data, uncertainty, relationships, or modeled behavior.",
+        "structural_analysis": "Application of mechanics and analytical methods to model or evaluate structural response under stated loads, combinations, or constraints.",
+        "structural_design": "Selection, sizing, or detailing of structural systems or members to satisfy stated requirements or constraints.",
+        "mechanical_design": "Creation or refinement of mechanical parts and assemblies through explicit geometry, fit, interference, material, or functional choices.",
+        "engineering_simulation": "Construction, execution, or interpretation of numerical or physics-based models used to study an engineered system.",
+        "embedded_digital_systems": "Design or integration of digital logic, sensors, firmware, or control behavior within an embedded hardware system.",
+        "qualitative_research": "Systematic collection, coding, comparison, or interpretation of nonnumeric evidence to investigate a research question.",
+        "teaching_instruction": "Planning, delivering, adapting, or evaluating instruction, tutoring, or learning activities for identified learners."
+      },
+      "source_sha256": {
+        "source": "54d576f83711209dbbc1b9a691b563d8aef10fbcbd144c7b6d2a0c280417dfbe"
+      },
+      "draft_response_sha256": "1ecf35cebcfdfcc75d0b6e130c9b34d66eb13f499401ccc3331ef8f7026d2ccf",
+      "review_response_sha256": "619b42b968fcd8d86e64b2264c67a99af90827defb8ae14b670bd330fbf2e589"
+    }
+  },
+  "differences_are_investigation_questions": true,
+  "differences": [
+    {
+      "field": "contexts",
+      "provisional_reference": [
+        {
+          "kind": "concept",
+          "label": "REST endpoint"
+        },
+        {
+          "kind": "tool",
+          "label": "Java"
+        }
+      ],
+      "model_prediction": [
+        {
+          "kind": "tool",
+          "label": "Java"
+        },
+        {
+          "kind": "tool",
+          "label": "unit tests"
+        }
+      ],
+      "question": "Which cited tools, domains, or concepts should remain context only?"
+    },
+    {
+      "field": "demonstrated_methods",
+      "provisional_reference": [
+        "Implemented a Java API endpoint with validation tests"
+      ],
+      "model_prediction": [
+        "Java endpoint implementation and unit test creation"
+      ],
+      "question": "Which performed methods are explicitly supported?"
+    },
+    {
+      "field": "competency_suggestions",
+      "provisional_reference": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Implemented a Java API endpoint with validation tests"
+        }
+      ],
+      "model_prediction": [
+        {
+          "competency_id": "programming",
+          "observed_skill": "Java endpoint implementation and unit test creation"
+        }
+      ],
+      "question": "Which competency routes are supported without inference?"
+    }
+  ],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}

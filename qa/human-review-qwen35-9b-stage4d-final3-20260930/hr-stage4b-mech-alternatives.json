@@ -1,0 +1,35 @@
+{
+  "run_id": "qwen35-9b-stage4d-final3-20260930",
+  "review_id": "hr-stage4b-mech-alternatives",
+  "review_domain": "mechanical",
+  "lineage_group": "solidworks_progression",
+  "source_sha256": "3ebbf38e0dabc86637618427a2b1ef45ab8c436e24b2e22b93c2bebb416e6399",
+  "provider": "ollama-local",
+  "model": "qwen3.5:9b",
+  "prompt_version": "understanding-v10",
+  "status": "structural_failure",
+  "failure_stage": "provider_student_understanding",
+  "error": "Model endpoint unavailable or timed out",
+  "seconds": 180.05,
+  "raw_calls": [
+    {
+      "name": "student_understanding",
+      "prompt_version": "understanding-v10",
+      "status": "provider_error",
+      "seconds": 180.03,
+      "instructions_sha256": "e7731b59bc50e9a801ced459488df6961dbb8e295c4e9d91b9d78e96d219fbe3",
+      "payload_sha256": "3ea92d7d0492f20ece1bc43c42d6c1497f2ba07131e25850d0f563fa21d79e26",
+      "schema_sha256": "bbe30466e2cc7baed57f86ebed37ba94cb70abf71d3f34bc74dfb4f78b1b6cb8",
+      "response_id": null,
+      "model": null,
+      "text": null,
+      "error": "Model endpoint unavailable or timed out"
+    }
+  ],
+  "model_output": null,
+  "differences_are_investigation_questions": true,
+  "differences": [],
+  "human_review_status": "pending",
+  "human_final_label": null,
+  "dataset_split": "unassigned"
+}
